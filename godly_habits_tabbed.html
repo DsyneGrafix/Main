@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflecting Christ: Daily Habits of a Godly Person</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: sticky;
+            top: 0;
+            height: 4px;
+            background: #e0e0e0;
+            z-index: 1000;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Navigation Tabs */
+        .nav-container {
+            position: sticky;
+            top: 4px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .nav-tabs {
+            display: flex;
+            overflow-x: auto;
+            padding: 1rem 2rem 0 2rem;
+            gap: 0.5rem;
+            scrollbar-width: thin;
+        }
+
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .nav-tab:hover {
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+        .nav-tab.active {
+            color: #2c3e50;
+            border-bottom-color: #3498db;
+            font-weight: 600;
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 2rem;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin: 2rem 0 1rem 0;
+            font-size: 2em;
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            color: #34495e;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5em;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        ul {
+            margin-bottom: 1.2rem;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f4f8, #d4ebf7);
+            border-left: 4px solid #3498db;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .practice-box {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .scripture-quote {
+            font-style: italic;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+            margin: 3rem 0 2rem 0;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            
+            .nav-tabs {
+                padding: 0.5rem 1rem 0 1rem;
+            }
+            
+            .nav-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Reflecting Christ: Daily Habits of a Godly Person</h1>
+            <p class="hero-subtitle">
+                "Let your light shine before others, that they may see your good deeds and glorify your Father in heaven." - Matthew 5:16
+            </p>
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <strong>🌅 Morning Foundation</strong><br>
+                    Start each day with God
+                </div>
+                <div class="stat-box">
+                    <strong>📖 Daily Practices</strong><br>
+                    Transform through consistency
+                </div>
+                <div class="stat-box">
+                    <strong>❤️ Living Faith</strong><br>
+                    Love in action
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="nav-container">
+            <div class="nav-tabs">
+                <div class="nav-tab active" data-section="overview">Overview</div>
+                <div class="nav-tab" data-section="morning">Morning Foundation</div>
+                <div class="nav-tab" data-section="daily">Daily Practices</div>
+                <div class="nav-tab" data-section="character">Character Growth</div>
+                <div class="nav-tab" data-section="relationships">Relationships</div>
+                <div class="nav-tab" data-section="living">Living Your Faith</div>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="content">
+            <!-- Overview Section -->
+            <div class="section active" id="overview">
+                <h2>The Journey of Transformation</h2>
+                
+                <p>Living a life that reflects Christ is not about achieving perfection overnight, but about cultivating daily habits that gradually transform us into His likeness. The journey of godliness is marked by consistent, intentional practices that align our hearts, minds, and actions with the character of Jesus Christ. These habits serve as spiritual disciplines that shape our souls and prepare us to be vessels of God's love and grace in a world that desperately needs both.</p>
+
+                <p>The apostle Paul reminds us in Romans 12:2 to "be transformed by the renewing of your mind." This transformation doesn't happen by accident or through sporadic bursts of spiritual enthusiasm. Rather, it occurs through the steady rhythm of daily practices that keep us connected to our heavenly Father and attuned to His will for our lives.</p>
+
+                <div class="highlight-box">
+                    <h3>Why Daily Habits Matter</h3>
+                    <p>Spiritual growth is not achieved through occasional grand gestures but through consistent, small choices made day after day. Like water gradually shaping stone, regular spiritual disciplines slowly but surely transform our hearts and lives in ways that surprise even us.</p>
+                </div>
+
+                <h3>The Core Disciplines</h3>
+                <p>Throughout this guide, we'll explore the essential daily habits that characterize a godly life:</p>
+                <ul>
+                    <li><strong>Morning Communion:</strong> Beginning each day connected to God through prayer and Scripture</li>
+                    <li><strong>Scripture Meditation:</strong> Carrying God's truth with us throughout the day</li>
+                    <li><strong>Acts of Service:</strong> Expressing Christ's love through practical help</li>
+                    <li><strong>Self-Examination:</strong> Honest assessment and growth in character</li>
+                    <li><strong>Gratitude:</strong> Recognizing and celebrating God's goodness</li>
+                    <li><strong>Stewardship:</strong> Managing resources wisely and generously</li>
+                    <li><strong>Sabbath Rest:</strong> Trusting God's provision through regular renewal</li>
+                    <li><strong>Lifestyle Evangelism:</strong> Witnessing through how we live</li>
+                </ul>
+
+                <div class="practice-box">
+                    <h3>Getting Started</h3>
+                    <p>Don't try to implement all these habits at once. Start with one or two, establish them firmly, then gradually add others. The goal is sustainable transformation, not burnout from trying to do everything perfectly.</p>
+                </div>
+            </div>
+
+            <!-- Morning Foundation Section -->
+            <div class="section" id="morning">
+                <h2>The Foundation: Morning Communion with God</h2>
+
+                <p>The most crucial habit of a godly person begins before the world awakens. <strong>Morning devotion</strong> sets the tone for the entire day and establishes a foundation of spiritual strength that can withstand whatever challenges may come. This sacred time isn't simply checking off a religious obligation; it represents a deliberate choice to prioritize relationship with God above all other demands.</p>
+
+                <div class="scripture-quote">
+                    "Very early in the morning, while it was still dark, Jesus got up, left the house and went off to a solitary place, where he prayed." - Mark 1:35
+                </div>
+
+                <p>Jesus Himself modeled this practice. If the Son of God found it necessary to begin His day in communion with the Father, how much more do we need this time of connection and preparation?</p>
+
+                <h3>Elements of Effective Morning Devotion</h3>
+
+                <div class="highlight-box">
+                    <h4>1. Scripture Reading</h4>
+                    <p>Feed the soul with God's truth and wisdom. Rather than rushing through passages, approach the Bible with reverence and expectation, asking the Holy Spirit to illuminate the text and speak to your heart. This might involve following a reading plan, meditating on a single verse, or studying a particular book in depth.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>2. Prayer</h4>
+                    <p>Prayer forms the conversational heart of morning devotion. Include worship and adoration, confession of sin, thanksgiving for God's blessings, and intercession for others. Prayer is not merely asking God for things, but developing an intimate dialogue with your Creator.</p>
+                    
+                    <p><strong>Prayer Components:</strong></p>
+                    <ul>
+                        <li><strong>Worship:</strong> Praising God for who He is</li>
+                        <li><strong>Confession:</strong> Admitting our sins honestly</li>
+                        <li><strong>Thanksgiving:</strong> Expressing gratitude for blessings</li>
+                        <li><strong>Intercession:</strong> Praying for others' needs</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>3. Journaling</h4>
+                    <p>Enhance your morning time by providing a space to record insights from Scripture, track prayer requests and answers, and reflect on God's faithfulness. Writing helps clarify thoughts and creates a tangible record of spiritual growth and God's work in your life.</p>
+                </div>
+
+                <div class="practice-box">
+                    <h3>Make It Practical</h3>
+                    <p><strong>Start small:</strong> Begin with just 10-15 minutes. Set your alarm 20 minutes earlier than usual. Prepare your space the night before - Bible, journal, coffee or tea ready.</p>
+                    <p><strong>Consistency over perfection:</strong> If you miss a day, don't quit. Simply start again the next morning. The goal is progress, not perfection.</p>
+                </div>
+            </div>
+
+            <!-- Daily Practices Section -->
+            <div class="section" id="daily">
+                <h2>Daily Practices: Walking in Truth</h2>
+
+                <h3>Scripture Meditation Throughout the Day</h3>
+                
+                <p>While morning devotion provides the foundational meal of spiritual nourishment, godly people understand the need for continuous feeding on God's Word throughout the day. <strong>Scripture meditation</strong> involves carrying verses in one's heart and mind, allowing God's truth to permeate every moment and decision.</p>
+
+                <div class="scripture-quote">
+                    "That person is like a tree planted by streams of water, which yields its fruit in season and whose leaf does not wither—whatever they do prospers." - Psalm 1:3
+                </div>
+
+                <h3>The Power of Memorized Scripture</h3>
+                
+                <p>Committing verses to memory equips believers with spiritual weapons for times of temptation, comfort during seasons of grief, and wisdom for moments of decision-making. When Jesus faced temptation in the wilderness, He responded with memorized Scripture, demonstrating the power of having God's Word readily accessible in times of spiritual battle.</p>
+
+                <div class="practice-box">
+                    <h4>Memory Verse Strategy</h4>
+                    <ul>
+                        <li>Choose verses that address your current struggles or areas of growth</li>
+                        <li>Write the verse on an index card and carry it with you</li>
+                        <li>Repeat the verse during your commute, while exercising, or during breaks</li>
+                        <li>Use mobile apps that send daily verses</li>
+                        <li>Review memorized verses regularly to keep them fresh</li>
+                    </ul>
+                </div>
+
+                <h3>The Practice of Gratitude</h3>
+                
+                <p><strong>Daily gratitude</strong> represents one of the most transformative habits a godly person can cultivate. Gratitude shifts focus from what is lacking to recognition of God's abundant provision, from complaints about circumstances to appreciation for blessings both seen and unseen.</p>
+
+                <div class="scripture-quote">
+                    "Give thanks in all circumstances; for this is God's will for you in Christ Jesus." - 1 Thessalonians 5:18
+                </div>
+
+                <h3>Practical Expressions of Gratitude</h3>
+                
+                <div class="highlight-box">
+                    <h4>Keep a Gratitude Journal</h4>
+                    <p>Recording daily blessings and answers to prayer trains the mind to notice God's goodness and creates a record of His faithfulness that can provide encouragement during challenging times.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Express Thanks Verbally</h4>
+                    <p>Regularly thank family members, friends, and colleagues for their contributions. This creates an atmosphere of appreciation and reflects God's generous heart. These expressions of gratitude often inspire others and create positive cycles of encouragement.</p>
+                </div>
+
+                <div class="practice-box">
+                    <h3>Daily Gratitude Challenge</h3>
+                    <p>Each evening, write down three specific things you're thankful for from that day. Be specific - instead of "I'm thankful for my family," write "I'm thankful that Sarah made me laugh during lunch today."</p>
+                </div>
+            </div>
+
+            <!-- Character Growth Section -->
+            <div class="section" id="character">
+                <h2>Character Growth: The Inner Work</h2>
+
+                <h3>The Discipline of Self-Examination</h3>
+                
+                <p>Godly living requires honest self-assessment and the courage to confront areas that need transformation. <strong>Regular self-examination</strong> prevents spiritual complacency and maintains sensitivity to the Holy Spirit's conviction. This practice involves regularly asking difficult questions about motives, attitudes, and actions.</p>
+
+                <div class="scripture-quote">
+                    "Examine yourselves to see whether you are in the faith; test yourselves." - 2 Corinthians 13:5
+                </div>
+
+                <p>This examination is not meant to produce guilt or discouragement, but to maintain spiritual health and promote continued growth in Christ-likeness.</p>
+
+                <h3>Questions for Spiritual Self-Assessment</h3>
+                
+                <div class="highlight-box">
+                    <ul>
+                        <li>Am I growing in love for God and others?</li>
+                        <li>Are there areas of unconfessed sin that need attention?</li>
+                        <li>How am I handling stress and conflict in my relationships?</li>
+                        <li>What attitudes or behaviors do I need to surrender to God's transforming power?</li>
+                        <li>Am I making time for spiritual disciplines?</li>
+                        <li>How am I stewarding the resources God has given me?</li>
+                    </ul>
+                </div>
+
+                <h3>The Role of Christian Community</h3>
+                
+                <p>While personal self-examination is important, godly people also recognize the value of trusted Christian friends who can provide external perspective and loving accountability.</p>
+
+                <div class="scripture-quote">
+                    "As iron sharpens iron, so one person sharpens another." - Proverbs 27:17
+                </div>
+
+                <p>These accountability relationships provide safe spaces for honest conversation about spiritual struggles, growth goals, and areas needing prayer. They offer encouragement during difficult seasons and gentle correction when blind spots become apparent.</p>
+
+                <h3>Stewardship of Resources</h3>
+                
+                <p>Godly people understand that everything they possess belongs to God and that they serve as stewards of His resources. This perspective shapes how they handle money, time, talents, and material possessions. <strong>Faithful stewardship</strong> involves both generous giving and wise management of what God has entrusted to their care.</p>
+
+                <div class="scripture-quote">
+                    "For where your treasure is, there your heart will be also." - Matthew 6:21
+                </div>
+
+                <h3>The Discipline of Generous Giving</h3>
+                
+                <p>Systematic, generous giving represents a fundamental habit of godly living. This begins with the biblical principle of tithing—giving the first ten percent of income to God's work through the local church. However, many mature believers find that their giving extends beyond the tithe to include additional offerings for missions, charity, and special needs as God leads and provides.</p>
+
+                <div class="practice-box">
+                    <h4>Wise Financial Management</h4>
+                    <ul>
+                        <li>Create and follow a budget</li>
+                        <li>Avoid unnecessary debt</li>
+                        <li>Save for future needs and opportunities to give</li>
+                        <li>Make purchasing decisions that align with kingdom values</li>
+                        <li>Ask: "Will this purchase contribute to my spiritual growth or ability to serve others?"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Relationships Section -->
+            <div class="section" id="relationships">
+                <h2>The Ministry of Presence: Faithful Relationships</h2>
+
+                <h3>Daily Acts of Service</h3>
+                
+                <p>Christ's life was characterized by constant service to others, and those who seek to reflect His character must cultivate habits of selfless love. <strong>Daily acts of service</strong> transform abstract theological concepts into tangible expressions of God's love that touch real lives and meet genuine needs.</p>
+
+                <p>These acts need not be grandiose or public. Often, the most Christ-like service occurs in quiet moments: encouraging a discouraged coworker, helping a neighbor with groceries, sending an unexpected text of appreciation, or simply listening with full attention when someone needs to be heard.</p>
+
+                <h3>Service Within the Family</h3>
+                
+                <p>The home provides the first and most important arena for practicing Christ-like service. Godly individuals understand that serving family members with joy and patience reflects God's unconditional love more powerfully than any public ministry.</p>
+
+                <div class="scripture-quote">
+                    "Do good to all people, especially to those who belong to the family of believers." - Galatians 6:10
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Practical Family Service</h4>
+                    <ul>
+                        <li>Prepare meals with gratitude rather than resentment</li>
+                        <li>Help children with homework while maintaining gentleness</li>
+                        <li>Support a spouse through difficult seasons without keeping score</li>
+                        <li>Do household tasks cheerfully as an act of love</li>
+                    </ul>
+                </div>
+
+                <h3>The Art of Listening</h3>
+                
+                <p>One of the most powerful ways to reflect Christ's character in relationships is through the practice of deep, attentive listening. Godly people resist the urge to quickly offer solutions or shift conversations back to their own experiences. Instead, they create safe spaces where others feel heard, valued, and understood.</p>
+
+                <p>This type of listening requires patience and selflessness. It means setting aside personal agendas and truly focusing on understanding another person's perspective, emotions, and needs. When people feel genuinely heard, they often experience God's love in tangible ways through the listener's attention and care.</p>
+
+                <h3>Sabbath Rest: Trusting God's Provision</h3>
+                
+                <p>In a culture that celebrates busyness and productivity, godly people understand the importance of <strong>regular rest and renewal</strong>. The practice of Sabbath—setting aside time for rest, worship, and reflection—demonstrates trust in God's provision and acknowledges human limitations.</p>
+
+                <div class="scripture-quote">
+                    "The Sabbath was made for man, not man for the Sabbath." - Mark 2:27
+                </div>
+
+                <h3>Creating Sacred Space for Rest</h3>
+                
+                <p>Practicing Sabbath in modern life requires intentionality and often counter-cultural choices. It might involve turning off electronic devices for specific periods, declining work-related activities on designated rest days, or creating family traditions that prioritize worship and relationship over productivity.</p>
+
+                <div class="practice-box">
+                    <h4>Sabbath Practices</h4>
+                    <ul>
+                        <li>Designate one day per week for rest and renewal</li>
+                        <li>Turn off work email and notifications</li>
+                        <li>Spend time in worship and reflection</li>
+                        <li>Enjoy meals with family without distractions</li>
+                        <li>Engage in activities that refresh your soul</li>
+                        <li>Take walks in nature</li>
+                        <li>Read for pleasure, not just productivity</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Living Your Faith Section -->
+            <div class="section" id="living">
+                <h2>Living Your Faith: A Daily Witness</h2>
+
+                <h3>Evangelism Through Living</h3>
+                
+                <p>While some believers feel called to formal evangelistic ministries, every godly person understands that their daily life serves as a witness to God's transforming power. <strong>Lifestyle evangelism</strong> involves living in such a way that others are drawn to inquire about the hope that lies within.</p>
+
+                <p>This type of witness happens through consistent character, genuine love for others, peaceful responses to stress, and joy that transcends circumstances. When colleagues, neighbors, and family members observe these qualities over time, they often become curious about their source and open to conversations about faith.</p>
+
+                <h3>Integrity in Daily Decisions</h3>
+                
+                <p>Godly people understand that their witness depends on alignment between their stated beliefs and their actual choices. This means maintaining honesty in business dealings, showing patience in traffic, responding graciously to criticism, and treating service workers with dignity and respect.</p>
+
+                <div class="highlight-box">
+                    <p>These seemingly small choices accumulate to create an overall impression of authenticity and genuineness that gives credibility to verbal expressions of faith when opportunities arise.</p>
+                </div>
+
+                <h3>Prepared to Give an Answer</h3>
+                
+                <div class="scripture-quote">
+                    "Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have." - 1 Peter 3:15
+                </div>
+
+                <p>This preparation involves both living in a way that prompts questions and being ready to share faith stories when opportunities arise. Godly people often develop the ability to share their testimony naturally and conversationally, highlighting God's work in their lives without sounding rehearsed or artificial.</p>
+
+                <h3>Perseverance in Growth: The Long Journey</h3>
+                
+                <p>Perhaps the most important habit of godly living is the commitment to <strong>lifelong growth and learning</strong>. Spiritual maturity is not a destination but a journey that continues throughout life. Godly people maintain teachable hearts and willingness to be shaped by God's Spirit, even when growth requires discomfort or change.</p>
+
+                <h3>Learning from Failure</h3>
+                
+                <p>Godly people understand that failure and sin are inevitable parts of the human experience, but they refuse to let these experiences define them or derail their spiritual growth. Instead, they learn to see failure as opportunity for deeper dependence on God's grace and renewed commitment to spiritual disciplines.</p>
+
+                <div class="practice-box">
+                    <h4>When You Stumble:</h4>
+                    <ol>
+                        <li><strong>Practice quick confession and repentance</strong></li>
+                        <li><strong>Receive God's forgiveness</strong> - don't wallow in guilt</li>
+                        <li><strong>Return to healthy habits</strong> that promote spiritual health</li>
+                        <li><strong>Learn from the experience</strong> without letting it define you</li>
+                        <li><strong>Seek accountability</strong> if needed</li>
+                    </ol>
+                </div>
+
+                <h3>Celebrating God's Faithfulness</h3>
+                
+                <p>As godly people look back over months and years of practicing spiritual disciplines, they begin to see evidence of God's transforming work in their lives. Attitudes that once controlled them lose their power. Relationships improve as love and patience increase. Responses to difficulties become more peaceful and trusting.</p>
+
+                <p>Recognizing and celebrating these changes serves multiple purposes: it builds faith for continued growth, provides encouragement during difficult seasons, and creates opportunities to give God glory for His faithfulness.</p>
+
+                <h2>The Transformed Life</h2>
+                
+                <p>The daily habits of a godly person work together to create a life that increasingly reflects Christ's character and brings glory to God. These practices—morning devotion, Scripture meditation, acts of service, self-examination, gratitude, stewardship, faithful relationships, Sabbath rest, lifestyle evangelism, and perseverance in growth—form a holistic approach to spiritual development that touches every aspect of life.</p>
+
+                <div class="highlight-box">
+                    <p>The beauty of these habits lies not in their perfection but in their consistency. Like water slowly shaping stone, regular spiritual disciplines gradually transform hearts and lives in ways that surprise even the practitioners themselves.</p>
+                </div>
+
+                <p>Most importantly, these habits keep believers connected to the Source of all spiritual life and growth. Apart from Christ, Jesus reminds us, we can do nothing of eternal value (John 15:5). But as we abide in Him through consistent spiritual practices, we become branches that bear much fruit for God's kingdom and glory.</p>
+
+                <div class="scripture-quote">
+                    "The call to reflect Christ through daily living is both challenging and profoundly rewarding. It requires sacrifice, intentionality, and dependence on God's grace. Yet it leads to the deep satisfaction that comes from knowing we are becoming who God created us to be."
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            Another AnchorStack Micro Module<br>
+            © Copyright AnchorStack.pro 2025 - All Rights Reserved
+        </footer>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        const tabs = document.querySelectorAll('.nav-tab');
+        const sections = document.querySelectorAll('.section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and sections
+                tabs.forEach(t => t.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Show corresponding section
+                const sectionId = tab.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+
+                // Scroll to top smoothly
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Progress bar functionality
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressFill').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>
