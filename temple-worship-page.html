@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics (keep your existing) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    
+    <!-- AdSense (keep your existing) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+    crossorigin="anonymous"></script>
+     <link rel="canonical" href="https://anchorstack.pro/temple-worship-page.html" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="AnchorStack.pro">
+    <link rel="stylesheet" href="main.css">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Worship & Sacred Rhythms - AnchorStack.pro</title>
+    <meta name="description" content="Experience the daily worship, sacred festivals, and priestly service that brought the Temple to life. Discover the spiritual rhythms that shaped ancient Israel.">
+    <meta name="keywords" content="Temple worship, Jewish festivals, daily sacrifice, priestly service, Temple music, psalms, incense offering">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FBF9F6;
+            color: #4C433A;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .nav-tab {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .nav-tab.active, .nav-tab:hover {
+            border-bottom-color: #4B5D7A;
+            color: #4B5D7A;
+        }
+        
+        .content-section {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .time-card {
+            background-color: #FFFFFF;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .time-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .time-card.active {
+            border: 2px solid #D4AF37;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+        }
+        
+        .festival-card {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F7F3E9 100%);
+            border-left: 4px solid #D4AF37;
+            transition: all 0.3s ease;
+        }
+        
+        .festival-card:hover {
+            transform: translateX(5px);
+        }
+        
+        .psalm-box {
+            background-color: #F7F3E9;
+            border-left: 3px solid #A17C5B;
+            padding-left: 1rem;
+        }
+        
+        .service-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .service-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #D4AF37 0%, #4B5D7A 100%);
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: -4px;
+            width: 10px;
+            height: 10px;
+            background-color: #D4AF37;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#4B5D7A]">Temple Worship & Sacred Rhythms</h1>
+            <p class="mt-4 text-lg text-[#6a615a] max-w-3xl mx-auto">Journey through a day in the Temple, experience the sacred festivals, and discover how ancient worship patterns shaped spiritual life.</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="flex flex-wrap justify-center border-b-2 border-[#A17C5B]/30 mb-12">
+            <button data-target="daily" class="nav-tab active py-4 px-4 md:px-6 text-base md:text-lg font-semibold">Daily Service</button>
+            <button data-target="festivals" class="nav-tab py-4 px-4 md:px-6 text-base md:text-lg font-semibold">Sacred Festivals</button>
+            <button data-target="music" class="nav-tab py-4 px-4 md:px-6 text-base md:text-lg font-semibold">Music & Psalms</button>
+            <button data-target="priests" class="nav-tab py-4 px-4 md:px-6 text-base md:text-lg font-semibold">Priestly Service</button>
+            <button data-target="meaning" class="nav-tab py-4 px-4 md:px-6 text-base md:text-lg font-semibold">Spiritual Meaning</button>
+        </nav>
+
+        <!-- Content Sections -->
+        <main id="content-pane">
+            
+            <!-- Daily Service Section -->
+            <section id="daily" class="content-section active">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4">A Day in the Temple</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">From dawn to dusk, the Temple pulsed with sacred activity. Every moment was choreographed to honor God and facilitate worship for His people.</p>
+                </div>
+
+                <!-- Time Selection -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-center">Select a Time to Explore</h3>
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="time-card active p-4 rounded-lg shadow-md" data-time="dawn">
+                            <h4 class="font-bold text-[#4B5D7A]">Dawn</h4>
+                            <p class="text-sm text-gray-600">3:00 - 6:00 AM</p>
+                            <p class="text-xs mt-2">Temple gates open</p>
+                        </div>
+                        <div class="time-card p-4 rounded-lg shadow-md" data-time="morning">
+                            <h4 class="font-bold text-[#4B5D7A]">Morning</h4>
+                            <p class="text-sm text-gray-600">6:00 - 9:00 AM</p>
+                            <p class="text-xs mt-2">Morning sacrifice</p>
+                        </div>
+                        <div class="time-card p-4 rounded-lg shadow-md" data-time="afternoon">
+                            <h4 class="font-bold text-[#4B5D7A]">Afternoon</h4>
+                            <p class="text-sm text-gray-600">12:00 - 3:00 PM</p>
+                            <p class="text-xs mt-2">Public worship</p>
+                        </div>
+                        <div class="time-card p-4 rounded-lg shadow-md" data-time="evening">
+                            <h4 class="font-bold text-[#4B5D7A]">Evening</h4>
+                            <p class="text-sm text-gray-600">3:00 - 6:00 PM</p>
+                            <p class="text-xs mt-2">Evening sacrifice</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Details Display -->
+                <div id="time-details" class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-[#4B5D7A]">Dawn Service (3:00 - 6:00 AM)</h3>
+                    <div class="service-timeline">
+                        <div class="mb-6 relative">
+                            <div class="timeline-marker"></div>
+                            <h4 class="font-bold">3:00 AM - The Watch Changes</h4>
+                            <p class="text-sm text-gray-600">The captain of the Temple guard makes his rounds. Any priest found sleeping on duty faces discipline. The watch cry echoes: "Is all well?"</p>
+                        </div>
+                        <div class="mb-6 relative">
+                            <div class="timeline-marker"></div>
+                            <h4 class="font-bold">4:00 AM - Drawing of Lots</h4>
+                            <p class="text-sm text-gray-600">Priests gather in the Chamber of Hewn Stone. Four lots are cast to determine who performs each sacred duty for the day.</p>
+                        </div>
+                        <div class="mb-6 relative">
+                            <div class="timeline-marker"></div>
+                            <h4 class="font-bold">4:30 AM - Altar Preparation</h4>
+                            <p class="text-sm text-gray-600">The altar fire is stirred, ashes removed. Fresh wood is arranged. The bronze laver is filled with fresh water.</p>
+                        </div>
+                        <div class="mb-6 relative">
+                            <div class="timeline-marker"></div>
+                            <h4 class="font-bold">5:00 AM - Opening the Gates</h4>
+                            <p class="text-sm text-gray-600">The great Nicanor Gate creaks open. The sound signals to all Jerusalem that a new day of worship has begun.</p>
+                        </div>
+                        <div class="mb-6 relative">
+                            <div class="timeline-marker"></div>
+                            <h4 class="font-bold">Dawn - The Shema</h4>
+                            <p class="text-sm text-gray-600">As the first light touches the eastern hills, the priests recite: "Hear, O Israel: The Lord our God, the Lord is one."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Offerings Chart -->
+                <div class="mt-8 bg-[#F7F3E9] p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center">Daily Offerings Overview</h3>
+                    <div class="grid md:grid-cols-3 gap-4 text-center">
+                        <div>
+                            <p class="text-3xl font-bold text-[#D4AF37]">2</p>
+                            <p class="text-sm">Lambs Daily</p>
+                            <p class="text-xs text-gray-600">Morning and evening</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-[#D4AF37]">13</p>
+                            <p class="text-sm">Spices in Incense</p>
+                            <p class="text-xs text-gray-600">Sacred recipe</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-[#D4AF37]">12</p>
+                            <p class="text-sm">Loaves of Showbread</p>
+                            <p class="text-xs text-gray-600">Replaced weekly</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sacred Festivals Section -->
+            <section id="festivals" class="content-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4">The Sacred Calendar</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">Three times a year, all Israel gathered at the Temple for the pilgrimage festivals. Each celebration brought unique worship experiences and spiritual lessons.</p>
+                </div>
+
+                <!-- Festival Calendar -->
+                <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                    <h3 class="text-xl font-bold mb-6 text-center">Annual Festival Cycle</h3>
+                    <div class="chart-container" style="height: 400px;">
+                        <canvas id="festival-chart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Festival Details -->
+                <div class="space-y-6">
+                    <div class="festival-card p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-[#4B5D7A] mb-3">Passover (Pesach) - Spring</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Temple Activities:</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Slaughter of Passover lambs (14th Nisan, 3 PM)</li>
+                                    <li>• Blood sprinkled on altar, not doorposts</li>
+                                    <li>• Levitical choirs sing the Hallel (Psalms 113-118)</li>
+                                    <li>• Approximately 250,000 lambs sacrificed</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Unique Elements:</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Three shifts to accommodate crowds</li>
+                                    <li>• Silver and gold basins for blood</li>
+                                    <li>• Priests in white garments changed multiple times</li>
+                                    <li>• Temple illuminated all night</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="festival-card p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-[#4B5D7A] mb-3">Pentecost (Shavuot) - Late Spring</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Temple Activities:</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Two loaves of leavened bread offered</li>
+                                    <li>• Seven lambs, one bull, two rams sacrificed</li>
+                                    <li>• Reading of the Book of Ruth</li>
+                                    <li>• Temple decorated with flowers and greenery</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Significance:</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Celebrates giving of Torah at Sinai</li>
+                                    <li>• First fruits of wheat harvest</li>
+                                    <li>• Only festival with leavened offering</li>
+                                    <li>• Later: Holy Spirit given on this day</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="festival-card p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-[#4B5D7A] mb-3">Tabernacles (Sukkot) - Fall</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Temple Activities:</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Water libation ceremony each morning</li>
+                                    <li>• Temple illumination with giant menorahs</li>
+                                    <li>• Willow branch processions around altar</li>
+                                    <li>• 70 bulls offered for the nations</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Joyful Celebrations:</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• "Simchat Beit HaShoevah" - water drawing celebration</li>
+                                    <li>• All-night dancing and rejoicing</li>
+                                    <li>• Torches and juggling performances</li>
+                                    <li>• "Whoever hasn't seen this hasn't seen joy"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day of Atonement Special -->
+                <div class="mt-8 bg-gradient-to-br from-[#8B3A3A] to-[#B85450] text-white p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Yom Kippur - The Day of Atonement</h3>
+                    <p class="text-center mb-6">The most solemn and sacred day of the year</p>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <p class="text-3xl font-bold mb-2">1</p>
+                            <p class="font-bold">Time Per Year</p>
+                            <p class="text-sm">High Priest enters Holy of Holies</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold mb-2">5</p>
+                            <p class="font-bold">Garment Changes</p>
+                            <p class="text-sm">Between linen and gold</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold mb-2">7</p>
+                            <p class="font-bold">Blood Sprinklings</p>
+                            <p class="text-sm">On the mercy seat</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Music & Psalms Section -->
+            <section id="music" class="content-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4">Sacred Music & Psalms</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">The Temple resounded with music from dawn to dusk. Levitical choirs, instruments, and psalms created a continuous symphony of worship.</p>
+                </div>
+
+                <!-- Musical Organization -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-[#4B5D7A]">The Temple Orchestra</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2">🎵</span>
+                                <div>
+                                    <strong>Harps (Nevel):</strong> Minimum of 2, maximum 6
+                                    <p class="text-sm text-gray-600">Ten-stringed instruments for melody</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2">🎵</span>
+                                <div>
+                                    <strong>Lyres (Kinnor):</strong> Minimum of 9, no maximum
+                                    <p class="text-sm text-gray-600">David's instrument, for harmony</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2">🎵</span>
+                                <div>
+                                    <strong>Cymbals (Metziltayim):</strong> One pair only
+                                    <p class="text-sm text-gray-600">Marking rhythm and transitions</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2">🎵</span>
+                                <div>
+                                    <strong>Trumpets (Chatzotzrot):</strong> Minimum of 2, maximum 120
+                                    <p class="text-sm text-gray-600">Silver trumpets for calls and fanfares</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2">🎵</span>
+                                <div>
+                                    <strong>Flutes (Chalil):</strong> Used 12 days per year
+                                    <p class="text-sm text-gray-600">For special occasions and festivals</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-[#4B5D7A]">The Levitical Choir</h3>
+                        <div class="mb-4">
+                            <p class="text-3xl font-bold text-[#D4AF37] text-center mb-2">288</p>
+                            <p class="text-center text-sm">Trained singers divided into 24 courses</p>
+                        </div>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Minimum age: 30 years old</li>
+                            <li>• Training period: 5 years</li>
+                            <li>• Stood on 15 semi-circular steps</li>
+                            <li>• Faced the Holy Place while singing</li>
+                            <li>• Boys could join for special harmonies</li>
+                            <li>• Each course served one week twice yearly</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Daily Psalms -->
+                <div class="bg-[#F7F3E9] p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-[#4B5D7A]">Psalm of the Day</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="psalm-box p-4 rounded">
+                            <h4 class="font-bold">Sunday</h4>
+                            <p class="text-sm font-semibold">Psalm 24</p>
+                            <p class="text-xs italic mt-2">"The earth is the Lord's..."</p>
+                            <p class="text-xs text-gray-600">First day of creation</p>
+                        </div>
+                        <div class="psalm-box p-4 rounded">
+                            <h4 class="font-bold">Monday</h4>
+                            <p class="text-sm font-semibold">Psalm 48</p>
+                            <p class="text-xs italic mt-2">"Great is the Lord..."</p>
+                            <p class="text-xs text-gray-600">Division of waters</p>
+                        </div>
+                        <div class="psalm-box p-4 rounded">
+                            <h4 class="font-bold">Tuesday</h4>
+                            <p class="text-sm font-semibold">Psalm 82</p>
+                            <p class="text-xs italic mt-2">"God stands in the congregation..."</p>
+                            <p class="text-xs text-gray-600">Dry land appears</p>
+                        </div>
+                        <div class="psalm-box p-4 rounded">
+                            <h4 class="font-bold">Wednesday</h4>
+                            <p class="text-sm font-semibold">Psalm 94</p>
+                            <p class="text-xs italic mt-2">"O Lord God of vengeance..."</p>
+                            <p class="text-xs text-gray-600">Sun, moon, stars</p>
+                        </div>
+                        <div class="psalm-box p-4 rounded">
+                            <h4 class="font-bold">Thursday</h4>
+                            <p class="text-sm font-semibold">Psalm 81</p>
+                            <p class="text-xs italic mt-2">"Sing aloud to God..."</p>
+                            <p class="text-xs text-gray-600">Living creatures</p>
+                        </div>
+                        <div class="psalm-box p-4 rounded">
+                            <h4 class="font-bold">Friday</h4>
+                            <p class="text-sm font-semibold">Psalm 93</p>
+                            <p class="text-xs italic mt-2">"The Lord reigns..."</p>
+                            <p class="text-xs text-gray-600">Man created</p>
+                        </div>
+                        <div class="psalm-box p-4 rounded">
+                            <h4 class="font-bold">Sabbath</h4>
+                            <p class="text-sm font-semibold">Psalm 92</p>
+                            <p class="text-xs italic mt-2">"A psalm for the Sabbath..."</p>
+                            <p class="text-xs text-gray-600">Day of rest</p>
+                        </div>
+                        <div class="psalm-box p-4 rounded">
+                            <h4 class="font-bold">New Moon</h4>
+                            <p class="text-sm font-semibold">Psalm 104</p>
+                            <p class="text-xs italic mt-2">"Bless the Lord, O my soul..."</p>
+                            <p class="text-xs text-gray-600">Special addition</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Priestly Service Section -->
+            <section id="priests" class="content-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4">The Priestly Service</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">Twenty-four courses of priests rotated weekly, ensuring continuous service. Each course contained hundreds of priests, all descendants of Aaron.</p>
+                </div>
+
+                <!-- Priestly Organization -->
+                <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                    <h3 class="text-xl font-bold mb-6 text-center">The 24 Priestly Courses</h3>
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="text-center">
+                            <p class="text-4xl font-bold text-[#4B5D7A]">24</p>
+                            <p class="text-sm">Weekly Courses (Mishmarot)</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-4xl font-bold text-[#D4AF37]">~750</p>
+                            <p class="text-sm">Priests per Course</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-4xl font-bold text-[#A17C5B]">18,000</p>
+                            <p class="text-sm">Total Priests in Service</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-[#F7F3E9] p-4 rounded">
+                        <p class="text-sm text-center"><strong>Notable:</strong> The course of Abijah (8th course) included Zechariah, father of John the Baptist</p>
+                    </div>
+                </div>
+
+                <!-- Daily Duties -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-gradient-to-br from-[#4B5D7A] to-[#6B7D9A] text-white p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4">Morning Duties</h3>
+                        <ol class="space-y-2 text-sm">
+                            <li>1. Remove ashes from altar</li>
+                            <li>2. Prepare the altar fire</li>
+                            <li>3. Slaughter morning sacrifice</li>
+                            <li>4. Sprinkle blood on altar</li>
+                            <li>5. Burn incense in Holy Place</li>
+                            <li>6. Trim the menorah lamps</li>
+                            <li>7. Offer grain offering</li>
+                            <li>8. Pour drink offering</li>
+                            <li>9. Burn sacrifice portions</li>
+                            <li>10. Pronounce priestly blessing</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-[#4B5D7A]">Special Privileges</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-[#D4AF37]">Incense Offering</h4>
+                                <p class="text-sm">Once-in-a-lifetime opportunity. Chosen by lot. Considered the highest honor for ordinary priests.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#D4AF37]">Showbread Service</h4>
+                                <p class="text-sm">Weekly replacement on Sabbath. Old bread eaten by priests in sacred meal.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#D4AF37]">New Moon Declaration</h4>
+                                <p class="text-sm">Examining witnesses, declaring the new month, special offerings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Priestly Blessing -->
+                <div class="bg-gradient-to-r from-[#F7F3E9] to-white p-8 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4 text-[#4B5D7A]">The Priestly Blessing</h3>
+                    <p class="text-sm mb-4">Pronounced daily after the morning sacrifice</p>
+                    <blockquote class="text-lg italic max-w-2xl mx-auto">
+                        <p class="mb-2">יְבָרֶכְךָ יהוה וְיִשְׁמְרֶךָ</p>
+                        <p class="mb-2">"The LORD bless you and keep you;</p>
+                        <p class="mb-2">The LORD make His face shine upon you and be gracious to you;</p>
+                        <p>The LORD lift up His countenance upon you and give you peace."</p>
+                    </blockquote>
+                    <p class="text-sm text-gray-600 mt-4">Numbers 6:24-26</p>
+                </div>
+            </section>
+
+            <!-- Spiritual Meaning Section -->
+            <section id="meaning" class="content-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4">Spiritual Significance for Today</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">The Temple's worship patterns reveal timeless principles about approaching God, community worship, and spiritual rhythms.</p>
+                </div>
+
+                <!-- Then and Now Comparison -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-[#A17C5B]">Temple Worship Then</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li>
+                                <strong>Physical Sacrifices:</strong>
+                                <p class="text-gray-600">Animals offered daily for atonement</p>
+                            </li>
+                            <li>
+                                <strong>Restricted Access:</strong>
+                                <p class="text-gray-600">Only priests entered Holy Place</p>
+                            </li>
+                            <li>
+                                <strong>Temporal Cleansing:</strong>
+                                <p class="text-gray-600">Repeated offerings needed</p>
+                            </li>
+                            <li>
+                                <strong>External Rituals:</strong>
+                                <p class="text-gray-600">Ceremonial washing, dietary laws</p>
+                            </li>
+                            <li>
+                                <strong>Central Location:</strong>
+                                <p class="text-gray-600">Jerusalem only</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-[#4B5D7A]">Spiritual Worship Now</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li>
+                                <strong>Living Sacrifice:</strong>
+                                <p class="text-gray-600">Our bodies presented to God (Rom 12:1)</p>
+                            </li>
+                            <li>
+                                <strong>Direct Access:</strong>
+                                <p class="text-gray-600">All believers are priests (1 Pet 2:9)</p>
+                            </li>
+                            <li>
+                                <strong>Eternal Cleansing:</strong>
+                                <p class="text-gray-600">Once for all through Christ</p>
+                            </li>
+                            <li>
+                                <strong>Heart Transformation:</strong>
+                                <p class="text-gray-600">Inner renewal by the Spirit</p>
+                            </li>
+                            <li>
+                                <strong>Universal Presence:</strong>
+                                <p class="text-gray-600">Worship in spirit and truth anywhere</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sacred Rhythms -->
+                <div class="bg-[#F7F3E9] p-8 rounded-lg mb-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-[#4B5D7A]">Sacred Rhythms for Modern Life</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">🌅</div>
+                            <h4 class="font-bold mb-2">Daily</h4>
+                            <p class="text-sm">Morning and evening prayer</p>
+                            <p class="text-xs text-gray-600 mt-2">Like the perpetual offerings, begin and end each day with God</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">📅</div>
+                            <h4 class="font-bold mb-2">Weekly</h4>
+                            <p class="text-sm">Sabbath rest and worship</p>
+                            <p class="text-xs text-gray-600 mt-2">Regular rhythm of work and rest, individual and corporate worship</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">🎉</div>
+                            <h4 class="font-bold mb-2">Seasonal</h4>
+                            <p class="text-sm">Celebration and remembrance</p>
+                            <p class="text-xs text-gray-600 mt-2">Mark God's faithfulness through feast and fast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Reflection -->
+                <div class="bg-gradient-to-br from-[#D4AF37] to-[#F4D03F] text-white p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-center">The Ultimate Temple</h3>
+                    <blockquote class="text-lg italic text-center mb-4">
+                        "Do you not know that you are God's temple and that God's Spirit dwells in you?"
+                    </blockquote>
+                    <p class="text-center text-sm mb-6">- 1 Corinthians 3:16</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold mb-2">Personal Temple</h4>
+                            <p class="text-sm">Your body houses God's presence. Every moment becomes an opportunity for worship, every action a potential offering.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Corporate Temple</h4>
+                            <p class="text-sm">Together we form a spiritual house, offering spiritual sacrifices, declaring God's praises to the world.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application Questions -->
+                <div class="mt-8 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center text-[#4B5D7A]">Reflection Questions</h3>
+                    <ol class="space-y-3 max-w-2xl mx-auto">
+                        <li>1. What "daily offerings" could you establish in your spiritual life?</li>
+                        <li>2. How can you incorporate sacred rhythms into your weekly schedule?</li>
+                        <li>3. What would it look like to treat your body as God's temple practically?</li>
+                        <li>4. How can your local church embody the community aspect of Temple worship?</li>
+                        <li>5. Which feast or festival speaks most to your current spiritual season?</li>
+                    </ol>
+                    <p class="text-sm text-center mt-4">Reflect on these questions individually or with others. Let them guide you towards deeper engagement with God's Word and His worship.</p>
+                
+                    <!-- Link to next page -->
+        <div class="cta-section">
+            <h3 class="text-2xl font-bold mb-4 text-center text-[#4B5D7A]">Ready to Enter the Holy of Holies?</h3>
+            <h4 class="text-2xl font-bold mb-4 text-center text-[#4B5D7A]">Explore how the Temple's worship patterns continue to shape our relationship with God today.</h4>
+            <h3 class="mt-2">Continue your journey into the heart of the Temple and discover the profound significance of the Holy of Holies.</h3>
+            <a href="/holy-of-holies-page.html" class="cta-button mt-4 inline-block bg-[#4B5D7A] text-white px-6 py-3 rounded-lg hover:bg-[#4B5D7A] transition">Enter the Holy of Holies</a>
+        </div>
+                </div>
+            </section>
+
+        </main>
+
+        
+    </div>
+
+    <script>
+        // Time period data
+        const timeData = {
+            dawn: {
+                title: "Dawn Service (3:00 - 6:00 AM)",
+                events: [
+                    { time: "3:00 AM", title: "The Watch Changes", desc: "The captain of the Temple guard makes his rounds. Any priest found sleeping on duty faces discipline. The watch cry echoes: 'Is all well?'" },
+                    { time: "4:00 AM", title: "Drawing of Lots", desc: "Priests gather in the Chamber of Hewn Stone. Four lots are cast to determine who performs each sacred duty for the day." },
+                    { time: "4:30 AM", title: "Altar Preparation", desc: "The altar fire is stirred, ashes removed. Fresh wood is arranged. The bronze laver is filled with fresh water." },
+                    { time: "5:00 AM", title: "Opening the Gates", desc: "The great Nicanor Gate creaks open. The sound signals to all Jerusalem that a new day of worship has begun." },
+                    { time: "Dawn", title: "The Shema", desc: "As the first light touches the eastern hills, the priests recite: 'Hear, O Israel: The Lord our God, the Lord is one.'" }
+                ]
+            },
+            morning: {
+                title: "Morning Service (6:00 - 9:00 AM)",
+                events: [
+                    { time: "6:00 AM", title: "Morning Lamb Selected", desc: "The lamb for the morning sacrifice is examined one final time to ensure it is without blemish." },
+                    { time: "6:30 AM", title: "The Slaughter", desc: "The lamb is slaughtered on the north side of the altar. Its blood is caught in golden bowls." },
+                    { time: "7:00 AM", title: "Incense Offering", desc: "A priest enters the Holy Place to burn incense. Outside, the people pray in silent reverence." },
+                    { time: "8:00 AM", title: "The Sacrifice Burns", desc: "The lamb is placed on the altar. The smoke rises as 'a sweet savor unto the Lord.'" },
+                    { time: "9:00 AM", title: "The Priestly Blessing", desc: "The priests raise their hands and pronounce the ancient blessing over the assembled people." }
+                ]
+            },
+            afternoon: {
+                title: "Afternoon Activities (12:00 - 3:00 PM)",
+                events: [
+                    { time: "12:00 PM", title: "Public Teaching", desc: "Rabbis and teachers gather in Solomon's Porch to discuss the Law. Debates and instruction fill the courts." },
+                    { time: "1:00 PM", title: "Private Offerings", desc: "Individuals bring their personal sacrifices - sin offerings, thank offerings, vows being fulfilled." },
+                    { time: "1:30 PM", title: "The Shewbread", desc: "On the Sabbath, fresh loaves replace the week-old bread. The priests eat the old loaves in a sacred meal." },
+                    { time: "2:00 PM", title: "Preparation Begins", desc: "Priests begin preparing for the evening sacrifice. The altar is cleaned, wood replenished." },
+                    { time: "2:30 PM", title: "The Second Lots", desc: "Lots are cast to determine who will perform the evening service duties." }
+                ]
+            },
+            evening: {
+                title: "Evening Service (3:00 - 6:00 PM)",
+                events: [
+                    { time: "3:00 PM", title: "Evening Sacrifice", desc: "The second daily lamb is offered. This is the exact hour Christ died on the cross." },
+                    { time: "3:30 PM", title: "Incense Again", desc: "The golden altar receives its second offering of incense for the day." },
+                    { time: "4:00 PM", title: "Lamp Lighting", desc: "The menorah lamps are cleaned, wicks trimmed, and fresh oil added for the night." },
+                    { time: "5:00 PM", title: "Gates Begin Closing", desc: "The Temple courts begin to empty. The massive gates prepare to close." },
+                    { time: "6:00 PM", title: "Night Watch Begins", desc: "The Temple guards take their positions. The sacred fire burns on through the night." }
+                ]
+            }
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tab navigation
+            const tabs = document.querySelectorAll('.nav-tab');
+            const sections = document.querySelectorAll('.content-section');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.dataset.target;
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    tab.classList.add('active');
+                    document.getElementById(targetId)?.classList.add('active');
+                    
+                    // Initialize festival chart when that section is shown
+                    if (targetId === 'festivals' && !document.getElementById('festival-chart').chartInitialized) {
+                        initFestivalChart();
+                    }
+                });
+            });
+            
+            // Time period selection
+            const timeCards = document.querySelectorAll('.time-card');
+            const timeDetails = document.getElementById('time-details');
+            
+            timeCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const timeKey = card.dataset.time;
+                    const data = timeData[timeKey];
+                    
+                    timeCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    
+                    // Update details display
+                    let timelineHTML = `<h3 class="text-2xl font-bold mb-4 text-[#4B5D7A]">${data.title}</h3>`;
+                    timelineHTML += '<div class="service-timeline">';
+                    
+                    data.events.forEach(event => {
+                        timelineHTML += `
+                            <div class="mb-6 relative">
+                                <div class="timeline-marker"></div>
+                                <h4 class="font-bold">${event.time} - ${event.title}</h4>
+                                <p class="text-sm text-gray-600">${event.desc}</p>
+                            </div>
+                        `;
+                    });
+                    
+                    timelineHTML += '</div>';
+                    timeDetails.innerHTML = timelineHTML;
+                });
+            });
+        });
+        
+        // Festival Calendar Chart
+        function initFestivalChart() {
+            const ctx = document.getElementById('festival-chart');
+            if (!ctx) return;
+            
+            ctx.chartInitialized = true;
+            
+            new Chart(ctx.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul', 'Tishrei', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar'],
+                    datasets: [{
+                        label: 'Major Festivals',
+                        data: [100, 20, 100, 10, 10, 30, 100, 10, 30, 10, 10, 30],
+                        borderColor: '#D4AF37',
+                        backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 8,
+                        pointBackgroundColor: function(context) {
+                            const value = context.raw;
+                            return value === 100 ? '#D4AF37' : 'rgba(212, 175, 55, 0.3)';
+                        }
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const festivals = {
+                                        0: 'Passover (14-21)',
+                                        2: 'Pentecost (6)',
+                                        6: 'Trumpets (1), Atonement (10), Tabernacles (15-22)'
+                                    };
+                                    return festivals[context.dataIndex] || 'Minor observances';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            display: false
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

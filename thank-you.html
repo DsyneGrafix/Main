@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://anchorstack.pro/thank-you.html">
+    <title>Thank You - Your Free Resources Are Here! | AnchorStack</title>
+    <meta name="description" content="Access your free biblical resources including prayer guides, study tools, and spiritual growth materials.">
+    
+    
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --accent: #A97142;
+            --success: #10b981;
+            --text: #1a1a1a;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* SUCCESS HEADER */
+        .success-header {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bounce 1s ease;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .success-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .success-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        /* IMPORTANT NOTICE */
+        .email-notice {
+            background: #fef3c7;
+            border: 2px solid #fbbf24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .email-notice h3 {
+            color: #92400e;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* RESOURCES SECTION */
+        .resources-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .resource-item {
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            background: var(--bg-light);
+        }
+        
+        .resource-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+        
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .resource-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .resource-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+        }
+        
+        .coming-soon-btn {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        /* NEXT STEPS */
+        .next-steps {
+            background: linear-gradient(135deg, var(--accent), #D4A574);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .next-steps h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .step {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .step-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* BOOKMARK REMINDER */
+        .bookmark-reminder {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .bookmark-reminder h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 2px solid var(--border);
+        }
+        
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .success-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- SUCCESS HEADER -->
+        <div class="success-header">
+            <div class="success-icon">🎉</div>
+            <h1>Welcome to AnchorStack!</h1>
+            <p>Your free biblical resources are ready for download</p>
+        </div>
+        
+        <!-- EMAIL NOTICE -->
+        <div class="email-notice">
+            <h3>📧 Check Your Email!</h3>
+            <p>We've sent a welcome email to your inbox with permanent links to all these resources.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                <strong>Can't find it?</strong> Check your spam/promotions folder or 
+                <a href="/contact.html" style="color: var(--primary); font-weight: 600;">contact us</a>
+            </p>
+        </div>
+        
+        <!-- IMMEDIATE DOWNLOADS -->
+        <div class="resources-section">
+            <h2 class="section-title">📚 Your Free Resources (Instant Access)</h2>
+            
+            <div class="resource-grid">
+                <!-- INTERACTIVE PRAYER GUIDE -->
+                <div class="resource-item">
+                    <span class="resource-icon">🙏</span>
+                    <h3>Interactive Prayer Guide</h3>
+                    <p>Digital prayer experience with timers and progress tracking</p>
+                    <a href="/interactive_prayer_guide.html" class="download-btn" target="_blank">
+                        Open Guide →
+                    </a>
+                </div>
+                
+                <!-- PRAYER FOUNDATIONS PDF -->
+                <div class="resource-item">
+                    <span class="resource-icon">📖</span>
+                    <h3>Prayer Foundations Guide</h3>
+                    <p>15-page PDF covering biblical foundations of prayer</p>
+                    <!-- Replace with actual Google Drive or Dropbox link -->
+                    <a href="https://drive.google.com/your-file-link" class="download-btn" download>
+                        Download PDF →
+                    </a>
+                </div>
+                
+                <!-- BIBLE STUDY METHODS -->
+                <div class="resource-item">
+                    <span class="resource-icon">📝</span>
+                    <h3>Bible Study Methods</h3>
+                    <p>7 proven methods for effective Scripture study</p>
+                    <!-- Replace with actual link -->
+                    <a href="https://drive.google.com/your-file-link" class="download-btn" download>
+                        Download PDF →
+                    </a>
+                </div>
+                
+                <!-- BOOK CLUB KIT -->
+                <div class="resource-item">
+                    <span class="resource-icon">📚</span>
+                    <h3>Book Club Starter Kit</h3>
+                    <p>Everything needed to start a Christian book club</p>
+                    <!-- Replace with actual link -->
+                    <a href="https://drive.google.com/your-file-link" class="download-btn" download>
+                        Get Kit →
+                    </a>
+                </div>
+                
+                <!-- READING PLANS -->
+                <div class="resource-item">
+                    <span class="resource-icon">📅</span>
+                    <h3>Bible Reading Plans</h3>
+                    <p>10 different reading plans for every schedule</p>
+                    <!-- Replace with actual link -->
+                    <a href="https://drive.google.com/your-file-link" class="download-btn" download>
+                        Download Plans →
+                    </a>
+                </div>
+                
+                <!-- JOURNAL TEMPLATES -->
+                <div class="resource-item">
+                    <span class="resource-icon">✍️</span>
+                    <h3>Study Journal Templates</h3>
+                    <p>Printable templates for note-taking and reflection</p>
+                    <!-- Replace with actual link -->
+                    <a href="https://drive.google.com/your-file-link" class="download-btn" download>
+                        Get Templates →
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- COMING SOON SECTION -->
+        <div class="resources-section">
+            <h2 class="section-title">🚀 Coming Soon (You'll Get These Automatically)</h2>
+            
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <span class="resource-icon">📊</span>
+                    <h3>Daniel Study Guide</h3>
+                    <p>Interactive charts and timeline (Launching next week)</p>
+                    <button class="download-btn coming-soon-btn" disabled>Coming Soon</button>
+                </div>
+                
+                <div class="resource-item">
+                    <span class="resource-icon">🗺️</span>
+                    <h3>Biblical Maps Collection</h3>
+                    <p>High-resolution maps for study (February 2025)</p>
+                    <button class="download-btn coming-soon-btn" disabled>Coming Soon</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- NEXT STEPS -->
+        <div class="next-steps">
+            <h2>📋 Your Next Steps</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Download your resources above</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Check email for permanent links</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>Start with the Prayer Guide</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <p>Join our weekly Bible studies</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- BOOKMARK REMINDER -->
+        <div class="bookmark-reminder">
+            <h3>🔖 Bookmark This Page!</h3>
+            <p>Press Ctrl+D (or Cmd+D on Mac) to bookmark this page for easy access to your resources</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.9;">
+                URL to save: anchorstack.pro/thank-you.html
+            </p>
+        </div>
+        
+     <script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

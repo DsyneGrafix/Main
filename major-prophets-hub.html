@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+    crossorigin="anonymous"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Comprehensive interactive Bible study resource for Isaiah, Jeremiah, Lamentations, Ezekiel, and Daniel. Features timeline, expandable sections, and quiz.">
+    <meta name="keywords" content="Major Prophets, Isaiah, Jeremiah, Ezekiel, Daniel, Bible Study, Old Testament, Prophecy">
+    <title>Major Prophets Interactive Bible Study Hub | AnchorStack</title>
+    <link rel="canonical" href="https://anchorstack.pro/major-prophets-hub.html">
+    <link rel="stylesheet" href="main.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Major Prophets: Interactive Study Hub",
+        "description": "Comprehensive study of Isaiah, Jeremiah, Ezekiel, Daniel, and Lamentations with interactive elements",
+        "provider": {
+            "@type": "Organization",
+            "name": "AnchorStack",
+            "url": "https://anchorstack.pro"
+        },
+        "instructor": {
+            "@type": "Person",
+            "name": "Ricky Jarnagin"
+        },
+        "educationalLevel": "Beginner to Advanced",
+        "teaches": ["Biblical Studies", "Old Testament", "Prophetic Literature", "Biblical History"],
+        "courseMode": "online",
+        "isAccessibleForFree": true,
+        "inLanguage": "en",
+        "learningResourceType": "Interactive Guide",
+        "timeRequired": "PT4H"
+    }
+    </script>
+
+    <style>
+        /* CSS RESET AND BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        /* MAIN CONTENT STYLES */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #8b5cf6;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            background: #e5e7eb;
+            height: 8px;
+            border-radius: 4px;
+            margin: 2rem auto;
+            max-width: 600px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8b5cf6, #a855f7);
+            height: 100%;
+            width: 16.66%;
+            transition: width 0.3s ease;
+        }
+
+        /* TAB NAVIGATION */
+        .nav-container {
+            margin: 2rem 0;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 0 0 1rem 0;
+        }
+
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s;
+            color: #6b7280;
+        }
+
+        .nav-tab:hover {
+            background: #f3f4f6;
+            border-color: #d1d5db;
+        }
+
+        .nav-tab.active {
+            background: white;
+            border-color: #8b5cf6;
+            color: #8b5cf6;
+            border-bottom-color: white;
+            margin-bottom: -2px;
+        }
+
+        /* CONTENT SECTIONS */
+        .section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section h2 {
+            color: #8b5cf6;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #a855f7;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            color: #8b5cf6;
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        /* INTERACTIVE ELEMENTS */
+        .highlight-box {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            border: 2px solid #e9d5ff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .verse-quote {
+            background: #8b5cf6;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .interactive-exercise {
+            background: #fefbff;
+            border: 2px solid #c084fc;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .exercise-header {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #7c3aed;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+
+        .btn:hover {
+            background: #7c3aed;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .btn.secondary {
+            background: #6b7280;
+        }
+
+        .btn.secondary:hover {
+            background: #4b5563;
+        }
+
+        /* PROPHET CARDS */
+        .prophet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .prophet-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .prophet-card:hover {
+            border-color: #8b5cf6;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .prophet-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .prophet-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8b5cf6;
+            margin-bottom: 0.5rem;
+        }
+
+        .prophet-era {
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .prophet-period {
+            background: #f3e8ff;
+            color: #7c3aed;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        /* EXPANDABLE CONTENT */
+        .expandable {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .expandable-header {
+            padding: 1rem;
+            background: #f9fafb;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .expandable-header:hover {
+            background: #f3f4f6;
+        }
+
+        .expandable-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .expandable.active .expandable-content {
+            padding: 1rem;
+            max-height: 2000px;
+        }
+
+        .expandable-arrow {
+            transition: transform 0.3s;
+        }
+
+        .expandable.active .expandable-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* TIMELINE STYLES */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #8b5cf6;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            padding: 0 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 55%;
+        }
+
+        /* QUIZ STYLES */
+        .quiz-question {
+            background: white;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .quiz-option {
+            padding: 1rem;
+            background: #f3f4f6;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .quiz-option:hover {
+            background: #8b5cf6;
+            color: white;
+            border-color: #8b5cf6;
+        }
+
+        .quiz-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .quiz-feedback.correct {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .quiz-feedback.incorrect {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* STUDY GUIDE ELEMENTS */
+        .study-section {
+            background: #fafafa;
+            border-left: 4px solid #8b5cf6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .study-section h4 {
+            color: #8b5cf6;
+            margin-bottom: 1rem;
+        }
+
+        /* TIMELINE CONTROLS */
+        .timeline-controls {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-controls .btn {
+            margin: 0 0.5rem;
+        }
+
+        .timeline-event {
+            background: white;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #8b5cf6;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .timeline-event:hover {
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+        }
+
+        .timeline-event h4 {
+            color: #7c3aed;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-event.hidden {
+            display: none;
+        }
+
+        /* FLOATING TOOLS */
+        .floating-tools {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 1000;
+        }
+
+        .tool-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: #8b5cf6;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.2s;
+        }
+
+        .tool-btn:hover {
+            background: #7c3aed;
+            transform: scale(1.1);
+        }
+
+        /* RESPONSIVE IMPROVEMENTS */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem 0.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-tabs {
+                gap: 0.5rem;
+            }
+            
+            .nav-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .floating-tools {
+                right: 1rem;
+                bottom: 1rem;
+            }
+            
+            .prophet-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item::before {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: auto;
+                margin-left: 50px !important;
+                margin-right: 0 !important;
+            }
+
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📜 Major Prophets Hub</h1>
+            <p class="subtitle">Interactive Seminary-Level Studies • Isaiah • Jeremiah • Ezekiel • Daniel</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="nav-container">
+            <div class="nav-tabs">
+                <div class="nav-tab active" data-section="overview">Overview</div>
+                <div class="nav-tab" data-section="isaiah">Isaiah</div>
+                <div class="nav-tab" data-section="jeremiah">Jeremiah</div>
+                <div class="nav-tab" data-section="ezekiel">Ezekiel</div>
+                <div class="nav-tab" data-section="daniel">Daniel</div>
+                <div class="nav-tab" data-section="timeline">Timeline</div>
+                <div class="nav-tab" data-section="quiz">Quiz</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Overview Section -->
+            <div class="section active" id="overview">
+                <h2>Introduction to the Major Prophets</h2>
+                
+                <div class="highlight-box">
+                    <p><strong>The Major Prophets—Isaiah, Jeremiah, Lamentations, Ezekiel, and Daniel—represent God's powerful voice during Israel's most turbulent centuries.</strong> Called "major" not because of greater importance but due to the length of their writings, these prophets delivered messages that shaped biblical theology and continue to transform lives today.</p>
+                </div>
+
+                <div class="verse-quote">
+                    "Surely the Sovereign LORD does nothing without revealing his plan to his servants the prophets." - Amos 3:7
+                </div>
+
+                <div class="prophet-grid">
+                    <div class="prophet-card" onclick="showSection('isaiah')">
+                        <div class="prophet-icon">⚡</div>
+                        <div class="prophet-name">Isaiah</div>
+                        <div class="prophet-era">The Prince of Prophets</div>
+                        <div class="prophet-period">740-686 BC</div>
+                        <p>Served under four kings during Assyrian crisis. Contains more Messianic prophecies than any other Old Testament book.</p>
+                    </div>
+                    
+                    <div class="prophet-card" onclick="showSection('jeremiah')">
+                        <div class="prophet-icon">💧</div>
+                        <div class="prophet-name">Jeremiah</div>
+                        <div class="prophet-era">The Weeping Prophet</div>
+                        <div class="prophet-period">627-580 BC</div>
+                        <p>Witnessed Judah's final decades and Jerusalem's destruction. Proclaimed the New Covenant written on hearts.</p>
+                    </div>
+                    
+                    <div class="prophet-card" onclick="showSection('ezekiel')">
+                        <div class="prophet-icon">👁️</div>
+                        <div class="prophet-name">Ezekiel</div>
+                        <div class="prophet-era">Prophet of Visions</div>
+                        <div class="prophet-period">597-571 BC</div>
+                        <p>Priest-turned-prophet in Babylonian exile. Famous for throne vision and valley of dry bones.</p>
+                    </div>
+                    
+                    <div class="prophet-card" onclick="showSection('daniel')">
+                        <div class="prophet-icon">👑</div>
+                        <div class="prophet-name">Daniel</div>
+                        <div class="prophet-era">Faithful in Exile</div>
+                        <div class="prophet-period">605-535 BC</div>
+                        <p>Served in Babylonian and Persian courts. Known for interpretations, courage, and apocalyptic visions.</p>
+                    </div>
+                </div>
+
+                <h3>What You'll Discover</h3>
+                <div class="study-section">
+                    <h4>📖 Rich Historical Context</h4>
+                    <p>Understand the political upheavals, cultural backgrounds, and spiritual challenges that shaped these prophetic messages.</p>
+                </div>
+
+                <div class="study-section">
+                    <h4>🎯 Messianic Prophecies</h4>
+                    <p>Trace the progressive revelation of God's redemptive plan from the Suffering Servant to the eternal kingdom.</p>
+                </div>
+
+                <div class="study-section">
+                    <h4>🙏 Modern Applications</h4>
+                    <p>Apply prophetic insights to contemporary issues of justice, hope, leadership, and faithful living.</p>
+                </div>
+
+                <div class="interactive-exercise">
+                    <div class="exercise-header">🎯 Quick Reflection</div>
+                    <p>Which prophet's story or message do you feel most drawn to and why?</p>
+                    <textarea class="journal-area" placeholder="Write your thoughts here..." id="initialReflection" style="width: 100%; min-height: 100px; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit;"></textarea>
+                    <button class="btn" onclick="saveReflection()">Save Reflection</button>
+                </div>
+            </div>
+
+            <!-- Isaiah Section -->
+            <div class="section" id="isaiah">
+                <h2>Isaiah: The Prince of Prophets</h2>
+                
+                <div class="highlight-box">
+                    <h3>⚡ Isaiah's Ministry</h3>
+                    <p><strong>Isaiah ministered during the 8th century BC (740-686 BC), a critical period when the Assyrian Empire threatened Israel and Judah.</strong> He served under four kings—Uzziah, Jotham, Ahaz, and Hezekiah—witnessing both spiritual decline and remarkable deliverance when God miraculously saved Jerusalem from Sennacherib's siege in 701 BC.</p>
+                </div>
+
+                <div class="verse-quote">
+                    "For to us a child is born, to us a son is given, and the government will be on his shoulders. And he will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace." - Isaiah 9:6
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header" onclick="toggleExpandable(this)">
+                        🔥 Isaiah's Call and Vision
+                        <span class="expandable-arrow">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>The Holy Vision (Isaiah 6)</h4>
+                        <p>Isaiah's foundational vision revealed God as "holy, holy, holy" and shaped his entire ministry. The coal touching his lips symbolized cleansing for prophetic service.</p>
+                        
+                        <h4>Commissioning</h4>
+                        <p>"Whom shall I send? And who will go for us?" Isaiah's response: "Here am I. Send me!" demonstrates willing obedience despite knowing the message would largely be rejected.</p>
+                        
+                        <h4>The Sign of Immanuel</h4>
+                        <p>During the Syro-Ephraimite crisis, Isaiah offered King Ahaz a sign from God. Though Ahaz refused, God gave the sign anyway: "The virgin will conceive and give birth to a son, and will call him Immanuel" (Isaiah 7:14).</p>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header" onclick="toggleExpandable(this)">
+                        📜 Major Messianic Prophecies
+                        <span class="expandable-arrow">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>The Servant Songs (Isaiah 42, 49, 50, 52-53)</h4>
+                        <p>Four passages describing the suffering servant who would bring justice to the nations and bear the sins of many. Jesus fulfilled these prophecies completely.</p>
+                        
+                        <h4>The Prince of Peace (Isaiah 9:6-7)</h4>
+                        <p>Prophecy of a child who would be called "Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace" whose government would have no end.</p>
+                        
+                        <h4>The Branch of Jesse (Isaiah 11:1-10)</h4>
+                        <p>Description of the Messiah as a shoot from Jesse's stump, filled with the Spirit of the Lord, who would rule with righteousness and justice.</p>
+                        
+                        <h4>New Heavens and New Earth (Isaiah 65:17-25)</h4>
+                        <p>Vision of ultimate restoration where God creates new heavens and a new earth, echoed in Revelation 21-22.</p>
+                    </div>
+                </div>
+
+                <div class="study-section">
+                    <h4>📚 Isaiah's Literary Mastery</h4>
+                    <p>Isaiah employs the finest classical Hebrew with masterful poetic imagery, Hebrew parallelism, and apocalyptic visions. His distinctive phrases include "The Holy One of Israel" (25 times) and "in that day."</p>
+                </div>
+
+                <div class="interactive-exercise">
+                    <div class="exercise-header">🎯 Isaiah Study Questions</div>
+                    <div style="margin: 1rem 0;">
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">How does Isaiah's vision of God's holiness impact his message?</div>
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">What makes Isaiah's Messianic prophecies so detailed and compelling?</div>
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">How does Isaiah balance messages of judgment and hope?</div>
+                    </div>
+                    <textarea class="journal-area" placeholder="Write your reflections on Isaiah..." id="isaiahReflection" style="width: 100%; min-height: 100px; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit;"></textarea>
+                    <button class="btn" onclick="saveReflection()">Save Isaiah Study</button>
+                </div>
+            </div>
+
+            <!-- Jeremiah Section -->
+            <div class="section" id="jeremiah">
+                <h2>Jeremiah: The Weeping Prophet</h2>
+                
+                <div class="highlight-box">
+                    <h3>💧 Jeremiah's Heart</h3>
+                    <p><strong>Jeremiah prophesied for over 40 years (627-580 BC) during Judah's final decades, spanning the reigns of five kings from Josiah's reforms through Jerusalem's destruction.</strong> Born into a priestly family in Anathoth, he witnessed the nation's spiritual decline and ultimate judgment with a broken heart.</p>
+                </div>
+
+                <div class="verse-quote">
+                    "I will put my law in their minds and write it on their hearts. I will be their God, and they will be my people." - Jeremiah 31:33
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header" onclick="toggleExpandable(this)">
+                        📞 Jeremiah's Call and Commission
+                        <span class="expandable-arrow">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>The Reluctant Prophet</h4>
+                        <p>Called in his youth, Jeremiah protested: "I do not know how to speak; I am too young." God responded by touching his mouth and declaring: "I have put my words in your mouth."</p>
+                        
+                        <h4>Visions of Calling</h4>
+                        <p>The almond branch (God watching over His word) and boiling pot (judgment from the north) established the themes of Jeremiah's ministry: God's faithfulness and coming judgment.</p>
+                        
+                        <h4>A Prophet to the Nations</h4>
+                        <p>Though primarily focused on Judah, Jeremiah was commissioned as "a prophet to the nations" with messages for surrounding peoples.</p>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header" onclick="toggleExpandable(this)">
+                        🏺 Symbolic Actions and Object Lessons
+                        <span class="expandable-arrow">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>The Potter's House (Jeremiah 18)</h4>
+                        <p>God's sovereignty over nations demonstrated through a potter reshaping clay. "Can I not do with you, Israel, as this potter does?"</p>
+                        
+                        <h4>The Broken Jar (Jeremiah 19)</h4>
+                        <p>Jeremiah smashed a clay jar to illustrate how God would shatter Jerusalem irreparably because of their idolatry.</p>
+                        
+                        <h4>The Wooden Yoke (Jeremiah 27-28)</h4>
+                        <p>Jeremiah wore a wooden yoke to symbolize submission to Babylon. False prophet Hananiah broke it, claiming freedom, but God replaced it with iron.</p>
+                    </div>
+                </div>
+
+                <div class="study-section">
+                    <h4>📜 The New Covenant Promise</h4>
+                    <p>Jeremiah 31:31-34 contains one of the most significant prophecies in Scripture: God's promise of a new covenant written on hearts, not stone tablets. This foundational passage points directly to Christ's work.</p>
+                </div>
+
+                <div class="interactive-exercise">
+                    <div class="exercise-header">🎯 Jeremiah Study Questions</div>
+                    <div style="margin: 1rem 0;">
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">How did Jeremiah's emotional depth enhance his prophetic ministry?</div>
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">What does the New Covenant prophecy reveal about God's ultimate plan?</div>
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">How do Jeremiah's symbolic actions communicate God's message?</div>
+                    </div>
+                    <textarea class="journal-area" placeholder="Write your reflections on Jeremiah..." id="jeremiahReflection" style="width: 100%; min-height: 100px; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit;"></textarea>
+                    <button class="btn" onclick="saveReflection()">Save Jeremiah Study</button>
+                </div>
+            </div>
+
+            <!-- Ezekiel Section -->
+            <div class="section" id="ezekiel">
+                <h2>Ezekiel: Prophet of Visions</h2>
+                
+                <div class="highlight-box">
+                    <h3>👁️ Ezekiel's Visions</h3>
+                    <p><strong>Ezekiel, a priest-turned-prophet, ministered to Jewish exiles in Babylon from 593-571 BC.</strong> Taken in the 597 BC deportation, he prophesied by the Chebar Canal, receiving his call at age 30—when he should have begun priestly service in Jerusalem. His ministry is marked by spectacular visions and dramatic sign-acts.</p>
+                </div>
+
+                <div class="verse-quote">
+                    "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh." - Ezekiel 36:26
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header" onclick="toggleExpandable(this)">
+                        🌪️ The Throne Vision (Ezekiel 1)
+                        <span class="expandable-arrow">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>Four Living Creatures</h4>
+                        <p>Ezekiel saw four creatures with faces of man, lion, ox, and eagle—representing intelligence, strength, service, and swiftness. These reappear in Revelation 4.</p>
+                        
+                        <h4>Wheels Within Wheels</h4>
+                        <p>The mysterious wheels covered with eyes suggest God's omniscience and omnipresence. They moved in perfect coordination with the living creatures.</p>
+                        
+                        <h4>The Throne Above</h4>
+                        <p>Above the creatures was an expanse like crystal, and above that a throne with a figure "like that of a man"—a theophany of God's glory.</p>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header" onclick="toggleExpandable(this)">
+                        🦴 The Valley of Dry Bones (Ezekiel 37)
+                        <span class="expandable-arrow">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>The Vision</h4>
+                        <p>Ezekiel was transported to a valley full of dry bones. At God's command, he prophesied to the bones, and they came together, were covered with flesh, and received breath.</p>
+                        
+                        <h4>The Interpretation</h4>
+                        <p>God explained: "These bones are the people of Israel." The vision promised national restoration from exile and spiritual resurrection.</p>
+                        
+                        <h4>Two Sticks Become One</h4>
+                        <p>Ezekiel joined two sticks representing Judah and Israel, symbolizing the reunification of God's people under one king (Ezekiel 37:15-28).</p>
+                    </div>
+                </div>
+
+                <div class="study-section">
+                    <h4>🏛️ The New Temple Vision (Ezekiel 40-48)</h4>
+                    <p>Ezekiel's final vision describes a new temple in meticulous detail, with a river flowing from its threshold bringing life wherever it goes. This temple vision points to God's eternal presence among His people.</p>
+                </div>
+
+                <div class="interactive-exercise">
+                    <div class="exercise-header">🎯 Ezekiel Study Questions</div>
+                    <div style="margin: 1rem 0;">
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">What do Ezekiel's visions reveal about God's character and purposes?</div>
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">How does the valley of dry bones apply to both national and spiritual restoration?</div>
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">What is the significance of God's glory departing and returning?</div>
+                    </div>
+                    <textarea class="journal-area" placeholder="Write your reflections on Ezekiel..." id="ezekielReflection" style="width: 100%; min-height: 100px; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit;"></textarea>
+                    <button class="btn" onclick="saveReflection()">Save Ezekiel Study</button>
+                </div>
+            </div>
+
+            <!-- Daniel Section -->
+            <div class="section" id="daniel">
+                <h2>Daniel: Faithful in Exile</h2>
+                
+                <div class="highlight-box">
+                    <h3>👑 Daniel's Faithfulness</h3>
+                    <p><strong>Daniel, taken to Babylon in the first deportation (605 BC), rose to prominence in both Babylonian and Persian courts.</strong> His 70-year career spanned from Nebuchadnezzar to Cyrus, demonstrating unwavering faithfulness in pagan environments while interpreting dreams and receiving prophetic visions.</p>
+                </div>
+
+                <div class="verse-quote">
+                    "The Most High is sovereign over all kingdoms on earth and gives them to anyone he wishes." - Daniel 4:17
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header" onclick="toggleExpandable(this)">
+                        🔥 Famous Narratives
+                        <span class="expandable-arrow">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>The Fiery Furnace (Daniel 3)</h4>
+                        <p>Shadrach, Meshach, and Abednego refused to bow to Nebuchadnezzar's golden image. Thrown into a fiery furnace, they were protected by a fourth figure "like a son of the gods."</p>
+                        
+                        <h4>The Handwriting on the Wall (Daniel 5)</h4>
+                        <p>During Belshazzar's feast, a hand wrote "MENE, MENE, TEKEL, PARSIN" on the wall. Daniel interpreted: God had numbered Babylon's days and found them wanting.</p>
+                        
+                        <h4>The Lion's Den (Daniel 6)</h4>
+                        <p>When Daniel continued praying despite a royal decree, he was thrown to the lions. God shut the lions' mouths, and Daniel emerged unharmed.</p>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header" onclick="toggleExpandable(this)">
+                        🔮 Prophetic Visions
+                        <span class="expandable-arrow">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>The Four Kingdoms (Daniel 2, 7)</h4>
+                        <p>Both Nebuchadnezzar's dream and Daniel's vision reveal four successive kingdoms (Babylon, Medo-Persia, Greece, Rome) followed by God's eternal kingdom.</p>
+                        
+                        <h4>The Seventy Weeks (Daniel 9:24-27)</h4>
+                        <p>This prophecy provides a timeline for the Messiah's coming, often interpreted as pointing to Christ's first advent and the church age.</p>
+                        
+                        <h4>The End Times (Daniel 10-12)</h4>
+                        <p>Daniel's final visions describe future conflicts, the resurrection of the dead, and ultimate vindication of the righteous.</p>
+                    </div>
+                </div>
+
+                <div class="study-section">
+                    <h4>🙏 Daniel's Prayer Life</h4>
+                    <p>Daniel's commitment to prayer three times daily, even facing death, demonstrates the priority of communion with God over personal safety. His intercessory prayer in Daniel 9 is a model of confession and petition.</p>
+                </div>
+
+                <div class="interactive-exercise">
+                    <div class="exercise-header">🎯 Daniel Study Questions</div>
+                    <div style="margin: 1rem 0;">
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">How did Daniel maintain integrity in a compromising environment?</div>
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">What do Daniel's prophecies reveal about God's sovereignty over history?</div>
+                        <div style="padding: 0.5rem; margin: 0.5rem 0; background: #f9fafb; border-radius: 8px; cursor: pointer;" onclick="this.style.background='#faf5ff'">How does Daniel's prayer life inform our own spiritual disciplines?</div>
+                    </div>
+                    <textarea class="journal-area" placeholder="Write your reflections on Daniel..." id="danielReflection" style="width: 100%; min-height: 100px; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit;"></textarea>
+                    <button class="btn" onclick="saveReflection()">Save Daniel Study</button>
+                </div>
+            </div>
+
+            <!-- Timeline Section -->
+            <div class="section" id="timeline">
+                <h2>Interactive Timeline of the Major Prophets</h2>
+                
+                <div class="timeline-controls">
+                    <button class="btn" onclick="filterTimeline('all')">View All</button>
+                    <button class="btn secondary" onclick="filterTimeline('pre-exilic')">Pre-Exilic</button>
+                    <button class="btn secondary" onclick="filterTimeline('exilic')">Exilic</button>
+                </div>
+                
+                <div class="timeline-visual">
+                    <div class="timeline-event" data-period="pre-exilic">
+                        <h4>740-686 BC - ISAIAH</h4>
+                        <p><strong>Call to Ministry:</strong> 740 BC - "The year King Uzziah died" (Isaiah 6:1)</p>
+                        <p><strong>Historical Context:</strong> Served under kings Uzziah, Jotham, Ahaz, and Hezekiah</p>
+                        <p><strong>Major Events:</strong> Syro-Ephraimite War (734-732 BC), Fall of Northern Kingdom (722 BC), Sennacherib's siege (701 BC)</p>
+                    </div>
+                    
+                    <div class="timeline-event" data-period="pre-exilic">
+                        <h4>627-580 BC - JEREMIAH</h4>
+                        <p><strong>Call to Ministry:</strong> 627 BC - "13th year of King Josiah" (Jeremiah 1:2)</p>
+                        <p><strong>Historical Context:</strong> Witnessed Josiah's reforms through Jerusalem's destruction</p>
+                        <p><strong>Major Events:</strong> Josiah's reforms (621 BC), Battle of Carchemish (605 BC), Destruction of Jerusalem (586 BC)</p>
+                    </div>
+                    
+                    <div class="timeline-event" data-period="exilic">
+                        <h4>597-571 BC - EZEKIEL</h4>
+                        <p><strong>Call to Ministry:</strong> July 31, 593 BC - "5th year of Jehoiachin's exile"</p>
+                        <p><strong>Location:</strong> Tel Abib by the Chebar Canal, Babylon</p>
+                        <p><strong>Major Visions:</strong> Throne-chariot, Valley of dry bones, New temple</p>
+                    </div>
+                    
+                    <div class="timeline-event" data-period="exilic">
+                        <h4>605-535 BC - DANIEL</h4>
+                        <p><strong>Taken to Babylon:</strong> 605 BC in first deportation</p>
+                        <p><strong>Service:</strong> Royal courts of Babylon and Persia</p>
+                        <p><strong>Major Events:</strong> Interprets dreams, Fiery furnace, Lion's den</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="section" id="quiz">
+                <h2>Test Your Knowledge of the Major Prophets</h2>
+                
+                <div class="quiz-question" data-question="1">
+                    <h3>Question 1: Which prophet saw the vision of the Valley of Dry Bones?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(1, 'a')">Isaiah</div>
+                        <div class="quiz-option" onclick="checkAnswer(1, 'b')">Jeremiah</div>
+                        <div class="quiz-option" onclick="checkAnswer(1, 'c')">Ezekiel</div>
+                        <div class="quiz-option" onclick="checkAnswer(1, 'd')">Daniel</div>
+                    </div>
+                    <div class="quiz-feedback" id="feedback1"></div>
+                </div>
+                
+                <div class="quiz-question" data-question="2">
+                    <h3>Question 2: Which prophet ministered earliest?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(2, 'a')">Isaiah</div>
+                        <div class="quiz-option" onclick="checkAnswer(2, 'b')">Jeremiah</div>
+                        <div class="quiz-option" onclick="checkAnswer(2, 'c')">Ezekiel</div>
+                        <div class="quiz-option" onclick="checkAnswer(2, 'd')">Daniel</div>
+                    </div>
+                    <div class="quiz-feedback" id="feedback2"></div>
+                </div>
+                
+                <div class="quiz-question" data-question="3">
+                    <h3>Question 3: Who prophesied the New Covenant written on hearts?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(3, 'a')">Isaiah</div>
+                        <div class="quiz-option" onclick="checkAnswer(3, 'b')">Jeremiah</div>
+                        <div class="quiz-option" onclick="checkAnswer(3, 'c')">Ezekiel</div>
+                        <div class="quiz-option" onclick="checkAnswer(3, 'd')">Daniel</div>
+                    </div>
+                    <div class="quiz-feedback" id="feedback3"></div>
+                </div>
+                
+                <div class="quiz-question" data-question="4">
+                    <h3>Question 4: Which prophet was commanded to eat a scroll?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(4, 'a')">Isaiah</div>
+                        <div class="quiz-option" onclick="checkAnswer(4, 'b')">Jeremiah</div>
+                        <div class="quiz-option" onclick="checkAnswer(4, 'c')">Ezekiel</div>
+                        <div class="quiz-option" onclick="checkAnswer(4, 'd')">Daniel</div>
+                    </div>
+                    <div class="quiz-feedback" id="feedback4"></div>
+                </div>
+                
+                <div class="quiz-question" data-question="5">
+                    <h3>Question 5: Which three prophets were contemporaries during the Babylonian exile?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(5, 'a')">Isaiah, Jeremiah, Ezekiel</div>
+                        <div class="quiz-option" onclick="checkAnswer(5, 'b')">Jeremiah, Ezekiel, Daniel</div>
+                        <div class="quiz-option" onclick="checkAnswer(5, 'c')">Isaiah, Ezekiel, Daniel</div>
+                        <div class="quiz-option" onclick="checkAnswer(5, 'd')">Isaiah, Jeremiah, Daniel</div>
+                    </div>
+                    <div class="quiz-feedback" id="feedback5"></div>
+                </div>
+
+                <div class="highlight-box" style="text-align: center; margin: 3rem 0;">
+                    <h3>🌟 Continue Your Study</h3>
+                    <p>Ready to dive deeper into specific prophets?</p>
+                    <button class="btn" style="margin: 0.5rem; font-size: 1.1rem; padding: 1rem 2rem;">
+                        📚 Explore Individual Prophet Studies
+                    </button>
+                    <p style="font-style: italic; color: #6b7280; font-size: 0.9rem; margin-top: 1rem;">
+                        "The grass withers and the flowers fall, but the word of our God endures forever." - Isaiah 40:8
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Tools -->
+        <div class="floating-tools">
+            <button class="tool-btn" onclick="scrollToTop()" title="Back to Top">↑</button>
+        </div>
+    </div>
+
+    <script>
+        let currentProgress = 0;
+
+        // TAB NAVIGATION
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Update nav tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            const activeTab = document.querySelector(`[data-section="${sectionId}"]`);
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
+            
+            // Update progress
+            updateProgress(sectionId);
+            
+            // Scroll to top
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Tab click handlers
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const sectionId = tab.getAttribute('data-section');
+                if (sectionId) {
+                    showSection(sectionId);
+                }
+            });
+        });
+
+        // PROGRESS TRACKING
+        function updateProgress(sectionId) {
+            const sections = ['overview', 'isaiah', 'jeremiah', 'ezekiel', 'daniel', 'timeline', 'quiz'];
+            const currentIndex = sections.indexOf(sectionId);
+            if (currentIndex !== -1) {
+                const progress = ((currentIndex + 1) / sections.length) * 100;
+                const progressFill = document.getElementById('progressFill');
+                if (progressFill) {
+                    progressFill.style.width = progress + '%';
+                }
+            }
+        }
+
+        // EXPANDABLE SECTIONS
+        function toggleExpandable(header) {
+            const expandable = header.parentElement;
+            expandable.classList.toggle('active');
+        }
+
+        // TIMELINE FILTERING
+        function filterTimeline(period) {
+            const events = document.querySelectorAll('.timeline-event');
+            const buttons = document.querySelectorAll('.timeline-controls .btn');
+            
+            // Update button styles
+            buttons.forEach(btn => {
+                btn.classList.remove('btn');
+                btn.classList.add('btn', 'secondary');
+            });
+            event.target.classList.remove('secondary');
+            
+            events.forEach(event => {
+                if (period === 'all') {
+                    event.classList.remove('hidden');
+                } else if (event.dataset.period === period) {
+                    event.classList.remove('hidden');
+                } else {
+                    event.classList.add('hidden');
+                }
+            });
+        }
+
+        // QUIZ FUNCTIONALITY
+        function checkAnswer(questionNum, answer) {
+            const correctAnswers = {
+                1: 'c', // Ezekiel
+                2: 'a', // Isaiah
+                3: 'b', // Jeremiah
+                4: 'c', // Ezekiel
+                5: 'b'  // Jeremiah, Ezekiel, Daniel
+            };
+            
+            const feedback = document.getElementById('feedback' + questionNum);
+            
+            if (answer === correctAnswers[questionNum]) {
+                feedback.innerHTML = '✓ Correct!';
+                feedback.className = 'quiz-feedback correct';
+                
+                // Provide explanation
+                const explanations = {
+                    1: 'Ezekiel 37:1-14 describes this powerful vision symbolizing Israel\'s restoration.',
+                    2: 'Isaiah ministered in the 8th century BC (740-686 BC), about 100 years before the others.',
+                    3: 'Jeremiah 31:31-34 contains this foundational prophecy fulfilled in Christ.',
+                    4: 'Ezekiel 3:1-3 describes God commanding him to eat a scroll before prophesying.',
+                    5: 'All three lived and prophesied during the 6th century BC exile period.'
+                };
+                
+                feedback.innerHTML += '<br><small>' + explanations[questionNum] + '</small>';
+            } else {
+                feedback.innerHTML = '✗ Try again';
+                feedback.className = 'quiz-feedback incorrect';
+            }
+        }
+
+        // UTILITY FUNCTIONS
+        function saveReflection() {
+            alert('Study reflection saved! 📖');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script src="/js/universal-nav.js"></script>
+    <script src="anchorstack-nav.js"></script>
+    <script src="anchorstack-footer.js"></script>
+</body>
+</html>

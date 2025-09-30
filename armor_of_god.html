@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "@id": "https://anchorstack.pro/satan_series", "headline": "Satan Series - Interactive Biblical Study", "description": "Comprehensive biblical analysis of Satan's role in Scripture with interactive elements", "image": "https://anchorstack.pro/images/satan-series-cover.jpg", "author": { "@type": "Person", "name": "Ricky Jarnagin" }, "publisher": { "@type": "Organization", "name": "AnchorStack", "logo": { "@type": "ImageObject", "url": "https://anchorstack.pro/images/logo.png" } }, "datePublished": "2024-01-01", "dateModified": "2025-09-26", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://anchorstack.pro/satan_series" } } </script>
+ <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>The Armor of God: An Interactive Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link rel="stylesheet" href="main.css">
+    <link rel="canonical" href="https://anchorstack.pro/armor_of_god.html"/>
+    <meta property="og:site_name" content="AnchorStack"/>
+    <!-- Add other Open Graph tags as needed -->
+    <meta property="og:type" content="website"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <meta property="og:title" content="The Armor of God: An Interactive Guide"/>
+    <meta property="og:description" content="Explore the Armor of God through an interactive guide, including detailed explanations, practical applications, and theological perspectives."/>
+    <meta property="og:image" content="/path/to/image.jpg"/>
+    <meta property="og:url" content="https://anchorstack.com/armor_of_god.html"/>
+    <meta property="twitter:title" content="The Armor of God: An Interactive Guide"/>
+    <meta name="description" content="Explore the Armor of God through an interactive guide, including detailed explanations, practical applications, and theological perspectives."/>
+    <meta name="keywords" content="Armor of God, Spiritual Warfare, Bible Study, Christian Leadership"/>
+    <meta name="author" content="Ricky Jarnagin"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="google-site-verification" content="yQWzJnKlPvUkxuHgM1oTqO3iI049Z6m25_7kYV8XsEk"/>
+    <meta name="googlebot" content="index,follow"/>
+        <meta name="bingbot" content="index,follow"/>
+        <meta name="yandex" content="index,follow"/>
+        <meta name="msnbot" content="index,follow"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:description" content="Explore the Armor of God through an interactive guide, including detailed explanations, practical applications, and theological perspectives."/>
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+   <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDF6E3;
+        }
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-button:hover, .nav-button.active {
+            color: #4A4A4A;
+            border-bottom-color: #D4AF37;
+        }
+        .armor-piece, .enemy-tactic, .perspective-tab {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .armor-piece:hover, .enemy-tactic:hover, .perspective-tab:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .armor-piece.active {
+            background-color: #D4AF37;
+            color: #ffffff;
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+        .armor-piece.highlight {
+            box-shadow: 0 0 15px 3px #3B82F6;
+        }
+        .perspective-tab.active {
+            background-color: #4A4A4A;
+            color: #FDF6E3;
+        }
+        .content-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        
+        /* Simple Navigation Styles */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 64, 175, 0.95);
+            z-index: 999999;
+            display: none;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .nav-panel {
+            max-width: 800px;
+            margin: 80px auto 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .nav-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #dc2626;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .nav-button-float {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 999998;
+            box-shadow: 0 4px 20px rgba(30, 64, 175, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-button-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(30, 64, 175, 0.6);
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 15px;
+            margin: 5px 0;
+            background: white;
+            color: #374151;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s;
+        }
+        
+        .nav-link:hover {
+            background: #eff6ff;
+            border-color: #3b82f6;
+        }
+        
+        .nav-link.special {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            font-weight: 600;
+        }
+    </style>
+
+   
+</head>
+
+<body class="bg-[#FDF6E3] text-[#4A4A4A]">
+    
+
+<div id="navOverlay" class="nav-overlay">
+    <div class="nav-panel">
+        <button class="nav-close" onclick="closeNavigation()">✕</button>
+        
+        <div class="nav-header">
+            <h1>⚓ AnchorStack Navigation</h1>
+            <p>Biblical studies and leadership resources</p>
+        </div>
+        
+        <div class="nav-grid">
+            <!-- ===== UPDATE THESE LINKS AS NEEDED ===== -->
+            
+              <div class="nav-section">
+                <h3>📚 Free Biblical Studies</h3>
+                <a href="https://anchorstack.pro" class="nav-link">🏠 Home</a>
+                <a href="https://anchorstack.pro/email_capture_page.html" class="nav-link prayer">🙏 Prayer Guide</a>
+                <a href="https://anchorstack.pro/email_capture_page.html" class="nav-link">📖 Prayer Manual</a>
+              <!--  <a href="https://anchorstack.pro/prayers_that_win.html" class="nav-link">📖 Prayers that Win</a> -->
+                <a href="https://anchorstack.pro/scripture_memory.html" class="nav-link">📖 Scripture Memory</a>
+                <a href="https://anchorstack.pro/Daily_Devotions.html" class="nav-link">📖 Daily Devotions</a>
+                <a href="https://anchorstack.pro/systematic_bible_study_guide.html" class="nav-link">📋 Study Templates</a>
+                <a href="https://anchorstack.pro/armor_of_god.html" class="nav-link">⚔️ Armor of God</a>
+            </div>
+
+         <div class="nav-section">
+                <h3>💎 Premium Library</h3>
+                  <a href="https://anchorstack.gumroad.com/l/xcqfn" class="nav-link">👑 Pentateuch Interactive</a>
+                <a href="https://anchorstack.gumroad.com/l/pgfyd" class="nav-link">📖 Levitical Priesthood</a>
+               <a href="https://anchorstack.gumroad.com/l/ryjycr" class="nav-link">📖 Isaiah the Prophet Interactive</a>
+                <a href="https://anchorstack.gumroad.com/l/edgnm" class="nav-link">🎵 Ezekiel Interactive</a>
+                <a href="https://anchorstack.gumroad.com/l/ummlqq" class="nav-link">📜 Daniel Master Suite</a>
+                <a href="https://anchorstack.gumroad.com/l/hwuhpo" class="nav-link">⚡ Seven Seals Deep Dive</a>
+                <a href="https://anchorstack.gumroad.com/l/qrpult" class="nav-link">⚡ Revelation Study</a>
+                <a href="https://anchorstack.gumroad.com/l/uahhng" class="nav-link premium">🔓 Full Access</a>       
+                
+            </div>
+            <div class="nav-section">
+                <h3>📖 Books & Leadership</h3>
+                <a href="https://anchorstack.pro/gideon_book_landing_page.html" class="nav-link">👑 Gideon Leadership</a>
+                <a href="https://amazon.com/dp/B0FBZVXJT9" class="nav-link">📱 Amazon Kindle</a>
+                <a href="https://anchorstack.pro/individual_studies.html" class="nav-link">📋 Individual Studies</a>
+            </div>
+
+             <div class="nav-section">
+                <h3>ℹ️ About & Support</h3>
+                <a href="https://anchorstack.pro/about.html" class="nav-link">👨‍🏫 About Ricky</a>
+                <a href="mailto:support@anchorstack.pro" class="nav-link">📧 Contact</a>
+                <a href="https://anchorstack.pro/faq.html" class="nav-link">❓ FAQ</a> 
+            </div>
+        </div>
+    </div>
+</div>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="text-center mb-20" id="intro">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Stand Firm in the Lord's Power</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-[#6B7280]">
+                Ephesians 6:10-18 calls believers to prepare for a spiritual battle by putting on the full armor of God.<br> 
+                This interactive guide is designed to help you understand each piece of this divine provision, the nature of the conflict, and how to apply these truths daily.
+            </p>
+        </section>
+
+        <section class="mb-20 scroll-mt-24" id="armory">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">The Armory</h2>
+                <p class="mt-2 text-lg text-[#6B7280]">
+                    Click on each piece of armor to learn its purpose and practical application.<br> 
+                    These are the divine tools God has provided for your protection and victory.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div class="armor-piece bg-white p-4 rounded-lg shadow-md text-center" data-armor="belt" id="armor-belt">
+                        <div class="text-4xl mb-2">🛡️</div>
+                        <h3 class="font-semibold">Belt of Truth</h3>
+                    </div>
+                    <div class="armor-piece bg-white p-4 rounded-lg shadow-md text-center" data-armor="breastplate" id="armor-breastplate">
+                        <div class="text-4xl mb-2">🎽</div>
+                        <h3 class="font-semibold">Breastplate of Righteousness</h3>
+                    </div>
+                    <div class="armor-piece bg-white p-4 rounded-lg shadow-md text-center" data-armor="shoes" id="armor-shoes">
+                        <div class="text-4xl mb-2">👟</div>
+                        <h3 class="font-semibold">Shoes of Peace</h3>
+                    </div>
+                    <div class="armor-piece bg-white p-4 rounded-lg shadow-md text-center" data-armor="shield" id="armor-shield">
+                        <div class="text-4xl mb-2">🛡️</div>
+                        <h3 class="font-semibold">Shield of Faith</h3>
+                    </div>
+                    <div class="armor-piece bg-white p-4 rounded-lg shadow-md text-center" data-armor="helmet" id="armor-helmet">
+                        <div class="text-4xl mb-2">👑</div>
+                        <h3 class="font-semibold">Helmet of Salvation</h3>
+                    </div>
+                    <div class="armor-piece bg-white p-4 rounded-lg shadow-md text-center" data-armor="sword" id="armor-sword">
+                        <div class="text-4xl mb-2">⚔️</div>
+                        <h3 class="font-semibold">Sword of the Spirit</h3>
+                    </div>
+                    <div class="armor-piece bg-white p-4 rounded-lg shadow-md text-center col-span-2 sm:col-span-3" data-armor="prayer" id="armor-prayer">
+                        <div class="text-4xl mb-2">🙏</div>
+                        <h3 class="font-semibold">The Power of Prayer</h3>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg min-h-[300px]" id="armor-details">
+                    <p class="text-center text-gray-500 pt-24">Select a piece of armor to see its details.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20 scroll-mt-24" id="enemy">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Know Your Enemy</h2>
+                <p class="mt-2 text-lg text-[#6B7280]">
+                    Understanding the enemy's tactics is crucial for effective spiritual warfare.<br> 
+                    Click on a scheme to see which armor pieces are its primary counters.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="enemy-tactic bg-white p-6 rounded-lg shadow-md" data-tactic="division">
+                    <h3 class="font-bold text-xl mb-2">Division</h3>
+                    <p>Sowing discord in relationships to divert focus from the true spiritual battle.</p>
+                </div>
+                <div class="enemy-tactic bg-white p-6 rounded-lg shadow-md" data-tactic="deception">
+                    <h3 class="font-bold text-xl mb-2">Deception</h3>
+                    <p>Distorting God's truth with subtle lies and half-truths to lead believers astray.</p>
+                </div>
+                <div class="enemy-tactic bg-white p-6 rounded-lg shadow-md" data-tactic="accusation">
+                    <h3 class="font-bold text-xl mb-2">Accusation</h3>
+                    <p>Undermining confidence in God's love and forgiveness by reminding of past sins.</p>
+                </div>
+                <div class="enemy-tactic bg-white p-6 rounded-lg shadow-md" data-tactic="distraction">
+                    <h3 class="font-bold text-xl mb-2">Distraction</h3>
+                    <p>Consuming time and energy with worldly pursuits to cause spiritual neglect.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20 scroll-mt-24" id="analysis">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Strategic Analysis</h2>
+                <p class="mt-2 text-lg text-[#6B7280]">
+                    The armor provides a balance of defensive and offensive capabilities, all sustained by prayer. 
+                    This chart illustrates the functional breakdown of the spiritual tools God provides.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="chart-container">
+                    <canvas id="armorFunctionChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-mt-24" id="perspectives">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Theological Perspectives</h2>
+                <p class="mt-2 text-lg text-[#6B7280]">
+                    The Armor of God has been interpreted in various ways across Christian traditions. 
+                    Explore these rich perspectives to deepen your understanding.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <button class="perspective-tab active px-4 py-2 rounded-md font-semibold" data-perspective="metaphorical">Metaphorical</button>
+                <button class="perspective-tab px-4 py-2 rounded-md font-semibold" data-perspective="christ-centric">Christ-Centric</button>
+                <button class="perspective-tab px-4 py-2 rounded-md font-semibold" data-perspective="protestant">Protestant</button>
+                <button class="perspective-tab px-4 py-2 rounded-md font-semibold" data-perspective="catholic">Catholic</button>
+                <button class="perspective-tab px-4 py-2 rounded-md font-semibold" data-perspective="orthodox">Orthodox</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg min-h-[250px]" id="perspective-content"></div>
+        </section>
+    </main>
+
+   
+   
+   
+
+    <script>
+    
+
+        // Armor content data
+        const armorContent = {
+            belt: {
+                title: "Belt of Truth",
+                verse: "Ephesians 6:14a",
+                description: "Stand firm then, with the belt of truth buckled around your waist...",
+                purpose: "The belt holds everything together and provides stability. In ancient warfare, a soldier's belt was essential for carrying weapons and keeping armor in place.",
+                spiritual: "Truth is the foundation of the Christian life. Without it, we cannot stand firm against deception. This includes both God's truth (Scripture) and personal integrity.",
+                practical: [
+                    "Study Scripture regularly to know God's truth",
+                    "Practice honesty in all relationships",
+                    "Examine your motives and thoughts",
+                    "Reject lies and half-truths"
+                ]
+            },
+            breastplate: {
+                title: "Breastplate of Righteousness",
+                verse: "Ephesians 6:14b",
+                description: "...with the breastplate of righteousness in place...",
+                purpose: "The breastplate protected vital organs, especially the heart. It was often the most ornate piece of armor, showing the soldier's rank and allegiance.",
+                spiritual: "Righteousness protects our hearts from guilt and condemnation. This includes both Christ's righteousness imputed to us and practical righteous living.",
+                practical: [
+                    "Accept Christ's righteousness by faith",
+                    "Live according to God's standards",
+                    "Confess and repent of sin quickly",
+                    "Pursue holiness in daily life"
+                ]
+            },
+            shoes: {
+                title: "Shoes of Peace",
+                verse: "Ephesians 6:15",
+                description: "...and with your feet fitted with the readiness that comes from the gospel of peace.",
+                purpose: "Roman soldiers wore special sandals with hobnails for grip and stability. Good footwear was essential for mobility and sure footing in battle.",
+                spiritual: "The gospel of peace gives us firm footing and readiness to move. We stand confident in our reconciliation with God and are ready to share this peace.",
+                practical: [
+                    "Cultivate inner peace through prayer",
+                    "Share the gospel with others",
+                    "Be ready to go where God leads",
+                    "Stand firm in your faith foundation"
+                ]
+            },
+            shield: {
+                title: "Shield of Faith",
+                verse: "Ephesians 6:16",
+                description: "In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one.",
+                purpose: "The Roman shield was large enough to protect the entire body. Shields were often soaked in water to extinguish flaming arrows.",
+                spiritual: "Faith acts as our primary defense against Satan's attacks. It extinguishes doubts, fears, and temptations that come like flaming arrows.",
+                practical: [
+                    "Trust God's promises in difficult times",
+                    "Pray when facing temptation",
+                    "Remember God's faithfulness",
+                    "Act on faith, not feelings"
+                ]
+            },
+            helmet: {
+                title: "Helmet of Salvation",
+                verse: "Ephesians 6:17a",
+                description: "Take the helmet of salvation...",
+                purpose: "The helmet protected the head and brain - the command center of the body. Roman helmets were designed to deflect blows and arrows.",
+                spiritual: "Salvation protects our minds and thoughts. It gives us the mind of Christ and protects against destructive thinking patterns.",
+                practical: [
+                    "Renew your mind with Scripture",
+                    "Think on pure and lovely things",
+                    "Take every thought captive to Christ",
+                    "Remember your identity in Christ"
+                ]
+            },
+            sword: {
+                title: "Sword of the Spirit",
+                verse: "Ephesians 6:17b",
+                description: "...and the sword of the Spirit, which is the word of God.",
+                purpose: "The sword was the primary offensive weapon. Roman swords were short, sharp, and designed for close combat. A skilled swordsman was formidable.",
+                spiritual: "God's Word is our offensive weapon against the enemy. It's living, active, and sharper than any two-edged sword.",
+                practical: [
+                    "Memorize key Scripture verses",
+                    "Speak God's Word in spiritual battle",
+                    "Use Scripture to overcome temptation",
+                    "Study the Bible systematically"
+                ]
+            },
+            prayer: {
+                title: "The Power of Prayer",
+                verse: "Ephesians 6:18",
+                description: "And pray in the Spirit on all occasions with all kinds of prayers and requests.",
+                purpose: "Prayer is not a piece of armor but the atmosphere in which all spiritual warfare takes place. It's how we communicate with our Commander.",
+                spiritual: "Prayer connects us to God's power and wisdom. It's both defensive (asking for protection) and offensive (interceding for others).",
+                practical: [
+                    "Pray regularly and consistently",
+                    "Pray for other believers",
+                    "Use different types of prayer",
+                    "Stay alert and persistent in prayer"
+                ]
+            }
+        };
+
+        // Enemy tactics and their counters
+        const enemyTactics = {
+            division: ['belt', 'shoes', 'prayer'],
+            deception: ['belt', 'sword', 'helmet'],
+            accusation: ['breastplate', 'helmet', 'shield'],
+            distraction: ['helmet', 'prayer', 'belt']
+        };
+
+        // Perspective content
+        const perspectiveContent = {
+            metaphorical: {
+                title: "Metaphorical Interpretation",
+                content: "This view sees the armor as symbolic representations of Christian virtues and spiritual disciplines. Each piece represents a different aspect of Christian character that believers must develop. The armor serves as a memorable framework for understanding how to live a victorious Christian life through practical spiritual disciplines."
+            },
+            'christ-centric': {
+                title: "Christ-Centric Interpretation", 
+                content: "This perspective emphasizes that Christ himself is our armor. Rather than seeing the armor as things we must put on, this view sees each piece as representing Christ's work for us. We don't achieve righteousness; we put on Christ's righteousness. We don't generate truth; we embrace Christ who is the Truth."
+            },
+            protestant: {
+                title: "Protestant Reformed View",
+                content: "Protestant theology typically emphasizes that the armor represents both positional and practical aspects of salvation. The armor is given by grace through faith and cannot be earned. However, believers are called to actively appropriate what God has provided, living out their salvation through the enabling power of the Holy Spirit."
+            },
+            catholic: {
+                title: "Catholic Perspective",
+                content: "Catholic interpretation often emphasizes the sacramental life and cooperation with grace. The armor represents the graces available through the sacraments and the importance of good works in the Christian life. Prayer, particularly the rosary and liturgical prayer, is seen as essential for spiritual warfare."
+            },
+            orthodox: {
+                title: "Orthodox Understanding",
+                content: "Eastern Orthodox theology emphasizes theosis (becoming like God) and sees the armor as representing the process of deification. The armor helps believers participate in the divine nature and overcome the passions that separate us from God. Ascetic practices and liturgical worship are key elements in putting on this armor."
+            }
+        };
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeArmor();
+            initializeEnemy();
+            initializePerspectives();
+            initializeChart();
+            initializeNavigation();
+        });
+
+        function initializeArmor() {
+            document.querySelectorAll('.armor-piece').forEach(piece => {
+                piece.addEventListener('click', function() {
+                    const armorType = this.dataset.armor;
+                    showArmorDetails(armorType);
+                    
+                    // Update active state
+                    document.querySelectorAll('.armor-piece').forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        }
+
+        function showArmorDetails(armorType) {
+            const content = armorContent[armorType];
+            const detailsDiv = document.getElementById('armor-details');
+            
+            detailsDiv.innerHTML = `
+                <div class="content-fade-in">
+                    <h3 class="text-2xl font-bold mb-2 text-[#D4AF37]">${content.title}</h3>
+                    <p class="text-sm text-gray-600 mb-3">${content.verse}</p>
+                    <p class="mb-4 italic">"${content.description}"</p>
+                    
+                    <h4 class="font-semibold mb-2">Historical Context:</h4>
+                    <p class="mb-3">${content.purpose}</p>
+                    
+                    <h4 class="font-semibold mb-2">Spiritual Significance:</h4>
+                    <p class="mb-3">${content.spiritual}</p>
+                    
+                    <h4 class="font-semibold mb-2">Practical Application:</h4>
+                    <ul class="list-disc list-inside space-y-1">
+                        ${content.practical.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        function initializeEnemy() {
+            document.querySelectorAll('.enemy-tactic').forEach(tactic => {
+                tactic.addEventListener('click', function() {
+                    const tacticType = this.dataset.tactic;
+                    highlightCounters(tacticType);
+                });
+            });
+        }
+
+        function highlightCounters(tacticType) {
+            // Clear existing highlights
+            document.querySelectorAll('.armor-piece').forEach(piece => {
+                piece.classList.remove('highlight');
+            });
+            
+            // Highlight the counters
+            const counters = enemyTactics[tacticType];
+            counters.forEach(counter => {
+                const piece = document.getElementById(`armor-${counter}`);
+                if (piece) {
+                    piece.classList.add('highlight');
+                }
+            });
+            
+            // Show which pieces counter this tactic
+            setTimeout(() => {
+                alert(`${tacticType.charAt(0).toUpperCase() + tacticType.slice(1)} is countered by:\n\n${counters.map(c => armorContent[c].title).join('\n')}\n\nClick on the highlighted armor pieces to learn more!`);
+            }, 500);
+        }
+
+        function initializePerspectives() {
+            // Show default perspective
+            showPerspective('metaphorical');
+            
+            document.querySelectorAll('.perspective-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const perspective = this.dataset.perspective;
+                    showPerspective(perspective);
+                    
+                    // Update active state
+                    document.querySelectorAll('.perspective-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        }
+
+        function showPerspective(perspective) {
+            const content = perspectiveContent[perspective];
+            const contentDiv = document.getElementById('perspective-content');
+            
+            contentDiv.innerHTML = `
+                <div class="content-fade-in">
+                    <h3 class="text-xl font-bold mb-3 text-[#4A4A4A]">${content.title}</h3>
+                    <p class="text-gray-700 leading-relaxed">${content.content}</p>
+                </div>
+            `;
+        }
+
+        function initializeChart() {
+            const ctx = document.getElementById('armorFunctionChart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Defensive (Belt, Breastplate, Shield, Helmet)', 'Mobility (Shoes)', 'Offensive (Sword)', 'Spiritual Power (Prayer)'],
+                    datasets: [{
+                        data: [4, 1, 1, 1],
+                        backgroundColor: ['#D4AF37', '#6B7280', '#4A4A4A', '#FDF6E3'],
+                        borderColor: ['#B8941F', '#4B5563', '#374151', '#D1D5DB'],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                usePointStyle: true
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Armor Function Distribution'
+                        }
+                    }
+                }
+            });
+        }
+
+      
+    </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QL8N3YFW6B');
+</script> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Book of Daniel: An Interactive Exploration</title>
+    <meta name="description" content="An interactive journey through the Book of Daniel, exploring its timeless narratives of faith, its profound apocalyptic visions.">
+    <meta property="og:title" content="The Book of Daniel: An Interactive Exploration">
+    <meta property="og:description" content="An interactive journey through the Book of Daniel.">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <link rel="canonical" href="the_book_of_daniel:_an_interactive_exploration.html">
+     <meta name ="keywords" content="Book of Daniel, Bible Study, Interactive Exploration, Apocalyptic Visions, Faithfulness, Biblical Themes, Prophecy, Theology, Religious Studies">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="main.css">
+    
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FDFBF5; /* Warm Parchment */
+            color: #4A4A4A;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Tinos', serif;
+            color: #8B5A2B; /* Muted Gold/Brown */
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #C89B3C; /* Brighter Gold */
+            border-bottom-color: #C89B3C;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* CORRECTED THEME CARD STYLES */
+        .theme-card {
+            perspective: 1000px;
+            height: 160px; /* Reduced from 192px */
+            cursor: pointer;
+        }
+        
+        .theme-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .theme-card.flipped .theme-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .theme-card-front, .theme-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+        }
+        
+        .theme-card-front {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .theme-card-back {
+            background-color: #8B5A2B;
+            color: white;
+            transform: rotateY(180deg);
+            padding: 1rem;
+        }
+        
+        /* Text improvements for theme cards */
+        .theme-card-back h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+        
+        .theme-card-back p {
+            font-size: 0.875rem;
+            line-height: 1.3;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            line-clamp: 4; /* Standard property for broader compatibility */
+            -webkit-box-orient: vertical;
+        }
+        
+        /* Responsive adjustments for theme cards */
+        @media (max-width: 768px) {
+            .theme-card {
+                height: 140px;
+            }
+            
+            .theme-card-front, .theme-card-back {
+                padding: 1rem;
+            }
+            
+            .theme-card-back {
+                padding: 0.75rem;
+            }
+            
+            .theme-card-back h4 {
+                font-size: 0.9rem;
+            }
+            
+            .theme-card-back p {
+                font-size: 0.8rem;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
+            }
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">The Book of Daniel</h1>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#overview" class="nav-link text-lg">Overview</a>
+                    <a href="#tales" class="nav-link text-lg">Court Tales</a>
+                    <a href="#visions" class="nav-link text-lg">Visions</a>
+                    <a href="#themes" class="nav-link text-lg">Themes</a>
+                    <a href="#debates" class="nav-link text-lg">Debates</a>
+                </div>
+               
+            </div>
+            
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="hero" class="text-center mb-24">
+            <h2 class="text-5xl font-bold mb-4">Sovereignty in the Shadow of Empires</h2>
+            <p class="max-w-3xl mx-auto text-xl text-gray-600">
+                An interactive journey through the Book of Daniel, exploring its timeless narratives of faith, its profound apocalyptic visions, and its enduring message of God's ultimate control over history.
+            </p>
+        </section>
+
+        <section id="overview" class="mb-24 scroll-mt-20">
+            <h3 class="text-4xl font-bold text-center mb-4">A Book of Two Halves</h3>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-lg">
+                The Book of Daniel has a unique structure, divided into two distinct parts that differ in both language and style. The first half tells stories of faithfulness in the royal courts, while the second reveals sweeping visions of future empires and God's final victory. This section provides an overview of that structure, its bilingual nature, and its canonical context.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                    <h4 class="text-2xl font-bold mb-4">Bipartite Structure</h4>
+                    <div class="flex flex-col space-y-4">
+                        <div class="p-4 bg-amber-50 rounded-md border-l-4 border-[#C89B3C]">
+                            <h5 class="font-bold text-lg">Chapters 1-6: Court Tales</h5>
+                            <p>Narratives of Daniel and his friends demonstrating faithfulness and wisdom in the courts of Babylon and Persia.</p>
+                        </div>
+                        <div class="p-4 bg-sky-50 rounded-md border-l-4 border-sky-400">
+                            <h5 class="font-bold text-lg">Chapters 7-12: Apocalyptic Visions</h5>
+                            <p>Symbolic visions foretelling the rise and fall of world empires, culminating in the establishment of God's eternal kingdom.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                    <h4 class="text-2xl font-bold mb-4">A Tale of Two Tongues</h4>
+                    <p class="mb-4">The book is written in two languages, a rare feature in the Bible. The shift in language aligns with the shift in focus.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-8 flex overflow-hidden">
+                        <div class="flex items-center justify-center h-full bg-[#C89B3C] text-white" style="width: 45%">
+                            Hebrew (Ch 1, 8-12)
+                        </div>
+                        <div class="flex items-center justify-center h-full bg-sky-500 text-white" style="width: 55%">
+                            Aramaic (Ch 2-7)
+                        </div>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-600">The use of Aramaic, the international language of the time, for the court tales suggests a message for the nations, while the return to Hebrew for the visions may signify a focus on God's covenant people.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tales" class="mb-24 scroll-mt-20">
+            <h3 class="text-4xl font-bold text-center mb-4">Tales of Faithfulness in Exile</h3>
+             <p class="text-center max-w-3xl mx-auto mb-12 text-lg">
+                The first six chapters of Daniel are not just stories; they are powerful demonstrations of how to live faithfully in a culture that is hostile to one's beliefs. Each narrative showcases courage, integrity, and God's miraculous deliverance. Click on each tale to explore its story and significance.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="tales-grid">
+            </div>
+        </section>
+
+        <section id="visions" class="mb-24 scroll-mt-20">
+            <h3 class="text-4xl font-bold text-center mb-4">Visions of Empires and Eternity</h3>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-lg">
+                The second half of Daniel shifts from earthly courts to heavenly visions. Through powerful, symbolic imagery, Daniel receives a divine perspective on history, witnessing the rise and fall of mighty empires and the ultimate, unshakable triumph of God's eternal kingdom. This section visualizes the succession of kingdoms as foretold in the key prophecies.
+            </p>
+            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                <h4 class="text-2xl font-bold mb-2 text-center">The Four Kingdoms Prophecy</h4>
+                <p class="text-center mb-6">Daniel's visions (chapters 2 & 7) consistently depict four successive world empires, followed by a fifth, divine kingdom that will last forever.</p>
+                <div class="chart-container">
+                    <canvas id="empiresChart"></canvas>
+                </div>
+                <p class="text-center mt-4 text-sm text-gray-600">This chart shows the traditional interpretation of the four kingdoms, highlighting their transient nature in contrast to God's eternal reign.</p>
+            </div>
+        </section>
+
+        <section id="themes" class="mb-24 scroll-mt-20">
+            <h3 class="text-4xl font-bold text-center mb-4">Core Theological Themes</h3>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-lg">
+                Beyond its stories and prophecies, the Book of Daniel is rich with profound theological truths that have resonated with believers for centuries. These themes provide a framework for understanding God's character and His work in the world. Click on a card to flip it and reveal its meaning.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="themes-grid">
+            </div>
+        </section>
+
+        <section id="debates" class="scroll-mt-20">
+            <h3 class="text-4xl font-bold text-center mb-4">The Dating Debate</h3>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-lg">
+                One of the most significant scholarly discussions surrounding Daniel is when it was written. The date of composition profoundly impacts how one interprets its prophecies and historical accounts. Below is a summary of the main arguments for an early (6th century BCE) versus a late (2nd century BCE) date.
+            </p>
+            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 overflow-x-auto">
+                <table class="w-full min-w-[600px] text-left">
+                    <thead>
+                        <tr class="border-b-2 border-[#8B5A2B]">
+                            <th class="p-4 text-xl">Argument Category</th>
+                            <th class="p-4 text-xl">Early Date (6th Century BCE)</th>
+                            <th class="p-4 text-xl">Late Date (2nd Century BCE)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="debates-table">
+                    </tbody>
+                </table>
+        </div>
+        </section>
+
+    </main>
+
+  
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const talesData = [
+                { title: "The Dietary Trial", chapter: 1, summary: "Daniel and his friends refuse the king's rich food, choosing vegetables and water. They emerge healthier, showing God blesses their obedience and resolve against cultural assimilation.", icon: "🌿" },
+                { title: "Nebuchadnezzar's Statue Dream", chapter: 2, summary: "Daniel interprets the king's dream of a great statue made of different metals, symbolizing four successive earthly kingdoms that will be destroyed and replaced by God's eternal kingdom.", icon: "🗿" },
+                { title: "The Fiery Furnace", chapter: 3, summary: "Shadrach, Meshach, and Abednego refuse to worship a golden idol and are thrown into a fiery furnace. They are miraculously saved by a divine being, demonstrating God's power to deliver.", icon: "🔥" },
+                { title: "Nebuchadnezzar's Tree Dream", chapter: 4, summary: "Daniel interprets a dream foretelling the king's humiliation and madness, meant to teach him that God is sovereign over all kingdoms. The king is restored after humbling himself.", icon: "🌳" },
+                { title: "The Handwriting on the Wall", chapter: 5, summary: "At a sacrilegious feast, a mysterious hand writes on the wall. Daniel interprets the message as a judgment against King Belshazzar, foretelling the fall of Babylon.", icon: "✍️" },
+                { title: "Daniel in the Lions' Den", chapter: 6, summary: "For defying a decree against prayer, Daniel is thrown into a den of lions. An angel protects him, leading King Darius to honor Daniel's God.", icon: "🦁" }
+            ];
+
+            const themesData = [
+                { title: "Divine Sovereignty", summary: "God has absolute control over all history, nations, and rulers. He raises up and brings down empires according to His divine plan.", icon: "👑" },
+                { title: "Impermanence of Power", summary: "All human empires, no matter how powerful, are temporary and will eventually fall. Only God's kingdom is eternal.", icon: "⏳" },
+                { title: "Human Pride", summary: "Arrogance and hubris, especially among rulers who defy God, lead to humiliation and destruction. Humility before God is the path to wisdom.", icon: "🦚" },
+                { title: "Faithfulness & Resistance", summary: "Believers are called to unwavering fidelity to God, even amidst persecution. This moral and spiritual resistance is a powerful witness.", icon: "🛡️" },
+                { title: "The Messiah & Victory", summary: "The book points to a coming 'Son of Man' (Messiah) who will receive an eternal, universal kingdom, bringing ultimate victory to God's people.", icon: "✨" },
+                { title: "Resurrection & Judgment", summary: "Daniel provides one of the Old Testament's clearest references to a future physical resurrection and a final judgment for both the righteous and the wicked.", icon: "⚖️" }
+            ];
+            
+            const debatesData = [
+                { category: "Core Claim", early: "Written by the prophet Daniel during the Babylonian exile.", late: "Finalized by an anonymous author during the Maccabean persecution." },
+                { category: "Prophecy", early: "Predictive prophecy given by God, foretelling future events.", late: "Prophecy 'after the fact' (vaticinium ex eventu), describing events that had already happened." },
+                { category: "Historical Accuracy", early: "Contains precise details of the 6th century BCE, some confirmed by modern archaeology.", late: "Contains historical inaccuracies for the 6th century but is highly precise for the 2nd century." },
+                { category: "Author Testimony", early: "The book claims Daniel as its author; Jesus refers to 'Daniel the prophet'.", late: "Authorship is pseudonymous, a common feature of apocalyptic literature." },
+                { category: "Genre & Language", early: "Linguistic features and limited Greek words support an earlier composition.", late: "The apocalyptic genre and certain religious ideas are more typical of the 2nd century BCE." }
+            ];
+
+            // Build Tales Grid
+            const talesGrid = document.getElementById('tales-grid');
+            talesData.forEach(tale => {
+                const taleElement = document.createElement('div');
+                taleElement.className = 'card bg-white p-6 rounded-lg shadow-md border border-gray-200 cursor-pointer';
+                taleElement.innerHTML = `
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">${tale.icon}</span>
+                        <div>
+                            <h4 class="text-xl font-bold">${tale.title}</h4>
+                            <p class="text-sm text-gray-500">Chapter ${tale.chapter}</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">${tale.summary}</p>
+                `;
+                talesGrid.appendChild(taleElement);
+            });
+
+            // Build Themes Grid (CORRECTED VERSION)
+            const themesGrid = document.getElementById('themes-grid');
+            themesData.forEach(theme => {
+                const themeCard = document.createElement('div');
+                themeCard.className = 'theme-card';
+                themeCard.innerHTML = `
+                    <div class="theme-card-inner">
+                        <div class="theme-card-front">
+                            <span class="text-4xl mb-2">${theme.icon}</span>
+                            <h4 class="text-xl font-bold">${theme.title}</h4>
+                        </div>
+                        <div class="theme-card-back">
+                            <h4>${theme.title}</h4>
+                            <p>${theme.summary}</p>
+                        </div>
+                    </div>
+                `;
+                themesGrid.appendChild(themeCard);
+                
+                themeCard.addEventListener('click', () => {
+                    themeCard.classList.toggle('flipped');
+                });
+            });
+
+            // Build Debates Table
+            const debatesTable = document.getElementById('debates-table');
+            debatesData.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.className = 'border-b border-gray-200';
+                tr.innerHTML = `
+                    <td class="p-4 font-bold text-[#8B5A2B]">${row.category}</td>
+                    <td class="p-4">${row.early}</td>
+                    <td class="p-4">${row.late}</td>
+                `;
+                debatesTable.appendChild(tr);
+            });
+
+            // Build Chart
+            const empiresChartElem = document.getElementById('empiresChart');
+            if (empiresChartElem) {
+                const empiresCtx = empiresChartElem.getContext('2d');
+                const empiresChart = new Chart(empiresCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Babylon (Gold)', 'Medo-Persia (Silver)', 'Greece (Bronze)', 'Rome (Iron)'],
+                        datasets: [{
+                            label: 'Symbolic Representation in Prophecy',
+                            data: [1, 2, 3, 4], 
+                            backgroundColor: [
+                                'rgba(255, 215, 0, 0.6)',
+                                'rgba(192, 192, 192, 0.6)',
+                                'rgba(205, 127, 50, 0.6)',
+                                'rgba(108, 122, 137, 0.6)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 215, 0, 1)',
+                                'rgba(192, 192, 192, 1)',
+                                'rgba(205, 127, 50, 1)',
+                                'rgba(108, 122, 137, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const labels = [
+                                            'Represented by the head of gold in the statue dream (Ch. 2) and a lion in the beast vision (Ch. 7).',
+                                            'Represented by the chest of silver (Ch. 2) and a bear (Ch. 7).',
+                                            'Represented by the belly of bronze (Ch. 2) and a leopard (Ch. 7).',
+                                            'Represented by the legs of iron (Ch. 2) and a terrifying beast (Ch. 7).'
+                                        ];
+                                        return labels[context.dataIndex];
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                display: false,
+                            },
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    font: {
+                                        size: 14,
+                                        family: "'Tinos', serif"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Mobile Menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Navigation highlighting
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+ 
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

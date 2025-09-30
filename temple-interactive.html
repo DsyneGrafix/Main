@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+<!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Temple: From Solomon to Herod - AnchorStack.pro</title>
+    <meta name="description" content="Explore the magnificent Temples of Jerusalem - their construction, destruction, and prophetic significance in biblical history.">
+    <meta name="keywords" content="Solomon's Temple, Second Temple, Herod's Temple, Jerusalem, Holy of Holies, Jewish worship">
+    <link rel="stylesheet" href="main.css">
+     <link rel="canonical" href="https://anchorstack.pro/temple-interactive.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FBF9F6;
+            color: #4C433A;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .nav-tab {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .nav-tab.active, .nav-tab:hover {
+            border-bottom-color: #4B5D7A;
+            color: #4B5D7A;
+        }
+        
+        .content-section {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .temple-card {
+            background-color: #FFFFFF;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .temple-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .temple-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #D4AF37;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .temple-card:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #D4AF37;
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .timeline-line {
+            height: 2px;
+            background: linear-gradient(90deg, #D4AF37 0%, #4B5D7A 100%);
+        }
+        
+        .feature-box {
+            background: linear-gradient(135deg, #4B5D7A 0%, #6B7D9A 100%);
+            color: white;
+        }
+        
+        .gold-accent {
+            border-left: 4px solid #D4AF37;
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#4B5D7A]">The Temple of Jerusalem</h1>
+            <p class="mt-4 text-lg text-[#6a615a] max-w-3xl mx-auto">From Solomon's golden splendor to Herod's massive reconstruction - explore the center of Jewish worship and its prophetic significance.</p>
+        
+       </header>
+<!-- Navigation -->
+        <nav class="flex flex-wrap justify-center border-b-2 border-[#A17C5B]/30 mb-12">
+            <button data-target="solomon" class="nav-tab active py-4 px-4 md:px-6 text-base md:text-lg font-semibold">Solomon's Temple</button>
+            <button data-target="second" class="nav-tab py-4 px-4 md:px-6 text-base md:text-lg font-semibold">Second Temple</button>
+            <button data-target="herod" class="nav-tab py-4 px-4 md:px-6 text-base md:text-lg font-semibold">Herod's Temple</button>
+            <button data-target="jesus" class="nav-tab py-4 px-4 md:px-6 text-base md:text-lg font-semibold">Jesus & Temple</button>
+            <button data-target="prophecy" class="nav-tab py-4 px-4 md:px-6 text-base md:text-lg font-semibold">Future Temple</button>
+        </nav>
+
+        <!-- Content Sections -->
+        <main id="content-pane">
+            
+            <!-- Solomon's Temple Section -->
+            <section id="solomon" class="content-section active">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4">Solomon's Temple (960-586 BCE)</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">After 480 years from the Exodus, King Solomon built the first permanent dwelling for the God of Israel, a wonder of the ancient world.</p>
+                </div>
+
+                <!-- Key Stats -->
+                <div class="grid md:grid-cols-4 gap-4 mb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-3xl font-bold text-[#D4AF37] mb-2">7</div>
+                        <p class="text-sm font-semibold">Years to Build</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-3xl font-bold text-[#D4AF37] mb-2">183,000</div>
+                        <p class="text-sm font-semibold">Workers Employed</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-3xl font-bold text-[#D4AF37] mb-2">120</div>
+                        <p class="text-sm font-semibold">Talents of Gold Used</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-3xl font-bold text-[#D4AF37] mb-2">374</div>
+                        <p class="text-sm font-semibold">Years It Stood</p>
+                    </div>
+                </div>
+
+                <!-- Temple Features -->
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-[#4B5D7A]">Dimensions & Structure</h3>
+                        <ul class="space-y-3">
+                            <li class="gold-accent">
+                                <strong>Main Building:</strong> 90 feet long, 30 feet wide, 45 feet high
+                            </li>
+                            <li class="gold-accent">
+                                <strong>Holy of Holies:</strong> Perfect 30x30x30 foot cube
+                            </li>
+                            <li class="gold-accent">
+                                <strong>Porch:</strong> 30 feet wide, 15 feet deep
+                            </li>
+                            <li class="gold-accent">
+                                <strong>Side Chambers:</strong> 3 stories surrounding the temple
+                            </li>
+                            <li class="gold-accent">
+                                <strong>Inner Court:</strong> For priests only
+                            </li>
+                            <li class="gold-accent">
+                                <strong>Outer Court:</strong> For all Israelites
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">Unique Features</h3>
+                        <ul class="space-y-3 text-white">
+                            <li>✨ <strong>No hammer sounds:</strong> Stones cut off-site</li>
+                            <li>✨ <strong>Cedar of Lebanon:</strong> Walls and ceiling</li>
+                            <li>✨ <strong>Overlaid with gold:</strong> Everything covered</li>
+                            <li>✨ <strong>Two massive pillars:</strong> Jachin and Boaz</li>
+                            <li>✨ <strong>Bronze Sea:</strong> Held 11,000 gallons of water</li>
+                            <li>✨ <strong>Ten golden lampstands:</strong> Instead of one</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Solomon's Dedication -->
+                <div class="bg-gradient-to-r from-[#F7F3E9] to-white p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-center text-[#4B5D7A]">The Day of Dedication</h3>
+                    <blockquote class="text-lg italic text-center mb-4">
+                        "When Solomon finished praying, fire came down from heaven and consumed the burnt offering and the sacrifices, and the glory of the Lord filled the temple."
+                    </blockquote>
+                    <p class="text-center text-sm text-[#6a615a]">- 2 Chronicles 7:1</p>
+                    <div class="grid md:grid-cols-3 gap-4 mt-6">
+                        <div class="text-center">
+                            <p class="font-bold text-[#D4AF37]">22,000 Oxen</p>
+                            <p class="text-sm">Sacrificed</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold text-[#D4AF37]">120,000 Sheep</p>
+                            <p class="text-sm">Offered</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold text-[#D4AF37]">14 Days</p>
+                            <p class="text-sm">Of celebration</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Second Temple Section -->
+            <section id="second" class="content-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4">The Second Temple (516 BCE - 70 CE)</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">After 70 years of exile, a remnant returned to rebuild. Though smaller and less ornate, it represented hope and restoration.</p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="mb-12">
+                    <h3 class="text-xl font-bold mb-6 text-center">Rebuilding Timeline</h3>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line flex-1 mx-4"></div>
+                                <div class="flex-1">
+                                    <strong class="text-[#4B5D7A]">538 BCE:</strong> Cyrus's decree permits return
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line flex-1 mx-4"></div>
+                                <div class="flex-1">
+                                    <strong class="text-[#4B5D7A]">536 BCE:</strong> Foundation laid amid weeping and joy
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line flex-1 mx-4"></div>
+                                <div class="flex-1">
+                                    <strong class="text-[#4B5D7A]">520 BCE:</strong> Work resumes under Haggai & Zechariah
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line flex-1 mx-4"></div>
+                                <div class="flex-1">
+                                    <strong class="text-[#4B5D7A]">516 BCE:</strong> Temple completed and dedicated
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparisons -->
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="temple-card p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-[#4B5D7A]">What Was Missing</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>❌ The Ark of the Covenant</li>
+                            <li>❌ The Shekinah Glory</li>
+                            <li>❌ The Sacred Fire</li>
+                            <li>❌ The Urim and Thummim</li>
+                            <li>❌ The Spirit of Prophecy</li>
+                        </ul>
+                        <p class="text-xs text-[#6a615a] mt-4">According to the Talmud, these five things were absent from the Second Temple</p>
+                    </div>
+
+                    <div class="temple-card p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-[#4B5D7A]">What Was Added</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>✓ Court of the Gentiles</li>
+                            <li>✓ Court of Women</li>
+                            <li>✓ Larger overall footprint</li>
+                            <li>✓ The Sanhedrin chamber</li>
+                            <li>✓ Multiple storage rooms</li>
+                        </ul>
+                        <p class="text-xs text-[#6a615a] mt-4">The Second Temple period saw new developments in worship structure</p>
+                    </div>
+                </div>
+
+                <!-- Prophetic Promise -->
+                <div class="bg-gradient-to-br from-[#4B5D7A] to-[#6B7D9A] text-white p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Haggai's Promise</h3>
+                    <blockquote class="text-lg italic mb-4">
+                        "The glory of this latter house shall be greater than of the former... and in this place will I give peace."
+                    </blockquote>
+                    <p class="text-sm">- Haggai 2:9</p>
+                    <p class="mt-4 text-sm">This prophecy was fulfilled when the Messiah walked through its courts.</p>
+                </div>
+            </section>
+
+            <!-- Herod's Temple Section -->
+            <section id="herod" class="content-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4">Herod's Renovation (20 BCE - 70 CE)</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">Herod the Great transformed the modest Second Temple into one of the most magnificent structures in the Roman world.</p>
+                </div>
+
+                <!-- Scale Comparison -->
+                <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+                    <h3 class="text-xl font-bold mb-6 text-center">Massive Expansion</h3>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="temple-comparison-chart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-[#6a615a] mt-4">Temple Mount platform expanded to 35 acres</p>
+                </div>
+
+                <!-- Architectural Marvels -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-[#F7F3E9] p-6 rounded-lg">
+                        <h4 class="font-bold mb-3 text-[#4B5D7A]">The Stones</h4>
+                        <ul class="text-sm space-y-2">
+                            <li>• Largest: 44 feet long</li>
+                            <li>• Weight: up to 600 tons</li>
+                            <li>• Precisely cut limestone</li>
+                            <li>• No mortar needed</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#F7F3E9] p-6 rounded-lg">
+                        <h4 class="font-bold mb-3 text-[#4B5D7A]">The Courts</h4>
+                        <ul class="text-sm space-y-2">
+                            <li>• Court of Gentiles</li>
+                            <li>• Court of Women</li>
+                            <li>• Court of Israel</li>
+                            <li>• Court of Priests</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#F7F3E9] p-6 rounded-lg">
+                        <h4 class="font-bold mb-3 text-[#4B5D7A]">The Beauty</h4>
+                        <ul class="text-sm space-y-2">
+                            <li>• Gold-plated facade</li>
+                            <li>• White marble gleaming</li>
+                            <li>• Royal Stoa colonnade</li>
+                            <li>• Solomon's Portico</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Josephus Quote -->
+                <div class="bg-white p-6 rounded-lg shadow-md gold-accent">
+                    <p class="italic text-lg mb-2">"The exterior of the building wanted nothing that could astound either mind or eye. For, being covered on all sides with massive plates of gold, the sun was no sooner up than it radiated so fiery a flash that persons straining to look at it were compelled to avert their eyes, as from the solar rays."</p>
+                    <p class="text-sm text-[#6a615a]">- Josephus, Jewish historian</p>
+                </div>
+            </section>
+
+            <!-- Jesus and the Temple Section -->
+            <section id="jesus" class="content-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4">Jesus and the Temple</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">The Temple was central to Jesus's ministry, from His presentation as an infant to His prophecy of its destruction.</p>
+                </div>
+
+                <!-- Key Moments -->
+                <div class="mb-12">
+                    <h3 class="text-xl font-bold mb-6 text-center">Significant Temple Moments</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="temple-card p-6 rounded-lg shadow-md">
+                            <h4 class="font-bold text-[#4B5D7A] mb-3">As a Child</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><strong>8 days old:</strong> Presented for circumcision</li>
+                                <li><strong>40 days old:</strong> Mary's purification offering</li>
+                                <li><strong>12 years old:</strong> "In my Father's house"</li>
+                            </ul>
+                        </div>
+                        <div class="temple-card p-6 rounded-lg shadow-md">
+                            <h4 class="font-bold text-[#4B5D7A] mb-3">During Ministry</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><strong>First cleansing:</strong> "Take these things away!"</li>
+                                <li><strong>Teaching daily:</strong> In Solomon's Portico</li>
+                                <li><strong>Second cleansing:</strong> "Den of thieves"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jesus's Prophecy -->
+                <div class="bg-gradient-to-r from-[#8B3A3A] to-[#B85450] text-white p-8 rounded-lg mb-12">
+                    <h3 class="text-2xl font-bold mb-4 text-center">The Prophecy of Destruction</h3>
+                    <blockquote class="text-lg italic text-center mb-4">
+                        "Do you see all these great buildings? Not one stone here will be left on another; every one will be thrown down."
+                    </blockquote>
+                    <p class="text-center text-sm">- Mark 13:2</p>
+                    <div class="mt-6 p-4 bg-white/10 rounded">
+                        <p class="text-center">Fulfilled in 70 CE when Roman legions destroyed the Temple</p>
+                    </div>
+                </div>
+
+                <!-- The True Temple -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-[#4B5D7A]">Jesus as Temple</h3>
+                        <blockquote class="italic mb-3">"Destroy this temple, and in three days I will raise it up."</blockquote>
+                        <p class="text-sm text-[#6a615a]">He spoke of the temple of His body (John 2:19-21)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-[#4B5D7A]">The Veil Torn</h3>
+                        <blockquote class="italic mb-3">"The curtain of the temple was torn in two from top to bottom."</blockquote>
+                        <p class="text-sm text-[#6a615a]">Access to God now through Christ (Mark 15:38)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Temple Section -->
+            <section id="prophecy" class="content-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4">The Future Temple</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">Scripture speaks of temples yet to come - both physical and spiritual realities that await fulfillment.</p>
+                </div>
+
+                <!-- Three Views -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-[#F7F3E9] p-6 rounded-lg">
+                        <h3 class="text-lg font-bold mb-3 text-[#4B5D7A]">The Church</h3>
+                        <p class="text-sm mb-3">"You are the temple of the living God" (2 Cor 6:16)</p>
+                        <ul class="text-sm space-y-1">
+                            <li>• Living stones</li>
+                            <li>• Holy Spirit indwells</li>
+                            <li>• Spiritual sacrifices</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#F7F3E9] p-6 rounded-lg">
+                        <h3 class="text-lg font-bold mb-3 text-[#4B5D7A]">Tribulation Temple</h3>
+                        <p class="text-sm mb-3">Prophesied in Daniel & Revelation</p>
+                        <ul class="text-sm space-y-1">
+                            <li>• Rebuilt in Jerusalem</li>
+                            <li>• Abomination of desolation</li>
+                            <li>• Before Christ's return</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#F7F3E9] p-6 rounded-lg">
+                        <h3 class="text-lg font-bold mb-3 text-[#4B5D7A]">Millennial Temple</h3>
+                        <p class="text-sm mb-3">Ezekiel's vision (chapters 40-48)</p>
+                        <ul class="text-sm space-y-1">
+                            <li>• Massive dimensions</li>
+                            <li>• Prince worship</li>
+                            <li>• Living waters flow</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- New Jerusalem -->
+                <div class="bg-gradient-to-br from-[#D4AF37] to-[#F4D03F] text-white p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-center">The Ultimate Reality</h3>
+                    <blockquote class="text-lg italic text-center mb-4">
+                        "I saw no temple in the city, for the Lord God Almighty and the Lamb are its temple."
+                    </blockquote>
+                    <p class="text-center text-sm">- Revelation 21:22</p>
+                    <div class="grid md:grid-cols-3 gap-4 mt-6">
+                        <div class="text-center">
+                            <p class="font-bold">No Separation</p>
+                            <p class="text-sm">Direct access to God</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold">No Sacrifice</p>
+                            <p class="text-sm">The Lamb forever present</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold">No Night</p>
+                            <p class="text-sm">God's glory illuminates</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application -->
+                <div class="mt-12 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center text-[#4B5D7A]">What This Means Today</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold mb-3 text-[#A17C5B]">Personal Temple</h4>
+                            <p class="text-sm">Your body is a temple of the Holy Spirit. How we live, what we consume, and how we worship all matter.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-3 text-[#A17C5B]">Corporate Temple</h4>
+                            <p class="text-sm">The church is being built together as a dwelling place for God. Unity and holiness are essential.</p>
+                        </div>
+                    </div>
+                    <p class="text-center mt-6 text-sm text-[#6a615a]">
+                        "Do you not know that you are God's temple and that God's Spirit dwells in you?" - 1 Corinthians 3:16
+                    </p>
+                </div>
+                <h4 class="text-2xl font-bold mb-4 text-center text-[#4B5D7A]">Prepare to Enter the Temple?</h4>
+                <button class="btn btn-primary w-full max-w-md mx-auto mt-6"><a href="https://temple-worship-page.html">Enter Now</a></button>
+            </section>
+       
+       <!-- ADD THIS SECTION TO YOUR TEMPLE-INTERACTIVE.HTML PAGE -->
+<!-- Insert this before the closing </main> tag -->
+
+<section class="related-studies-section" style="margin: 4rem 0; padding: 3rem 1rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 20px;">
+    <h2 style="text-align: center; font-size: 2.5rem; color: #4B5D7A; margin-bottom: 3rem; font-family: 'Crimson Text', serif;">Continue Your Temple Studies</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Tabernacle Connection -->
+        <div class="study-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border: 2px solid transparent; border-radius: 15px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #A17C5B, #4B5D7A); transform: scaleX(0); transition: transform 0.3s ease;"></div>
+            <h3 style="color: #4B5D7A; margin-bottom: 1rem; font-size: 1.4rem;">The Tabernacle: God's Portable Dwelling</h3>
+            <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6;">Explore the precursor to Solomon's Temple - the wilderness sanctuary that traveled with Israel for 40 years. Discover how its design became the blueprint for the Temple.</p>
+            <a href="/tabernacle-interactive.html" style="display: inline-block; background: linear-gradient(135deg, #A17C5B 0%, #4B5D7A 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Explore the Tabernacle →</a>
+        </div>
+
+        <!-- Holy of Holies Connection -->
+        <div class="study-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border: 2px solid transparent; border-radius: 15px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #D4AF37, #4B0082); transform: scaleX(0); transition: transform 0.3s ease;"></div>
+            <h3 style="color: #4B0082; margin-bottom: 1rem; font-size: 1.4rem;">Holy of Holies: God's Throne Room</h3>
+            <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6;">Enter the most sacred space in the Temple - where the Ark of the Covenant resided and God's presence dwelt. Discover the mysteries of the Shekinah Glory.</p>
+            <a href="/holy-of-holies-page.html" style="display: inline-block; background: linear-gradient(135deg, #D4AF37 0%, #4B0082 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Enter the Holy Place →</a>
+        </div>
+
+        <!-- Jewish Roots Connection -->
+        <div class="study-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border: 2px solid transparent; border-radius: 15px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #007bff, #28a745); transform: scaleX(0); transition: transform 0.3s ease;"></div>
+            <h3 style="color: #007bff; margin-bottom: 1rem; font-size: 1.4rem;">Jewish Roots of Christianity</h3>
+            <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6;">Understand the Temple's role in Jewish worship and how it connects to Christian faith. Explore the continuity from Old Testament to New Testament worship.</p>
+            <a href="/The-Jewish-Roots-of-Christianity.html" style="display: inline-block; background: linear-gradient(135deg, #007bff 0%, #28a745 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Discover the Roots →</a>
+        </div>
+   
+    </div>
+</section>
+
+<section class="deeper-studies-section" style="margin: 4rem 0; padding: 3rem 1rem; background: linear-gradient(135deg, #4B5D7A 0%, #6B7D9A 100%); border-radius: 20px; color: white;">
+    <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 2rem; font-family: 'Crimson Text', serif;">Deepen Your Understanding</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+        
+        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);">
+            <h4 style="margin-bottom: 0.75rem; font-size: 1.2rem;">📜 Scripture Study Tools</h4>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem; opacity: 0.9;">Master biblical interpretation with Strong's numbers, cross-referencing, and symbolic analysis.</p>
+            <a href="/scripture-interpretation-guide.html" style="color: #D4AF37; text-decoration: none; font-weight: 600;">Learn Biblical Interpretation →</a>
+        </div>
+        
+
+        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);">
+            <h4 style="margin-bottom: 0.75rem; font-size: 1.2rem;">🗓️ Festival Connections</h4>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem; opacity: 0.9;">Discover how Temple worship connected to Passover and other Jewish festivals that point to Christ.</p>
+            <a href="/passover.html" style="color: #D4AF37; text-decoration: none; font-weight: 600;">Explore Passover →</a>
+        </div>
+        
+        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);">
+            <h4 style="margin-bottom: 0.75rem; font-size: 1.2rem;">🏛️ Biblical Archaeology</h4>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem; opacity: 0.9;">Archaeological evidence supporting the Temple's historical reality and biblical accuracy.</p>
+            <a href="/biblical_archaeology_page.html" style="color: #D4AF37; text-decoration: none; font-weight: 600;">See the Evidence →</a>
+        </div>
+        
+        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);">
+            <h4 style="margin-bottom: 0.75rem; font-size: 1.2rem;">📖 Seminary Resources</h4>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem; opacity: 0.9;">Essential books and study plans for deeper theological education on Temple studies.</p>
+            <a href="/top-10-seminary-books.html" style="color: #D4AF37; text-decoration: none; font-weight: 600;">Build Your Library →</a>
+        </div>
+     
+        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);">
+            <h4 style="margin-bottom: 0.75rem; font-size: 1.2rem;">📜 Saturday Scripture Study</h4>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem; opacity: 0.9;">Our Newest Addition will dig deeper into the First Passover this week.</p>
+            <a href="/Saturday-Scripture-Study.html" style="color: #D4AF37; text-decoration: none; font-weight: 600;">Check Back Every Week →</a>
+        </div>
+        
+    
+    </div>
+</section>
+
+<!-- CSS for hover effects -->
+<style>
+.study-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #4B5D7A;
+}
+
+.study-card:hover div:first-child {
+    transform: scaleX(1);
+}
+
+.study-card a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(75, 93, 122, 0.3);
+}
+</style>
+
+       
+       
+        </main>
+
+        
+    </div>
+
+    <script>
+        // Initialize page functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tab navigation
+            const tabs = document.querySelectorAll('.nav-tab');
+            const sections = document.querySelectorAll('.content-section');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.dataset.target;
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    tab.classList.add('active');
+                    document.getElementById(targetId)?.classList.add('active');
+                    
+                    // Initialize chart when Herod section is shown
+                    if (targetId === 'herod' && !document.getElementById('temple-comparison-chart').chartInitialized) {
+                        initComparisonChart();
+                    }
+                });
+            });
+            
+            // Card interactions
+            const cards = document.querySelectorAll('.temple-card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+        });
+        
+        function initComparisonChart() {
+            const ctx = document.getElementById('temple-comparison-chart');
+            if (!ctx) return;
+            
+            ctx.chartInitialized = true;
+            
+            new Chart(ctx.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['Tabernacle', "Solomon's Temple", 'Second Temple', "Herod's Temple"],
+                    datasets: [{
+                        label: 'Relative Size',
+                        data: [1, 4, 3, 10],
+                        backgroundColor: [
+                            'rgba(161, 124, 91, 0.8)',
+                            'rgba(212, 175, 55, 0.8)',
+                            'rgba(75, 93, 122, 0.8)',
+                            'rgba(139, 58, 58, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgb(161, 124, 91)',
+                            'rgb(212, 175, 55)',
+                            'rgb(75, 93, 122)',
+                            'rgb(139, 58, 58)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const labels = ['Portable sanctuary', 'Original glory', 'Modest rebuild', 'Architectural marvel'];
+                                    return labels[context.dataIndex];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Relative Scale'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

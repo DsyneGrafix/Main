@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics (keep your existing) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    
+    <!-- AdSense (keep your existing) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+    crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Happened to the Lost Tribes of Israel?</title>
+      <link rel="stylesheet" href="main.css">
+    <meta name="description" content="Explore the history and theories surrounding the Lost Tribes of Israel.">
+    <meta name="keywords" content="Lost Tribes, Israel, History, Anthropology">
+    <meta name="robots" content="index, follow">
+    <!-- External Libraries -->
+    <link rel="canonical" href="https://anchorstack.pro/lost_tribes_interactive_site.html">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+   
+
+        /* Main Content */
+        .content {
+            padding: 50px 0;
+        }
+
+        .chapter {
+            background: white;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .chapter:hover {
+            transform: translateY(-5px);
+        }
+
+        .bookmark-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f39c12;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .bookmark-btn:hover {
+            background: #e67e22;
+            transform: scale(1.1);
+        }
+
+        .bookmark-btn.bookmarked {
+            background: #e74c3c;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .chapter-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .chapter-content {
+            padding: 40px;
+        }
+
+        .chapter-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Interactive Elements */
+        .scripture-box {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border-left: 5px solid #e74c3c;
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .scripture-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.2);
+        }
+
+        .scripture-box::before {
+            content: "📜";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+        }
+
+        .scripture-box h3 {
+            color: #c0392b;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .scripture-quote {
+            font-style: italic;
+            background: rgba(255,255,255,0.8);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .archaeology-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-left: 5px solid #16a085;
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .archaeology-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(22, 160, 133, 0.2);
+        }
+
+        .archaeology-box::before {
+            content: "🏺";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+        }
+
+        .archaeology-box h3 {
+            color: #148f77;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .historical-note {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-left: 5px solid #f39c12;
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .historical-note:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.2);
+        }
+
+        .historical-note::before {
+            content: "📜";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+        }
+
+        .historical-note h3 {
+            color: #d68910;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Interactive Map */
+        .map-container {
+            height: 500px;
+            border-radius: 15px;
+            margin: 30px 0;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Image Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px 15px 15px;
+            font-size: 14px;
+        }
+
+        /* Interactive Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3498db, #9b59b6);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 40px 0;
+            cursor: pointer;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 55%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #3498db;
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Theories Grid */
+        .theories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .theory-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .theory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .theory-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .theory-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        /* Notes System */
+        .notes-panel {
+            position: fixed;
+            right: -350px;
+            top: 0;
+            width: 350px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            transition: right 0.3s ease;
+            z-index: 500;
+            overflow-y: auto;
+        }
+
+        .notes-panel.open {
+            right: 0;
+        }
+
+        .notes-header {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+        }
+
+        .notes-content {
+            padding: 20px;
+        }
+
+        .note-item {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .note-delete {
+            float: right;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* Search Results */
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .search-result {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-result:hover {
+            background: #f8f9fa;
+        }
+
+        .search-result:last-child {
+            border-bottom: none;
+        }
+
+        .search-highlight {
+            background: yellow;
+            font-weight: bold;
+        }
+
+        /* Social Sharing */
+        .social-share {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .share-btn {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .share-btn.facebook { background: #3b5998; }
+        .share-btn.twitter { background: #1da1f2; }
+        .share-btn.linkedin { background: #0077b5; }
+
+        /* Interactive Elements */
+        .expandable {
+            cursor: pointer;
+        }
+
+        .expandable .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .expandable.active .content {
+            max-height: 1000px;
+        }
+
+        .expand-icon {
+            float: right;
+            transition: transform 0.3s ease;
+        }
+
+        .expandable.active .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .tools-container {
+                flex-direction: column;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .timeline-marker {
+                left: 20px;
+            }
+
+            .theories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .notes-panel {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+        
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>What Happened to the Lost Tribes of Israel?</h1>
+            <p class="subtitle">A Casual Deep Dive for Bible Lovers Who Love a Good Mystery</p>
+            <p class="intro">
+                It's one of history's great vanishings — not a single person, but an entire nation. 
+                For 2,700 years, their fate has been debated by scholars, rabbis, explorers, and even amateur detectives.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tools Bar -->
+    <div class="tools-bar">
+        <div class="container">
+            <div class="tools-container">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-box" placeholder="Search scriptures, locations, theories..." id="searchInput">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                <div class="tool-buttons">
+                    <button class="tool-btn" onclick="toggleNotes()">
+                        <i class="fas fa-sticky-note"></i> Notes (<span id="noteCount">0</span>)
+                    </button>
+                    <button class="tool-btn" onclick="showBookmarks()">
+                        <i class="fas fa-bookmark"></i> Bookmarks
+                    </button>
+                    <button class="tool-btn" onclick="openGallery()">
+                        <i class="fas fa-images"></i> Gallery
+                    </button>
+                    <button class="tool-btn" onclick="showShareModal()">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#kingdom-divided">Kingdom Divided</a></li>
+                <li><a href="#biblical-record">Biblical Record</a></li>
+                <li><a href="#outside-bible">Outside the Bible</a></li>
+                <li><a href="#theories">Five Theories</a></li>
+                <li><a href="#prophecy">Prophecy's View</a></li>
+                <li><a href="#modern-claimants">Modern Claimants</a></li>
+                <li><a href="#archaeology">Archaeology</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <!-- Introduction -->
+            <section id="introduction" class="chapter fade-in" data-chapter="introduction">
+                <button class="bookmark-btn" onclick="toggleBookmark('introduction')">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+                <div class="chapter-header">
+                    <h2>The Mystery That Refuses to Die</h2>
+                </div>
+                <div class="chapter-content">
+                    <p>Imagine standing on the hills outside <span class="searchable" data-term="Samaria">Samaria</span> in 722 BC. Dust clouds on the horizon announce the dreaded <span class="searchable" data-term="Assyrian">Assyrian</span> army. Inside the city walls, ten of Israel's twelve tribes cling to hope. But the siege comes, the gates fall, and the people are marched away in chains.</p>
+                    
+                    <p>And then? Silence.</p>
+                    
+                    <p>Unlike <span class="searchable" data-term="Judah">Judah</span>, which returned from Babylonian captivity, these ten tribes never reappear in Scripture as a united people. They seem to have been swallowed whole by history.</p>
+
+                    <div class="historical-note expandable">
+                        <h3>Fast Fact <span class="expand-icon">▼</span></h3>
+                        <div class="content">
+                            <p>The "Lost Tribes" are the northern tribes: <span class="searchable" data-term="Reuben">Reuben</span>, <span class="searchable" data-term="Simeon">Simeon</span>, <span class="searchable" data-term="Dan">Dan</span>, <span class="searchable" data-term="Naphtali">Naphtali</span>, <span class="searchable" data-term="Gad">Gad</span>, <span class="searchable" data-term="Asher">Asher</span>, <span class="searchable" data-term="Issachar">Issachar</span>, <span class="searchable" data-term="Zebulun">Zebulun</span>, <span class="searchable" data-term="Ephraim">Ephraim</span>, and <span class="searchable" data-term="Manasseh">Manasseh</span>. Judah and Benjamin, plus Levites, made up the southern kingdom.</p>
+                        </div>
+                    </div>
+
+                    <button class="tool-btn" onclick="addNote('introduction', 'The Mystery Begins')">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+            </section>
+
+            <!-- Kingdom Divided -->
+            <section id="kingdom-divided" class="chapter fade-in" data-chapter="kingdom-divided">
+                <button class="bookmark-btn" onclick="toggleBookmark('kingdom-divided')">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+                <div class="chapter-header">
+                    <h2>Chapter 1: A Kingdom Torn in Two</h2>
+                </div>
+                <div class="chapter-content">
+                    <p>The story begins with the golden age of Israel under <span class="searchable" data-term="Saul">Saul</span>, <span class="searchable" data-term="David">David</span>, and <span class="searchable" data-term="Solomon">Solomon</span>. But after Solomon's death, cracks turned into a full-blown split.</p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">Northern Kingdom (Israel)</div>
+                                <p>Ten tribes, capital in <span class="searchable" data-term="Samaria">Samaria</span>, often straying into idolatry.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">Southern Kingdom (Judah)</div>
+                                <p>Judah, Benjamin, and Levites, capital in <span class="searchable" data-term="Jerusalem">Jerusalem</span>, home to the Temple.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Prophets like <span class="searchable" data-term="Elijah">Elijah</span> and <span class="searchable" data-term="Hosea">Hosea</span> warned the north to turn back to God. But politically unstable kings and spiritual compromise paved the way for disaster.</p>
+
+                    <div class="scripture-box expandable">
+                        <h3>Scripture Study Box 1 — The Assyrian Policy of Displacement <span class="expand-icon">▼</span></h3>
+                        <div class="content">
+                            <strong><span class="searchable" data-term="2 Kings 17:6">2 Kings 17:6</span></strong>
+                            <div class="scripture-quote">
+                                "In the ninth year of Hoshea the king of Assyria took Samaria, and carried Israel away into Assyria, and placed them in <span class="searchable" data-term="Halah">Halah</span> and in <span class="searchable" data-term="Habor">Habor</span> by the river of <span class="searchable" data-term="Gozan">Gozan</span>, and in the cities of the <span class="searchable" data-term="Medes">Medes</span>."
+                            </div>
+                            <p><strong>Background:</strong> The Assyrians weren't just conquerors — they were engineers of cultural erasure. By removing people from their homeland and mixing them with other nations, they ensured no group could unite and rebel.</p>
+                            <p><strong>Reflection:</strong> This wasn't just political strategy — from a biblical perspective, it was the fulfillment of <span class="searchable" data-term="Deuteronomy 28">Deuteronomy 28</span>'s warnings about scattering for covenant disobedience.</p>
+                        </div>
+                    </div>
+
+                    <button class="tool-btn" onclick="addNote('kingdom-divided', 'Kingdom Division Timeline')">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+            </section>
+
+            <!-- Biblical Record -->
+            <section id="biblical-record" class="chapter fade-in" data-chapter="biblical-record">
+                <button class="bookmark-btn" onclick="toggleBookmark('biblical-record')">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+                <div class="chapter-header">
+                    <h2>Chapter 2: What the Bible Says (and Doesn't Say)</h2>
+                </div>
+                <div class="chapter-content">
+                    <p>The biblical record gives us their last known coordinates:</p>
+                    <ul style="margin: 20px 0; padding-left: 30px;">
+                        <li><strong><span class="searchable" data-term="Halah">Halah</span></strong> (likely in modern-day Syria)</li>
+                        <li><strong><span class="searchable" data-term="Habor">Habor by the River Gozan</span></strong> (northeastern Syria)</li>
+                        <li><strong><span class="searchable" data-term="Medes">Cities of the Medes</span></strong> (northwestern Iran)</li>
+                    </ul>
+
+                    <div class="map-container">
+                        <div id="map"></div>
+                    </div>
+
+                    <p><span class="searchable" data-term="1 Chronicles 5:26">1 Chronicles 5:26</span> repeats the exile details and ends with the sobering phrase: "unto this day."</p>
+                    
+                    <p>And then... the trail goes cold.</p>
+
+                    <div class="scripture-box expandable">
+                        <h3>Scripture Study Box 2 — Hosea's Strange Children <span class="expand-icon">▼</span></h3>
+                        <div class="content">
+                            <strong><span class="searchable" data-term="Hosea 1:9-10">Hosea 1:9-10</span></strong>
+                            <div class="scripture-quote">
+                                "Then the LORD said, 'Call him <span class="searchable" data-term="Lo-Ammi">Lo-Ammi</span>, for you are not my people, and I am not your God.' Yet the Israelites will be like the sand on the seashore, which cannot be measured or counted..."
+                            </div>
+                            <p><strong>Background:</strong> Hosea's symbolic family told Israel's story: unfaithfulness, judgment, and exile — but also the promise of restoration.</p>
+                            <p><strong>Reflection:</strong> Even in judgment, God hinted at a future beyond exile. The image of countless descendants scattered across the earth matches the mystery of the Lost Tribes.</p>
+                        </div>
+                    </div>
+
+                    <button class="tool-btn" onclick="addNote('biblical-record', 'Last Known Locations')">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+            </section>
+
+            <!-- Outside the Bible -->
+            <section id="outside-bible" class="chapter fade-in" data-chapter="outside-bible">
+                <button class="bookmark-btn" onclick="toggleBookmark('outside-bible')">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+                <div class="chapter-header">
+                    <h2>Chapter 3: The World Outside the Bible</h2>
+                </div>
+                <div class="chapter-content">
+                    <p>Archaeologists and historians have more than just Scripture to work with. <span class="searchable" data-term="Assyrian records">Assyrian records</span> — carved into stone or pressed into clay tablets — give context:</p>
+
+                    <div class="archaeology-box expandable">
+                        <h3>Archaeology Box 1 — Assyrian Reliefs and Israelite Faces <span class="expand-icon">▼</span></h3>
+                        <div class="content">
+                            <p>In the <span class="searchable" data-term="British Museum">British Museum</span>, a series of stone panels from <span class="searchable" data-term="Sargon II">Sargon II</span>'s palace depict rows of captives in distinctive clothing — fringed garments and headbands that match ancient Israelite fashion.</p>
+                            
+                            <div class="gallery-grid">
+                                <div class="gallery-item" onclick="openImageModal('assyrian-relief', 'Assyrian Relief of Israelite Captives')">
+                                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%23d4af37' width='400' height='200'/><text x='200' y='100' text-anchor='middle' fill='%238b4513' font-size='20'>Assyrian Relief Panel</text><text x='200' y='130' text-anchor='middle' fill='%238b4513' font-size='14'>Click to view</text></svg>" alt="Assyrian Relief">
+                                    <div class="caption">Assyrian Relief of Israelite Captives</div>
+                                </div>
+                            </div>
+
+                            <p><strong>Significance:</strong></p>
+                            <ul style="margin: 10px 0; padding-left: 20px;">
+                                <li>Confirms the Assyrian practice of publicizing conquests</li>
+                                <li>Offers visual evidence of how the Israelites dressed at the time</li>
+                                <li>Matches biblical descriptions of the exile era</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="archaeology-box expandable">
+                        <h3>Archaeology Box 2 — Hebrew Names in Foreign Lands <span class="expand-icon">▼</span></h3>
+                        <div class="content">
+                            <p>At several Mesopotamian excavation sites, archaeologists have unearthed clay tablets bearing personal seals with Hebrew names like "<span class="searchable" data-term="Shema">Shema</span>" and "<span class="searchable" data-term="Pedaiah">Pedaiah</span>."</p>
+                            
+                            <div class="gallery-grid">
+                                <div class="gallery-item" onclick="openImageModal('clay-tablet', 'Clay Tablet with Hebrew Names')">
+                                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%238b7355' width='400' height='200'/><text x='200' y='80' text-anchor='middle' fill='%23f4e4c1' font-size='16'>Clay Tablet</text><text x='200' y='105' text-anchor='middle' fill='%23f4e4c1' font-size='12'>Hebrew Names:</text><text x='200' y='125' text-anchor='middle' fill='%23f4e4c1' font-size='14'>שמע - Shema</text><text x='200' y='145' text-anchor='middle' fill='%23f4e4c1' font-size='14'>פדיה - Pedaiah</text></svg>" alt="Clay Tablet">
+                                    <div class="caption">Clay Tablet with Hebrew Names</div>
+                                </div>
+                            </div>
+
+                            <p><strong>Significance:</strong> The northern tribes may not have vanished overnight — they adapted, found work, and integrated into their host society, all while carrying remnants of their identity.</p>
+                        </div>
+                    </div>
+
+                    <button class="tool-btn" onclick="addNote('outside-bible', 'Archaeological Evidence')">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+            </section>
+
+            <!-- Five Theories -->
+            <section id="theories" class="chapter fade-in" data-chapter="theories">
+                <button class="bookmark-btn" onclick="toggleBookmark('theories')">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+                <div class="chapter-header">
+                    <h2>Chapter 4: Five Leading Theories</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theories-grid">
+                        <div class="theory-card expandable">
+                            <div class="theory-number">1</div>
+                            <h3>Stayed in the Middle East <span class="expand-icon">▼</span></h3>
+                            <div class="content">
+                                <p>Many believe the tribes didn't go far — they migrated eastward after exile. The <strong><span class="searchable" data-term="Pashtun tribes">Pashtun tribes</span></strong> of Afghanistan and Pakistan have long claimed descent from Israel, pointing to certain shared customs.</p>
+                                
+                                <div class="historical-note">
+                                    <h4>The Pashtun Puzzle</h4>
+                                    <p>The <span class="searchable" data-term="Pashtuns">Pashtuns</span>, numbering over 40 million today, have oral traditions claiming descent from "<span class="searchable" data-term="Bani Israel">Bani Israel</span>" (Children of Israel). Similarities include circumcision on the eighth day and levirate marriage practices.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="theory-card expandable">
+                            <div class="theory-number">2</div>
+                            <h3>Moved North into the Caucasus <span class="expand-icon">▼</span></h3>
+                            <div class="content">
+                                <p>Some connect the tribes with <strong><span class="searchable" data-term="Scythian nomads">Scythian nomads</span></strong> who roamed into Eastern Europe. From there, the theory says, they spread westward.</p>
+                                
+                                <div class="historical-note">
+                                    <h4>The Scythian Connection</h4>
+                                    <p>Greek historians like <span class="searchable" data-term="Herodotus">Herodotus</span> mention nomadic tribes called the <span class="searchable" data-term="Scythians">Scythians</span> roaming the steppes north of the Black Sea in the centuries after Israel's exile.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="theory-card expandable">
+                            <div class="theory-number">3</div>
+                            <h3>Went Far East <span class="expand-icon">▼</span></h3>
+                            <div class="content">
+                                <p>A minority view links them to distant Asian groups, such as some <span class="searchable" data-term="Japanese traditions">Japanese traditions</span>. Parallels in rituals exist but are often superficial.</p>
+                            </div>
+                        </div>
+
+                        <div class="theory-card expandable">
+                            <div class="theory-number">4</div>
+                            <h3>Went West (British-Israelism) <span class="expand-icon">▼</span></h3>
+                            <div class="content">
+                                <p>A 19th-century theory claiming the tribes became ancestors of <span class="searchable" data-term="Celtic">Celtic</span> and <span class="searchable" data-term="Anglo-Saxon">Anglo-Saxon</span> peoples. Popular in some church movements, but historically weak.</p>
+                            </div>
+                        </div>
+
+                        <div class="theory-card expandable">
+                            <div class="theory-number">5</div>
+                            <h3>Merged with Judah <span class="expand-icon">▼</span></h3>
+                            <div class="content">
+                                <p>Perhaps the simplest answer: many Israelites fled south before Assyria's invasion, merging with Judah. By New Testament times, the term "Jew" may have included members of all tribes.</p>
+                                
+                                <div class="historical-note">
+                                    <h4>New Testament Clues</h4>
+                                    <p><span class="searchable" data-term="James 1:1">James 1:1</span> addresses "the twelve tribes scattered abroad," suggesting the tribal framework still mattered in the first century.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="tool-btn" onclick="addNote('theories', 'Five Leading Theories Comparison')">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+            </section>
+
+            <!-- Prophecy's View -->
+            <section id="prophecy" class="chapter fade-in" data-chapter="prophecy">
+                <button class="bookmark-btn" onclick="toggleBookmark('prophecy')">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+                <div class="chapter-header">
+                    <h2>Chapter 5: Prophecy's Long View</h2>
+                </div>
+                <div class="chapter-content">
+                    <p>For believers, the Lost Tribes aren't just a historical puzzle — they're part of a divine storyline still unfolding.</p>
+
+                    <div class="scripture-box expandable">
+                        <h3>Scripture Study Box 3 — The Two Sticks <span class="expand-icon">▼</span></h3>
+                        <div class="content">
+                            <strong><span class="searchable" data-term="Ezekiel 37:16-17">Ezekiel 37:16-17</span></strong>
+                            <div class="scripture-quote">
+                                "...Take a stick of wood and write on it, 'Belonging to Judah and the Israelites associated with him.' Then take another stick of wood, and write on it, 'Belonging to Joseph (that is, to Ephraim) and all the Israelites associated with him.' Join them together into one stick so that they will become one in your hand."
+                            </div>
+                            <p><strong>Background:</strong> <span class="searchable" data-term="Ezekiel">Ezekiel</span>'s vision came after the northern tribes were already "lost" in exile. This prophetic act symbolized the reunion of Judah (southern kingdom) and Joseph/Ephraim (northern kingdom).</p>
+                            <p><strong>Reflection:</strong> For prophecy watchers, this isn't just ancient symbolism — it's a hint that the "lost" identity of the northern tribes will be revealed before God's kingdom is fully restored.</p>
+                        </div>
+                    </div>
+
+                    <p>Other prophetic clues include:</p>
+                    <ul style="margin: 20px 0; padding-left: 30px;">
+                        <li><strong><span class="searchable" data-term="Isaiah 11:12">Isaiah 11:12</span></strong> — God will "assemble the scattered people of Judah from the four quarters of the earth"</li>
+                        <li><strong><span class="searchable" data-term="Amos 9:14-15">Amos 9:14-15</span></strong> — Israel will be restored to their land "never again to be uprooted"</li>
+                        <li><strong><span class="searchable" data-term="James 1:1">James 1:1</span></strong> — The New Testament acknowledges "the twelve tribes scattered abroad"</li>
+                    </ul>
+
+                    <button class="tool-btn" onclick="addNote('prophecy', 'Prophetic Promises of Restoration')">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+            </section>
+
+            <!-- Modern Claimants -->
+            <section id="modern-claimants" class="chapter fade-in" data-chapter="modern-claimants">
+                <button class="bookmark-btn" onclick="toggleBookmark('modern-claimants')">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+                <div class="chapter-header">
+                    <h2>Chapter 6: Modern Claimants to the Lost Tribes</h2>
+                </div>
+                <div class="chapter-content">
+                    <p>Over the centuries, numerous groups have claimed descent from the northern tribes. Some claims have been dismissed as legend, others have surprising evidence.</p>
+
+                    <div class="theories-grid">
+                        <div class="theory-card expandable">
+                            <h3><span class="searchable" data-term="Beta Israel">Beta Israel</span> (Ethiopia) <span class="expand-icon">▼</span></h3>
+                            <div class="content">
+                                <p>Also called the <span class="searchable" data-term="Falasha">Falasha</span>, the Beta Israel claim descent from the tribe of Dan. In the late 20th century, the State of Israel officially recognized them as Jewish, leading to dramatic airlifts during <span class="searchable" data-term="Operation Moses">Operation Moses</span> (1984) and <span class="searchable" data-term="Operation Solomon">Operation Solomon</span> (1991).</p>
+                                
+                                <div class="gallery-grid">
+                                    <div class="gallery-item" onclick="openImageModal('beta-israel', 'Ethiopian Jews - Operation Solomon')">
+                                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%23228B22' width='400' height='200'/><text x='200' y='90' text-anchor='middle' fill='white' font-size='16'>Operation Solomon</text><text x='200' y='110' text-anchor='middle' fill='white' font-size='14'>Ethiopian Jews</text><text x='200' y='130' text-anchor='middle' fill='white' font-size='12'>Airlift to Israel</text></svg>" alt="Operation Solomon">
+                                        <div class="caption">Operation Solomon - Ethiopian Jews Airlift</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="historical-note">
+                                    <h4>Ethiopia's Tribe of Dan</h4>
+                                    <p>The Beta Israel's oral tradition says their ancestors arrived in Ethiopia before the First Temple's destruction. Their unique preservation of biblical festivals and kosher laws for centuries in isolation is remarkable.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="theory-card expandable">
+                            <h3><span class="searchable" data-term="Bnei Menashe">Bnei Menashe</span> (India/Myanmar) <span class="expand-icon">▼</span></h3>
+                            <div class="content">
+                                <p>Living in the far northeast of India and parts of Myanmar, they claim descent from <span class="searchable" data-term="Manasseh">Manasseh</span>. They follow customs resembling ancient Israelite traditions, including separation of meat and dairy.</p>
+                                
+                                <div class="gallery-grid">
+                                    <div class="gallery-item" onclick="openImageModal('bnei-menashe', 'Bnei Menashe Community')">
+                                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%23FF6347' width='400' height='200'/><text x='200' y='90' text-anchor='middle' fill='white' font-size='16'>Bnei Menashe</text><text x='200' y='110' text-anchor='middle' fill='white' font-size='14'>Northeast India</text><text x='200' y='130' text-anchor='middle' fill='white' font-size='12'>Claiming Israelite Heritage</text></svg>" alt="Bnei Menashe">
+                                        <div class="caption">Bnei Menashe Community in Northeast India</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="theory-card expandable">
+                            <h3><span class="searchable" data-term="Lemba People">Lemba People</span> (Southern Africa) <span class="expand-icon">▼</span></h3>
+                            <div class="content">
+                                <p>DNA studies found a high percentage of Y-chromosome markers associated with the Jewish priestly line among <span class="searchable" data-term="Lemba">Lemba</span> men, especially in their hereditary priestly clan, the <span class="searchable" data-term="Buba">Buba</span>.</p>
+                                
+                                <div class="gallery-grid">
+                                    <div class="gallery-item" onclick="openImageModal('lemba-people', 'Lemba People DNA Studies')">
+                                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%23DAA520' width='400' height='200'/><text x='200' y='80' text-anchor='middle' fill='white' font-size='16'>Lemba People</text><text x='200' y='100' text-anchor='middle' fill='white' font-size='14'>Southern Africa</text><text x='200' y='120' text-anchor='middle' fill='white' font-size='12'>DNA Evidence of</text><text x='200' y='140' text-anchor='middle' fill='white' font-size='12'>Priestly Lineage</text></svg>" alt="Lemba People">
+                                        <div class="caption">Lemba People - DNA Studies Reveal Priestly Heritage</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="theory-card expandable">
+                            <h3><span class="searchable" data-term="Pashtuns">Pashtuns</span> (Afghanistan/Pakistan) <span class="expand-icon">▼</span></h3>
+                            <div class="content">
+                                <p>Their tribal code, <span class="searchable" data-term="Pashtunwali">Pashtunwali</span>, emphasizes hospitality, honor, and justice — values found in ancient Israel's laws. Whether coincidence, Islamic influence, or lingering Israelite heritage remains intriguing.</p>
+                                
+                                <div class="gallery-grid">
+                                    <div class="gallery-item" onclick="openImageModal('pashtun-tribes', 'Pashtun Tribal Customs')">
+                                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%234682B4' width='400' height='200'/><text x='200' y='80' text-anchor='middle' fill='white' font-size='16'>Pashtun Tribes</text><text x='200' y='100' text-anchor='middle' fill='white' font-size='14'>Afghanistan/Pakistan</text><text x='200' y='120' text-anchor='middle' fill='white' font-size='12'>40+ Million People</text><text x='200' y='140' text-anchor='middle' fill='white' font-size='12'>Claiming Bani Israel Heritage</text></svg>" alt="Pashtun Tribes">
+                                        <div class="caption">Pashtun Tribes - Ancient Customs and Israelite Claims</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="tool-btn" onclick="addNote('modern-claimants', 'Modern Groups Claiming Israelite Descent')">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+            </section>
+
+            <!-- Archaeology -->
+            <section id="archaeology" class="chapter fade-in" data-chapter="archaeology">
+                <button class="bookmark-btn" onclick="toggleBookmark('archaeology')">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+                <div class="chapter-header">
+                    <h2>Chapter 7: Archaeology Weighs In</h2>
+                </div>
+                <div class="chapter-content">
+                    <p>Archaeology rarely hands us direct answers about people who vanish into other cultures. But certain finds help illuminate the exile experience.</p>
+
+                    <div class="archaeology-box expandable">
+                        <h3>Archaeology Box 3 — Pottery as a Time Capsule <span class="expand-icon">▼</span></h3>
+                        <div class="content">
+                            <p>Pottery fragments from exile sites in <span class="searchable" data-term="Gozan">Gozan</span> and <span class="searchable" data-term="Media">Media</span> show stylistic fingerprints identical to <span class="searchable" data-term="Samarian pottery">Samarian pottery</span> before 722 BC. This continuity suggests the exiles maintained some cultural traditions for at least a generation or two.</p>
+                            
+                            <div class="gallery-grid">
+                                <div class="gallery-item" onclick="openImageModal('pottery-fragments', 'Samarian Pottery Fragments')">
+                                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%23CD853F' width='400' height='200'/><text x='200' y='80' text-anchor='middle' fill='white' font-size='16'>Pottery Fragments</text><text x='200' y='100' text-anchor='middle' fill='white' font-size='14'>Samarian Style</text><text x='200' y='120' text-anchor='middle' fill='white' font-size='12'>Found in Exile Sites</text><text x='200' y='140' text-anchor='middle' fill='white' font-size='12'>Cultural Continuity Evidence</text></svg>" alt="Pottery Fragments">
+                                    <div class="caption">Samarian-Style Pottery Found in Exile Locations</div>
+                                </div>
+                                
+                                <div class="gallery-item" onclick="openImageModal('cuneiform-tablets', 'Assyrian Cuneiform Tablets')">
+                                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%236B4423' width='400' height='200'/><text x='200' y='80' text-anchor='middle' fill='%23F5DEB3' font-size='16'>Cuneiform Tablets</text><text x='200' y='100' text-anchor='middle' fill='%23F5DEB3' font-size='14'>Assyrian Records</text><text x='200' y='120' text-anchor='middle' fill='%23F5DEB3' font-size='12'>House of Omri</text><text x='200' y='140' text-anchor='middle' fill='%23F5DEB3' font-size='12'>Deportation Lists</text></svg>" alt="Cuneiform Tablets">
+                                    <div class="caption">Assyrian Cuneiform Tablets Mentioning Israelites</div>
+                                </div>
+                            </div>
+                            
+                            <p>Other clues include:</p>
+                            <ul style="margin: 10px 0; padding-left: 20px;">
+                                <li><strong>Assyrian cuneiform tablets</strong> — list deported peoples, including "<span class="searchable" data-term="House of Omri">House of Omri</span>"</li>
+                                <li><strong>Burial customs</strong> — some graves show a blend of local and Israelite practices</li>
+                                <li><strong>Personal seals</strong> — Hebrew names found on seals in Assyria</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button class="tool-btn" onclick="addNote('archaeology', 'Archaeological Evidence Summary')">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section id="conclusion" class="chapter fade-in" data-chapter="conclusion">
+                <button class="bookmark-btn" onclick="toggleBookmark('conclusion')">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+                <div class="chapter-header">
+                    <h2>Conclusion: Waiting for the Reveal</h2>
+                </div>
+                <div class="chapter-content">
+                    <p>The story of the Lost Tribes of Israel is part history book, part detective novel, and part prophecy yet to unfold. Historically, they were scattered across the ancient Near East, absorbed into empires, and eventually disappeared from recorded identity. But biblically, their story isn't over.</p>
+
+                    <p>Perhaps they are hidden in plain sight — in the DNA of countless peoples. Perhaps God has kept their identity veiled for a future moment when He will unite Judah and Israel once more.</p>
+
+                    <p>Until that day, every rumor of discovery, every archaeological dig, and every prophetic study keeps the embers of this mystery glowing. And maybe that's the point — to keep us looking, not just for the tribes, but for the God who keeps His promises.</p>
+
+                    <div class="scripture-box">
+                        <h3>Final Reflection</h3>
+                        <p>The Lost Tribes remind us that God's story is bigger than what we can see. Sometimes the most important chapters are the ones still being written.</p>
+                    </div>
+
+                    <div class="social-share">
+                        <button class="share-btn facebook" onclick="shareContent('facebook')">
+                            <i class="fab fa-facebook-f"></i> Share
+                        </button>
+                        <button class="share-btn twitter" onclick="shareContent('twitter')">
+                            <i class="fab fa-twitter"></i> Tweet
+                        </button>
+                        <button class="share-btn linkedin" onclick="shareContent('linkedin')">
+                            <i class="fab fa-linkedin-in"></i> Share
+                        </button>
+                    </div>
+
+                    <button class="tool-btn" onclick="addNote('conclusion', 'Final Thoughts and Reflections')">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Notes Panel -->
+    <div class="notes-panel" id="notesPanel">
+        <div class="notes-header">
+            <h3><i class="fas fa-sticky-note"></i> My Notes</h3>
+            <button class="tool-btn" onclick="toggleNotes()" style="float: right; background: rgba(255,255,255,0.2);">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notes-content" id="notesContent">
+            <p style="color: #666; font-style: italic;">No notes yet. Click "Add Note" on any section to start taking notes!</p>
+        </div>
+    </div>
+
+   
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('galleryModal')">&times;</span>
+            <h2><i class="fas fa-images"></i> Archaeological Discoveries Gallery</h2>
+            <div class="gallery-grid" id="fullGallery">
+                <!-- Full gallery will be populated here -->
+            </div>
+        </div>
+    </div>
+
+  
+    <script>
+        // Global Variables
+        let map;
+        let userNotes = [];
+        let userBookmarks = [];
+        let searchIndex = [];
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMap();
+            buildSearchIndex();
+            loadUserData();
+            initializeEventListeners();
+            initializeAnimations();
+        });
+
+        // Initialize Interactive Map
+        function initializeMap() {
+            try {
+                map = L.map('map').setView([33.0, 35.0], 4);
+                
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+
+                // Add markers for key locations
+                const locations = [
+                    { lat: 32.3, lng: 35.2, name: "Samaria", desc: "Capital of Northern Kingdom", color: "red" },
+                    { lat: 36.2, lng: 37.1, name: "Halah", desc: "Exile Destination", color: "blue" },
+                    { lat: 36.8, lng: 40.2, name: "Habor/Gozan", desc: "River Exile Location", color: "blue" },
+                    { lat: 35.7, lng: 51.4, name: "Cities of the Medes", desc: "Media Region", color: "blue" },
+                    { lat: 9.0, lng: 38.7, name: "Ethiopia", desc: "Beta Israel", color: "green" },
+                    { lat: 24.6, lng: 93.9, name: "Northeast India", desc: "Bnei Menashe", color: "green" },
+                    { lat: -22.3, lng: 24.8, name: "Southern Africa", desc: "Lemba People", color: "green" },
+                    { lat: 33.9, lng: 67.7, name: "Afghanistan", desc: "Pashtun Tribes", color: "green" }
+                ];
+
+                locations.forEach(loc => {
+                    const marker = L.marker([loc.lat, loc.lng]).addTo(map);
+                    marker.bindPopup(`<b>${loc.name}</b><br>${loc.desc}`);
+                    
+                    // Add click event for detailed information
+                    marker.on('click', function() {
+                        showLocationDetails(loc.name, loc.desc);
+                    });
+                });
+
+                console.log("Map initialized successfully");
+            } catch (error) {
+                console.log("Map initialization failed:", error);
+                // Show fallback content
+                document.getElementById('map').innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+                        <div>
+                            <h3>🗺️ Interactive Map of Exile Locations</h3>
+                            <p>Showing Assyrian deportation routes and modern claimant locations</p>
+                            <small>Map functionality simulated for demonstration</small>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Build search index
+        function buildSearchIndex() {
+            const searchableElements = document.querySelectorAll('.searchable');
+            searchableElements.forEach(element => {
+                searchIndex.push({
+                    term: element.dataset.term,
+                    text: element.textContent,
+                    element: element,
+                    section: element.closest('.chapter').id
+                });
+            });
+
+            // Add content from headings and key paragraphs
+            const headings = document.querySelectorAll('h2, h3');
+            headings.forEach(heading => {
+                searchIndex.push({
+                    term: heading.textContent,
+                    text: heading.textContent,
+                    element: heading,
+                    section: heading.closest('.chapter')?.id || 'general'
+                });
+            });
+        }
+
+        // Search functionality
+        function performSearch(query) {
+            if (!query || query.length < 2) {
+                hideSearchResults();
+                return;
+            }
+
+            const results = searchIndex.filter(item => 
+                item.term.toLowerCase().includes(query.toLowerCase()) ||
+                item.text.toLowerCase().includes(query.toLowerCase())
+            );
+
+            displaySearchResults(results, query);
+        }
+
+        function displaySearchResults(results, query) {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = '';
+
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<div class="search-result">No results found</div>';
+            } else {
+                results.slice(0, 10).forEach(result => {
+                    const div = document.createElement('div');
+                    div.className = 'search-result';
+                    div.innerHTML = `
+                        <strong>${highlightText(result.term, query)}</strong><br>
+                        <small>in ${result.section.replace('-', ' ')}</small>
+                    `;
+                    div.onclick = () => {
+                        navigateToResult(result);
+                        hideSearchResults();
+                    };
+                    resultsContainer.appendChild(div);
+                });
+            }
+
+            resultsContainer.style.display = 'block';
+        }
+
+        function highlightText(text, query) {
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+
+        function navigateToResult(result) {
+            const targetElement = result.element.closest('.chapter') || result.element;
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            
+            // Highlight the found element briefly
+            result.element.style.background = 'yellow';
+            setTimeout(() => {
+                result.element.style.background = '';
+            }, 2000);
+        }
+
+        function hideSearchResults() {
+            document.getElementById('searchResults').style.display = 'none';
+        }
+
+        // Notes system
+        function addNote(section, title) {
+            const noteText = prompt(`Add a note about: ${title}\n\nWhat would you like to remember?`);
+            if (noteText) {
+                const note = {
+                    id: Date.now(),
+                    section: section,
+                    title: title,
+                    text: noteText,
+                    timestamp: new Date().toLocaleString()
+                };
+                
+                userNotes.push(note);
+                saveUserData();
+                updateNotesDisplay();
+                updateNoteCount();
+                
+                // Show confirmation
+                showNotification('Note added successfully!');
+            }
+        }
+
+        function deleteNote(noteId) {
+            userNotes = userNotes.filter(note => note.id !== noteId);
+            saveUserData();
+            updateNotesDisplay();
+            updateNoteCount();
+        }
+
+        function updateNotesDisplay() {
+            const notesContent = document.getElementById('notesContent');
+            if (userNotes.length === 0) {
+                notesContent.innerHTML = '<p style="color: #666; font-style: italic;">No notes yet. Click "Add Note" on any section to start taking notes!</p>';
+                return;
+            }
+
+            notesContent.innerHTML = userNotes.map(note => `
+                <div class="note-item">
+                    <div class="note-delete" onclick="deleteNote(${note.id})">&times;</div>
+                    <strong>${note.title}</strong><br>
+                    <small>${note.timestamp} - ${note.section}</small><br>
+                    <p>${note.text}</p>
+                </div>
+            `).join('');
+        }
+
+        function updateNoteCount() {
+            document.getElementById('noteCount').textContent = userNotes.length;
+        }
+
+        // Bookmarks system
+        function toggleBookmark(chapterId) {
+            const index = userBookmarks.indexOf(chapterId);
+            if (index > -1) {
+                userBookmarks.splice(index, 1);
+            } else {
+                userBookmarks.push(chapterId);
+            }
+            
+            updateBookmarkDisplay(chapterId);
+            saveUserData();
+        }
+
+        function updateBookmarkDisplay(chapterId) {
+            const button = document.querySelector(`[data-chapter="${chapterId}"] .bookmark-btn`);
+            if (button) {
+                if (userBookmarks.includes(chapterId)) {
+                    button.classList.add('bookmarked');
+                } else {
+                    button.classList.remove('bookmarked');
+                }
+            }
+        }
+
+        function showBookmarks() {
+            if (userBookmarks.length === 0) {
+                alert('No bookmarks yet! Click the bookmark button on any chapter to save it.');
+                return;
+            }
+
+            const bookmarkList = userBookmarks.map(chapterId => {
+                const chapter = document.querySelector(`[data-chapter="${chapterId}"]`);
+                const title = chapter ? chapter.querySelector('h2').textContent : chapterId;
+                return `• ${title}`;
+            }).join('\n');
+
+            alert(`Your Bookmarks:\n\n${bookmarkList}\n\nClick on any bookmark button to remove it.`);
+        }
+
+        // Gallery functions
+        function openGallery() {
+            populateFullGallery();
+            document.getElementById('galleryModal').style.display = 'block';
+        }
+
+        function populateFullGallery() {
+            const gallery = document.getElementById('fullGallery');
+            const galleryItems = [
+                { id: 'assyrian-relief', title: 'Assyrian Relief of Israelite Captives', desc: 'Stone panels from Sargon II\'s palace showing Israelite captives' },
+                { id: 'clay-tablet', title: 'Clay Tablet with Hebrew Names', desc: 'Mesopotamian tablets with Hebrew names like Shema and Pedaiah' },
+                { id: 'beta-israel', title: 'Ethiopian Jews - Operation Solomon', desc: 'Historic airlift bringing Ethiopian Jews to Israel' },
+                { id: 'bnei-menashe', title: 'Bnei Menashe Community', desc: 'Northeast Indian community claiming Manasseh descent' },
+                { id: 'lemba-people', title: 'Lemba People DNA Studies', desc: 'Southern African tribe with genetic markers of priestly lineage' },
+                { id: 'pashtun-tribes', title: 'Pashtun Tribal Customs', desc: 'Afghan/Pakistani tribes claiming Bani Israel heritage' },
+                { id: 'pottery-fragments', title: 'Samarian Pottery Fragments', desc: 'Pottery showing cultural continuity in exile sites' },
+                { id: 'cuneiform-tablets', title: 'Assyrian Cuneiform Tablets', desc: 'Official records mentioning House of Omri deportations' }
+            ];
+
+            gallery.innerHTML = galleryItems.map(item => `
+                <div class="gallery-item" onclick="openImageModal('${item.id}', '${item.title}')">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%23${Math.floor(Math.random()*16777215).toString(16)}' width='400' height='200'/><text x='200' y='100' text-anchor='middle' fill='white' font-size='14'>${item.title}</text></svg>" alt="${item.title}">
+                    <div class="caption">${item.title}<br><small>${item.desc}</small></div>
+                </div>
+            `).join('');
+        }
+
+        function openImageModal(imageId, title) {
+            const modal = document.getElementById('imageModal');
+            const content = document.getElementById('imageModalContent');
+            
+            // In a real implementation, these would be actual archaeological images
+            const imageData = getImageData(imageId);
+            
+            content.innerHTML = `
+                <h2>${title}</h2>
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="${imageData.src}" alt="${title}" style="max-width: 100%; height: auto; border-radius: 10px;">
+                </div>
+                <p><strong>Description:</strong> ${imageData.description}</p>
+                <p><strong>Significance:</strong> ${imageData.significance}</p>
+                <p><strong>Location:</strong> ${imageData.location}</p>
+                <p><strong>Date:</strong> ${imageData.date}</p>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function getImageData(imageId) {
+            const imageDatabase = {
+                'assyrian-relief': {
+                    src: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><rect fill='%23d4af37' width='600' height='400'/><text x='300' y='200' text-anchor='middle' fill='%238b4513' font-size='24'>Assyrian Palace Relief</text><text x='300' y='230' text-anchor='middle' fill='%238b4513' font-size='16'>Depicting Israelite Captives</text></svg>",
+                    description: "Stone relief panels from Sargon II's palace at Khorsabad showing rows of captives in distinctive clothing that matches descriptions of ancient Israelite dress.",
+                    significance: "Provides visual confirmation of the Assyrian deportation of Israelites and shows how they were publicly displayed as trophies of conquest.",
+                    location: "British Museum, originally from Khorsabad, Iraq",
+                    date: "c. 722-705 BC"
+                },
+                'clay-tablet': {
+                    src: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><rect fill='%238b7355' width='600' height='400'/><text x='300' y='180' text-anchor='middle' fill='%23f4e4c1' font-size='20'>Clay Tablet</text><text x='300' y='210' text-anchor='middle' fill='%23f4e4c1' font-size='16'>Hebrew Names: שמע פדיה</text><text x='300' y='240' text-anchor='middle' fill='%23f4e4c1' font-size='14'>Shema - Pedaiah</text></svg>",
+                    description: "Mesopotamian business and administrative records containing Hebrew personal names, indicating Israelites integrated into Assyrian society.",
+                    significance: "Demonstrates that exiled Israelites didn't simply vanish but adapted to new environments while maintaining aspects of their identity.",
+                    location: "Various archaeological sites in Iraq and Iran",
+                    date: "7th-6th centuries BC"
+                },
+                'beta-israel': {
+                    src: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><rect fill='%23228B22' width='600' height='400'/><text x='300' y='180' text-anchor='middle' fill='white' font-size='20'>Operation Solomon</text><text x='300' y='210' text-anchor='middle' fill='white' font-size='16'>Ethiopian Jews Airlift</text><text x='300' y='240' text-anchor='middle' fill='white' font-size='14'>14,000 Jews in 36 hours</text></svg>",
+                    description: "Historic airlift operation that brought Ethiopian Jews (Beta Israel) to Israel in 1991, representing one of the most dramatic modern 'returns' of a claimed lost tribe.",
+                    significance: "Demonstrates how communities claiming Israelite descent can be officially recognized and integrated into modern Israel.",
+                    location: "Ethiopia to Israel",
+                    date: "May 24-25, 1991"
+                }
+                // Add more image data as needed
+            };
+
+            return imageDatabase[imageId] || {
+                src: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><rect fill='%23cccccc' width='600' height='400'/><text x='300' y='200' text-anchor='middle' fill='%23666666' font-size='20'>Image Not Available</text></svg>",
+                description: "Image data not available",
+                significance: "Historical significance information pending",
+                location: "Location unknown",
+                date: "Date unknown"
+            };
+        }
+
+        // Social sharing
+        function shareContent(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent("What Happened to the Lost Tribes of Israel? - Interactive Biblical Mystery");
+            const text = encodeURIComponent("Explore the fascinating 2,700-year mystery of the Lost Tribes of Israel through interactive maps, archaeology, and scripture study.");
+
+            let shareUrl;
+            switch (platform) {
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                    break;
+            }
+
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        }
+
+        function showShareModal() {
+            document.getElementById('shareModal').style.display = 'block';
+        }
+
+        // Modal functions
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Notes panel toggle
+        function toggleNotes() {
+            const panel = document.getElementById('notesPanel');
+            panel.classList.toggle('open');
+        }
+
+        // Location details
+        function showLocationDetails(name, description) {
+            alert(`${name}\n\n${description}\n\nThis location is significant in the story of the Lost Tribes of Israel.`);
+        }
+
+        // Data persistence (simulated - in a real app, this would sync with a backend)
+        function saveUserData() {
+            // Note: localStorage is not available in Claude.ai artifacts
+            // In a real implementation, this would save to localStorage or a backend
+            console.log('Saving user data:', { notes: userNotes, bookmarks: userBookmarks });
+        }
+
+        function loadUserData() {
+            // Note: localStorage is not available in Claude.ai artifacts
+            // In a real implementation, this would load from localStorage or a backend
+            userNotes = [];
+            userBookmarks = [];
+            updateNotesDisplay();
+            updateNoteCount();
+            
+            // Update bookmark displays
+            userBookmarks.forEach(chapterId => {
+                updateBookmarkDisplay(chapterId);
+            });
+        }
+
+        // Event listeners
+        function initializeEventListeners() {
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                performSearch(e.target.value);
+            });
+
+            // Hide search results when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.search-container')) {
+                    hideSearchResults();
+                }
+            });
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Expandable content
+            document.querySelectorAll('.expandable').forEach(element => {
+                element.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+
+            // Close modals when clicking outside
+            window.addEventListener('click', (e) => {
+                if (e.target.classList.contains('modal')) {
+                    e.target.style.display = 'none';
+                }
+            });
+        }
+
+        // Animation system
+        function initializeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Utility functions
+        function showNotification(message) {
+            // Simple notification system
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #3498db;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                z-index: 1000;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Initialize enhanced interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Enhanced scripture box interactions
+            document.querySelectorAll('.scripture-box, .archaeology-box, .historical-note').forEach(box => {
+                box.addEventListener('click', function() {
+                    this.style.boxShadow = '0 0 30px rgba(52, 152, 219, 0.5)';
+                    setTimeout(() => {
+                        this.style.boxShadow = '';
+                    }, 1000);
+                });
+            });
+
+            // Theory card hover effects
+            document.querySelectorAll('.theory-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                    this.style.color = 'white';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.background = 'white';
+                    this.style.color = '#2c3e50';
+                });
+            });
+        });
+    </script>
+
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

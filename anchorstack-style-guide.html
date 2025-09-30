@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnchorStack.pro - Master Style Guide & Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- MASTER STYLES FOR ALL ANCHORSTACK PAGES -->
+    <style>
+        /* === DESIGN SYSTEM VARIABLES === */
+        :root {
+            /* Primary Palette - Use across ALL pages */
+            --bg-main: #FBF9F6;        /* Main background */
+            --bg-card: #FFFFFF;        /* Card backgrounds */
+            --bg-accent: #F7F3E9;      /* Accent backgrounds */
+            
+            --color-primary: #4B5D7A;   /* Primary brand color (blue-gray) */
+            --color-secondary: #A17C5B; /* Secondary brand color (warm brown) */
+            --color-accent: #D4AF37;    /* Accent color (gold) */
+            
+            --text-primary: #4C433A;    /* Main text */
+            --text-secondary: #6a615a;  /* Secondary text */
+            --text-light: #8B8680;      /* Light text */
+            
+            /* Typography */
+            --font-heading: 'Crimson Text', serif;
+            --font-body: 'Lato', sans-serif;
+            
+            /* Spacing Scale */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+        }
+        
+        /* === BASE STYLES === */
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            line-height: 1.2;
+        }
+        
+        /* === COMPONENT CLASSES === */
+        
+        /* Navigation Tabs */
+        .nav-tab {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            padding: var(--space-sm) var(--space-md);
+            font-weight: 600;
+        }
+        
+        .nav-tab.active, 
+        .nav-tab:hover {
+            border-bottom-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        /* Content Sections */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(10px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        /* Cards */
+        .card-interactive {
+            background-color: var(--bg-card);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: var(--space-md);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .card-interactive:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .card-static {
+            background-color: var(--bg-card);
+            padding: var(--space-md);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3a4a62;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--color-secondary);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+        }
+        
+        /* Accent Elements */
+        .accent-border-left {
+            border-left: 4px solid var(--color-accent);
+            padding-left: var(--space-sm);
+        }
+        
+        .accent-border-top {
+            border-top: 3px solid var(--color-accent);
+            padding-top: var(--space-sm);
+        }
+        
+        /* Stat Boxes */
+        .stat-box {
+            background-color: var(--bg-card);
+            padding: var(--space-md);
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .stat-detail {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: var(--space-xs);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- SITE HEADER TEMPLATE -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold" style="color: var(--color-primary)">AnchorStack.pro</h1>
+                    <p class="text-sm" style="color: var(--text-secondary)">Biblical Truth • Spiritual Depth</p>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="/" class="hover:text-[#4B5D7A]">Home</a>
+                    <a href="/foundations" class="hover:text-[#4B5D7A]">Foundations</a>
+                    <a href="/teachings" class="hover:text-[#4B5D7A]">Teachings</a>
+                    <a href="/resources" class="hover:text-[#4B5D7A]">Resources</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="container mx-auto px-4 py-12">
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-8 text-center" style="color: var(--color-primary)">Style Guide Components</h2>
+            
+            <!-- Color Palette Display -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6">Official Color Palette</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center">
+                        <div class="h-24 rounded-lg mb-2" style="background-color: #4B5D7A;"></div>
+                        <p class="font-bold">Primary</p>
+                        <p class="text-sm">#4B5D7A</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="h-24 rounded-lg mb-2" style="background-color: #A17C5B;"></div>
+                        <p class="font-bold">Secondary</p>
+                        <p class="text-sm">#A17C5B</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="h-24 rounded-lg mb-2" style="background-color: #D4AF37;"></div>
+                        <p class="font-bold">Accent</p>
+                        <p class="text-sm">#D4AF37</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="h-24 rounded-lg mb-2 border" style="background-color: #FBF9F6;"></div>
+                        <p class="font-bold">Background</p>
+                        <p class="text-sm">#FBF9F6</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typography Examples -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6">Typography Scale</h3>
+                <div class="card-static">
+                    <h1 class="text-5xl mb-4">Heading 1 - Crimson Text</h1>
+                    <h2 class="text-4xl mb-4">Heading 2 - Crimson Text</h2>
+                    <h3 class="text-3xl mb-4">Heading 3 - Crimson Text</h3>
+                    <h4 class="text-2xl mb-4">Heading 4 - Crimson Text</h4>
+                    <p class="text-lg mb-2">Body Large - Lato Regular</p>
+                    <p class="mb-2">Body Normal - Lato Regular</p>
+                    <p class="text-sm">Body Small - Lato Regular</p>
+                </div>
+            </div>
+
+            <!-- Component Examples -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6">Reusable Components</h3>
+                
+                <!-- Navigation Tabs -->
+                <div class="mb-8">
+                    <h4 class="text-xl font-semibold mb-4">Navigation Tabs</h4>
+                    <div class="flex border-b-2" style="border-color: rgba(161, 124, 91, 0.3);">
+                        <button class="nav-tab active">Overview</button>
+                        <button class="nav-tab">Details</button>
+                        <button class="nav-tab">Examples</button>
+                        <button class="nav-tab">Resources</button>
+                    </div>
+                </div>
+
+                <!-- Cards -->
+                <div class="mb-8">
+                    <h4 class="text-xl font-semibold mb-4">Card Styles</h4>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="card-interactive">
+                            <h5 class="font-bold mb-2" style="color: var(--color-primary)">Interactive Card</h5>
+                            <p class="text-sm">Hover to see effect. Use for clickable items.</p>
+                        </div>
+                        <div class="card-static accent-border-left">
+                            <h5 class="font-bold mb-2" style="color: var(--color-primary)">Accent Card</h5>
+                            <p class="text-sm">With gold accent border for emphasis.</p>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">40</div>
+                            <p class="stat-label">Days of Testing</p>
+                            <p class="stat-detail">Wilderness, Fasting, Flood</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="mb-8">
+                    <h4 class="text-xl font-semibold mb-4">Button Styles</h4>
+                    <div class="flex gap-4">
+                        <button class="btn-primary">Primary Action</button>
+                        <button class="btn-secondary">Secondary Action</button>
+                        <button class="px-6 py-2 border-2 border-[#4B5D7A] text-[#4B5D7A] rounded-md hover:bg-[#4B5D7A] hover:text-white transition-all">
+                            Outline Button
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Template -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6">Standard Page Template</h3>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <pre class="text-sm overflow-x-auto"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;[PAGE TITLE] - AnchorStack.pro&lt;/title&gt;
+    &lt;meta name="description" content="[PAGE DESCRIPTION]"&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" href="/styles/anchorstack-master.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Content Here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+
+            <!-- JavaScript Component Library -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6">JavaScript Component Library</h3>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <pre class="text-sm overflow-x-auto"><code>// REUSABLE COMPONENT LIBRARY
+const AnchorStack = {
+    // Create a stat box
+    createStatBox: (number, label, detail) => {
+        return `
+            &lt;div class="stat-box"&gt;
+                &lt;div class="stat-number"&gt;${number}&lt;/div&gt;
+                &lt;p class="stat-label"&gt;${label}&lt;/p&gt;
+                &lt;p class="stat-detail"&gt;${detail}&lt;/p&gt;
+            &lt;/div&gt;
+        `;
+    },
+
+    // Create an interactive card
+    createCard: (title, content, clickable = false) => {
+        const cardClass = clickable ? 'card-interactive' : 'card-static';
+        return `
+            &lt;div class="${cardClass}"&gt;
+                &lt;h3 class="font-bold mb-2" style="color: var(--color-primary)"&gt;${title}&lt;/h3&gt;
+                &lt;p&gt;${content}&lt;/p&gt;
+            &lt;/div&gt;
+        `;
+    },
+
+    // Initialize tab navigation
+    initTabs: () => {
+        const tabs = document.querySelectorAll('.nav-tab');
+        const sections = document.querySelectorAll('.content-section');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.target;
+                
+                tabs.forEach(t => t.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(target)?.classList.add('active');
+            });
+        });
+    },
+
+    // Smooth scroll to element
+    scrollToElement: (elementId) => {
+        document.getElementById(elementId)?.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }
+};</code></pre>
+                </div>
+            </div>
+
+            <!-- SEO Guidelines -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6">SEO Best Practices</h3>
+                <div class="card-static">
+                    <h4 class="text-xl font-bold mb-4">For Every Page:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <span style="color: var(--color-secondary);" class="mr-2">✓</span>
+                            <div>
+                                <strong>Title Tag:</strong> 50-60 characters, include "AnchorStack.pro"
+                                <br><code class="text-sm bg-gray-100 px-2 py-1 rounded">&lt;title&gt;The Tabernacle: God's Dwelling Place - AnchorStack.pro&lt;/title&gt;</code>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span style="color: var(--color-secondary);" class="mr-2">✓</span>
+                            <div>
+                                <strong>Meta Description:</strong> 150-160 characters, compelling and keyword-rich
+                                <br><code class="text-sm bg-gray-100 px-2 py-1 rounded">&lt;meta name="description" content="Explore the ancient Tabernacle..."&gt;</code>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span style="color: var(--color-secondary);" class="mr-2">✓</span>
+                            <div>
+                                <strong>H1 Tag:</strong> One per page, matches topic
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span style="color: var(--color-secondary);" class="mr-2">✓</span>
+                            <div>
+                                <strong>Internal Links:</strong> Link to related content using descriptive anchor text
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span style="color: var(--color-secondary);" class="mr-2">✓</span>
+                            <div>
+                                <strong>Image Alt Text:</strong> Descriptive for accessibility and SEO
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quick Copy Section -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6">Quick Copy Elements</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold mb-2">Color Variables</h4>
+                        <div class="bg-gray-100 p-4 rounded text-sm">
+                            <code>
+                                Primary: #4B5D7A<br>
+                                Secondary: #A17C5B<br>
+                                Accent: #D4AF37<br>
+                                Background: #FBF9F6<br>
+                                Text Primary: #4C433A<br>
+                                Text Secondary: #6a615a
+                            </code>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-2">Common Classes</h4>
+                        <div class="bg-gray-100 p-4 rounded text-sm">
+                            <code>
+                                nav-tab<br>
+                                content-section<br>
+                                card-interactive<br>
+                                card-static<br>
+                                stat-box<br>
+                                btn-primary
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- STANDARD FOOTER -->
+    <footer class="text-center py-10 mt-12 border-t" style="border-color: rgba(161, 124, 91, 0.3);">
+        <p class="text-sm" style="color: var(--text-secondary);">© 2025 AnchorStack.pro • Exploring Biblical Truth with Depth and Clarity</p>
+    </footer>
+
+    <script>
+        // Initialize components
+        document.addEventListener('DOMContentLoaded', () => {
+            // Example: Initialize tabs if they exist
+            if (document.querySelector('.nav-tab')) {
+                const tabs = document.querySelectorAll('.nav-tab');
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        tabs.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

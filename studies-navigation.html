@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='impact-site-verification' value='75a45cbc-7b43-41a1-8998-7e2a739245b4'>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    
+    <title>Biblical Studies & Sacred Feasts | AnchorStack Study Library</title>
+    <meta name="author" content="AnchorStack">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="Explore our complete collection of biblical feast studies. From Sabbath rest to the millennial kingdom, discover God's prophetic calendar and its meaning for today.">
+    <meta name="keywords" content="biblical feasts, biblical studies, Passover, Sabbath, Pentecost, Tabernacles, biblical calendar, feast days">
+    <link rel="stylesheet" href="main.css">
+    <link rel="canonical" href="https://anchorstack.pro/studies-navigation.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Biblical Studies Library - AnchorStack">
+    <meta property="og:description" content="Deep-dive biblical studies on God's sacred calendar">
+    <meta property="og:image" content="https://anchorstack.pro/images/studies-library.jpg">
+    <meta property="og:url" content="https://anchorstack.pro/studies">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        .site-header {
+            background: #1a1a1a;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: #059669;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            font-family: 'Lora', Georgia, serif;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #059669;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-family: 'Lora', Georgia, serif;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Progress Bar */
+        .progress-section {
+            background: white;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .progress-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .progress-bar {
+            background: #e2e8f0;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+            height: 100%;
+            width: 20%; /* 2 of 10 completed */
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Main Content */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        /* Study Cards */
+        .study-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+        }
+        
+        .study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            padding: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Individual card colors */
+        .card-1 { background: linear-gradient(135deg, #059669 0%, #047857 100%); }
+        .card-2 { background: linear-gradient(135deg, #6b21a8 0%, #581c87 100%); }
+        .card-3 { background: linear-gradient(135deg, #991B1B 0%, #7F1D1D 100%); }
+        .card-4 { background: linear-gradient(135deg, #065f46 0%, #047857 100%); }
+        .card-5 { background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%); }
+        .card-6 { background: linear-gradient(135deg, #7c3aed 0%, #6b21a8 100%); }
+        .card-7 { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
+        .card-8 { background: linear-gradient(135deg, #166534 0%, #15803d 100%); }
+        .card-9 { background: linear-gradient(135deg, #facc15 0%, #f59e0b 100%); }
+        .card-10 { background: linear-gradient(135deg, #78350f 0%, #92400e 100%); }
+        
+        .card-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-family: 'Lora', Georgia, serif;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-subtitle {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .card-body {
+            padding: 1.5rem 2rem;
+        }
+        
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .reading-time {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .status-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status-available {
+            background: #10b981;
+            color: white;
+        }
+        
+        .status-coming {
+            background: #fbbf24;
+            color: #78350f;
+        }
+        
+        /* Featured Section */
+        .featured-section {
+            background: linear-gradient(135deg, #A97142 0%, #8B5A2B 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .featured-title {
+            font-size: 2.5rem;
+            font-family: 'Lora', Georgia, serif;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .featured-button {
+            display: inline-block;
+            background: white;
+            color: #A97142;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .featured-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Quick Navigation */
+        .quick-nav {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .quick-nav h2 {
+            color: #059669;
+            font-family: 'Lora', Georgia, serif;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .nav-pill {
+            background: #f8fafc;
+            border: 2px solid #059669;
+            color: #059669;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-pill:hover {
+            background: #059669;
+            color: white;
+        }
+        
+        /* Footer */
+        .site-footer {
+            background: #1a1a1a;
+            color: #e2e8f0;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #059669;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .studies-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .featured-title {
+                font-size: 1.8rem;
+            }
+            
+            .nav-pills {
+                gap: 0.5rem;
+            }
+            
+            .nav-pill {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="/" class="logo">AnchorStack</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/studies" style="color: #059669;">Studies</a></li>
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Biblical Feasts & Sacred Times</h1>
+        <p class="hero-subtitle">Journey through God's prophetic calendar from Creation to Eternity</p>
+    </section>
+
+    <!-- Progress Bar -->
+    <section class="progress-section">
+        <div class="progress-container">
+            <h3>Your Study Journey</h3>
+            <div class="progress-bar">
+                <div class="progress-fill">20%</div>
+            </div>
+            <p>2 of 10 studies now available • New content added weekly</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+        
+        <!-- Quick Navigation -->
+        <div class="quick-nav">
+            <h2>Quick Navigation</h2>
+            <div class="nav-pills">
+                <a href="#spring-feasts" class="nav-pill">Spring Feasts</a>
+                <a href="#summer-feast" class="nav-pill">Summer Feast</a>
+                <a href="#fall-feasts" class="nav-pill">Fall Feasts</a>
+                <a href="#practical" class="nav-pill">Practical Guide</a>
+            </div>
+        </div>
+
+        <!-- Studies Grid -->
+        <div class="studies-grid">
+            
+            <!-- Study 1: Sacred Seasons -->
+            <a href="/sacred-seasons" class="study-card">
+                <div class="card-header card-1">
+                    <div class="card-number">1</div>
+                    <div class="card-icon">📅</div>
+                    <h3 class="card-title">Sacred Seasons</h3>
+                    <p class="card-subtitle">Understanding Biblical Festivals in Modern Life</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Discover how God's appointed times reveal His master plan for humanity and provide rhythm for spiritual life today.</p>
+                    <div class="card-meta">
+                        <span class="reading-time">15 min read</span>
+                        <span class="status-badge status-coming">Coming Soon</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Study 2: Sabbath -->
+            <a href="/rest-as-resistance" class="study-card">
+                <div class="card-header card-2">
+                    <div class="card-number">2</div>
+                    <div class="card-icon">🕊️</div>
+                    <h3 class="card-title">Rest as Resistance</h3>
+                    <p class="card-subtitle">The Sabbath's Promise for Today</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Learn how biblical Sabbath offers revolutionary rest in our non-stop world and why rest is an act of faith.</p>
+                    <div class="card-meta">
+                        <span class="reading-time">20 min read</span>
+                        <span class="status-badge status-available">Available</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Study 3: Passover -->
+            <a href="/freedoms-foundation" class="study-card">
+                <div class="card-header card-3">
+                    <div class="card-number">3</div>
+                    <div class="card-icon">🐑</div>
+                    <h3 class="card-title">Freedom's Foundation</h3>
+                    <p class="card-subtitle">The Passover Connection</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Explore the profound connection between Passover and Christ's sacrifice, from Egypt to Calvary.</p>
+                    <div class="card-meta">
+                        <span class="reading-time">25 min read</span>
+                        <span class="status-badge status-available">Available</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Study 4: Unleavened Bread -->
+            <a href="/seven-days-transformation" class="study-card">
+                <div class="card-header card-4">
+                    <div class="card-number">4</div>
+                    <div class="card-icon">🍞</div>
+                    <h3 class="card-title">Seven Days of Transformation</h3>
+                    <p class="card-subtitle">Living the Unleavened Life</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Understand how removing leaven symbolizes sanctification and discover practical steps for spiritual purification.</p>
+                    <div class="card-meta">
+                        <span class="reading-time">18 min read</span>
+                        <span class="status-badge status-coming">Coming Soon</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Study 5: Pentecost -->
+            <a href="/first-fruits" class="study-card">
+                <div class="card-header card-5">
+                    <div class="card-number">5</div>
+                    <div class="card-icon">🔥</div>
+                    <h3 class="card-title">First Fruits</h3>
+                    <p class="card-subtitle">Why You're Called Now</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Discover the significance of Pentecost and why God calls certain people as "firstfruits" in His harvest plan.</p>
+                    <div class="card-meta">
+                        <span class="reading-time">22 min read</span>
+                        <span class="status-badge status-coming">Coming Soon</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Study 6: Trumpets -->
+            <a href="/awakening-call" class="study-card">
+                <div class="card-header card-6">
+                    <div class="card-number">6</div>
+                    <div class="card-icon">📯</div>
+                    <h3 class="card-title">The Awakening Call</h3>
+                    <p class="card-subtitle">Understanding Divine Warnings</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Learn about the Feast of Trumpets and its prophetic significance for the return of Christ.</p>
+                    <div class="card-meta">
+                        <span class="reading-time">20 min read</span>
+                        <span class="status-badge status-coming">Coming Soon</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Study 7: Atonement -->
+            <a href="/breaking-free" class="study-card">
+                <div class="card-header card-7">
+                    <div class="card-number">7</div>
+                    <div class="card-icon">⛓️</div>
+                    <h3 class="card-title">Breaking Free</h3>
+                    <p class="card-subtitle">When Evil Loses Its Power</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Understand the Day of Atonement's dual meaning: Satan bound and humanity freed from deception.</p>
+                    <div class="card-meta">
+                        <span class="reading-time">23 min read</span>
+                        <span class="status-badge status-coming">Coming Soon</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Study 8: Tabernacles -->
+            <a href="/dwelling-in-peace" class="study-card">
+                <div class="card-header card-8">
+                    <div class="card-number">8</div>
+                    <div class="card-icon">🏕️</div>
+                    <h3 class="card-title">Dwelling in Peace</h3>
+                    <p class="card-subtitle">The Millennial Promise</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Explore how the Feast of Tabernacles pictures the coming thousand-year reign of Christ on earth.</p>
+                    <div class="card-meta">
+                        <span class="reading-time">21 min read</span>
+                        <span class="status-badge status-coming">Coming Soon</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Study 9: Eighth Day -->
+            <a href="/beyond-time" class="study-card">
+                <div class="card-header card-9">
+                    <div class="card-number">9</div>
+                    <div class="card-icon">✨</div>
+                    <h3 class="card-title">Beyond Time</h3>
+                    <p class="card-subtitle">Hope for Every Soul Who Ever Lived</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Discover the mystery of the Eighth Day and God's plan for those who never knew Him.</p>
+                    <div class="card-meta">
+                        <span class="reading-time">19 min read</span>
+                        <span class="status-badge status-coming">Coming Soon</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Study 10: Practical Guide -->
+            <a href="/living-sacred-calendar" class="study-card">
+                <div class="card-header card-10">
+                    <div class="card-number">10</div>
+                    <div class="card-icon">📖</div>
+                    <h3 class="card-title">Living the Sacred Calendar</h3>
+                    <p class="card-subtitle">Practical Guide for Modern Believers</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Learn practical ways to observe God's festivals today with family celebrations, spiritual practices, and community.</p>
+                    <div class="card-meta">
+                        <span class="reading-time">30 min read</span>
+                        <span class="status-badge status-coming">Coming Soon</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Featured Section -->
+        <section class="featured-section">
+            <h2 class="featured-title">Complete Study Bundle</h2>
+            <p class="featured-description">Get instant access to all 10 studies plus exclusive bonus materials, discussion guides, and family activity resources.</p>
+            <a href="/bundle" class="featured-button">Get the Complete Bundle →</a>
+        </section>
+    </main>
+
+
+  
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

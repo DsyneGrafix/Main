@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QL8N3YFW6B');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Jewish Roots of Christianity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="canonical" href="https://anchorstack.pro/The-Jewish-Roots-of-Christianity.html">
+    <meta name="description" content="Explore the deep connections between Judaism and Christianity through shared scriptures.">
+    <meta name="keywords" content="Jewish Roots, Christianity, Shared Scriptures, Old Testament, New Testament, Jewish Messiah, Feasts, Festivals, Theological Concepts">
+    <meta name="author" content="AnchorStack">
+    <meta property="og:title" content="The Jewish Roots of Christianity">
+    <meta property="og:description" content="Explore the deep connections between Judaism and Christianity through shared scriptures.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anchorstack.pro/The-Jewish-Roots-of-Christianity.html">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Desert Dawn -->
+    <!-- Application Structure Plan: The SPA is designed as a thematic explorer with a primary tab-based navigation. This structure was chosen to break down a complex, multifaceted topic into four digestible themes: Shared Scriptures, The Jewish Messiah, Feasts & Festivals, and Key Concepts. This non-linear approach encourages user-led discovery, allowing them to explore areas of interest in any order. A central content pane dynamically updates based on the selected tab, keeping the user's focus clear and preventing information overload. This is more effective for learning than a long, scrolling page. -->
+    <!-- Visualization & Content Choices: Report Info: Old Testament as foundation -> Goal: Inform -> Viz/Method: Doughnut Chart (Chart.js Canvas) showing OT vs. NT Bible proportions + a comparison table -> Interaction: Chart is static but visually impactful; table is for reference -> Justification: The chart provides a quick, powerful visual of the shared textual foundation. | Report Info: Jewish Feasts & Christian fulfillment -> Goal: Compare/Organize -> Viz/Method: Interactive cards for each feast built with HTML/Tailwind -> Interaction: Clicking a card reveals its Jewish and Christian significance side-by-side -> Justification: Encourages focused learning on specific topics without cluttering the main view. | Report Info: Foundational theological concepts -> Goal: Show relationships -> Viz/Method: HTML/CSS "bridge" diagram -> Interaction: Clicking concept name updates text on both sides of the bridge -> Justification: A strong visual metaphor for how concepts span from Judaism to Christianity. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FBF9F6;
+            color: #4C433A;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Crimson Text', serif;
+        }
+        .nav-tab {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .nav-tab.active, .nav-tab:hover {
+            border-bottom-color: #4B5D7A;
+            color: #4B5D7A;
+        }
+        .content-section {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .content-section.active {
+            display: block;
+        }
+        .feast-card {
+            background-color: #FFFFFF;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .feast-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+        }
+        .feast-card .details {
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .feast-card.open .details {
+            display: grid;
+            max-height: 500px;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#4B5D7A]">The Jewish Roots of Christianity</h1>
+            <p class="mt-4 text-lg text-[#6a615a] max-w-3xl mx-auto">An interactive guide to understanding the foundational connections between Judaism and the Christian faith.</p>
+        </header>
+
+        <nav class="flex justify-center border-b-2 border-[#A17C5B]/30 mb-12">
+            <button data-target="scriptures" class="nav-tab active py-4 px-6 text-lg font-semibold">Shared Scriptures</button>
+            <button data-target="messiah" class="nav-tab py-4 px-6 text-lg font-semibold">The Jewish Messiah</button>
+            <button data-target="feasts" class="nav-tab py-4 px-6 text-lg font-semibold">Feasts & Festivals</button>
+            <button data-target="concepts" class="nav-tab py-4 px-6 text-lg font-semibold">Key Concepts</button>
+        </nav>
+
+        <main id="content-pane">
+            <section id="scriptures" class="content-section active">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-2">The Foundation of Scripture</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">The Christian faith did not emerge from a vacuum; its roots are deeply planted in the soil of the Hebrew Bible, which Christians call the Old Testament. This collection of sacred texts forms the vast majority of the biblical canon and provides the context, prophecies, and covenants essential for understanding Jesus and the New Testament.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="chart-container">
+                        <canvas id="bible-chart"></canvas>
+                        <p class="text-center mt-4 text-sm text-[#6a615a]">Approximate proportion of the Protestant Bible by Testament.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-center md:text-left">Prophecy and Fulfillment</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <h4 class="font-bold border-b pb-2">Hebrew Prophecy</h4>
+                                <h4 class="font-bold border-b pb-2">New Testament Fulfillment</h4>
+                                <div>
+                                    <p class="font-semibold">Isaiah 7:14</p>
+                                    <p class="text-sm">"Therefore the Lord himself will give you a sign: The virgin will conceive and give birth to a son, and will call him Immanuel."</p>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Matthew 1:22-23</p>
+                                    <p class="text-sm">"All this took place to fulfill what the Lord had said through the prophet... 'The virgin will conceive...'"</p>
+                                </div>
+                                <div class="pt-4 border-t">
+                                    <p class="font-semibold">Micah 5:2</p>
+                                    <p class="text-sm">"But you, Bethlehem Ephrathah... out of you will come for me one who will be ruler over Israel."</p>
+                                </div>
+                                <div class="pt-4 border-t">
+                                    <p class="font-semibold">Matthew 2:1, 5-6</p>
+                                    <p class="text-sm">"After Jesus was born in Bethlehem in Judea... 'in Bethlehem in Judea,' they replied, 'for this is what the prophet has written...'"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="messiah" class="content-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-2">Jesus, The Jewish Messiah</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">Jesus of Nazareth was a first-century Jew. He was born into a Jewish family, learned the Hebrew Scriptures, worshiped at the Temple, and taught in synagogues. His life, teachings, and identity can only be fully understood within this rich Jewish context.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-bold mb-2 text-[#4B5D7A]">A Jewish Rabbi</h3>
+                        <p>Jesus was addressed as "Rabbi" (Teacher) by his followers. His teaching methods, such as using parables and asking probing questions, were common among Jewish teachers of his time.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-bold mb-2 text-[#4B5D7A]">The Davidic King</h3>
+                        <p>The title "Messiah" (in Hebrew) or "Christ" (in Greek) means "Anointed One." It refers to the prophesied king from the line of David who would restore Israel. The Gospels emphasize Jesus's Davidic lineage.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-bold mb-2 text-[#4B5D7A]">Fulfillment of the Law</h3>
+                        <p>Jesus declared he came not to abolish the Law (Torah) and the Prophets, but to fulfill them. His teachings often expanded upon the ethical and spiritual intent behind the Mosaic Law.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="feasts" class="content-section">
+                 <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-2">The Feasts of Israel</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">God commanded Israel to observe specific feasts throughout the year to remember His mighty acts and promises. Early Christians saw these feasts as "types" or "shadows" pointing forward to the work of the Messiah. Click on each feast to see its significance.</p>
+                </div>
+                <div id="feasts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+            </section>
+
+            <section id="concepts" class="content-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-2">Bridging Key Concepts</h2>
+                    <p class="max-w-3xl mx-auto text-[#6a615a]">Many core tenets of Christianity are expansions of foundational Jewish concepts. The New Testament reinterprets these ideas in light of Jesus, viewing him as their ultimate fulfillment and meaning.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex justify-center items-center p-4 bg-white rounded-lg shadow-md">
+                        <div id="concept-judaism" class="w-1/2 text-right pr-6">
+                            <h3 class="text-xl font-bold text-[#A17C5B]">In Judaism</h3>
+                            <p class="text-sm">An agreement between God and His people, starting with Abraham and Moses, marked by obedience to the Law (Torah).</p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <div class="w-24 h-16 bg-[#A17C5B]/20 rounded-t-full border-4 border-b-0 border-[#A17C5B]"></div>
+                            <div id="concept-title" class="text-center -mt-3 text-lg font-bold text-white bg-[#4B5D7A] rounded-md py-1 px-3 z-10 relative">Covenant</div>
+                        </div>
+                        <div id="concept-christianity" class="w-1/2 text-left pl-6">
+                            <h3 class="text-xl font-bold text-[#4B5D7A]">In Christianity</h3>
+                            <p class="text-sm">A "New Covenant" established through Jesus's sacrifice, based on grace through faith, and open to all people, not just ethnic Israel.</p>
+                        </div>
+                    </div>
+                     <div class="flex justify-center gap-4 mt-6">
+                         <button class="concept-btn bg-[#4B5D7A] text-white py-1 px-4 rounded-md text-sm" data-concept="covenant">Covenant</button>
+                         <button class="concept-btn bg-gray-200 text-gray-700 py-1 px-4 rounded-md text-sm" data-concept="sacrifice">Sacrifice</button>
+                         <button class="concept-btn bg-gray-200 text-gray-700 py-1 px-4 rounded-md text-sm" data-concept="temple">Temple</button>
+                     </div>
+                </div>
+            </section>
+      <!-- ========================================= -->
+<!-- THE-JEWISH-ROOTS-OF-CHRISTIANITY.HTML LINKING BOX -->
+<!-- ========================================= -->
+
+<section class="roots-connections" style="margin: 4rem 0; padding: 3rem 1rem; background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%); border-radius: 20px; border: 1px solid #4682b4;">
+    <h2 style="text-align: center; font-size: 2.5rem; color: #2f4f4f; margin-bottom: 3rem; font-weight: bold;">Explore Jewish Heritage & Christian Faith</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+        
+        <div class="roots-card" style="background: white; border: 2px solid transparent; border-radius: 15px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #4682b4, #5f9ea0); transform: scaleX(0); transition: transform 0.3s ease;"></div>
+            <h3 style="color: #4682b4; margin-bottom: 1rem; font-size: 1.4rem;">Temple Worship</h3>
+            <p style="color: #696969; margin-bottom: 1.5rem; line-height: 1.6;">Explore the Temple where Jewish worship reached its pinnacle - the sacrificial system that pointed to Christ.</p>
+            <a href="/temple-interactive.html" style="display: inline-block; background: linear-gradient(135deg, #4682b4 0%, #5f9ea0 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Enter the Temple →</a>
+        </div>
+
+        <div class="roots-card" style="background: white; border: 2px solid transparent; border-radius: 15px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #cd853f, #daa520); transform: scaleX(0); transition: transform 0.3s ease;"></div>
+            <h3 style="color: #cd853f; margin-bottom: 1rem; font-size: 1.4rem;">Passover Festival</h3>
+            <p style="color: #696969; margin-bottom: 1.5rem; line-height: 1.6;">Understand the Passover that Jesus celebrated - how this ancient festival points to Christ as our Passover Lamb.</p>
+            <a href="/passover.html" style="display: inline-block; background: linear-gradient(135deg, #cd853f 0%, #daa520 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Celebrate Passover →</a>
+        </div>
+
+        <div class="roots-card" style="background: white; border: 2px solid transparent; border-radius: 15px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #dc143c, #ff6347); transform: scaleX(0); transition: transform 0.3s ease;"></div>
+            <h3 style="color: #dc143c; margin-bottom: 1rem; font-size: 1.4rem;">Four Gospels Context</h3>
+            <p style="color: #696969; margin-bottom: 1.5rem; line-height: 1.6;">See how the Gospels present Jesus within His Jewish context - understanding the cultural background of His ministry.</p>
+            <a href="/four-gospels-interactive.html" style="display: inline-block; background: linear-gradient(135deg, #dc143c 0%, #ff6347 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Study the Gospels →</a>
+        </div>
+    </div>
+</section>
+
+<div style="margin: 2rem 0; padding: 1.5rem; background: rgba(70, 130, 180, 0.1); border-radius: 10px;">
+    <h4 style="text-align: center; color: #2f4f4f; margin-bottom: 1rem;">Study Resources & Tools</h4>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+        <a href="/scripture-interpretation-guide.html" style="color: #4682b4; text-decoration: none; padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem; transition: all 0.3s ease;">Scripture Study Tools</a>
+        <a href="/biblical_archaeology_page.html" style="color: #4682b4; text-decoration: none; padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem; transition: all 0.3s ease;">Archaeological Evidence</a>
+        <a href="/seminary-study-plan.html" style="color: #4682b4; text-decoration: none; padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem; transition: all 0.3s ease;">Seminary Study Plan</a>
+    </div>
+</div>
+
+      
+        </main>
+        
+      
+    </div>
+
+    <script>
+        const contentData = {
+            feasts: [
+                {
+                    name: "Passover",
+                    judaism: "Commemorates the liberation of Israel from slavery in Egypt, when the blood of a lamb protected their firstborn from the plague of death.",
+                    christianity: "Seen as fulfilled by Jesus, the 'Lamb of God,' whose sacrificial death delivers believers from the slavery of sin. The Last Supper was a Passover meal."
+                },
+                {
+                    name: "Pentecost (Shavuot)",
+                    judaism: "Celebrates the giving of the Law (Torah) to Moses on Mount Sinai, 50 days after the Passover.",
+                    christianity: "Marks the day the Holy Spirit descended upon the apostles, 50 days after Jesus's resurrection, writing God's law on their hearts."
+                },
+                {
+                    name: "Day of Atonement (Yom Kippur)",
+                    judaism: "The holiest day of the year, when the High Priest would enter the Holy of Holies to make atonement for the nation's sins.",
+                    christianity: "Points to Jesus as the ultimate High Priest who made a once-for-all atonement for sin through his own blood, giving believers direct access to God."
+                }
+            ],
+            concepts: {
+                covenant: {
+                    judaism: "An agreement between God and His people, starting with Abraham and Moses, marked by obedience to the Law (Torah).",
+                    christianity: "A 'New Covenant' established through Jesus's sacrifice, based on grace through faith, and open to all people, not just ethnic Israel."
+                },
+                sacrifice: {
+                    judaism: "A system of animal offerings prescribed in the Torah to atone for sin, maintain fellowship with God, and express worship.",
+                    christianity: "Fulfilled in the final, perfect sacrifice of Jesus on the cross. His death is seen as the ultimate atonement, making the animal sacrifice system obsolete."
+                },
+                temple: {
+                    judaism: "The central place of worship and God's dwelling place on Earth, where sacrifices were made. First the Tabernacle, then the Temple in Jerusalem.",
+                    christianity: "Jesus referred to his body as a temple. The church (the community of believers) is now considered God's temple, where His Spirit dwells."
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.nav-tab');
+            const sections = document.querySelectorAll('.content-section');
+            const feastsGrid = document.getElementById('feasts-grid');
+            const conceptBtns = document.querySelectorAll('.concept-btn');
+
+            const updateContent = (targetId) => {
+                tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.target === targetId));
+                sections.forEach(section => section.classList.toggle('active', section.id === targetId));
+                
+                if (targetId === 'scriptures' && !document.getElementById('bible-chart').chart) {
+                    renderBibleChart();
+                }
+            };
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => updateContent(tab.dataset.target));
+            });
+            
+            contentData.feasts.forEach(feast => {
+                const card = document.createElement('div');
+                card.className = 'feast-card p-6 rounded-lg shadow-md border border-gray-200';
+                card.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-[#4B5D7A]">${feast.name}</h3>
+                        <span class="text-2xl transform transition-transform duration-300">
+                            &#x25BC;
+                        </span>
+                    </div>
+                    <div class="details grid-cols-1 md:grid-cols-2 gap-4 pt-4 mt-4 border-t border-gray-200">
+                        <div>
+                            <h4 class="font-bold text-[#A17C5B]">In Judaism:</h4>
+                            <p class="text-sm">${feast.judaism}</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#4B5D7A]">In Christianity:</h4>
+                            <p class="text-sm">${feast.christianity}</p>
+                        </div>
+                    </div>
+                `;
+                feastsGrid.appendChild(card);
+
+                card.addEventListener('click', () => {
+                    const wasOpen = card.classList.contains('open');
+                    document.querySelectorAll('.feast-card').forEach(c => {
+                        c.classList.remove('open');
+                        c.querySelector('span').style.transform = 'rotate(0deg)';
+                    });
+                    if (!wasOpen) {
+                        card.classList.add('open');
+                        card.querySelector('span').style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            conceptBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const conceptId = btn.dataset.concept;
+                    const concept = contentData.concepts[conceptId];
+                    document.getElementById('concept-title').textContent = conceptId.charAt(0).toUpperCase() + conceptId.slice(1);
+                    document.querySelector('#concept-judaism p').textContent = concept.judaism;
+                    document.querySelector('#concept-christianity p').textContent = concept.christianity;
+
+                    conceptBtns.forEach(b => b.classList.remove('bg-[#4B5D7A]', 'text-white'));
+                    conceptBtns.forEach(b => b.classList.add('bg-gray-200', 'text-gray-700'));
+                    btn.classList.add('bg-[#4B5D7A]', 'text-white');
+                    btn.classList.remove('bg-gray-200', 'text-gray-700');
+                });
+            });
+
+            updateContent('scriptures');
+        });
+
+        function renderBibleChart() {
+            const ctx = document.getElementById('bible-chart').getContext('2d');
+            if (ctx.chart) {
+                ctx.chart.destroy();
+            }
+            ctx.chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Old Testament (Shared Scripture)', 'New Testament'],
+                    datasets: [{
+                        data: [77, 23],
+                        backgroundColor: [
+                            '#A17C5B',
+                            '#4B5D7A'
+                        ],
+                        borderColor: '#FBF9F6',
+                        borderWidth: 4,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: "'Lato', sans-serif"
+                                }
+                            }
+                        },
+                        tooltip: {
+                             callbacks: {
+                                label: function(context) {
+                                    return ` ${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+        }
+    </script>
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>
+
+

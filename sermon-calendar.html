@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QL8N3YFW6B');
+</script>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://anchorstackpro.com/sermon-calendar.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>52-Week Sermon Calendar | AnchorStack Pro</title>
+     <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax库/jquery/3.6.0/jquery.min.js">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="description" content="Explore our 52-week sermon calendar featuring Torah-based teachings with seasonal themes. Download weekly sermon outlines in Markdown format to enhance your ministry.">
+    <meta property="og:title" content="52-Week Sermon Calendar | AnchorStack Pro">
+<meta property="og:description" content="Explore our 52-week sermon calendar featuring Torah-based teachings with seasonal themes. Download weekly sermon outlines in Markdown format to enhance your ministry.">
+<meta property="og:image" content="https://anchorstackpro.com/images/sermon-calendar.jpg">
+<meta property="og:url" content="https://anchorstackpro.com/sermon-calendar.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="52-Week Sermon Calendar | AnchorStack Pro">
+<meta name="twitter:description" content="Explore our 52-week sermon calendar featuring Torah-based teachings with seasonal themes. Download weekly sermon outlines in Markdown format to enhance your ministry.">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --hover-color: #2980b9;
+            --bg-color: #f5f6fa;
+            --card-bg: #ffffff;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --border-color: #dfe6e9;
+            --genesis: #3498db;
+            --exodus: #e74c3c;
+            --leviticus: #8e44ad;
+            --numbers: #27ae60;
+            --deuteronomy: #f39c12;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .year-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .year-tab {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            padding: 10px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .year-tab.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        .year-tab:hover:not(.active) {
+            border-color: var(--accent-color);
+        }
+
+        .stats-bar {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .stats-bar span {
+            margin: 0 20px;
+            font-size: 1.1rem;
+        }
+
+        .stats-bar .number {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .progress-tracker {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: var(--bg-color);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), var(--hover-color));
+            border-radius: 15px;
+            width: 0%;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .month-section {
+            margin-bottom: 50px;
+        }
+
+        .month-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            font-size: 1.3rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .month-theme {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .sermons-grid {
+            background: var(--card-bg);
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 20px;
+        }
+
+        .sermon-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px;
+            margin-bottom: 15px;
+            background: var(--bg-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            min-height: 80px;
+        }
+
+        .sermon-card:hover {
+            transform: translateX(5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
+        }
+
+        .sermon-card.genesis { border-left: 4px solid var(--genesis); }
+        .sermon-card.exodus { border-left: 4px solid var(--exodus); }
+        .sermon-card.leviticus { border-left: 4px solid var(--leviticus); }
+        .sermon-card.numbers { border-left: 4px solid var(--numbers); }
+        .sermon-card.deuteronomy { border-left: 4px solid var(--deuteronomy); }
+
+        .sermon-info {
+            flex: 1;
+        }
+
+        .sermon-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .sermon-title {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .sermon-scripture {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .sermon-series {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-top: 5px;
+            background: var(--card-bg);
+            color: var(--text-secondary);
+        }
+
+        .download-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 120px;
+            justify-content: center;
+        }
+
+        .download-btn:hover {
+            background: var(--hover-color);
+            transform: scale(1.05);
+        }
+
+        .download-btn.completed {
+            background: #27ae60;
+        }
+
+        .download-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .year-content {
+            display: none;
+        }
+
+        .year-content.active {
+            display: block;
+        }
+
+        .note-card {
+            background: #ffeaa7;
+            border-left: 4px solid #fdcb6e;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .sermon-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .download-btn {
+                width: 100%;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .stats-bar span {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+
+        /* High contrast mode button */
+        .contrast-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .contrast-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* High contrast mode */
+        body.high-contrast {
+            --primary-color: #000000;
+            --accent-color: #0066cc;
+            --hover-color: #0052a3;
+            --bg-color: #ffffff;
+            --card-bg: #ffffff;
+            --text-primary: #000000;
+            --text-secondary: #333333;
+            --border-color: #000000;
+        }
+
+        body.high-contrast .sermon-card {
+            border: 2px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<body>
+   
+   
+ 
+
+    <div class="container">
+        <header>
+            <h1>📖 52-Week Sermon Calendar</h1>
+            <p class="subtitle">Torah-Based Teaching Series with Seasonal Themes</p>
+        </header>
+
+        <div class="stats-bar">
+            <span>Total Sermons: <span class="number">52</span></span>
+            <span>Completed: <span class="number" id="completed-count">0</span></span>
+            <span>Format: <span class="number">Markdown (.md)</span></span>
+        </div>
+
+        <div class="progress-tracker">
+            <h3 style="margin-bottom: 10px;">Annual Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill">0%</div>
+            </div>
+        </div>
+
+        <div class="year-tabs">
+            <button class="year-tab active" onclick="showYear('2025')">2025 (Oct-Dec)</button>
+            <button class="year-tab" onclick="showYear('2026')">2026 (Full Year)</button>
+        </div>
+
+        <!-- 2025 Content (October - December) -->
+        <div id="year-2025" class="year-content active">
+            
+            <!-- October 2025 -->
+            <div class="month-section">
+                <div class="month-header">
+                    <span>October 2025</span>
+                    <span class="month-theme">Genesis: Beginnings & Foundations</span>
+                </div>
+                <div class="sermons-grid">
+                    <div class="sermon-card genesis">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, October 5, 2025</div>
+                            <div class="sermon-title">In the Beginning: Creation's Purpose</div>
+                            <div class="sermon-scripture">Genesis 1:1-2:3</div>
+                            <div class="sermon-series">Torah Series: Genesis</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-10-05', 'In the Beginning: Creation\'s Purpose', 'Genesis 1:1-2:3', 'Genesis')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <div class="sermon-card genesis">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, October 12, 2025</div>
+                            <div class="sermon-title">The Fall: Understanding Sin's Impact</div>
+                            <div class="sermon-scripture">Genesis 3:1-24</div>
+                            <div class="sermon-series">Torah Series: Genesis</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-10-12', 'The Fall: Understanding Sin\'s Impact', 'Genesis 3:1-24', 'Genesis')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <div class="sermon-card genesis">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, October 19, 2025</div>
+                            <div class="sermon-title">Noah's Ark: Judgment and Grace</div>
+                            <div class="sermon-scripture">Genesis 6:9-9:17</div>
+                            <div class="sermon-series">Torah Series: Genesis</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-10-19', 'Noah\'s Ark: Judgment and Grace', 'Genesis 6:9-9:17', 'Genesis')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <div class="sermon-card genesis">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, October 26, 2025</div>
+                            <div class="sermon-title">Abraham's Call: Faith's Journey Begins</div>
+                            <div class="sermon-scripture">Genesis 12:1-9</div>
+                            <div class="sermon-series">Torah Series: Genesis</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-10-26', 'Abraham\'s Call: Faith\'s Journey Begins', 'Genesis 12:1-9', 'Genesis')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- November 2025 -->
+            <div class="month-section">
+                <div class="month-header">
+                    <span>November 2025</span>
+                    <span class="month-theme">Gratitude & Thanksgiving</span>
+                </div>
+                <div class="sermons-grid">
+                    <div class="sermon-card">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, November 2, 2025</div>
+                            <div class="sermon-title">Grateful in All Circumstances</div>
+                            <div class="sermon-scripture">1 Thessalonians 5:16-18</div>
+                            <div class="sermon-series">Thanksgiving Series</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-11-02', 'Grateful in All Circumstances', '1 Thessalonians 5:16-18', 'Thanksgiving')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <div class="sermon-card">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, November 9, 2025</div>
+                            <div class="sermon-title">Remembering God's Faithfulness</div>
+                            <div class="sermon-scripture">Psalm 103:1-5</div>
+                            <div class="sermon-series">Thanksgiving Series</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-11-09', 'Remembering God\'s Faithfulness', 'Psalm 103:1-5', 'Thanksgiving')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <div class="sermon-card">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, November 16, 2025</div>
+                            <div class="sermon-title">The Gift of Community</div>
+                            <div class="sermon-scripture">Hebrews 10:24-25</div>
+                            <div class="sermon-series">Thanksgiving Series</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-11-16', 'The Gift of Community', 'Hebrews 10:24-25', 'Thanksgiving')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <div class="sermon-card">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, November 23, 2025</div>
+                            <div class="sermon-title">Overflow of Thanksgiving</div>
+                            <div class="sermon-scripture">Colossians 2:6-7</div>
+                            <div class="sermon-series">Thanksgiving Series</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-11-23', 'Overflow of Thanksgiving', 'Colossians 2:6-7', 'Thanksgiving')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <div class="sermon-card">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, November 30, 2025</div>
+                            <div class="sermon-title">Preparing Our Hearts</div>
+                            <div class="sermon-scripture">Isaiah 40:3-5</div>
+                            <div class="sermon-series">Advent Begins</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-11-30', 'Preparing Our Hearts', 'Isaiah 40:3-5', 'Advent')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- December 2025 -->
+            <div class="month-section">
+                <div class="month-header">
+                    <span>December 2025</span>
+                    <span class="month-theme">Advent: Hope, Peace, Joy, Love</span>
+                </div>
+                <div class="sermons-grid">
+                    <div class="sermon-card">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, December 7, 2025</div>
+                            <div class="sermon-title">Hope Has a Name</div>
+                            <div class="sermon-scripture">Romans 15:13</div>
+                            <div class="sermon-series">Advent Week 2</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-12-07', 'Hope Has a Name', 'Romans 15:13', 'Advent')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <div class="sermon-card">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, December 14, 2025</div>
+                            <div class="sermon-title">Peace on Earth</div>
+                            <div class="sermon-scripture">Luke 2:14</div>
+                            <div class="sermon-series">Advent Week 3</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-12-14', 'Peace on Earth', 'Luke 2:14', 'Advent')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <div class="sermon-card">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, December 21, 2025</div>
+                            <div class="sermon-title">Joy to the World</div>
+                            <div class="sermon-scripture">Luke 2:10-11</div>
+                            <div class="sermon-series">Advent Week 4</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-12-21', 'Joy to the World', 'Luke 2:10-11', 'Advent')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <div class="sermon-card">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, December 28, 2025</div>
+                            <div class="sermon-title">Love Came Down</div>
+                            <div class="sermon-scripture">John 3:16</div>
+                            <div class="sermon-series">Christmas Reflection</div>
+                        </div>
+                        <button class="download-btn" onclick="downloadSermon('2025-12-28', 'Love Came Down', 'John 3:16', 'Christmas')">
+                            <svg class="download-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2026 Content (Full Year) -->
+        <div id="year-2026" class="year-content">
+            <div class="note-card">
+                <strong>📝 2026 Planning Note:</strong> The full 2026 calendar will be developed throughout late 2025. 
+                Planned themes include:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>January:</strong> Exodus Series - From Bondage to Freedom</li>
+                    <li><strong>February:</strong> Leviticus Themes - Holiness & Sacrifice</li>
+                    <li><strong>March:</strong> Numbers - Faith in the Wilderness</li>
+                    <li><strong>April:</strong> Easter & Resurrection Hope</li>
+                    <li><strong>May-December:</strong> Additional Torah studies, seasonal themes, and practical application series</li>
+                </ul>
+            </div>
+
+            <!-- January 2026 Preview -->
+            <div class="month-section">
+                <div class="month-header">
+                    <span>January 2026</span>
+                    <span class="month-theme">Exodus: Liberation & Law</span>
+                </div>
+                <div class="sermons-grid">
+                    <div class="sermon-card exodus">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, January 4, 2026</div>
+                            <div class="sermon-title">Bondage in Egypt</div>
+                            <div class="sermon-scripture">Exodus 1:1-22</div>
+                            <div class="sermon-series">Torah Series: Exodus</div>
+                        </div>
+                        <button class="download-btn" disabled style="opacity: 0.5;">
+                            Coming Soon
+                        </button>
+                    </div>
+
+                    <div class="sermon-card exodus">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, January 11, 2026</div>
+                            <div class="sermon-title">The Call of Moses</div>
+                            <div class="sermon-scripture">Exodus 3:1-4:17</div>
+                            <div class="sermon-series">Torah Series: Exodus</div>
+                        </div>
+                        <button class="download-btn" disabled style="opacity: 0.5;">
+                            Coming Soon
+                        </button>
+                    </div>
+
+                    <div class="sermon-card exodus">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, January 18, 2026</div>
+                            <div class="sermon-title">The Plagues: God's Power Revealed</div>
+                            <div class="sermon-scripture">Exodus 7-11</div>
+                            <div class="sermon-series">Torah Series: Exodus</div>
+                        </div>
+                        <button class="download-btn" disabled style="opacity: 0.5;">
+                            Coming Soon
+                        </button>
+                    </div>
+
+                    <div class="sermon-card exodus">
+                        <div class="sermon-info">
+                            <div class="sermon-date">Sunday, January 25, 2026</div>
+                            <div class="sermon-title">Passover & Red Sea</div>
+                            <div class="sermon-scripture">Exodus 12-14</div>
+                            <div class="sermon-series">Torah Series: Exodus</div>
+                        </div>
+                        <button class="download-btn" disabled style="opacity: 0.5;">
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- High Contrast Toggle -->
+    <button class="contrast-toggle" onclick="toggleContrast()" title="Toggle High Contrast Mode">
+        👁️
+    </button>
+
+    <script>
+        // Track completed sermons
+        let completedSermons = JSON.parse(localStorage.getItem('completedSermons')) || [];
+
+        // Update progress on load
+        updateProgress();
+
+        // Function to generate markdown content with Torah references
+        function generateMarkdown(date, title, scripture, series) {
+            const seriesNotes = {
+                'Genesis': `This sermon is part of our Torah study series on Genesis, exploring the foundational narratives of creation, fall, and redemption that shape our understanding of God's relationship with humanity.`,
+                'Exodus': `This sermon is part of our Torah study series on Exodus, examining themes of liberation, covenant, and divine law that continue to shape faith communities today.`,
+                'Leviticus': `This sermon is part of our Torah study series on Leviticus, discovering principles of holiness, worship, and community life that reveal God's desire for His people.`,
+                'Thanksgiving': `This sermon is part of our Thanksgiving series, cultivating hearts of gratitude and recognizing God's faithfulness in all seasons of life.`,
+                'Advent': `This sermon is part of our Advent journey, preparing our hearts to receive the gift of Christ and the hope He brings to our world.`,
+                'Christmas': `This sermon reflects on the miracle of the incarnation and God's ultimate gift of love to humanity.`
+            };
+
+            const seriesNote = seriesNotes[series] || `This sermon is part of our ${series} series.`;
+
+            const markdown = `---
+date: ${date}
+title: "${title}"
+scripture: "${scripture}"
+series: "${series}"
+pastor: "[Pastor Name]"
+location: "AnchorStack Community Church"
+---
+
+# ${title}
+
+**Scripture Reading:** ${scripture}  
+**Date:** ${date}  
+**Series:** ${series}
+
+---
+
+## Series Context
+
+${seriesNote}
+
+## Opening Prayer
+
+Heavenly Father, we come before You with open hearts, ready to receive Your Word. Illuminate our minds through Your Holy Spirit as we explore these sacred texts. Help us not merely to gain knowledge, but to be transformed by Your truth. May this message draw us closer to You and equip us to live as Your faithful disciples. In Jesus' name, Amen.
+
+## Introduction
+
+[Begin with a relevant contemporary illustration or question that connects to today's scripture and theme. Consider current events, common struggles, or universal human experiences that make this ancient text relevant to modern listeners.]
+
+## Historical Context
+
+[Provide essential background information about the scripture passage, including:
+- The original audience and their circumstances
+- The cultural and religious context
+- Key terms or concepts that need explanation
+- Connection to the broader biblical narrative]
+
+## Main Message
+
+### Point 1: [First Major Theme from the Text]
+
+[Detailed exposition of the first major point, including:
+- Careful analysis of the scripture
+- Original language insights where relevant
+- Cross-references to other biblical passages
+- Historical and cultural background]
+
+**Application:** [Specific, practical ways this truth applies to daily life in the 21st century]
+
+### Point 2: [Second Major Theme from the Text]
+
+[Detailed exposition of the second major point, following the same structure as above]
+
+**Application:** [Concrete examples of how to implement this principle in work, family, and community life]
+
+### Point 3: [Third Major Theme from the Text]
+
+[Detailed exposition of the third major point, maintaining theological depth while remaining accessible]
+
+**Application:** [Actionable steps the congregation can take this week]
+
+## Theological Reflection
+
+[Connect this passage to broader biblical themes:
+- How does this relate to the character of God?
+- What does this reveal about human nature?
+- How does this point to Christ and the gospel?
+- What does this mean for the church today?]
+
+## Contemporary Relevance
+
+[Address modern questions and challenges:
+- How does this scripture speak to current cultural issues?
+- What hope does this offer in times of uncertainty?
+- How can this transform our community?]
+
+## Illustration
+
+[Include a powerful story, analogy, or example that crystallizes the main message and makes it memorable. This could be:
+- A personal testimony
+- A historical account
+- A modern parable
+- A scientific discovery that illustrates spiritual truth]
+
+## Conclusion
+
+[Summarize the key points and provide a clear, compelling call to action. This should:
+- Reinforce the main theme
+- Challenge listeners to respond
+- Offer hope and encouragement
+- Point to next steps in spiritual growth]
+
+## Closing Prayer
+
+Lord, we thank You for Your Word that is living and active, sharper than any two-edged sword. We ask that You would write these truths on our hearts and transform us from the inside out. Give us courage to live out what we've learned, wisdom to apply Your truth in complex situations, and love to share Your grace with others. May our lives be a testimony to Your transforming power. Through Christ our Lord, Amen.
+
+## Response and Reflection
+
+### Personal Reflection Questions
+
+1. How does today's scripture challenge your current understanding of God?
+2. What specific area of your life needs transformation in light of this message?
+3. Who in your life needs to hear this truth, and how can you share it with them?
+4. What one action step will you take this week to apply this message?
+
+### Small Group Discussion Guide
+
+**Opening:** Share a time when you experienced [relate to sermon theme].
+
+**Scripture Study:**
+- Read the passage aloud in 2-3 different translations
+- What stands out to you in this text?
+- What questions does this passage raise?
+
+**Application:**
+- How does this truth change your perspective on current challenges?
+- What obstacles might prevent you from applying this message?
+- How can the group support one another in living out these truths?
+
+**Prayer Focus:**
+- Pray for wisdom in application
+- Pray for courage to share this truth
+- Pray for transformation in specific areas discussed
+
+## Additional Resources
+
+### For Further Study
+- [Relevant book recommendation with brief description]
+- [Online resource or video series]
+- [Related scripture passages for deeper study]
+
+### Weekly Reading Plan
+- Monday: [Related passage]
+- Tuesday: [Related passage]
+- Wednesday: [Related passage]
+- Thursday: [Related passage]
+- Friday: [Related passage]
+- Saturday: [Related passage]
+
+### Memory Verse
+"[Select a key verse from the sermon text that captures the main theme]"
+
+---
+
+## Notes for Worship Team
+
+**Suggested Worship Songs:**
+- [Song that relates to the sermon theme]
+- [Song that reinforces the main scripture]
+- [Response song for after the message]
+
+**Communion Meditation (if applicable):**
+[Brief connection between sermon theme and the Lord's Supper]
+
+---
+
+## Pastor's Preparation Notes
+
+**Estimated Speaking Time:** 30-35 minutes
+
+**Key Transitions:**
+- From introduction to first point: [Suggested transition]
+- Between main points: [Connecting thoughts]
+- To conclusion: [Summary transition]
+
+**Visual Aids/Props:**
+- [Any objects or visuals that might enhance the message]
+
+**Sensitive Topics:**
+- [Notes on any controversial or sensitive aspects of the text]
+- [Pastoral guidance for addressing difficult questions]
+
+---
+
+*This sermon manuscript is provided by AnchorStack Pro as a starting point for sermon preparation. Feel free to adapt, modify, and personalize it for your specific congregation and context.*
+
+---
+
+© 2025 AnchorStack Pro | Equipping pastors with biblical, thoughtful, and practical resources for effective ministry.`;
+            
+            return markdown;
+        }
+
+        // Function to download sermon as markdown file
+        function downloadSermon(date, title, scripture, series) {
+            const content = generateMarkdown(date, title, scripture, series);
+            const filename = `${date}-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.md`;
+            
+            // Create blob and download
+            const blob = new Blob([content], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Track completion
+            if (!completedSermons.includes(date)) {
+                completedSermons.push(date);
+                localStorage.setItem('completedSermons', JSON.stringify(completedSermons));
+                updateProgress();
+            }
+            
+            // Show feedback
+            showDownloadFeedback(title);
+        }
+
+        // Function to show download feedback
+        function showDownloadFeedback(title) {
+            const btn = event.target.closest('.download-btn');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '✓ Downloaded!';
+            btn.style.background = '#27ae60';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.style.background = '';
+            }, 2000);
+        }
+
+        // Update progress display
+        function updateProgress() {
+            document.getElementById('completed-count').textContent = completedSermons.length;
+            const percentage = Math.round((completedSermons.length / 52) * 100);
+            const progressFill = document.getElementById('progress-fill');
+            progressFill.style.width = percentage + '%';
+            progressFill.textContent = percentage + '%';
+        }
+
+        // Year tab switching
+        function showYear(year) {
+            // Update tabs
+            document.querySelectorAll('.year-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.year-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('year-' + year).classList.add('active');
+        }
+
+        // Toggle high contrast mode
+        function toggleContrast() {
+            document.body.classList.toggle('high-contrast');
+            localStorage.setItem('highContrast', document.body.classList.contains('high-contrast'));
+        }
+
+        // Check for saved contrast preference
+        window.onload = function() {
+            if (localStorage.getItem('highContrast') === 'true') {
+                document.body.classList.add('high-contrast');
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.altKey && e.key === 'c') {
+                toggleContrast();
+            }
+        });
+    </script>
+ 
+    
+    
+
+  
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

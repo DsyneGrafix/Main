@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+ <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="main.css">
+    <title>Biblical Hermeneutics Assessment Quiz | AnchorStack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Georgia&display=swap">
+    <link rel="canonical" href="https://anchorstack.pro/hermeneutics-assessment-quiz.html">
+    <meta name="description" content="Test your understanding of biblical hermeneutics with this comprehensive assessment quiz. Perfect for students and enthusiasts of scripture interpretation.">
+    <meta property="og:title" content="Biblical Hermeneutics Assessment Quiz | AnchorStack">
+    <meta property="og:description" content="Test your understanding of biblical hermeneutics with this comprehensive assessment quiz. Perfect for students and enthusiasts of scripture interpretation.">
+    <style>
+        @media print {
+            .no-print { display: none; }
+            .page-break { page-break-after: always; }
+            body { margin: 0.5in; }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #374151;
+            background: #f9fafb;
+            padding: 20px;
+        }
+        
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .quiz-header {
+            background: linear-gradient(135deg, #1e3a8a, #5b21b6);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .quiz-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quiz-subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .student-info {
+            padding: 2rem;
+            background: #f3f4f6;
+            border-bottom: 3px solid #e5e7eb;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .info-field {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 0.25rem;
+        }
+        
+        .info-input {
+            padding: 0.5rem;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .quiz-body {
+            padding: 2rem;
+        }
+        
+        .instructions {
+            background: #fef3c7;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .question {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .question:last-child {
+            border-bottom: none;
+        }
+        
+        .question-number {
+            color: #1e3a8a;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .question-text {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        .options {
+            margin-left: 1.5rem;
+        }
+        
+        .option {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .option input[type="radio"] {
+            margin-right: 0.5rem;
+            margin-top: 0.25rem;
+        }
+        
+        .short-answer {
+            width: 100%;
+            padding: 0.5rem;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            min-height: 60px;
+            resize: vertical;
+        }
+        
+        .true-false {
+            display: flex;
+            gap: 2rem;
+            margin-left: 1.5rem;
+        }
+        
+        .scoring-box {
+            background: #f0fdf4;
+            border: 2px solid #22c55e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .score-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        /* Answer Key Styles */
+        .answer-key {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #e0e7ff;
+            border-radius: 15px;
+        }
+        
+        .answer-key-header {
+            background: #4f46e5;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .answer {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #22c55e;
+        }
+        
+        .answer-number {
+            font-weight: bold;
+            color: #059669;
+            margin-bottom: 0.25rem;
+        }
+        
+        .correct-answer {
+            font-weight: bold;
+            color: #047857;
+        }
+        
+        .explanation {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: #6b7280;
+        }
+        
+        .grading-rubric {
+            background: #fef3c7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .rubric-title {
+            font-weight: bold;
+            color: #92400e;
+            margin-bottom: 1rem;
+        }
+        
+        .rubric-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 640px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Student Quiz Section -->
+        <div class="quiz-header">
+            <h1 class="quiz-title">Biblical Hermeneutics Assessment</h1>
+            <p class="quiz-subtitle">Test Your Understanding of Scripture Interpretation</p>
+        </div>
+        
+        <div class="student-info">
+            <div class="info-grid">
+                <div class="info-field">
+                    <label class="info-label">Name</label>
+                    <input type="text" class="info-input">
+                </div>
+                <div class="info-field">
+                    <label class="info-label">Date</label>
+                    <input type="date" class="info-input">
+                </div>
+            </div>
+        </div>
+        
+        <div class="quiz-body">
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions to the best of your ability. 
+                This assessment is designed to reinforce learning, not to trick you. 
+                Take your time and apply the principles you've learned. (Total: 20 points)
+            </div>
+            
+            <!-- Question 1 -->
+            <div class="question">
+                <div class="question-number">Question 1 (2 points)</div>
+                <div class="question-text">Define "biblical hermeneutics" in one clear sentence.</div>
+                <textarea class="short-answer" placeholder="Write your answer here..."></textarea>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="question">
+                <div class="question-number">Question 2 (2 points)</div>
+                <div class="question-text">Which principle of interpretation helps us understand that Psalm 23 uses metaphorical language rather than literal shepherding instructions?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q2" id="q2a">
+                        <label for="q2a">A) Context</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q2" id="q2b">
+                        <label for="q2b">B) Genre</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q2" id="q2c">
+                        <label for="q2c">C) Original Language</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q2" id="q2d">
+                        <label for="q2d">D) Scripture Interprets Scripture</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="question">
+                <div class="question-number">Question 3 (2 points)</div>
+                <div class="question-text">True or False: A proverb in the Bible should always be taken as an absolute promise that applies to every situation.</div>
+                <div class="true-false">
+                    <div>
+                        <input type="radio" name="q3" id="q3true">
+                        <label for="q3true">True</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="q3" id="q3false">
+                        <label for="q3false">False</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="question">
+                <div class="question-number">Question 4 (2 points)</div>
+                <div class="question-text">List the five core principles of biblical interpretation (one point for getting at least 3 correct).</div>
+                <textarea class="short-answer" placeholder="1.&#10;2.&#10;3.&#10;4.&#10;5."></textarea>
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="question">
+                <div class="question-number">Question 5 (2 points)</div>
+                <div class="question-text">When you encounter a difficult or unclear passage, which principle suggests using clearer passages to help understand it?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q5" id="q5a">
+                        <label for="q5a">A) Context</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q5" id="q5b">
+                        <label for="q5b">B) Authorial Intent</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q5" id="q5c">
+                        <label for="q5c">C) Scripture Interprets Scripture</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q5" id="q5d">
+                        <label for="q5d">D) Original Language</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 6 -->
+            <div class="question">
+                <div class="question-number">Question 6 (2 points)</div>
+                <div class="question-text">Explain why Philippians 4:13 ("I can do all things through Christ who strengthens me") is NOT primarily about achieving personal goals. Use the principle of context in your answer.</div>
+                <textarea class="short-answer" placeholder="Write your answer here..."></textarea>
+            </div>
+            
+            <!-- Question 7 -->
+            <div class="question">
+                <div class="question-number">Question 7 (2 points)</div>
+                <div class="question-text">Which method of Bible study follows this pattern: Observe → Interpret → Apply?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q7" id="q7a">
+                        <label for="q7a">A) Historical-Critical Method</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q7" id="q7b">
+                        <label for="q7b">B) Inductive Bible Study</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q7" id="q7c">
+                        <label for="q7c">C) Lectio Divina</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q7" id="q7d">
+                        <label for="q7d">D) Allegorical Interpretation</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 8 -->
+            <div class="question">
+                <div class="question-number">Question 8 (2 points)</div>
+                <div class="question-text">True or False: Understanding the original language (Hebrew/Greek) requires years of study and is essential before anyone can properly interpret the Bible.</div>
+                <div class="true-false">
+                    <div>
+                        <input type="radio" name="q8" id="q8true">
+                        <label for="q8true">True</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="q8" id="q8false">
+                        <label for="q8false">False</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 9 -->
+            <div class="question">
+                <div class="question-number">Question 9 (2 points)</div>
+                <div class="question-text">In one sentence, reconcile this apparent contradiction: Paul says we're saved "by faith apart from works" (Romans 3:28) while James says "a person is justified by works and not by faith alone" (James 2:24).</div>
+                <textarea class="short-answer" placeholder="Write your answer here..."></textarea>
+            </div>
+            
+            <!-- Question 10 -->
+            <div class="question">
+                <div class="question-number">Question 10 (2 points)</div>
+                <div class="question-text">What is the FIRST thing you should do when you encounter a Bible verse you want to understand better?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q10" id="q10a">
+                        <label for="q10a">A) Look up the Greek/Hebrew words</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q10" id="q10b">
+                        <label for="q10b">B) Read the surrounding context</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q10" id="q10c">
+                        <label for="q10c">C) Consult a commentary</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q10" id="q10d">
+                        <label for="q10d">D) Apply it to your life</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scoring-box">
+                <h3>For Office Use Only</h3>
+                <div class="score-grid">
+                    <div>
+                        <strong>Total Score:</strong> _____ / 20
+                    </div>
+                    <div>
+                        <strong>Percentage:</strong> _____ %
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Answer Key Section -->
+    <div class="quiz-container page-break" style="margin-top: 3rem;">
+        <div class="answer-key">
+            <div class="answer-key-header">
+                <h2>ANSWER KEY - Facilitator's Copy</h2>
+                <p>Do not distribute to students</p>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-number">Question 1 (2 points)</div>
+                <div class="correct-answer">
+                    Acceptable Answer: Biblical hermeneutics is the art and science of interpreting Scripture to understand its original meaning and contemporary application.
+                </div>
+                <div class="explanation">
+                    Also accept variations that mention: interpretation, understanding meaning, bridging ancient/modern contexts.
+                    Partial credit (1 point) for answers that only mention interpretation without the dual aspect.
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-number">Question 2 (2 points)</div>
+                <div class="correct-answer">Answer: B) Genre</div>
+                <div class="explanation">
+                    Psalms are Hebrew poetry, which uses metaphor and imagery. Recognizing genre prevents literal misinterpretation.
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-number">Question 3 (2 points)</div>
+                <div class="correct-answer">Answer: False</div>
+                <div class="explanation">
+                    Proverbs are wisdom literature offering general principles, not absolute promises. They describe what usually happens, not what always happens.
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-number">Question 4 (2 points)</div>
+                <div class="correct-answer">
+                    The Five Core Principles:
+                    1. Context (Context is King)
+                    2. Genre (Genre Shapes Meaning)
+                    3. Original Language
+                    4. Authorial Intent
+                    5. Scripture Interprets Scripture
+                </div>
+                <div class="explanation">
+                    Full credit for all 5 correct (any order). 1 point for 3-4 correct. Accept reasonable variations in wording.
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-number">Question 5 (2 points)</div>
+                <div class="correct-answer">Answer: C) Scripture Interprets Scripture</div>
+                <div class="explanation">
+                    This principle (also called the analogy of faith) uses clear passages to illuminate unclear ones.
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-number">Question 6 (2 points)</div>
+                <div class="correct-answer">
+                    Model Answer: In context (Phil 4:10-13), Paul writes from prison about learning contentment in all circumstances—whether in plenty or want. The "all things" refers to enduring any situation through Christ's strength, not achieving personal goals.
+                </div>
+                <div class="explanation">
+                    Full credit for mentioning: prison context, contentment theme, or endurance vs achievement.
+                    Partial credit for incomplete but correct understanding.
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-number">Question 7 (2 points)</div>
+                <div class="correct-answer">Answer: B) Inductive Bible Study</div>
+                <div class="explanation">
+                    The inductive method moves from observation (what it says) to interpretation (what it means) to application (how it applies).
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-number">Question 8 (2 points)</div>
+                <div class="correct-answer">Answer: False</div>
+                <div class="explanation">
+                    While helpful, original languages can be accessed through tools like lexicons and interlinears. Good translations and study tools make interpretation accessible to all.
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-number">Question 9 (2 points)</div>
+                <div class="correct-answer">
+                    Model Answer: Paul addresses how we're saved (by faith, not by earning it through works), while James addresses how genuine saving faith behaves (it produces good works as evidence).
+                </div>
+                <div class="explanation">
+                    Accept any answer that distinguishes between: 
+                    - Justification by faith vs. evidence of faith
+                    - Root of salvation vs. fruit of salvation
+                    - Faith alone saves, but saving faith is never alone
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-number">Question 10 (2 points)</div>
+                <div class="correct-answer">Answer: B) Read the surrounding context</div>
+                <div class="explanation">
+                    Context is the starting point for interpretation. Never read a Bible verse—always read the paragraph or chapter.
+                </div>
+            </div>
+            
+            <div class="grading-rubric">
+                <div class="rubric-title">Grading Scale</div>
+                <div class="rubric-item">
+                    <span>18-20 points (90-100%)</span>
+                    <span><strong>Excellent</strong> - Strong grasp of principles</span>
+                </div>
+                <div class="rubric-item">
+                    <span>16-17 points (80-89%)</span>
+                    <span><strong>Good</strong> - Solid understanding</span>
+                </div>
+                <div class="rubric-item">
+                    <span>14-15 points (70-79%)</span>
+                    <span><strong>Satisfactory</strong> - Basic competence</span>
+                </div>
+                <div class="rubric-item">
+                    <span>12-13 points (60-69%)</span>
+                    <span><strong>Needs Improvement</strong> - Review key concepts</span>
+                </div>
+                <div class="rubric-item">
+                    <span>Below 12 points</span>
+                    <span><strong>Requires Remediation</strong> - Recommend retaking workshop</span>
+                </div>
+            </div>
+            
+            <div style="background: #e0e7ff; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                <h3 style="color: #4f46e5; margin-bottom: 1rem;">Teaching Notes</h3>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Use this assessment as a learning tool, not just evaluation</li>
+                    <li>Review answers together if time permits</li>
+                    <li>Focus on questions students struggled with most</li>
+                    <li>Celebrate what they got right before correcting errors</li>
+                    <li>Consider allowing open-Bible for first-time students</li>
+                    <li>Questions 1, 6, and 9 reveal deepest understanding</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+ 
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

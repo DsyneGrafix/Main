@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Complete Guide to Christian Prayer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Sanctuary -->
+    <!-- Application Structure Plan: The SPA uses a thematic, single-page structure with a top navigation bar for easy access to key sections: Foundations, Methods, Tools, Challenges, and Traditions. This non-linear design was chosen over a simple scroll to prevent overwhelming the user with dense text. It allows users to explore topics based on their interest, promoting engagement. Key interactions include clicking on cards to reveal detailed prayer methods and using tabs to compare denominational traditions, making the information digestible and interactive. -->
+    <!-- Visualization & Content Choices: 
+    - Report Info: ACTS Model (Adoration, Confession, Thanksgiving, Supplication). Goal: Organize/Inform. Viz: Doughnut Chart. Interaction: Static visualization within an interactive card that reveals the model's text. Justification: The doughnut chart visually represents the four equal, balanced components of the ACTS prayer model, providing a quick conceptual anchor for the user. Library: Chart.js (Canvas).
+    - Report Info: Denominational Traditions. Goal: Compare. Presentation: Tabbed Interface. Interaction: Clicking a tab reveals the content for that tradition. Justification: Tabs are a standard, intuitive UI pattern for comparing distinct but related sets of information, avoiding a long, hard-to-scan table. Method: HTML/CSS/JS.
+    - Report Info: Hindrances to Prayer. Goal: Inform. Presentation: Interactive Accordion/List. Interaction: Clicking a hindrance title expands to show the description. Justification: An accordion is more engaging and less cluttered than a static table, allowing users to focus on one obstacle at a time. Method: HTML/CSS/JS.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #4A4A4A;
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #8C6B5D;
+            border-bottom-color: #8C6B5D;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .tab.active {
+            background-color: #8C6B5D;
+            color: #FFFFFF;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+       .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.accordion-item.open .accordion-content {
+    max-height: none; /* Remove the arbitrary limit */
+    padding-top: 1rem;  /* 16px */
+    padding-bottom: 1rem; /* 16px */
+}
+        .accordion-item.open .accordion-arrow {
+            transform: rotate(180deg);
+        }
+        .accordion-arrow {
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<script src="/js/navigation.js"></script>
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-[#6D4C41]">Christian Prayer Guide</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#foundations" class="nav-link pb-1">Foundations</a>
+                <a href="#methods" class="nav-link pb-1">Methods</a>
+                <a href="#tools" class="nav-link pb-1">Tools</a>
+                <a href="#challenges" class="nav-link pb-1">Challenges</a>
+                <a href="#traditions" class="nav-link pb-1">Traditions</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-[#6D4C41]">
+                <span class="w-6 h-0.5 bg-current block my-1"></span>
+                <span class="w-6 h-0.5 bg-current block my-1"></span>
+                <span class="w-6 h-0.5 bg-current block my-1"></span>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#foundations" class="block py-2 text-center nav-link">Foundations</a>
+            <a href="#methods" class="block py-2 text-center nav-link">Methods</a>
+            <a href="#tools" class="block py-2 text-center nav-link">Tools</a>
+            <a href="#challenges" class="block py-2 text-center nav-link">Challenges</a>
+            <a href="#traditions" class="block py-2 text-center nav-link">Traditions</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="overview" class="text-center mb-20 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold section-title mb-4">The Landscape of Global Christianity</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-8">
+                Christianity is not a single entity but a diverse collection of denominations. This interactive guide explores the historical events and theological differences that define the major families of the Christian faith. The chart below shows the global distribution, revealing a more complex picture than the traditional three branches.
+            </p>
+            <div class="chart-container">
+                <canvas id="denominationsChart"></canvas>
+            </div>
+        </section>
+
+        <section id="history" class="mb-20 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold section-title text-center mb-4">The Great Divides: Origins of Division</h2>
+             <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12 text-center">
+                Two pivotal events in history created the foundational splits in Christianity. These schisms, driven by a mix of theology, politics, and culture, set the stage for the denominational landscape we see today. Explore the timeline to understand these key moments.
+            </p>
+            <div class="relative max-w-2xl mx-auto border-l-2 border-dashed border-gray-300 pl-8">
+                <div class="timeline-item mb-12">
+                    <h3 class="text-2xl font-semibold text-gray-800">1054: The East-West Schism</h3>
+                    <p class="text-gray-600 mt-2">The formal break between the Western (Roman Catholic) and Eastern (Orthodox) churches. This was the result of centuries of growing political and theological disagreements, particularly over papal authority and the *Filioque* clause in the Nicene Creed. This event solidified two distinct centers of Christian power and tradition.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-2xl font-semibold text-gray-800">1517: The Protestant Reformation</h3>
+                    <p class="text-gray-600 mt-2">Initiated by Martin Luther's 95 Theses, this movement challenged the authority and doctrines of the Roman Catholic Church. Aided by the printing press, the Reformation emphasized "Scripture Alone" (*sola scriptura*), leading to a rejection of papal authority and the creation of thousands of new denominations across Western Europe and beyond.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="beliefs" class="mb-20 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold section-title text-center mb-4">Core Beliefs Explorer</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-8 text-center">
+                The most fundamental differences between Christian traditions are theological. Select a topic below to compare the distinct views of Roman Catholicism, Eastern Orthodoxy, and Protestantism on the sources of authority, the path to salvation, and the nature of sacred rites.
+            </p>
+            <div id="belief-buttons" class="flex flex-wrap justify-center gap-4 mb-8">
+                <button data-belief="authority" class="btn-secondary active px-6 py-2 rounded-full font-semibold">Source of Authority</button>
+                <button data-belief="salvation" class="btn-secondary px-6 py-2 rounded-full font-semibold">Path to Salvation</button>
+                <button data-belief="sacraments" class="btn-secondary px-6 py-2 rounded-full font-semibold">Sacraments</button>
+            </div>
+            <div id="belief-content" class="grid md:grid-cols-3 gap-8">
+            </div>
+        </section>
+        
+        <section id="protestantism" class="mb-20 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold section-title text-center mb-4">Inside Protestantism: A Diverse Family</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-8 text-center">
+                The principle of "Scripture Alone" led to great diversity within Protestantism itself. While united in their break from Catholicism, different interpretations of the Bible created distinct traditions. Explore the core tenets of three major Protestant families by selecting them below.
+            </p>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-wrap justify-center border-b border-gray-200 mb-6">
+                    <button data-protestant="lutheran" class="protestant-tab py-3 px-6 font-medium text-lg border-b-2 border-transparent text-gray-500 hover:text-[#A0522D] active">Lutheranism</button>
+                    <button data-protestant="methodist" class="protestant-tab py-3 px-6 font-medium text-lg border-b-2 border-transparent text-gray-500 hover:text-[#A0522D]">Methodism</button>
+                    <button data-protestant="baptist" class="protestant-tab py-3 px-6 font-medium text-lg border-b-2 border-transparent text-gray-500 hover:text-[#A0522D]">Baptist Churches</button>
+                </div>
+                <div id="protestant-content" class="p-6 bg-white rounded-lg shadow-md">
+                </div>
+            </div>
+        </section>
+
+        <section id="summary" class="scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold section-title text-center mb-4">Comparative Summary</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-8 text-center">
+                This table provides a concise overview of the key doctrinal fault lines that separate the major Christian denominational families, synthesizing the core distinctions in authority, salvation, sacraments, and clergy.
+            </p>
+            <div class="overflow-x-auto card p-2">
+                <table class="w-full text-left">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="p-4 font-semibold">Topic</th>
+                            <th class="p-4 font-semibold">Roman Catholicism</th>
+                            <th class="p-4 font-semibold">Eastern Orthodoxy</th>
+                            <th class="p-4 font-semibold">Protestantism</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-medium">Authority</td>
+                            <td class="p-4">Scripture, Tradition, & Magisterium (Pope is infallible)</td>
+                            <td class="p-4">Holy Tradition (includes Scripture, councils)</td>
+                            <td class="p-4">Scripture Alone (sola scriptura)</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-medium">Justification</td>
+                            <td class="p-4">Synergistic process of faith and works</td>
+                            <td class="p-4">Synergistic process of grace and human activity (theosis)</td>
+                            <td class="p-4">By faith alone (sola fide)</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-medium">Sacraments</td>
+                            <td class="p-4">Seven sacraments; literal change in Eucharist (transubstantiation)</td>
+                            <td class="p-4">Seven mysteries; real, objective change in Eucharist</td>
+                            <td class="p-4">Two ordinances (Baptism, Communion); often symbolic</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-medium">Clergy</td>
+                            <td class="p-4">Celibate priests; apostolic succession</td>
+                            <td class="p-4">Married priests allowed; apostolic succession</td>
+                            <td class="p-4">Married pastors; apostolic succession often rejected</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+    <footer class="bg-[#6D4C41] text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>"Prayer does not change God, but it changes him who prays." - Søren Kierkegaard</p>
+            <p>&copy; 2025 AnchorStack. All rights reserved. | Built for spiritual growth and biblical education.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const prayerMethods = [
+                {
+                    title: 'The ACTS Model',
+                    icon: '🙏',
+                    summary: 'A balanced structure for personal prayer: Adoration, Confession, Thanksgiving, and Supplication.',
+                    details: `
+                        <p class="mb-4">The ACTS model is a popular and accessible guide for a well-rounded prayer life. Its deliberate order is a spiritual strategy to re-center prayer on God rather than self.</p>
+                        <div class="chart-container relative w-full max-w-sm mx-auto h-64 md:h-72">
+                            <canvas id="actsChart"></canvas>
+                        </div>
+                        <ul class="mt-6 space-y-3 text-left">
+                            <li><strong>Adoration:</strong> Praising God for who He is—His character and attributes. This puts everything else into perspective.</li>
+                            <li><strong>Confession:</strong> Acknowledging sin to remove barriers between you and God, ensuring a pure heart.</li>
+                            <li><strong>Thanksgiving:</strong> Expressing gratitude for God's blessings, which shifts focus from lack to abundance.</li>
+                            <li><strong>Supplication:</strong> Presenting your specific needs to God after your heart has been aligned through the first three steps.</li>
+                        </ul>
+                    `
+                },
+                {
+                    title: 'Lectio Divina',
+                    icon: '📖',
+                    summary: 'An ancient monastic practice of "Divine Reading" to encounter God through Scripture.',
+                    details: `
+                        <p class="mb-4">This slow, contemplative encounter with a biblical passage involves four steps (the four R's) to move God's word from the mind to the heart. The goal is not to analyze the text, but to listen for God's voice.</p>
+                        <ul class="space-y-3 text-left">
+                            <li><strong>Read (Lectio):</strong> Slowly read a passage, listening for a word or phrase that stands out.</li>
+                            <li><strong>Reflect (Meditatio):</strong> Ponder and "chew" on that word, absorbing its meaning for you.</li>
+                            <li><strong>Respond (Oratio):</strong> Speak to God in prayer about what you've reflected on.</li>
+                            <li><strong>Rest (Contemplatio):</strong> Simply rest in God's presence, beyond words or thoughts.</li>
+                        </ul>
+                    `
+                },
+                {
+                    title: 'Ignatian Contemplation',
+                    icon: '🤔',
+                    summary: 'Using your imagination to enter a biblical story and experience it with all five senses.',
+                    details: `
+                        <p>Popularized by St. Ignatius of Loyola, this method invites you to become a participant in a Gospel story. By engaging your senses—what you see, hear, smell, taste, and touch—the narrative comes alive, allowing for a personal conversation with Jesus "as one friend speaks to another." The goal is to gain insight into the heart of God by immersing yourself in His story.</p>
+                    `
+                },
+                {
+                    title: 'Centering Prayer',
+                    icon: '🧘',
+                    summary: 'A receptive method of silent prayer to rest in God\'s presence beyond words.',
+                    details: `
+                        <p class="mb-4">This practice helps quiet the mind to experience God's presence. It is not about emptying the mind, but focusing it on God through a "sacred word."</p>
+                        <ul class="space-y-3 text-left list-decimal list-inside">
+                            <li>Choose a sacred word (e.g., "Jesus," "Peace") as a symbol of your consent to God's presence.</li>
+                            <li>Sit comfortably with eyes closed, and silently introduce the word.</li>
+                            <li>When thoughts arise, gently return to the sacred word, letting the thoughts pass by without engagement.</li>
+                            <li>The goal is to rest in God, cultivating intimacy through stillness.</li>
+                        </ul>
+                    `
+                },
+                {
+                    title: 'Intercessory Prayer',
+                    icon: '🤝',
+                    summary: 'The fundamental Christian calling to pray on behalf of others, standing in the gap for them.',
+                    details: `
+                        <p>Intercession is a "high calling" to act as an advocate for others before God. Modeled by Jesus Christ himself, it involves entering into the pain and reality of another's situation and pleading their cause. This powerful discipline transforms the intercessor, cultivating a heart of compassion, love, and humility, shifting focus from self to God's heart for others.</p>
+                    `
+                },
+                {
+                    title: 'Praying Scripture',
+                    icon: '📜',
+                    summary: 'A direct method of turning a Bible verse or passage into a personal prayer.',
+                    details: `
+                        <p>This is a simple yet profound way to pray when you're not sure where to start. You simply read a passage of Scripture and rephrase it as a prayer for yourself or someone else. For example, reading Psalm 23, you might pray, "Lord, be my shepherd today, lead me beside quiet waters and restore my soul." This ensures your prayers are grounded in and aligned with God's revealed Word.</p>
+                    `
+                }
+            ];
+
+            const hindrances = [
+                { title: 'Unconfessed Sin', content: 'Deliberate sin creates a barrier between a person and God, preventing Him from hearing their prayers. (Isaiah 59:2)' },
+                { title: 'Wrong Motives', content: 'Asking with selfish desires, treating God like a cosmic genie rather than a loving Father. (James 4:3)' },
+                { title: 'Doubt', content: 'A lack of faith or a divided loyalty between God and the world can prevent a person from receiving anything. (James 1:6-7)' },
+                { title: 'Pride', content: 'An arrogant or self-exalting posture in prayer that God opposes. He gives grace to the humble. (James 4:6)' },
+                { title: 'Lack of Asking', content: 'Failing to bring our needs to God and instead choosing to worry or try to solve things on our own. (James 4:2)' }
+            ];
+
+            const traditions = {
+                catholicism: {
+                    title: 'Catholic Tradition',
+                    content: `
+                        <p class="mb-4">Catholic prayer is organized into three main forms: vocal prayer, meditation, and contemplation. It is known for its rich use of formal prayers that provide a sense of unity and historical continuity.</p>
+                        <ul class="space-y-2 list-disc list-inside">
+                            <li><strong>Key Practices:</strong> The Rosary, Hail Mary, Novenas, and the Mass (Eucharist) as the central liturgical act.</li>
+                            <li><strong>Unique Elements:</strong> The intercession of saints is a key practice, understood as asking fellow members of the Church in heaven to pray *with* and *for* us.</li>
+                        </ul>
+                    `
+                },
+                orthodoxy: {
+                    title: 'Orthodox Tradition',
+                    content: `
+                        <p class="mb-4">In Orthodoxy, prayer is a "lifting of the mind and heart to God." It emphasizes both communal worship and personal devotion, often with a deep sense of mystery and reverence.</p>
+                        <ul class="space-y-2 list-disc list-inside">
+                            <li><strong>Key Practices:</strong> The Divine Liturgy is the central communal prayer, uniting believers with saints and angels. The Jesus Prayer ("Lord Jesus Christ, Son of God, have mercy on me, a sinner") is a cornerstone of personal prayer.</li>
+                            <li><strong>Unique Elements:</strong> Use of icons to aid prayer, commemoration of saints, and hesychasm (a tradition of silent, contemplative prayer).</li>
+                        </ul>
+                    `
+                },
+                protestantism: {
+                    title: 'Protestant Traditions',
+                    content: `
+                        <p class="mb-4">Protestantism is diverse, but often emphasizes individual, spontaneous, and conversational prayer directly to God. However, many denominations also value formal liturgies and written prayers.</p>
+                        <ul class="space-y-2 list-disc list-inside">
+                            <li><strong>Key Practices:</strong> Varies widely. Liturgical traditions (Anglican, Lutheran) use prayer books like the *Book of Common Prayer*. Evangelical and Baptist traditions often focus on intercessory and spontaneous prayer.</li>
+                            <li><strong>Unique Elements:</strong> Most Reformed traditions reject the intercession of saints, emphasizing Christ as the sole mediator. Some liturgical denominations use the Sign of the Cross.</li>
+                        </ul>
+                    `
+                }
+            };
+
+            const methodsGrid = document.getElementById('methods-grid');
+            prayerMethods.forEach(method => {
+                const card = document.createElement('div');
+                card.className = 'card bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden cursor-pointer';
+                card.innerHTML = `
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">${method.icon}</div>
+                        <h3 class="text-xl font-semibold text-[#8C6B5D] mb-2">${method.title}</h3>
+                        <p class="text-gray-700">${method.summary}</p>
+                    </div>
+                    <div class="method-details bg-gray-50 p-6 border-t border-gray-200 hidden">
+                        ${method.details}
+                    </div>
+                `;
+                methodsGrid.appendChild(card);
+
+                card.addEventListener('click', () => {
+                    card.querySelector('.method-details').classList.toggle('hidden');
+                    if (method.title === 'The ACTS Model' && !card.querySelector('.method-details').classList.contains('hidden')) {
+                        setTimeout(createActsChart, 50);
+                    }
+                });
+            });
+
+            const accordionContainer = document.getElementById('accordion-container');
+            hindrances.forEach(item => {
+                const accordionItem = document.createElement('div');
+                accordionItem.className = 'accordion-item bg-white rounded-lg shadow-md border border-gray-200';
+                accordionItem.innerHTML = `
+                    <div class="accordion-header flex justify-between items-center p-4 cursor-pointer">
+                        <h3 class="font-semibold text-[#8C6B5D]">${item.title}</h3>
+                        <span class="accordion-arrow text-xl text-[#8C6B5D]">▼</span>
+                    </div>
+                    <div class="accordion-content px-4 pb-4 text-gray-700">
+                        <p>${item.content}</p>
+                    </div>
+                `;
+                accordionContainer.appendChild(accordionItem);
+                accordionItem.querySelector('.accordion-header').addEventListener('click', () => {
+                    accordionItem.classList.toggle('open');
+                });
+            });
+
+            const tabs = document.querySelectorAll('.tab');
+            const tabContent = document.getElementById('tab-content');
+            
+            function updateTabContent(tabId) {
+                tabContent.innerHTML = `
+                    <h3 class="text-2xl font-bold text-[#6D4C41] mb-4">${traditions[tabId].title}</h3>
+                    ${traditions[tabId].content}
+                `;
+            }
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    updateTabContent(tab.dataset.tab);
+                });
+            });
+            updateTabContent('catholicism');
+
+            let actsChartInstance = null;
+            function createActsChart() {
+                const ctx = document.getElementById('actsChart');
+                if (!ctx) return;
+                if(actsChartInstance) {
+                    actsChartInstance.destroy();
+                }
+                actsChartInstance = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Adoration', 'Confession', 'Thanksgiving', 'Supplication'],
+                        datasets: [{
+                            label: 'ACTS Model',
+                            data: [25, 25, 25, 25],
+                            backgroundColor: ['#A1887F', '#D7CCC8', '#8C6B5D', '#BCAAA4'],
+                            borderColor: '#FDFBF8',
+                            borderWidth: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.label}: A balanced component of prayer`;
+                                    }
+                                }
+                            }
+                        },
+                        cutout: '60%'
+                    }
+                });
+            }
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
+

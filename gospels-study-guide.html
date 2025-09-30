@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Gospels Study Guide for Beginners | AnchorStack</title>
+    <meta name="description" content="Discover the unique message of Matthew, Mark, Luke, and John with this beginner-friendly interactive study guide. Understand each Gospel's perspective on Jesus.">
+    <meta name="keywords" content="gospels study guide, Matthew Mark Luke John, beginner Bible study, four gospels explained, interactive Bible study">
+    <link rel="canonical" href="https://anchorstack.pro/gospels-study-guide.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #FDF6E3, #F7F0E8);
+        }
+        
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4A90E2;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #4A90E2;
+        }
+        
+        .nav-cta {
+            background: #4A90E2;
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        /* Gospel Tabs */
+        .gospel-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .gospel-tab {
+            padding: 15px 30px;
+            background: white;
+            border: 3px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .gospel-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .gospel-tab.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        /* Gospel Content */
+        .gospel-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .gospel-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Content Sections */
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .content-card h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .content-card h3 {
+            color: #764ba2;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+        }
+        
+        /* Key Info Grid */
+        .key-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        /* Interactive Elements */
+        .expandable {
+            margin: 20px 0;
+        }
+        
+        .expandable-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .expandable-header:hover {
+            transform: translateX(5px);
+        }
+        
+        .expandable-content {
+            display: none;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 0 0 10px 10px;
+            margin-top: -5px;
+        }
+        
+        .expandable.active .expandable-content {
+            display: block;
+        }
+        
+        .expand-icon {
+            transition: transform 0.3s;
+        }
+        
+        .expandable.active .expand-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Key Verses */
+        .verse-card {
+            background: linear-gradient(135deg, #fff4e6, #ffe0b2);
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-style: italic;
+        }
+        
+        .verse-reference {
+            font-weight: bold;
+            color: #ff9800;
+            margin-top: 10px;
+            text-align: right;
+        }
+        
+        /* Study Questions */
+        .study-questions {
+            background: #e3f2fd;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .study-questions h4 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        
+        .study-questions ol {
+            margin-left: 20px;
+        }
+        
+        .study-questions li {
+            margin: 10px 0;
+        }
+        
+        /* Progress Tracker */
+        .progress-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .progress-item {
+            text-align: center;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .progress-item:hover {
+            background: #e0e0e0;
+        }
+        
+        .progress-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2a2a2a;
+            color: #e2e8f0;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #667eea;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .gospel-tabs {
+                flex-direction: column;
+            }
+            
+            .gospel-tab {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .content-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>📖 Interactive Gospels Study Guide</h1>
+        <p>Discover the unique perspective each Gospel writer brings to the story of Jesus. Perfect for beginners!</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Progress Tracker -->
+        <div class="progress-section">
+            <h2>📊 Your Study Progress</h2>
+            <div class="progress-grid">
+                <div class="progress-item">
+                    <input type="checkbox" id="progress-matthew">
+                    <label for="progress-matthew">Matthew<br>Completed</label>
+                </div>
+                <div class="progress-item">
+                    <input type="checkbox" id="progress-mark">
+                    <label for="progress-mark">Mark<br>Completed</label>
+                </div>
+                <div class="progress-item">
+                    <input type="checkbox" id="progress-luke">
+                    <label for="progress-luke">Luke<br>Completed</label>
+                </div>
+                <div class="progress-item">
+                    <input type="checkbox" id="progress-john">
+                    <label for="progress-john">John<br>Completed</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gospel Tabs -->
+        <div class="gospel-tabs">
+            <button class="gospel-tab active" onclick="showGospel('matthew')">📘 Matthew</button>
+            <button class="gospel-tab" onclick="showGospel('mark')">📗 Mark</button>
+            <button class="gospel-tab" onclick="showGospel('luke')">📙 Luke</button>
+            <button class="gospel-tab" onclick="showGospel('john')">📕 John</button>
+        </div>
+
+        <!-- Matthew Content -->
+        <div id="matthew" class="gospel-content active">
+            <div class="content-card">
+                <h2>The Gospel According to Matthew</h2>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px;">
+                    Matthew presents Jesus as the promised Messiah and King, connecting Jesus to Old Testament prophecies and Jewish heritage.
+                </p>
+                
+                <div class="key-info">
+                    <div class="info-box">
+                        <h4>✍️ Author</h4>
+                        <p>Matthew (Levi), former tax collector and one of the twelve disciples</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>📅 Date Written</h4>
+                        <p>Approximately AD 60-70</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>👥 Original Audience</h4>
+                        <p>Jewish Christians and Jews considering Christianity</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🎯 Main Theme</h4>
+                        <p>Jesus is the Messiah-King promised in the Old Testament</p>
+                    </div>
+                </div>
+                
+                <h3>📚 Unique Features of Matthew</h3>
+                <ul style="line-height: 2;">
+                    <li>• Contains the most complete record of Jesus' teachings (5 major discourses)</li>
+                    <li>• Includes the Sermon on the Mount (chapters 5-7)</li>
+                    <li>• Genealogy traces Jesus back to Abraham</li>
+                    <li>• Over 60 Old Testament quotations and references</li>
+                    <li>• Emphasizes Jesus as the "Son of David"</li>
+                    <li>• Only Gospel that mentions the church (ekklesia)</li>
+                </ul>
+                
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span>📖 Key Passages to Read First</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <strong>Matthew 1:1-17</strong> - Jesus' genealogy showing His royal lineage
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Matthew 5-7</strong> - The Sermon on the Mount (Kingdom living)
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Matthew 13</strong> - Seven parables about the Kingdom of Heaven
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Matthew 16:13-20</strong> - Peter's confession: "You are the Christ"
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Matthew 26-28</strong> - The passion, death, and resurrection
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Matthew 28:18-20</strong> - The Great Commission
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="verse-card">
+                    <p>"All authority in heaven and on earth has been given to me. Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit."</p>
+                    <div class="verse-reference">Matthew 28:18-19</div>
+                </div>
+                
+                <div class="study-questions">
+                    <h4>💭 Reflection Questions for Matthew</h4>
+                    <ol>
+                        <li>How does Matthew show that Jesus fulfills Old Testament prophecies?</li>
+                        <li>What does the Sermon on the Mount teach about Kingdom living?</li>
+                        <li>Why is Jesus' genealogy important to Matthew's Jewish audience?</li>
+                        <li>What parables unique to Matthew help you understand God's Kingdom?</li>
+                        <li>How does the Great Commission apply to your life today?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mark Content -->
+        <div id="mark" class="gospel-content">
+            <div class="content-card">
+                <h2>The Gospel According to Mark</h2>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px;">
+                    Mark presents Jesus as the Suffering Servant who came to serve and give His life as a ransom for many.
+                </p>
+                
+                <div class="key-info">
+                    <div class="info-box">
+                        <h4>✍️ Author</h4>
+                        <p>John Mark, companion of Peter and Paul</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>📅 Date Written</h4>
+                        <p>Approximately AD 55-65 (likely the first Gospel written)</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>👥 Original Audience</h4>
+                        <p>Roman Christians, particularly Gentiles</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🎯 Main Theme</h4>
+                        <p>Jesus is the Servant who acts with power and authority</p>
+                    </div>
+                </div>
+                
+                <h3>📚 Unique Features of Mark</h3>
+                <ul style="line-height: 2;">
+                    <li>• Shortest and most action-packed Gospel</li>
+                    <li>• Uses "immediately" over 40 times</li>
+                    <li>• Emphasizes Jesus' deeds more than His words</li>
+                    <li>• No birth narrative - starts with Jesus' baptism</li>
+                    <li>• Vivid, eyewitness details (likely from Peter)</li>
+                    <li>• Explains Jewish customs for Gentile readers</li>
+                </ul>
+                
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span>📖 Key Passages to Read First</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <strong>Mark 1:1-13</strong> - The beginning of Jesus' ministry
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Mark 2:1-12</strong> - Jesus heals the paralytic (authority to forgive)
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Mark 4:35-41</strong> - Jesus calms the storm
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Mark 8:27-38</strong> - Peter's confession and the cost of discipleship
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Mark 10:45</strong> - The purpose of Jesus' coming
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Mark 15:39</strong> - The centurion's confession
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="verse-card">
+                    <p>"For even the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many."</p>
+                    <div class="verse-reference">Mark 10:45</div>
+                </div>
+                
+                <div class="study-questions">
+                    <h4>💭 Reflection Questions for Mark</h4>
+                    <ol>
+                        <li>What does Mark's fast-paced narrative style tell us about Jesus?</li>
+                        <li>How does Mark portray Jesus' authority over nature, demons, and disease?</li>
+                        <li>What can we learn from the disciples' struggles to understand Jesus?</li>
+                        <li>Why is the centurion's confession at the cross significant?</li>
+                        <li>How does Mark challenge you to follow Jesus in service?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Luke Content -->
+        <div id="luke" class="gospel-content">
+            <div class="content-card">
+                <h2>The Gospel According to Luke</h2>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px;">
+                    Luke presents Jesus as the Savior of all people, emphasizing His compassion for the poor, outcasts, and marginalized.
+                </p>
+                
+                <div class="key-info">
+                    <div class="info-box">
+                        <h4>✍️ Author</h4>
+                        <p>Luke, a Gentile physician and companion of Paul</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>📅 Date Written</h4>
+                        <p>Approximately AD 60-70</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>👥 Original Audience</h4>
+                        <p>Theophilus and Gentile Christians</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🎯 Main Theme</h4>
+                        <p>Jesus is the Savior for all humanity</p>
+                    </div>
+                </div>
+                
+                <h3>📚 Unique Features of Luke</h3>
+                <ul style="line-height: 2;">
+                    <li>• Most comprehensive Gospel (longest book in New Testament)</li>
+                    <li>• Beautiful literary style and historical detail</li>
+                    <li>• Emphasizes prayer (Jesus praying 11 times)</li>
+                    <li>• Highlights women's roles in Jesus' ministry</li>
+                    <li>• Contains unique parables (Good Samaritan, Prodigal Son)</li>
+                    <li>• Traces Jesus' genealogy back to Adam</li>
+                    <li>• Focus on the Holy Spirit's work</li>
+                </ul>
+                
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span>📖 Key Passages to Read First</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <strong>Luke 1-2</strong> - The birth narratives (most detailed account)
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Luke 4:16-21</strong> - Jesus' mission statement in Nazareth
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Luke 10:25-37</strong> - The Good Samaritan
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Luke 15</strong> - Three parables of the lost (sheep, coin, son)
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Luke 19:1-10</strong> - Zacchaeus (salvation comes)
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Luke 24</strong> - The resurrection and road to Emmaus
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="verse-card">
+                    <p>"For the Son of Man came to seek and to save the lost."</p>
+                    <div class="verse-reference">Luke 19:10</div>
+                </div>
+                
+                <div class="study-questions">
+                    <h4>💭 Reflection Questions for Luke</h4>
+                    <ol>
+                        <li>How does Luke show Jesus' concern for the marginalized?</li>
+                        <li>What do the unique parables in Luke teach about God's heart?</li>
+                        <li>How does Luke emphasize the importance of prayer?</li>
+                        <li>What role does the Holy Spirit play throughout Luke's Gospel?</li>
+                        <li>How does the story of Zacchaeus illustrate salvation?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- John Content -->
+        <div id="john" class="gospel-content">
+            <div class="content-card">
+                <h2>The Gospel According to John</h2>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px;">
+                    John presents Jesus as the eternal Son of God who became flesh to reveal the Father and provide eternal life.
+                </p>
+                
+                <div class="key-info">
+                    <div class="info-box">
+                        <h4>✍️ Author</h4>
+                        <p>John, the beloved disciple, one of the twelve</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>📅 Date Written</h4>
+                        <p>Approximately AD 85-95 (last Gospel written)</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>👥 Original Audience</h4>
+                        <p>Christians facing persecution and doctrinal challenges</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🎯 Main Theme</h4>
+                        <p>Jesus is the divine Son of God</p>
+                    </div>
+                </div>
+                
+                <h3>📚 Unique Features of John</h3>
+                <ul style="line-height: 2;">
+                    <li>• 90% unique material not found in other Gospels</li>
+                    <li>• Seven "I AM" statements of Jesus</li>
+                    <li>• Seven miraculous signs pointing to Jesus' deity</li>
+                    <li>• Extended discourses and theological depth</li>
+                    <li>• No parables (unlike the other Gospels)</li>
+                    <li>• Emphasis on believing for eternal life</li>
+                    <li>• Intimate look at the Upper Room discourse</li>
+                </ul>
+                
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span>📖 Key Passages to Read First</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <strong>John 1:1-18</strong> - The Word became flesh (prologue)
+                            </div>
+                            <div class="timeline-item">
+                                <strong>John 3:1-21</strong> - Nicodemus and being born again
+                            </div>
+                            <div class="timeline-item">
+                                <strong>John 4:1-42</strong> - The woman at the well
+                            </div>
+                            <div class="timeline-item">
+                                <strong>John 11</strong> - The raising of Lazarus
+                            </div>
+                            <div class="timeline-item">
+                                <strong>John 13-17</strong> - The Upper Room discourse
+                            </div>
+                            <div class="timeline-item">
+                                <strong>John 20:30-31</strong> - Purpose statement of the Gospel
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span>✨ The Seven "I AM" Statements</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <ol style="line-height: 2;">
+                            <li>"I am the bread of life" (6:35)</li>
+                            <li>"I am the light of the world" (8:12)</li>
+                            <li>"I am the door" (10:7)</li>
+                            <li>"I am the good shepherd" (10:11)</li>
+                            <li>"I am the resurrection and the life" (11:25)</li>
+                            <li>"I am the way, the truth, and the life" (14:6)</li>
+                            <li>"I am the true vine" (15:1)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="verse-card">
+                    <p>"But these are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name."</p>
+                    <div class="verse-reference">John 20:31</div>
+                </div>
+                
+                <div class="study-questions">
+                    <h4>💭 Reflection Questions for John</h4>
+                    <ol>
+                        <li>How do the seven signs demonstrate Jesus' divine nature?</li>
+                        <li>What do the "I AM" statements reveal about Jesus' identity?</li>
+                        <li>How does John's Gospel deepen your understanding of eternal life?</li>
+                        <li>What can we learn from Jesus' intimate teachings in chapters 13-17?</li>
+                        <li>How does John's purpose statement (20:31) shape your reading?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Section -->
+        <div class="content-card">
+            <h2>🔄 Comparing the Four Gospels</h2>
+            
+            <div class="expandable" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <span>📊 Quick Comparison Chart</span>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="background: #667eea; color: white;">
+                            <th style="padding: 10px; border: 1px solid #ddd;">Aspect</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Matthew</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Mark</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Luke</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">John</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Jesus as</strong></td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">King</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Servant</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Savior</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Son of God</td>
+                        </tr>
+                        <tr style="background: #f5f5f5;">
+                            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Audience</strong></td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Jews</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Romans</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Greeks</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Everyone</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Emphasis</strong></td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Teaching</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Action</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Compassion</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Belief</td>
+                        </tr>
+                        <tr style="background: #f5f5f5;">
+                            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Style</strong></td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Systematic</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Fast-paced</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Historical</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Theological</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <h3>🎯 How to Study the Gospels Effectively</h3>
+            <ol style="line-height: 2;">
+                <li><strong>Start with Mark</strong> - It's the shortest and most straightforward</li>
+                <li><strong>Read one Gospel completely</strong> before moving to the next</li>
+                <li><strong>Notice unique perspectives</strong> - Each writer emphasizes different aspects</li>
+                <li><strong>Use cross-references</strong> - See how the same events are described differently</li>
+                <li><strong>Apply what you learn</strong> - Ask "How does this change my life?"</li>
+                <li><strong>Pray before reading</strong> - Ask the Holy Spirit for understanding</li>
+            </ol>
+        </div>
+
+        <!-- Study Tips -->
+        <div class="content-card">
+            <h2>📝 Beginner's Study Tips</h2>
+            
+            <div class="study-questions">
+                <h4>🚀 Getting Started</h4>
+                <ul style="line-height: 2;">
+                    <li>✓ Choose a readable translation (NIV, NLT, or ESV)</li>
+                    <li>✓ Read with a notebook for questions and insights</li>
+                    <li>✓ Start with 15-20 minutes daily</li>
+                    <li>✓ Focus on understanding, not speed</li>
+                    <li>✓ Look up unfamiliar places on a Bible map</li>
+                    <li>✓ Join a study group or find a study partner</li>
+                </ul>
+            </div>
+            
+            <div class="verse-card" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9);">
+                <h4>🙏 A Prayer Before Reading</h4>
+                <p>"Lord, open my eyes to see wonderful truths in Your Word. Help me understand who Jesus is and what He has done for me. Give me wisdom to apply what I learn. In Jesus' name, Amen."</p>
+            </div>
+        </div>
+   <!-- ========================================= -->
+<!-- GOSPELS-STUDY-GUIDE.HTML LINKING BOX -->
+<!-- ========================================= -->
+
+<section class="gospels-guide-connections" style="margin: 4rem 0; padding: 3rem 1rem; background: linear-gradient(135deg, #453855 0%, #7049fd 100%); border-radius: 20px; color: white;">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">Master Gospel Studies</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+        
+        <div style="background: rgba(255, 255, 255, 0.2); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px);">
+            <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.4rem;">Interactive Four Gospels</h3>
+            <p style="margin-bottom: 1.5rem; line-height: 1.6; opacity: 0.95;">Compare Matthew, Mark, Luke, and John side-by-side with interactive features and comprehensive analysis.</p>
+            <a href="/four-gospels-interactive.html" style="color: #ffffff; text-decoration: none; font-weight: 600; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.2); border-radius: 25px; display: inline-block; transition: all 0.3s ease;">Compare Gospels →</a>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.2); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px);">
+            <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.4rem;">Jesus: Scholarly Analysis</h3>
+            <p style="margin-bottom: 1.5rem; line-height: 1.6; opacity: 0.95;">Deep dive into historical Jesus research with archaeological evidence, manuscript analysis, and academic insights.</p>
+            <a href="/jesus-scholarly-analysis.html" style="color: #ffffff; text-decoration: none; font-weight: 600; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.2); border-radius: 25px; display: inline-block; transition: all 0.3s ease;">Study Jesus →</a>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.2); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px);">
+            <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.4rem;">Scripture Study Tools</h3>
+            <p style="margin-bottom: 1.5rem; line-height: 1.6; opacity: 0.95;">Essential interpretation methods including Strong's numbers, cross-referencing, and hermeneutical principles.</p>
+            <a href="/scripture-interpretation-guide.html" style="color: #ffffff; text-decoration: none; font-weight: 600; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.2); border-radius: 25px; display: inline-block; transition: all 0.3s ease;">Master Tools →</a>
+        </div>
+    </div>
+    
+    <div style="margin-top: 2rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+            <a href="/The-Jewish-Roots-of-Christianity.html" style="color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.5rem 1rem; background: rgba(255,255,255,0.15); border-radius: 20px; font-size: 0.9rem;">Jewish Context</a>
+            <a href="/biblical_archaeology_page.html" style="color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.5rem 1rem; background: rgba(255,255,255,0.15); border-radius: 20px; font-size: 0.9rem;">Archaeological Evidence</a>
+            <a href="/seminary-study-plan.html" style="color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.5rem 1rem; background: rgba(255,255,255,0.15); border-radius: 20px; font-size: 0.9rem;">Seminary Plan</a>
+        </div>
+    </div>
+</section>
+   
+    </div>
+
+   
+
+    <script>
+        // Show/hide Gospel content
+        function showGospel(gospel) {
+            // Hide all content
+            const allContent = document.querySelectorAll('.gospel-content');
+            allContent.forEach(content => content.classList.remove('active'));
+            
+            // Remove active from all tabs
+            const allTabs = document.querySelectorAll('.gospel-tab');
+            allTabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected content
+            document.getElementById(gospel).classList.add('active');
+            
+            // Activate selected tab
+            event.target.classList.add('active');
+        }
+        
+        // Toggle expandable sections
+        function toggleExpand(element) {
+            element.classList.toggle('active');
+        }
+        
+        // Save progress to localStorage
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        
+        // Load saved progress
+        checkboxes.forEach(checkbox => {
+            const saved = localStorage.getItem(checkbox.id);
+            if (saved === 'true') {
+                checkbox.checked = true;
+            }
+            
+            // Save on change
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(this.id, this.checked);
+            });
+        });
+        
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

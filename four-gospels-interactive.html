@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive study guide comparing the Four Gospels: Matthew, Mark, Luke, and John. Explore historical context, theological themes, and literary structure.">
+    <meta name="keywords" content="Four Gospels, Matthew, Mark, Luke, John, Bible Study, New Testament, Christian, Theology, Comparison, Interactive Guide">
+    <link rel="canonical" href="https://anchorstack.pro/four-gospels-interactive.html">
+     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/css?family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <title>The Four Gospels: Interactive Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .intro-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .gospel-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .gospel-btn {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: none;
+            background: white;
+            color: #667eea;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+
+        .gospel-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .gospel-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .gospel-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .gospel-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gospel-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .gospel-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .gospel-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: white;
+            margin-right: 20px;
+        }
+
+        .mark-icon { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .matthew-icon { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .luke-icon { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .john-icon { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 2em;
+        }
+
+        .section-toggle {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .section-toggle:hover {
+            background: #e9ecef;
+        }
+
+        .section-toggle h3 {
+            color: #495057;
+            font-size: 1.2em;
+        }
+
+        .toggle-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding: 0 20px;
+        }
+
+        .section-content.open {
+            max-height: 3000px;
+            padding: 20px;
+        }
+
+        .key-info {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .quick-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .fact-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .fact-label {
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .comparison-table {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .timeline-date {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin-right: 20px;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .footer-note {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            .gospel-btn { padding: 10px 20px; font-size: 1em; }
+            .gospel-icon { width: 40px; height: 40px; }
+            .quick-facts { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Four Gospels</h1>
+            <p class="subtitle">Historical Context, Theological Themes, and Literary Structure</p>
+        </header>
+
+        <div class="intro-section">
+            <h2>Introduction</h2>
+            <p>The New Testament's four canonical gospels – Matthew, Mark, Luke, and John – each present unique accounts of Jesus Christ's life, teachings, death, and resurrection. Composed in the 1st century A.D. for different audiences and contexts, each Gospel offers distinct theological emphases and literary approaches.</p>
+            <p>The first three (Matthew, Mark, Luke) are called the "Synoptic Gospels" due to their similar narrative structure, while John's Gospel stands apart with its unique theological depth and symbolic language.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">~66-70 AD</span>
+                    <span>Mark written (earliest Gospel)</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">~80-90 AD</span>
+                    <span>Matthew and Luke composed</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">~90-100 AD</span>
+                    <span>John written (latest Gospel)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="gospel-selector">
+            <button class="gospel-btn active" onclick="showGospel('mark')">Gospel of Mark</button>
+            <button class="gospel-btn" onclick="showGospel('matthew')">Gospel of Matthew</button>
+            <button class="gospel-btn" onclick="showGospel('luke')">Gospel of Luke</button>
+            <button class="gospel-btn" onclick="showGospel('john')">Gospel of John</button>
+            <button class="gospel-btn" onclick="showGospel('comparison')">Compare All</button>
+        </div>
+
+        <!-- Mark Content -->
+        <div id="mark" class="gospel-content active">
+            <div class="gospel-card">
+                <div class="gospel-header">
+                    <div class="gospel-icon mark-icon">✠</div>
+                    <h2>The Gospel of Mark</h2>
+                </div>
+                
+                <div class="quick-facts">
+                    <div class="fact-item">
+                        <span class="fact-label">Author</span>
+                        <span>John Mark (Peter's companion)</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Date</span>
+                        <span>~66-70 AD</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Audience</span>
+                        <span>Roman Christians</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Key Theme</span>
+                        <span>Suffering Messiah</span>
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('mark-historical')">
+                    <h3>Historical Context</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="mark-historical" class="section-content">
+                    <p>The Gospel of Mark is widely considered the earliest gospel, likely written around the time of the Jewish War against Rome (circa A.D. 66–70). The text quotes Jesus predicting the Temple's destruction (Mark 13:2), suggesting composition near this pivotal event.</p>
+                    <div class="key-info">
+                        <strong>Key Point:</strong> Early church tradition links this gospel to John Mark, companion of Peter, possibly written in Rome capturing Peter's eyewitness accounts. Mark's community likely faced persecution and confusion, needing affirmation of Jesus's identity amid turmoil.
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('mark-themes')">
+                    <h3>Theological Themes</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="mark-themes" class="section-content">
+                    <p>Mark emphasizes Jesus as the Messiah and Son of God who must suffer and die as part of God's redemptive plan. A dominant motif is the "Messianic Secret" – Jesus often silences demons and followers from proclaiming his identity.</p>
+                    <div class="key-info">
+                        <strong>The Theology of the Cross:</strong> Only at the crucifixion does a Roman centurion exclaim "Truly this man was the Son of God!" (Mark 15:39), revealing that Jesus's divine sonship is understood through his suffering and death.
+                    </div>
+                    <p>Mark's gospel offers hope by showing that Christ's humiliation was the path to victory, encouraging believers that faith may entail hardship but will ultimately be vindicated in resurrection.</p>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('mark-structure')">
+                    <h3>Literary Structure</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="mark-structure" class="section-content">
+                    <p>Mark is the shortest gospel with a fast-paced, dramatic style, frequently using "immediately." The three-act structure includes:</p>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Act 1 (1:14–8:26):</strong> Jesus's ministry in Galilee</li>
+                        <li><strong>Act 2 (8:27–10:52):</strong> Journey toward Jerusalem with passion predictions</li>
+                        <li><strong>Act 3 (11:1–16:8):</strong> Final week in Jerusalem, crucifixion, and resurrection</li>
+                    </ul>
+                    <p>Mark's vivid storytelling includes unique details like Jesus's emotions, giving it an eyewitness quality consistent with Peter's reminiscences.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matthew Content -->
+        <div id="matthew" class="gospel-content">
+            <div class="gospel-card">
+                <div class="gospel-header">
+                    <div class="gospel-icon matthew-icon">📖</div>
+                    <h2>The Gospel of Matthew</h2>
+                </div>
+                
+                <div class="quick-facts">
+                    <div class="fact-item">
+                        <span class="fact-label">Author</span>
+                        <span>Matthew (Tax Collector)</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Date</span>
+                        <span>~80-90 AD</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Audience</span>
+                        <span>Jewish Christians</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Key Theme</span>
+                        <span>Jesus as New Moses</span>
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('matthew-historical')">
+                    <h3>Historical Context</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="matthew-historical" class="section-content">
+                    <p>Matthew was composed around A.D. 80–90, likely in Syrian Antioch or another Eastern Mediterranean center with a substantial Jewish-Christian population. The author assumes readers understand Jewish customs without explanation.</p>
+                    <div class="key-info">
+                        <strong>Key Point:</strong> Written for a Jewish-Christian community recently expelled from or at odds with the synagogue, navigating between Jewish tradition and the emerging Gentile mission. Matthew demonstrates Jesus as the fulfillment of God's promises to Israel.
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('matthew-themes')">
+                    <h3>Theological Themes</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="matthew-themes" class="section-content">
+                    <p>Matthew is the most "Jewish" gospel, presenting Jesus as the Messiah predicted in Hebrew Scriptures. Key themes include:</p>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Fulfillment Quotations:</strong> "This took place to fulfill what was spoken by the prophet..." (appears ~12 times)</li>
+                        <li><strong>Jesus as New Moses:</strong> Five major teaching discourses parallel the five books of Torah</li>
+                        <li><strong>Higher Righteousness:</strong> "You have heard...but I say to you..." intensifying the Law's requirements</li>
+                        <li><strong>Royal Messiah:</strong> "Son of David, son of Abraham" establishing Jesus's kingly lineage</li>
+                    </ul>
+                    <div class="key-info">
+                        <strong>The Church:</strong> Only Gospel to explicitly mention "church" (ekklesia) - "On this rock I will build my church" (16:18)
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('matthew-structure')">
+                    <h3>Literary Structure</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="matthew-structure" class="section-content">
+                    <p>Matthew alternates between narrative and discourse sections, with five major teaching blocks:</p>
+                    <ol style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Sermon on the Mount</strong> (Ch. 5-7)</li>
+                        <li><strong>Missionary Instructions</strong> (Ch. 10)</li>
+                        <li><strong>Parable Discourse</strong> (Ch. 13)</li>
+                        <li><strong>Community Discipline</strong> (Ch. 18)</li>
+                        <li><strong>Olivet Discourse</strong> (Ch. 24-25)</li>
+                    </ol>
+                    <p>Each discourse ends with "When Jesus had finished these sayings..." Matthew organizes material in groups of threes and sevens for memorization.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Luke Content -->
+        <div id="luke" class="gospel-content">
+            <div class="gospel-card">
+                <div class="gospel-header">
+                    <div class="gospel-icon luke-icon">🕊️</div>
+                    <h2>The Gospel of Luke</h2>
+                </div>
+                
+                <div class="quick-facts">
+                    <div class="fact-item">
+                        <span class="fact-label">Author</span>
+                        <span>Luke the Physician</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Date</span>
+                        <span>~80-90 AD</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Audience</span>
+                        <span>Gentile Christians</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Key Theme</span>
+                        <span>Universal Salvation</span>
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('luke-historical')">
+                    <h3>Historical Context</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="luke-historical" class="section-content">
+                    <p>Luke is the first volume of Luke-Acts, written by Paul's companion "the beloved physician." Composed in educated Greek with a formal historical prologue, it was likely written in a Gentile milieu outside Palestine.</p>
+                    <div class="key-info">
+                        <strong>Key Point:</strong> Addressed to Theophilus but intended for Gentile Christians throughout the Mediterranean. Luke's genealogy traces Jesus back to Adam (not just Abraham), emphasizing Jesus as Savior for all humanity.
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('luke-themes')">
+                    <h3>Theological Themes</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="luke-themes" class="section-content">
+                    <p>Luke's distinctive themes include:</p>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Social Justice:</strong> Concern for the poor, women, sinners, Samaritans, and outcasts</li>
+                        <li><strong>Mercy & Forgiveness:</strong> Parables of Good Samaritan, Prodigal Son, forgiveness on the cross</li>
+                        <li><strong>Holy Spirit:</strong> Active from birth narratives through Jesus's ministry</li>
+                        <li><strong>Prayer:</strong> Jesus praying at key moments, parables on prayer</li>
+                        <li><strong>Joy:</strong> Frequent rejoicing when the lost are found</li>
+                    </ul>
+                    <div class="key-info">
+                        <strong>Mary's Magnificat:</strong> God "has exalted the lowly and filled the hungry...sent the rich away empty" - theme of reversal permeating the Gospel.
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('luke-structure')">
+                    <h3>Literary Structure</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="luke-structure" class="section-content">
+                    <p>Luke presents the most comprehensive chronological narrative:</p>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Prologue & Infancy</strong> (1:1–2:52): Births of John and Jesus</li>
+                        <li><strong>Galilean Ministry</strong> (4:14–9:50): Teaching and miracles</li>
+                        <li><strong>Journey to Jerusalem</strong> (9:51–19:27): Unique "Travel Narrative" with many parables</li>
+                        <li><strong>Jerusalem & Resurrection</strong> (19:28–24:53): Final week and appearances</li>
+                    </ul>
+                    <p>Luke begins and ends in Jerusalem, tying to Acts where the gospel spreads from Jerusalem to Rome.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- John Content -->
+        <div id="john" class="gospel-content">
+            <div class="gospel-card">
+                <div class="gospel-header">
+                    <div class="gospel-icon john-icon">🦅</div>
+                    <h2>The Gospel of John</h2>
+                </div>
+                
+                <div class="quick-facts">
+                    <div class="fact-item">
+                        <span class="fact-label">Author</span>
+                        <span>Beloved Disciple (John)</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Date</span>
+                        <span>~90-100 AD</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Audience</span>
+                        <span>Mixed Jewish-Gentile</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Key Theme</span>
+                        <span>Jesus as Divine Word</span>
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('john-historical')">
+                    <h3>Historical Context</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="john-historical" class="section-content">
+                    <p>John is the latest Gospel (A.D. 90-100), likely written in Ephesus. Attributed to "the disciple whom Jesus loved," it emerged from the Johannine community during conflicts with synagogues and early heresies.</p>
+                    <div class="key-info">
+                        <strong>Key Evidence:</strong> Papyrus P52 (c. 125 AD) is the oldest NT manuscript fragment, containing John 18, proving the Gospel's early circulation throughout the Mediterranean.
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('john-themes')">
+                    <h3>Theological Themes</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="john-themes" class="section-content">
+                    <p>John presents the highest Christology with unique features:</p>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Divine Identity:</strong> "In the beginning was the Word...the Word was God" (1:1)</li>
+                        <li><strong>Seven "I Am" Statements:</strong> Bread of Life, Light of the World, Good Shepherd, etc.</li>
+                        <li><strong>Seven Signs:</strong> Miracles revealing Jesus's glory (water to wine → raising Lazarus)</li>
+                        <li><strong>Dualistic Imagery:</strong> Light/darkness, truth/falsehood, life/death</li>
+                        <li><strong>Love & Unity:</strong> New commandment, Farewell Discourse (Ch. 13-17)</li>
+                    </ul>
+                    <div class="key-info">
+                        <strong>Purpose Statement:</strong> "These are written that you may believe Jesus is the Christ, the Son of God, and by believing have life in his name" (20:31)
+                    </div>
+                </div>
+
+                <div class="section-toggle" onclick="toggleSection('john-structure')">
+                    <h3>Literary Structure</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="john-structure" class="section-content">
+                    <p>John's structure differs from the Synoptics:</p>
+                    <ol style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Prologue</strong> (1:1-18): Cosmic introduction of the Word</li>
+                        <li><strong>Book of Signs</strong> (1:19-12:50): Seven miracles and discourses</li>
+                        <li><strong>Book of Glory</strong> (13:1-20:31): Farewell Discourse, Passion, Resurrection</li>
+                        <li><strong>Epilogue</strong> (Ch. 21): Beach appearance and Peter's restoration</li>
+                    </ol>
+                    <p>John uses misunderstandings as teaching opportunities, simple vocabulary with deep symbolism, and emphasizes Jewish festivals connecting to Jesus's identity.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Content -->
+        <div id="comparison" class="gospel-content">
+            <div class="gospel-card">
+                <h2>Comparing the Four Gospels</h2>
+                
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Mark</th>
+                                <th>Matthew</th>
+                                <th>Luke</th>
+                                <th>John</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Date Written</strong></td>
+                                <td>66-70 AD</td>
+                                <td>80-90 AD</td>
+                                <td>80-90 AD</td>
+                                <td>90-100 AD</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Audience</strong></td>
+                                <td>Roman Christians</td>
+                                <td>Jewish Christians</td>
+                                <td>Gentile Christians</td>
+                                <td>Mixed Communities</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Portrait of Jesus</strong></td>
+                                <td>Suffering Servant</td>
+                                <td>Teacher & King</td>
+                                <td>Universal Savior</td>
+                                <td>Divine Word</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Opening</strong></td>
+                                <td>John the Baptist</td>
+                                <td>Genealogy from Abraham</td>
+                                <td>Birth narratives</td>
+                                <td>Cosmic prologue</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Unique Features</strong></td>
+                                <td>Messianic Secret</td>
+                                <td>Five Discourses</td>
+                                <td>Parables of mercy</td>
+                                <td>Seven Signs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ending Focus</strong></td>
+                                <td>Empty tomb</td>
+                                <td>Great Commission</td>
+                                <td>Ascension</td>
+                                <td>Thomas's confession</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Literary Style</strong></td>
+                                <td>Fast-paced, urgent</td>
+                                <td>Structured, teaching</td>
+                                <td>Historical, detailed</td>
+                                <td>Symbolic, theological</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="key-info" style="margin-top: 30px;">
+                    <h3>The Synoptic Problem</h3>
+                    <p>Matthew, Mark, and Luke share similar content and structure (hence "Synoptic" = seeing together). Most scholars believe Mark was written first, with Matthew and Luke using Mark plus a shared sayings source ("Q") plus their own unique materials.</p>
+                </div>
+
+                <div class="key-info">
+                    <h3>Why Four Gospels?</h3>
+                    <p>Each Gospel provides a complementary perspective, like four portraits of the same person. Together they offer a rich, multifaceted understanding of Jesus's identity and mission - historical facts preserved alongside theological meaning for different communities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <h3>Study Resources</h3>
+            <p>This interactive guide synthesizes scholarly research on the Four Gospels. Each Gospel was carefully crafted for its original audience while preserving the universal message of Jesus Christ. Continue exploring each Gospel's unique contribution to understanding the life, death, and resurrection of Jesus.</p>
+            <p style="margin-top: 15px; font-style: italic;">Remember: The differences among the gospels are not contradictions but complementary angles that collectively illuminate the person and work of Jesus Christ.</p>
+        </div>
+    <!-- ========================================= -->
+<!-- FOUR-GOSPELS-INTERACTIVE.HTML LINKING BOX -->
+<!-- ========================================= -->
+<!-- Insert before closing </main> tag, after the footer-note -->
+
+<section class="gospel-connections" style="margin: 3rem 0; padding: 3rem 1rem; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border-radius: 15px; border: 1px solid rgba(102, 126, 234, 0.2);">
+    <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 3rem;">Continue Your Gospel Studies</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+        
+        <div class="gospel-link-card" style="background: white; border: 2px solid transparent; border-radius: 15px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #667eea, #764ba2); transform: scaleX(0); transition: transform 0.3s ease;"></div>
+            <h3 style="color: #667eea; margin-bottom: 1rem; font-size: 1.4rem;">Jesus: Scholarly Analysis</h3>
+            <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6;">Dive deeper into the historical Jesus with comprehensive archaeological evidence, manuscript analysis, and scholarly research.</p>
+            <a href="/jesus-scholarly-analysis.html" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Explore Jesus Research →</a>
+        </div>
+
+        <div class="gospel-link-card" style="background: white; border: 2px solid transparent; border-radius: 15px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #43e97b, #38f9d7); transform: scaleX(0); transition: transform 0.3s ease;"></div>
+            <h3 style="color: #43e97b; margin-bottom: 1rem; font-size: 1.4rem;">Gospels Study Guide</h3>
+            <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6;">Structured study plans and detailed analysis for mastering the Gospel narratives and their theological themes.</p>
+            <a href="/gospels-study-guide.html" style="display: inline-block; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Access Study Guide →</a>
+        </div>
+
+        <div class="gospel-link-card" style="background: white; border: 2px solid transparent; border-radius: 15px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #fa709a, #fee140); transform: scaleX(0); transition: transform 0.3s ease;"></div>
+            <h3 style="color: #fa709a; margin-bottom: 1rem; font-size: 1.4rem;">Seminary Study Plan</h3>
+            <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6;">3-year theological education plan including Gospel studies, hermeneutics, and biblical interpretation methods.</p>
+            <a href="/seminary-study-plan.html" style="display: inline-block; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">View Study Plan →</a>
+        </div>
+    </div>
+</section>
+
+<section style="margin: 2rem 0; padding: 1.5rem; background: #f8f9fa; border-radius: 10px;">
+    <h4 style="text-align: center; color: #495057; margin-bottom: 1rem;">Related Biblical Studies</h4>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+        <a href="/The-Jewish-Roots-of-Christianity.html" style="color: #495057; text-decoration: none; padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem; transition: all 0.3s ease;">Jewish Roots of Christianity</a>
+        <a href="/scripture-interpretation-guide.html" style="color: #495057; text-decoration: none; padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem; transition: all 0.3s ease;">Scripture Study Tools</a>
+        <a href="/biblical_archaeology_page.html" style="color: #495057; text-decoration: none; padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem; transition: all 0.3s ease;">Biblical Archaeology</a>
+    </div>
+</section>
+    
+    </div>
+
+    <script>
+        function showGospel(gospel) {
+            // Hide all content sections
+            const contents = document.querySelectorAll('.gospel-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.gospel-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected content
+            document.getElementById(gospel).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const toggle = section.previousElementSibling;
+            const icon = toggle.querySelector('.toggle-icon');
+            
+            if (section.classList.contains('open')) {
+                section.classList.remove('open');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                section.classList.add('open');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>
