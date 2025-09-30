@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblical Hermeneutics Interactive Academy | AnchorStack</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #1e3a8a;
+            --accent-gold: #f59e0b;
+            --deep-purple: #5b21b6;
+            --sage-green: #84a98c;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #fafaf9;
+            --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-dark: linear-gradient(135deg, #1e3a8a 0%, #5b21b6 100%);
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: var(--bg-light);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        /* Epic Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Interactive Principles Grid */
+        .principles-showcase {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .principle-card {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--accent-gold);
+        }
+        
+        .principle-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .principle-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .principle-content {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .principle-example {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-gold);
+            margin-top: 1rem;
+        }
+        
+        /* Interactive Timeline */
+        .timeline-section {
+            background: var(--gradient-hero);
+            padding: 4rem 2rem;
+            position: relative;
+        }
+        
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-title {
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 51%;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 51%;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 45%;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            left: 50%;
+            top: 2rem;
+            transform: translateX(-50%);
+            border: 4px solid white;
+        }
+        
+        /* Live Exercise Section */
+        .exercise-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .exercise-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .exercise-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .exercise-title {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .exercise-box {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .exercise-prompt {
+            font-size: 1.2rem;
+            color: var(--deep-purple);
+            margin-bottom: 1.5rem;
+        }
+        
+        .verse-display {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--accent-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .exercise-input {
+            width: 100%;
+            min-height: 150px;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            resize: vertical;
+        }
+        
+        .exercise-input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+        
+        .btn-check {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-check:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Progress Tracker */
+        .progress-tracker {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 100;
+            background: white;
+            padding: 1rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .progress-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .progress-dot.active {
+            background: var(--accent-gold);
+            transform: scale(1.3);
+        }
+        
+        /* Interactive Quiz */
+        .quiz-section {
+            background: var(--gradient-dark);
+            padding: 4rem 2rem;
+            color: white;
+        }
+        
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .quiz-question {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+        
+        .question-text {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .quiz-options {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .quiz-option {
+            background: rgba(255,255,255,0.9);
+            color: var(--text-primary);
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .quiz-option:hover {
+            transform: translateX(10px);
+            border-color: var(--accent-gold);
+        }
+        
+        .quiz-option.selected {
+            background: var(--accent-gold);
+            color: white;
+        }
+        
+        /* Downloadable Resources */
+        .resources-section {
+            padding: 4rem 2rem;
+            background: var(--bg-light);
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .resource-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-title {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .resource-size {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+                text-align: left !important;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .progress-tracker {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Tracker -->
+    <div class="progress-tracker">
+        <div class="progress-dot active" onclick="scrollToSection('hero')"></div>
+        <div class="progress-dot" onclick="scrollToSection('principles')"></div>
+        <div class="progress-dot" onclick="scrollToSection('timeline')"></div>
+        <div class="progress-dot" onclick="scrollToSection('exercise')"></div>
+        <div class="progress-dot" onclick="scrollToSection('quiz')"></div>
+        <div class="progress-dot" onclick="scrollToSection('resources')"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-animation"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Biblical Hermeneutics Interactive Academy</h1>
+            <p class="hero-subtitle">Master the Art & Science of Scripture Interpretation</p>
+            <div style="display: flex; gap: 2rem; justify-content: center; margin-top: 3rem;">
+                <button class="btn-check" onclick="scrollToSection('principles')">Start Learning</button>
+                <button class="btn-check" style="background: transparent; border: 2px solid white;">Watch Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Principles -->
+    <section id="principles" class="principles-showcase">
+        <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 3rem;">
+            The 5 Core Principles - Click to Explore
+        </h2>
+        <div class="principles-grid">
+            <div class="principle-card" onclick="expandPrinciple(this)">
+                <span class="principle-icon">📚</span>
+                <h3 class="principle-title">Context is King</h3>
+                <p class="principle-content">
+                    Every verse exists within layers of context: immediate paragraph, chapter, book, and the entire biblical canon.
+                </p>
+                <div class="principle-example">
+                    <strong>Try it:</strong> Philippians 4:13 - "I can do all things..."
+                    <br>In context: Paul speaks of contentment in hardship, not personal achievement!
+                </div>
+            </div>
+            
+            <div class="principle-card" onclick="expandPrinciple(this)">
+                <span class="principle-icon">🎭</span>
+                <h3 class="principle-title">Genre Shapes Meaning</h3>
+                <p class="principle-content">
+                    Poetry speaks differently than law. Prophecy uses symbols narrative doesn't. Each genre has its own rules.
+                </p>
+                <div class="principle-example">
+                    <strong>Example:</strong> Psalm 23 is poetry, not a livestock manual. The metaphors paint spiritual truths!
+                </div>
+            </div>
+            
+            <div class="principle-card" onclick="expandPrinciple(this)">
+                <span class="principle-icon">🌍</span>
+                <h3 class="principle-title">Original Language Matters</h3>
+                <p class="principle-content">
+                    Hebrew, Aramaic, and Greek carry nuances that English can't fully capture. Single words can have multiple meanings.
+                </p>
+                <div class="principle-example">
+                    <strong>Deep Dive:</strong> "Agape" love vs "Phileo" love - understanding Greek unlocks deeper meaning!
+                </div>
+            </div>
+            
+            <div class="principle-card" onclick="expandPrinciple(this)">
+                <span class="principle-icon">✍️</span>
+                <h3 class="principle-title">Authorial Intent</h3>
+                <p class="principle-content">
+                    What did the author mean to communicate to their original audience? This anchors our interpretation.
+                </p>
+                <div class="principle-example">
+                    <strong>Consider:</strong> Paul's letters addressed specific church problems - knowing which ones illuminates the text!
+                </div>
+            </div>
+            
+            <div class="principle-card" onclick="expandPrinciple(this)">
+                <span class="principle-icon">🔗</span>
+                <h3 class="principle-title">Scripture Interprets Scripture</h3>
+                <p class="principle-content">
+                    The Bible is a unified message. Clear passages illuminate difficult ones. Let the whole counsel speak.
+                </p>
+                <div class="principle-example">
+                    <strong>Reconcile:</strong> James says "faith without works" while Paul says "faith alone" - they complement, not contradict!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Timeline -->
+    <section id="timeline" class="timeline-section">
+        <div class="timeline-container">
+            <h2 class="timeline-title">Journey Through Hermeneutical History</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Early Church (100-500 AD)</h3>
+                        <p>Allegorical interpretation dominates. Church fathers like Origen see multiple layers of meaning.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Medieval Period (500-1500)</h3>
+                        <p>Four-fold sense of Scripture: literal, allegorical, moral, and anagogical. Scholasticism emerges.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Reformation (1500s)</h3>
+                        <p>Luther's "Scripture alone" principle. Return to grammatical-historical method.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Enlightenment (1700s)</h3>
+                        <p>Historical-critical method develops. Scientific approach to biblical texts.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Modern Era (1900s-Today)</h3>
+                        <p>Multiple approaches coexist: literary, canonical, reader-response, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Exercise Section -->
+    <section id="exercise" class="exercise-section">
+        <div class="exercise-container">
+            <div class="exercise-header">
+                <h2 class="exercise-title">Practice Lab: Context Analysis</h2>
+                <p>Apply what you've learned with this interactive exercise</p>
+            </div>
+            
+            <div class="exercise-box">
+                <p class="exercise-prompt">📝 Exercise: Analyze the context of this famous verse</p>
+                
+                <div class="verse-display">
+                    <strong>Jeremiah 29:11 (NIV)</strong><br>
+                    "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, plans to give you hope and a future."
+                </div>
+                
+                <p style="margin-bottom: 1rem;">Answer these context questions:</p>
+                <ol style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                    <li>Who was Jeremiah writing to?</li>
+                    <li>What was their situation?</li>
+                    <li>How long would they wait for this promise?</li>
+                    <li>How does this context change the application?</li>
+                </ol>
+                
+                <textarea class="exercise-input" placeholder="Type your analysis here..."></textarea>
+                <button class="btn-check" onclick="checkAnswer()">Check My Answer</button>
+                
+                <div id="feedback" style="margin-top: 1.5rem; padding: 1rem; border-radius: 10px; display: none;">
+                    <!-- Feedback will appear here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz -->
+    <section id="quiz" class="quiz-section">
+        <div class="quiz-container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">Test Your Knowledge</h2>
+            
+            <div class="quiz-question">
+                <p class="question-text">1. Which principle helps us understand that Psalm 23 uses metaphorical language rather than literal shepherding instructions?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">Context</div>
+                    <div class="quiz-option" onclick="selectOption(this)">Genre</div>
+                    <div class="quiz-option" onclick="selectOption(this)">Original Language</div>
+                    <div class="quiz-option" onclick="selectOption(this)">Authorial Intent</div>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p class="question-text">2. When Paul and James seem to disagree about faith and works, which principle helps reconcile them?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">Context alone</div>
+                    <div class="quiz-option" onclick="selectOption(this)">Genre analysis</div>
+                    <div class="quiz-option" onclick="selectOption(this)">Scripture interprets Scripture</div>
+                    <div class="quiz-option" onclick="selectOption(this)">Original language study</div>
+                </div>
+            </div>
+            
+            <button class="btn-check" style="margin-top: 2rem;">Submit Quiz</button>
+        </div>
+    </section>
+
+    <!-- Downloadable Resources -->
+    <section id="resources" class="resources-section">
+        <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 3rem;">
+            Your Hermeneutics Toolkit - This comprehensive toolkit is in development. Sign up below to be notified when it's available.
+        </h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">📄</div>
+                <h3 class="resource-title">Complete Workshop Guide</h3>
+                <p class="resource-size">PDF • 2.4 MB</p>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">✏️</div>
+                <h3 class="resource-title">Practice Worksheets</h3>
+                <p class="resource-size">PDF • 1.2 MB</p>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">🎯</div>
+                <h3 class="resource-title">Quick Reference Card</h3>
+                <p class="resource-size">PDF • 450 KB</p>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">📊</div>
+                <h3 class="resource-title">PowerPoint Slides</h3>
+                <p class="resource-size">PPTX • 5.1 MB</p>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">🎓</div>
+                <h3 class="resource-title">Facilitator's Guide</h3>
+                <p class="resource-size">PDF • 1.8 MB</p>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">📝</div>
+                <h3 class="resource-title">Assessment Quiz</h3>
+                <p class="resource-size">PDF • 320 KB</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            updateProgressTracker();
+        }
+        
+        // Update progress tracker
+        function updateProgressTracker() {
+            const sections = ['hero', 'principles', 'timeline', 'exercise', 'quiz', 'resources'];
+            const dots = document.querySelectorAll('.progress-dot');
+            
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            
+            sections.forEach((section, index) => {
+                const element = document.getElementById(section);
+                const elementTop = element.offsetTop;
+                const elementBottom = elementTop + element.offsetHeight;
+                
+                if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[index].classList.add('active');
+                }
+            });
+        }
+        
+        // Expand principle card
+        function expandPrinciple(card) {
+            card.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                card.style.transform = '';
+            }, 300);
+        }
+        
+        // Check exercise answer
+        function checkAnswer() {
+            const feedback = document.getElementById('feedback');
+            feedback.style.display = 'block';
+            feedback.style.background = 'linear-gradient(135deg, #84a98c, #52796f)';
+            feedback.style.color = 'white';
+            feedback.innerHTML = `
+                <strong>Great Analysis!</strong><br>
+                Key Context: Jeremiah wrote to Jewish exiles in Babylon. They would wait 70 years! 
+                This promise was for a future generation, not immediate relief. 
+                Understanding this prevents us from treating it as a personal guarantee of immediate prosperity.
+            `;
+        }
+        
+        // Select quiz option
+        function selectOption(option) {
+            const options = option.parentElement.querySelectorAll('.quiz-option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+        }
+        
+        // Listen for scroll
+        window.addEventListener('scroll', updateProgressTracker);
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'all 0.6s ease';
+            observer.observe(item);
+        });
+    </script>
+
+    
+<div style="background: #f0f0f0; padding: 20px; border-radius: 10px; text-align: center;">
+    <h2>Contact Us</h2>
+    <p style="font-size: 20px;">Email us at:</p>
+    <p style="font-size: 24px; color: #8B4513;">
+        <strong>support@anchorstack.pro</strong>
+    </p>
+    <p>We read every message and typically respond within 24 hours.</p>
+</div>
+  
+ 
+</div>
+</footer>
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

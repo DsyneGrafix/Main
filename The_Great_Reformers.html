@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
++    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+ <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AnchorStack.pro">
+    <link rel="canonical" href="https://anchorstack.pro/The_Great_Reformers.html">
+    <title>The Great Reformers: An Interactive Exploration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Parchment & Ink -->
+    <!-- Application Structure Plan: The application is structured as a single-page dashboard with five thematic sections accessible via a fixed top navigation. This non-linear design replaces the report's sequential chapters, allowing users to freely explore topics of interest. The sections are: 1) 'The Spark' (context and timeline), 2) 'Core Tenets' (interactive cards for Luther's and Calvin's theology), 3) 'Doctrine Divergence' (a dynamic side-by-side comparison tool), 4) 'The Revolution' (visualizing political consequences with stats and diagrams), and 5) 'Enduring Legacy' (summarizing long-term impacts). This structure was chosen to break down a complex historical narrative into digestible, interactive modules, promoting user engagement and understanding over passive reading. The user flow is driven by curiosity, encouraging jumps between related concepts (e.g., from a theological tenet to its political consequence). -->
+    <!-- Visualization & Content Choices: 1. Pre-Reformation Timeline: Info: Key events leading to 1517. Goal: Show chronological context. Viz: Interactive horizontal timeline (HTML/CSS). Interaction: Click event to display details. Justification: Provides a clear, sequential overview of the buildup. 2. Theological Doctrines (Solas & TULIP): Info: Core tenets of Luther and Calvin. Goal: Explain complex ideas. Viz: Interactive cards (HTML/CSS). Interaction: Click to reveal full descriptions. Justification: Breaks down dense theology into manageable, engaging pieces. 3. Lutheran vs. Calvinist Comparison: Info: Doctrinal differences. Goal: Compare/contrast. Viz: Dynamic text display + a horizontal bar chart (Chart.js) for the philosophical approach. Interaction: User selects a doctrine to compare. Justification: Transforms a static table into an interactive tool, making nuanced differences easier to grasp. The chart adds a visual dimension to an abstract concept. 4. Political Consequences: Info: Peasants' War, Thirty Years' War, rise of nation-state. Goal: Show impact. Viz: Key stat cards and a simple flowchart (HTML/CSS). Interaction: Hover effects on flowchart. Justification: Highlights the scale of the upheaval and clarifies the causal chain from religious schism to political change. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF5;
+            color: #4A4A4A;
+        }
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active, .nav-link:hover {
+            border-bottom-color: #A0522D;
+            color: #A0522D;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 5px;
+            width: 2px;
+            height: 100%;
+            background-color: #D1C4B0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: #FDFBF5;
+            border: 2px solid #A0522D;
+            z-index: 10;
+        }
+        .comparison-btn.active {
+            background-color: #A0522D;
+            color: #FFFFFF;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 250px;
+            max-height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 300px;
+                max-height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-gray-800">The Great Reformers</h1>
+                </div>
+                <nav class="hidden md:flex md:space-x-8">
+                    <a href="#spark" class="nav-link active" data-section="spark">The Spark</a>
+                    <a href="#tenets" class="nav-link" data-section="tenets">Core Tenets</a>
+                    <a href="#divergence" class="nav-link" data-section="divergence">Doctrine Divergence</a>
+                    <a href="#revolution" class="nav-link" data-section="revolution">The Revolution</a>
+                    <a href="#legacy" class="nav-link" data-section="legacy">Enduring Legacy</a>
+                </nav>
+                <div class="md:hidden">
+                    <select id="mobile-nav" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <option value="spark">The Spark</option>
+                        <option value="tenets">Core Tenets</option>
+                        <option value="divergence">Doctrine Divergence</option>
+                        <option value="revolution">The Revolution</option>
+                        <option value="legacy">Enduring Legacy</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        
+        <section id="spark" class="content-section active">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800">The Spark of a Revolution</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">The Protestant Reformation was not a sudden schism but the culmination of centuries of dissatisfaction with the Roman Catholic Church. This section explores the volatile pre-Reformation environment and the key events that ignited a continent-spanning movement, starting with an academic dispute that, amplified by new technology, changed the world forever.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="prose max-w-none">
+                    <h3 class="text-2xl font-semibold text-gray-800">The Pre-Reformation Crucible</h3>
+                    <p>By the early 1500s, the Church had become a major political and economic power, widely perceived as corrupt. A central abuse was the sale of indulgences—certificates to reduce punishment for sins—which had devolved into a commercial enterprise. Figures like Johann Tetzel taught that people could "literally buy their way into the kingdom of God." This, along with the Church's deep entanglement in temporal affairs, fueled widespread public discontent and a desire for a return to a more pure, scriptural Christianity.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mt-6">The Ninety-five Theses</h3>
+                    <p>On October 31, 1517, Martin Luther, a monk and theology professor, posted his *Ninety-five Theses* to the door of the Castle Church in Wittenberg. Intended for academic debate, the theses argued against the sale of indulgences and the Pope's authority to forgive sins. Aided by the printing press, they were translated into German and rapidly spread, transforming a local critique into a popular movement that marked the beginning of the Reformation.</p>
+                </div>
+                
+                <div class="relative pl-8">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-lg font-semibold text-gray-700">14th-15th Centuries</h4>
+                        <p class="text-gray-600">"Proto-Protestant" movements led by figures like John Wycliffe and Jan Hus challenge Church doctrines, advocating for a return to scripture, but are largely suppressed.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-lg font-semibold text-gray-700">c. 1440</h4>
+                        <p class="text-gray-600">Johannes Gutenberg invents the printing press, a technological innovation that will prove critical for disseminating reformist ideas.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-lg font-semibold text-gray-700">October 31, 1517</h4>
+                        <p class="text-gray-600">Martin Luther posts his *Ninety-five Theses* in Wittenberg, Germany, sparking the Reformation.</p>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-lg font-semibold text-gray-700">1521</h4>
+                        <p class="text-gray-600">At the Diet of Worms, Luther refuses to retract his teachings, famously declaring, "Here I stand, I can do no other."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tenets" class="content-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800">The Core Tenets of Reform</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">The Reformation was built on a foundation of radical theological ideas that challenged centuries of Catholic doctrine. This section breaks down the foundational principles of the two most influential reformers, Martin Luther and John Calvin. Interact with the cards below to explore the core beliefs that reshaped Western Christianity.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-3xl font-bold text-center mb-6 text-gray-800">Martin Luther's "Three Solas"</h3>
+                    <div class="space-y-4">
+                        <div class="card p-6 bg-white rounded-lg shadow-md cursor-pointer" onclick="toggleDetails(this)">
+                            <h4 class="text-xl font-semibold">Sola Fide (Faith Alone)</h4>
+                            <p class="text-gray-600 mt-2 details hidden">Justification is a gift of God's grace received solely through faith in Jesus Christ, not through human deeds or merit. Good works are a necessary fruit of faith, not a means to salvation.</p>
+                        </div>
+                        <div class="card p-6 bg-white rounded-lg shadow-md cursor-pointer" onclick="toggleDetails(this)">
+                            <h4 class="text-xl font-semibold">Sola Gratia (Grace Alone)</h4>
+                            <p class="text-gray-600 mt-2 details hidden">Salvation is entirely the work of God and is a free, unmerited gift, standing in contrast to the Catholic belief in the cooperation of human righteous acts with God's grace.</p>
+                        </div>
+                        <div class="card p-6 bg-white rounded-lg shadow-md cursor-pointer" onclick="toggleDetails(this)">
+                            <h4 class="text-xl font-semibold">Sola Scriptura (Scripture Alone)</h4>
+                            <p class="text-gray-600 mt-2 details hidden">The Bible is the only source of divinely revealed knowledge and the ultimate authority, directly challenging the established authority of the pope and bishops.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-center mb-6 text-gray-800">John Calvin's "TULIP" Doctrines</h3>
+                    <div class="space-y-4">
+                        <div class="card p-4 bg-white rounded-lg shadow-md cursor-pointer" onclick="toggleDetails(this)">
+                            <h4 class="text-xl font-semibold">T - Total Depravity</h4>
+                            <p class="text-gray-600 mt-2 details hidden">Humanity is enslaved to sin and morally unable to choose salvation on their own.</p>
+                        </div>
+                        <div class="card p-4 bg-white rounded-lg shadow-md cursor-pointer" onclick="toggleDetails(this)">
+                            <h4 class="text-xl font-semibold">U - Unconditional Election</h4>
+                            <p class="text-gray-600 mt-2 details hidden">God's choice of who to save is based on His mercy alone, not on any foreseen merit in individuals.</p>
+                        </div>
+                        <div class="card p-4 bg-white rounded-lg shadow-md cursor-pointer" onclick="toggleDetails(this)">
+                            <h4 class="text-xl font-semibold">L - Limited Atonement</h4>
+                            <p class="text-gray-600 mt-2 details hidden">Jesus's death was specifically for the sins of the elect, not for all of humanity.</p>
+                        </div>
+                        <div class="card p-4 bg-white rounded-lg shadow-md cursor-pointer" onclick="toggleDetails(this)">
+                            <h4 class="text-xl font-semibold">I - Irresistible Grace</h4>
+                            <p class="text-gray-600 mt-2 details hidden">The Holy Spirit's saving grace is effectually applied and cannot be resisted by the elect.</p>
+                        </div>
+                        <div class="card p-4 bg-white rounded-lg shadow-md cursor-pointer" onclick="toggleDetails(this)">
+                            <h4 class="text-xl font-semibold">P - Perseverance of the Saints</h4>
+                            <p class="text-gray-600 mt-2 details hidden">Those whom God has called will continue in faith until the end; their salvation is eternally secure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="divergence" class="content-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800">Doctrine Divergence</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">While united in their break from Rome, the reformers disagreed on several key theological points. These differences were significant enough to create lasting schisms within Protestantism. Use the interactive tool below to compare the distinct doctrines of Lutheranism and Calvinism on fundamental issues of faith.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="w-full md:w-1/4">
+                    <div id="comparison-controls" class="flex flex-col space-y-2">
+                        <button data-topic="predestination" class="comparison-btn text-left p-3 rounded-md bg-white shadow-sm hover:bg-gray-50 active">Predestination</button>
+                        <button data-topic="atonement" class="comparison-btn text-left p-3 rounded-md bg-white shadow-sm hover:bg-gray-50">Atonement</button>
+                        <button data-topic="eucharist" class="comparison-btn text-left p-3 rounded-md bg-white shadow-sm hover:bg-gray-50">Eucharist (Lord's Supper)</button>
+                        <button data-topic="emphasis" class="comparison-btn text-left p-3 rounded-md bg-white shadow-sm hover:bg-gray-50">Theological Emphasis</button>
+                        <button data-topic="philosophy" class="comparison-btn text-left p-3 rounded-md bg-white shadow-sm hover:bg-gray-50">Philosophical Approach</button>
+                    </div>
+                </div>
+                <div class="w-full md:w-3/4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-inner">
+                            <h3 class="text-2xl font-semibold text-gray-800">Lutheranism</h3>
+                            <p id="lutheran-text" class="mt-4 text-gray-600"></p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-inner">
+                            <h3 class="text-2xl font-semibold text-gray-800">Calvinism</h3>
+                            <p id="calvinist-text" class="mt-4 text-gray-600"></p>
+                        </div>
+                    </div>
+                    <div id="philosophy-chart-container" class="mt-8 hidden">
+                         <div class="chart-container">
+                            <canvas id="philosophyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="revolution" class="content-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800">The Unintended Revolution</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">The call for theological freedom unleashed a wave of political and social upheaval that the reformers neither anticipated nor controlled. This section visualizes the profound, often violent, consequences of the Reformation, which plunged Europe into over a century of conflict and ultimately laid the groundwork for the modern secular nation-state.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center mb-12">
+                <div class="card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-4xl font-bold text-red-700">300,000+</h3>
+                    <p class="mt-2 text-gray-600">Peasants involved in the German Peasants' War (1524-25), inspired by reformist ideas of freedom.</p>
+                </div>
+                <div class="card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-4xl font-bold text-red-700">~40%</h3>
+                    <p class="mt-2 text-gray-600">Population loss in parts of Germany during the Thirty Years' War (1618-48) from conflict, famine, and disease.</p>
+                </div>
+                <div class="card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-4xl font-bold text-red-700">100+ Years</h3>
+                    <p class="mt-2 text-gray-600">Of religious wars that ravaged Europe following the initial schism.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">From Religious Schism to Nation-State</h3>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <p class="font-semibold">Reformation Begins</p>
+                        <p class="text-sm text-gray-500">Challenge to Catholic Authority</p>
+                    </div>
+                    <div class="text-2xl text-gray-400 font-sans">&rarr;</div>
+                    <div class="text-center p-4 bg-red-50 rounded-lg">
+                        <p class="font-semibold">Religious Wars</p>
+                        <p class="text-sm text-gray-500">Decades of devastating conflict</p>
+                    </div>
+                    <div class="text-2xl text-gray-400 font-sans">&rarr;</div>
+                    <div class="text-center p-4 bg-blue-50 rounded-lg">
+                        <p class="font-semibold">Peace of Westphalia (1648)</p>
+                        <p class="text-sm text-gray-500">Establishes territorial sovereignty</p>
+                    </div>
+                    <div class="text-2xl text-gray-400 font-sans">&rarr;</div>
+                    <div class="text-center p-4 bg-green-50 rounded-lg">
+                        <p class="font-semibold">Modern Nation-State</p>
+                        <p class="text-sm text-gray-500">Politics separated from religion</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="legacy" class="content-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800">Enduring Legacy</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">The Reformation's impact extends far beyond theology, shaping the foundations of Western culture, politics, and economics. Its consequences were often paradoxical and unintended, creating a world the reformers themselves might not have recognized. This section explores the long-term ripple effects that continue to define modern society.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">The "Protestant Ethic" and Capitalism</h3>
+                    <p class="text-gray-600">Max Weber's influential thesis argues that Calvinist doctrines, particularly predestination, created a "work ethic" that spurred modern capitalism. The psychological need for believers to find signs of their "election" led them to pursue worldly success through hard work, discipline, and asceticism. This transformed labor into a moral and spiritual "calling," viewing the accumulation of capital as a potential sign of God's favor.</p>
+                </div>
+                <div class="card bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">The Rise of Secularism</h3>
+                    <p class="text-gray-600">A profoundly unintended consequence was the secularization of Western society. The carnage of the religious wars forced political leaders to adopt religious toleration as a pragmatic necessity. This led to a redefinition of religion as a private, individual belief, separate from the public spheres of politics and economics. This created the space for people to practice no religion at all—a direct contradiction of the reformers' goals.</p>
+                </div>
+                <div class="card bg-white p-8 rounded-lg shadow-md md:col-span-2">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Individualism and Democracy</h3>
+                    <p class="text-gray-600">Despite the reformers' own authoritarian tendencies, the movement's central idea—that an individual's conscience matters before God—helped foster a more democratic culture. Luther's stand at the Diet of Worms became a powerful symbol of "speaking truth to power." By challenging the ultimate authority of the Church, the Reformation laid the groundwork for modern concepts of freedom of religion, freedom of conscience, and the dignity of the individual.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <footer class="site-footer">
+    <div class="border-t border-gray-300 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2025 AnchorStack. All rights reserved. | Built for spiritual growth and biblical education.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileNav = document.getElementById('mobile-nav');
+        const sections = document.querySelectorAll('.content-section');
+
+        const comparisonData = {
+            predestination: {
+                lutheran: "Single Predestination: God elects people for salvation but does not actively condemn others to damnation. The ultimate reason for non-salvation is unknown.",
+                calvinist: "Double Predestination: God actively determines who goes to Heaven AND who goes to Hell."
+            },
+            atonement: {
+                lutheran: "Universal Atonement: Christ died for the sins of all humanity, but not all people come to faith.",
+                calvinist: "Limited Atonement: Christ's death was a definite act of atonement only for the sins of the elect."
+            },
+            eucharist: {
+                lutheran: "Real Presence: Christ is really physically present in the elements in a mysterious way, though not by the Catholic doctrine of transubstantiation.",
+                calvinist: "Spiritual Presence: Christ is 'truly and efficaciously' present, but only in a spiritual sense through the action of the Holy Spirit, not physically in the elements."
+            },
+            emphasis: {
+                lutheran: "Gospel-Focused: Emphasizes man's privilege to serve God as a response to His grace and mercy.",
+                calvinist: "Law-Based: Emphasizes man's obligation to glorify God as the sole purpose of creation."
+            },
+            philosophy: {
+                lutheran: "Comfortable with Mystery: Tolerates 'antinomies' or contradictions that cannot be logically resolved, viewing them as matters beyond human understanding.",
+                calvinist: "Logical Reconciliation: Often uses human logic to resolve theological paradoxes, viewing them as seemingly contradictory but ultimately reconcilable."
+            }
+        };
+
+        function switchSection(sectionId) {
+            sections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            if (mobileNav.value !== sectionId) {
+                mobileNav.value = sectionId;
+            }
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = e.target.getAttribute('data-section');
+                switchSection(sectionId);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+        
+        mobileNav.addEventListener('change', (e) => {
+            switchSection(e.target.value);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.toggleDetails = function(element) {
+            const details = element.querySelector('.details');
+            details.classList.toggle('hidden');
+        }
+        
+        const comparisonControls = document.getElementById('comparison-controls');
+        const lutheranText = document.getElementById('lutheran-text');
+        const calvinistText = document.getElementById('calvinist-text');
+        const chartContainer = document.getElementById('philosophy-chart-container');
+        let philosophyChart;
+
+        function updateComparison(topic) {
+            lutheranText.textContent = comparisonData[topic].lutheran;
+            calvinistText.textContent = comparisonData[topic].calvinist;
+
+            document.querySelectorAll('.comparison-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.comparison-btn[data-topic="${topic}"]`).classList.add('active');
+            
+            if (topic === 'philosophy') {
+                chartContainer.classList.remove('hidden');
+                renderPhilosophyChart();
+            } else {
+                chartContainer.classList.add('hidden');
+            }
+        }
+
+        comparisonControls.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                const topic = e.target.dataset.topic;
+                updateComparison(topic);
+            }
+        });
+        
+        function renderPhilosophyChart() {
+            const ctx = document.getElementById('philosophyChart').getContext('2d');
+            if(philosophyChart) {
+                philosophyChart.destroy();
+            }
+            philosophyChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Lutheranism', 'Calvinism'],
+                    datasets: [{
+                        label: 'Comfort with Mystery',
+                        data: [8, 3],
+                        backgroundColor: 'rgba(160, 82, 45, 0.7)',
+                        borderColor: 'rgba(160, 82, 45, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Reliance on Logic',
+                        data: [4, 9],
+                        backgroundColor: 'rgba(70, 70, 70, 0.7)',
+                        borderColor: 'rgba(70, 70, 70, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            ticks: { display: false },
+                            grid: { display: false },
+                        },
+                        y: {
+                            stacked: true,
+                            grid: { display: false },
+                            ticks: {
+                                font: {
+                                    size: 14,
+                                    family: "'Inter', sans-serif"
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Conceptual Philosophical Approach',
+                            font: {
+                                size: 16,
+                                family: "'Lora', serif"
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` A conceptual score of ${context.raw} for ${context.dataset.label}.`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateComparison('predestination');
+        });
+
+    </script>
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>
+

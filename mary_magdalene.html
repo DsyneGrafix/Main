@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics - KEEP THIS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Story of Mary Magdalene - AnchorStack</title>
+    <meta name="description" content="Explore the complete story of Mary Magdalene - from devoted follower to first witness of the resurrection." />
+    
+    <!-- Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CLEAN STYLES FOR CONSISTENT LAYOUT */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* HEADER STYLES */
+        .header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00BCD4;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+        }
+        
+        .nav-menu a:hover {
+            color: #00BCD4;
+        }
+        
+        .nav-cta {
+            background: #00BCD4 !important;
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: 4px;
+        }
+        
+        .nav-cta:hover {
+            background: #0097a7 !important;
+        }
+        
+        /* MAIN CONTENT */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .article-title {
+            font-family: 'Lora', serif;
+            font-size: 48px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .article-subtitle {
+            font-size: 20px;
+            color: #666;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #00BCD4;
+        }
+        
+        .article-content {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .article-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            color: #00BCD4;
+            margin: 50px 0 25px 0;
+        }
+        
+        .article-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            color: #333;
+            margin: 40px 0 20px 0;
+        }
+        
+        .article-content p {
+            margin-bottom: 25px;
+        }
+        
+        /* FOOTER STYLES */
+        .site-footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px 0;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #00BCD4;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 10px;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .article-title {
+                font-size: 32px;
+            }
+        }
+ 
+/* Article CTA Boxes */
+.article-cta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 40px 0;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.article-cta h3 {
+    color: white !important;
+    margin-bottom: 15px !important;
+}
+
+.article-cta p {
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+.btn {
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.toc-box {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-left: 4px solid #00BCD4;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.toc-box h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.toc-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc-list li {
+    margin: 12px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.toc-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #00BCD4;
+}
+
+.toc-link {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.toc-link:hover {
+    color: #00BCD4;
+    padding-left: 5px;
+}
+</style>
+</head>
+<body>
+ 
+
+
+    <!-- MAIN ARTICLE CONTENT -->
+    <main class="article-container">
+        <div class="article-header">
+            <h1 class="article-title">The Story of Mary Magdalene</h1>
+            <p class="article-subtitle">A journey through history, scripture, and legend to understand one of Christianity's most enigmatic and influential figures</p>
+        </div>
+        
+
+
+<!-- Table of Contents - Place this after your article header -->
+<div class="toc-box">
+    <h3>📖 Article Contents</h3>
+    <ul class="toc-list">
+        <li><a href="#introduction" class="toc-link">Introduction: The Woman Behind the Mystery</a></li>
+        <li><a href="#biblical-origins" class="toc-link">Biblical Origins: Mary in the Gospels</a></li>
+        <li><a href="#resurrection" class="toc-link">The Resurrection Encounter</a></li>
+        <li><a href="#historical-context" class="toc-link">Historical Context</a></li>
+        <li><a href="#medieval" class="toc-link">The Medieval Transformation</a></li>
+        <li><a href="#modern" class="toc-link">Modern Reclamation</a></li>
+    </ul>
+</div>
+
+<style>
+.toc-box {
+    background: #f8f9fa;
+    border-left: 4px solid #00BCD4;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 5px;
+}
+
+.toc-box h3 {
+    margin-top: 0;
+    color: #00BCD4;
+}
+
+.toc-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc-list li {
+    margin: 10px 0;
+}
+
+.toc-list a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.toc-list a:hover {
+    color: #00BCD4;
+    text-decoration: underline;
+}
+</style>
+
+
+
+
+
+
+        <div class="article-content">
+            <h2 id="introduction">Introduction: The Woman Behind the Mystery</h2>
+            
+            <p>Few figures in Christian history have captured the imagination quite like Mary Magdalene. Known by many names throughout the centuries—the Magdalene, Mary of Magdala, the Apostle to the Apostles—she stands as one of the most compelling and controversial characters in the New Testament. Her story weaves through the Gospels as a devoted follower of Jesus Christ, yet her identity has been shrouded in mystery, misinterpretation, and mythmaking for nearly two millennia.</p>
+            
+            <p>Mary Magdalene represents a fascinating study in how historical figures can be transformed by religious tradition, cultural interpretation, and artistic imagination. From her biblical origins as a faithful disciple to her later portrayal as a repentant prostitute, and finally to modern scholarly attempts to recover her authentic voice, Mary Magdalene's story reflects the broader challenges of understanding women's roles in early Christianity and the complex process by which religious traditions develop and evolve.</p>
+            
+            <p>This comprehensive exploration seeks to unravel the layers of interpretation that have accumulated around Mary Magdalene over the centuries, examining what we can know from historical and biblical sources, how her image has been shaped by theological and cultural forces, and why her story continues to resonate so powerfully in contemporary discussions about faith, gender, and spiritual authority.</p>
+
+            <h2 id="biblical-origins">Biblical Origins: Mary in the Gospels</h2>
+            
+            <h3 id="first-appearances">First Appearances and Early Ministry</h3>
+            
+            <p>Mary Magdalene first appears in the Gospel narratives as one of several women who accompanied Jesus during his ministry. The Gospel of Luke provides our earliest substantial reference to her, identifying her as <strong>"Mary called Magdalene, from whom seven demons had gone out"</strong> (Luke 8:2). This brief but significant description establishes two key aspects of her identity that would profoundly influence later interpretations: her geographic origin in the town of Magdala, and her experience of being healed by Jesus from what the Gospel describes as demonic possession.</p>
+            
+            <p>The reference to "seven demons" has been interpreted in various ways throughout Christian history. Some scholars suggest this represents a severe form of mental or physical illness that was understood in first-century terms as demonic influence. Others view it as symbolic language for a profound spiritual transformation. The number seven, often representing completeness or totality in biblical literature, may indicate that Mary experienced a complete spiritual healing and renewal through her encounter with Jesus.</p>
+            
+            <p>Luke's Gospel also places Mary Magdalene among a group of women who <strong>"provided for them out of their means"</strong> (Luke 8:3), suggesting that she was a woman of some financial resources who helped support Jesus and his disciples during their itinerant ministry. This detail challenges later characterizations of Mary as a marginalized or destitute figure, instead presenting her as an active patron and supporter of the early Christian movement.</p>
+
+           <h3 id="crucifixion">The Crucifixion Witness</h3>
+            
+            <p>All four canonical Gospels present Mary Magdalene as a crucial witness to the crucifixion of Jesus, establishing her as one of the most loyal and courageous of his followers. While many of the male disciples fled or denied their association with Jesus during his arrest and trial, Mary Magdalene remained present through the darkest hours of the Passion narrative.</p>
+            
+            <p>The Gospel of Matthew describes how <strong>"many women were there, watching from afar, who had followed Jesus from Galilee, ministering to him; among whom were Mary Magdalene, and Mary the mother of James and Joseph, and the mother of the sons of Zebedee"</strong> (Matthew 27:55-56). This passage emphasizes both the courage of these women in remaining present during a dangerous and traumatic event, and their role as witnesses to the central event of Christian faith.</p>
+            
+            <p>Mark's Gospel provides a similar account, noting that these women <strong>"when he was in Galilee, followed him, and ministered to him; and there were also many other women who came up with him to Jerusalem"</strong> (Mark 15:41). This description reinforces the picture of Mary Magdalene as part of a significant group of female disciples who had been with Jesus throughout his ministry, not merely appearing at its conclusion.</p>
+            
+            <p>The Gospel of John offers perhaps the most poignant account of Mary Magdalene's presence at the crucifixion, placing her <strong>"near the cross of Jesus"</strong> along with Jesus' mother and other close followers (John 19:25). This proximity to the cross, in contrast to the distance maintained by other witnesses, suggests an intimate relationship and extraordinary devotion that transcended fear of association with a condemned criminal.</p>
+
+            <h3 id="burial">The Burial and Preparation</h3>
+            
+            <p>Mary Magdalene's role continues in the burial narratives, where she appears as one of the women who carefully observed where Jesus was laid and who prepared to anoint his body according to Jewish burial customs. The Gospel of Mark describes how <strong>"Mary Magdalene and Mary the mother of Joses saw where he was laid"</strong> (Mark 15:47), establishing their role as witnesses not only to the death but also to the burial of Jesus.</p>
+            
+            <p>This attention to the burial location proves crucial for the resurrection narrative, as it explains how these women knew exactly where to go on the first day of the week to complete the burial preparations that had been interrupted by the onset of the Sabbath. Their careful observation demonstrates both their devotion to Jesus and their commitment to fulfilling the proper ritual obligations for the dead.</p>
+
+            <!-- CTA Box -->
+            <div class="article-cta">
+                <h3>📖 Deepen Your Biblical Understanding</h3>
+                <p>Want to explore more stories of biblical figures and their significance? Get our free interactive prayer guide and study resources.</p>
+                <a href="/email_capture_page.html" class="btn">Get Free Resources</a>
+            </div>
+
+         <h2 id="resurrection">The Resurrection Encounter: First Witness to the Risen Christ</h2>
+            
+            <h3 id="empty-tomb">The Empty Tomb Discovery</h3>
+            
+            <p>Mary Magdalene's most significant role in the Gospel narratives comes with her discovery of the empty tomb and her encounter with the risen Jesus. All four Gospels identify her as either the sole discoverer or the primary witness among a small group of women who came to the tomb early on the first day of the week.</p>
+            
+            <p>The Gospel of John provides the most detailed and personal account of Mary's experience at the tomb. According to John's narrative, Mary came to the tomb <strong>"while it was still dark"</strong> and found the stone removed from the entrance (John 20:1). Her immediate reaction was to run to Peter and the other disciples with the alarming news that <strong>"they have taken the Lord out of the tomb, and we do not know where they have laid him"</strong> (John 20:2).</p>
+            
+            <p>This initial interpretation of the empty tomb as grave robbery rather than resurrection reflects the natural human tendency to seek rational explanations for extraordinary events. Mary's concern about the missing body demonstrates both her continued devotion to Jesus and her practical worry about the proper treatment of his remains.</p>
+
+           <h3 id="garden">The Garden Encounter</h3>
+            
+            <p>John's Gospel continues with the most intimate and detailed resurrection appearance in all of Christian scripture. After Peter and John examine the empty tomb and return home, Mary remains in the garden, weeping. Her persistence in staying at the tomb, even after the other disciples have left, reveals the depth of her grief and her unwillingness to abandon Jesus even in death.</p>
+            
+            <p>The encounter that follows has become one of the most beloved passages in Christian literature. Mary sees two angels in the tomb who ask why she is weeping, and she repeats her concern about the missing body. When she turns around, she sees someone she assumes to be the gardener and makes the same request: <strong>"Sir, if you have carried him away, tell me where you have laid him, and I will take him away"</strong> (John 20:15).</p>
+            
+            <p>The moment of recognition comes when Jesus speaks her name: <strong>"Mary."</strong> Her immediate response, <strong>"Rabboni"</strong> (which means Teacher), reveals both the intimacy of their relationship and her instant recognition of his voice (John 20:16). This simple exchange of names represents one of the most powerful moments in all of Christian scripture, combining personal intimacy with cosmic significance.</p>
+
+            <h3 id="commission">The Commission to Proclaim</h3>
+            
+            <p>Perhaps most significantly for understanding Mary Magdalene's historical importance, Jesus immediately commissions her as the bearer of the resurrection message. He tells her, <strong>"Go to my brothers and say to them, 'I am ascending to my Father and your Father, to my God and your God'"</strong> (John 20:17). This commission makes Mary Magdalene the first evangelist of the resurrection, earning her the traditional title "Apostle to the Apostles."</p>
+            
+            <p>The Gospel records that Mary faithfully carries out this commission, going to the disciples and announcing, <strong>"I have seen the Lord"</strong>, and relating everything he had said to her (John 20:18). This moment establishes Mary not merely as a witness to the resurrection but as its first proclaimer, the one entrusted with sharing the central message of Christian faith.</p>
+
+          <h2 id="historical-context">Historical Context: Women in First-Century Palestine</h2>
+            
+           
+<h3 id="social-status">Social and Religious Status</h3>
+            
+            <p>To understand the significance of Mary Magdalene's role in the Gospel narratives, it is essential to examine the position of women in first-century Palestinian society. Women in this period faced significant legal, social, and religious restrictions that would make Mary's prominent role in the Jesus movement quite remarkable for its time.</p>
+            
+            <p>In Jewish law and custom of the first century, women were generally considered to be under the authority of their fathers or husbands, with limited legal rights and restricted public roles. They could not serve as witnesses in legal proceedings, which makes the Gospel's presentation of women as the primary witnesses to the resurrection all the more striking. This legal restriction has led some scholars to argue that the prominence of women in the resurrection accounts actually supports their historical authenticity, as it would be unlikely for early Christian communities to invent female witnesses if they were trying to make their story more credible to contemporary audiences.</p>
+
+            <h3 id="economic">Economic Independence and Patronage</h3>
+            
+            <p>Despite these restrictions, some women in first-century Palestine did achieve degrees of economic independence and social influence. Wealthy widows, in particular, could control significant resources and property. The Gospel of Luke's mention that Mary Magdalene and other women <strong>"provided for them out of their means"</strong> suggests that she may have been such a woman of independent resources.</p>
+            
+            <p>Archaeological evidence from first-century Magdala, Mary's hometown, suggests it was a prosperous fishing community on the Sea of Galilee with connections to broader Mediterranean trade networks. This context supports the possibility that Mary came from a family of means, perhaps involved in the fishing industry or related commerce, which would explain her ability to provide financial support for Jesus' ministry.</p>
+
+           <h2 id="medieval">The Medieval Transformation</h2>
+            
+            <h3 id="gregory">Gregory the Great's Influential Sermon</h3>
+            
+            <p>The medieval understanding of Mary Magdalene was definitively shaped by Pope Gregory the Great's Sermon 33, delivered around 591 CE. In this influential homily, Gregory explicitly identified Mary Magdalene with both the sinful woman of Luke 7 and Mary of Bethany, creating a composite figure that would dominate Christian imagination for more than a millennium.</p>
+            
+            <p>Gregory declared: <strong>"She whom Luke calls the sinful woman, whom John calls Mary, we believe to be the Mary from whom seven devils were ejected according to Mark."</strong> This papal pronouncement carried enormous authority and effectively established the conflated identity as official Church teaching. Gregory's sermon transformed Mary Magdalene from the complex biblical figure into a single narrative of sin, repentance, and redemption.</p>
+
+          <h3 id="artistic">Artistic and Literary Legacy</h3>
+            
+            <p>Medieval art and literature extensively depicted Mary Magdalene, almost always emphasizing her role as penitent sinner rather than apostolic witness. Paintings, sculptures, and illuminated manuscripts typically showed her with long flowing hair (often red, symbolizing her supposed sinful past), holding a jar of ointment (referencing the anointing scenes), and sometimes in states of ecstatic devotion or penitential grief.</p>
+            
+            <p>The Golden Legend, a popular collection of saints' lives compiled by Jacobus de Voragine in the 13th century, provided an extensive and influential account of Mary Magdalene's life that combined biblical elements with legendary material. This text spread throughout medieval Europe and helped standardize the understanding of Mary Magdalene as a reformed prostitute who became a great saint through her passionate devotion to Jesus.</p>
+
+       <h2 id="modern">Modern Reclamation and Contemporary Significance</h2>
+            
+          <h3 id="scholarly">Scholarly Reassessment</h3>
+            
+            <p>Modern biblical scholarship has fundamentally challenged the medieval conflation of Mary Magdalene with other biblical women. Critical scholars have noted the lack of any explicit connection in the Gospel texts themselves between Mary Magdalene and the various other women with whom she had been traditionally identified.</p>
+            
+            <p>In 1969, the Roman Catholic Church officially acknowledged that the traditional conflation of Mary Magdalene with other Gospel women lacked biblical foundation. The Church's liturgical reforms separated the feast of Mary Magdalene (July 22) from celebrations of other women who had been confused with her, and new liturgical texts emphasized her role as witness to the resurrection rather than focusing primarily on themes of repentance and conversion.</p>
+            
+            <p>Pope Francis elevated Mary Magdalene's liturgical celebration to the rank of feast in 2016, explicitly calling her "Apostle to the Apostles" and emphasizing her role as the first witness and proclaimer of the resurrection. This papal action represented a significant official recognition of Mary Magdalene's apostolic importance and marked a clear departure from medieval interpretations that had marginalized her apostolic role.</p>
+
+            <h3 id="contemporary">Contemporary Relevance</h3>
+            
+            <p>Mary Magdalene's story continues to resonate powerfully in contemporary discussions about faith, gender, and spiritual authority. Feminist theologians have highlighted her significance as evidence of women's leadership roles in early Christianity, while popular culture continues to be fascinated by her mysterious and compelling story.</p>
+            
+            <p>The recovery of Mary Magdalene's authentic biblical role—as devoted disciple, courageous witness, and commissioned proclaimer of the resurrection—offers important insights into the nature of discipleship, the meaning of witness, and the inclusive nature of the Gospel message. Her story reminds us that the most faithful witnesses are not always those with the most social status or religious authority, but those whose transformed lives testify to the power of divine grace.</p>
+
+            <!-- Final CTA -->
+            <div class="article-cta">
+                <h3>🙏 Continue Your Biblical Journey</h3>
+                <p>Discover more fascinating stories from Scripture with our interactive study guides and resources. Join thousands who are deepening their faith through engaging biblical education.</p>
+               
+            </div>
+        </div>
+    </main>
+
+  
+
+<footer class="mega-footer">
+    <div class="mega-footer-container">
+        <div class="mega-footer-grid">
+            
+            <!-- Free Resources -->
+            <div class="mega-footer-section">
+                <h3>📚 Free Resources</h3>
+                <ul>
+                    <li><a href="/interactive_prayer_guide.html">Interactive Prayer Guide</a></li>
+                    <li><a href="/enhanced_prayer_guide.html">Complete Prayer Manual</a></li>
+                    <li><a href="/systematic_bible_study_guide.html">Bible Study Templates</a></li>
+                    <li><a href="/armor_of_god.html">Armor of God Interactive</a></li>
+                    <li><a href="/Daily_Devotions.html" class="mega-footer-highlight">Start Daily Devotions</a></li>
+                    <li><a href="/hermeneutics-masterclass.html">Hermeneutics Masterclass</a></li>
+                </ul>
+            </div>
+            
+            <!-- Bible Studies -->
+            <div class="mega-footer-section">
+                <h3>📖 Bible Studies</h3>
+                <ul>
+                    <li><a href="https://anchorstack.gumroad.com/l/tefnpe">Lost Tribes of Israel</a></li>
+                    <li><a href="https://anchorstack.gumroad.com/l/xcqfn">Pentateuch Deep Dive</a></li>
+                    <li><a href="https://anchorstack.gumroad.com/l/pgfyd">Levitical Priesthood</a></li>
+                    <li><a href="https://anchorstack.gumroad.com/l/ryjycr">Isaiah Prophet Study</a></li>
+                    <li><a href="/nephilim_article.html">The Nephilim Mystery</a></li>
+                    <li><a href="https://anchorstack.gumroad.com/l/uahhng" class="mega-footer-highlight">Complete Library</a></li>
+                </ul>
+            </div>
+            
+            <!-- Biblical Knowledge -->
+            <div class="mega-footer-section">
+                <h3>🕊️ Biblical Knowledge</h3>
+                <ul>
+                    <li><a href="/wp/the-gospel-of-matthew/">Gospel of Matthew</a></li>
+                    <li><a href="/Christian_Philosophy_101.html">Christian Philosophy 101</a></li>
+                    <li><a href="/old-testament-survey.html">Old Testament Survey</a></li>
+                    <li><a href="/new-testament-survey.html">New Testament Survey</a></li>
+                    <li><a href="/biblical-archaeology.html">Biblical Archaeology</a></li>
+                    <li><a href="/biblical-languages.html">Biblical Languages</a></li>
+                </ul>
+            </div>
+            
+            <!-- Leadership & Ministry -->
+            <div class="mega-footer-section">
+                <h3>⛪ Leadership & Ministry</h3>
+                <ul>
+                    <li><a href="/gideon_book_landing_page.html">Gideon Leadership Book</a></li>
+                    <li><a href="/Church_Growth_Tools.html">Church Growth Tools</a></li>
+                    <li><a href="/pastoral-resources.html">Pastoral Resources</a></li>
+                    <li><a href="/youth-ministry.html">Youth Ministry</a></li>
+                    <li><a href="/worship-resources.html">Worship Resources</a></li>
+                    <li><a href="/small-groups.html">Small Group Materials</a></li>
+                </ul>
+            </div>
+            
+            <!-- Special Features 
+            <div class="mega-footer-section">
+                <h3>✨ Special Features</h3>
+                <ul>
+                    <li><a href="/biblical-timeline.html">Interactive Timeline</a></li>
+                    <li><a href="/maps.html">Biblical Maps</a></li>
+                    <li><a href="/hebrew-greek-tools.html">Language Tools</a></li>
+                    <li><a href="/commentary.html">Commentary Library</a></li>
+                    <li><a href="/video-courses.html">Video Courses</a></li>
+                    <li><a href="/certificates.html" class="mega-footer-highlight">Get Certified</a></li>
+                </ul>
+            </div>-->
+            
+            <!-- About & Support -->
+            <div class="mega-footer-section">
+                <h3>ℹ️ About & Support</h3>
+                <ul>
+                    <li><a href="/about.html">About AnchorStack</a></li>
+                    <li><a href="/contact.html">Contact Support</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
+                    <li><a href="/testimonials.html">Success Stories</a></li>
+                    <li><a href="/newsletter.html">Newsletter</a></li>
+                    <li><a href="/donate.html" class="mega-footer-highlight">Support Our Mission</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="mega-footer-bottom">
+            <div class="mega-footer-logo">⚓ AnchorStack Seminary</div>
+            <p>© 2025 AnchorStack.pro | Equipping Believers with Biblical Knowledge</p>
+            <p style="margin-top: 5px;">Building Faith Through Understanding</p>
+        </div>
+    </div>
+</footer>
+    <!-- OptinMonster Script -->
+    <script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.account=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,374010,396602);</script>
+<script>
+// Smooth scrolling for table of contents
+document.querySelectorAll('.toc-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = targetElement.offsetTop - headerHeight - 20;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+</script>
+
+  
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

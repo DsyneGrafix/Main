@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentecost: The Birth of the Church | AnchorStack</title>
+    <meta name="description" content="Discover the meaning and significance of Pentecost - when the Holy Spirit came with power, tongues of fire appeared, and the Church was born. Complete biblical study guide.">
+    <meta name="keywords" content="Pentecost, Holy Spirit, Acts 2, tongues of fire, birth of church, speaking in tongues, biblical festivals">
+    <meta name="author" content="AnchorStack">
+    <link rel="canonical" href="https://anchorstack.pro/pentecost.html">
+    <link rel="stylesheet" href="main.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #dc2626 0%, #fbbf24 50%, #f59e0b 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+            animation: flame-flicker 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes flame-flicker {
+            0% { opacity: 0.7; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+        
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-date {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: #dc2626;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: #b91c1c;
+            margin: 2rem 0 1rem 0;
+            border-left: 4px solid #fbbf24;
+            padding-left: 1rem;
+        }
+        
+        /* Scripture Box */
+        .scripture-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .scripture-box::before {
+            content: '"';
+            font-size: 4rem;
+            color: #f59e0b;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+        
+        .scripture-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #92400e;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .scripture-ref {
+            font-weight: bold;
+            color: #b45309;
+        }
+        
+        /* Fire Cards */
+        .pentecost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .fire-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fire-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #dc2626, #fbbf24);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .fire-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+            border-color: #fbbf24;
+        }
+        
+        .fire-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .fire-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .fire-card h3 {
+            border: none;
+            padding: 0;
+            margin-bottom: 1rem;
+            color: #dc2626;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #dc2626, #fbbf24);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 45%;
+            position: relative;
+        }
+        
+        .timeline-date {
+            background: #dc2626;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            z-index: 3;
+        }
+        
+        /* Interactive Element */
+        .interactive-section {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gift-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .gift-item:hover {
+            background: #fbbf24;
+            color: white;
+            transform: scale(1.05);
+            border-color: #dc2626;
+        }
+        
+        /* Related Links */
+        .pentecost-connections {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+        }
+        
+        .connection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .connection-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .connection-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .connection-card h3 {
+            color: #fbbf24;
+            border: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .connection-card a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #fbbf24;
+            padding-bottom: 2px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 40px;
+            }
+            
+            .timeline-date {
+                left: 20px;
+                transform: translateY(-50%);
+            }
+            
+            .pentecost-grid,
+            .gift-grid,
+            .connection-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">Pentecost</h1>
+        <p class="hero-subtitle">The Birth of the Church</p>
+        <p class="hero-date">Celebrating the Coming of the Holy Spirit</p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <h2>What is Pentecost?</h2>
+        
+        <div class="scripture-box">
+            <p class="scripture-text">
+                "When the day of Pentecost came, they were all together in one place. Suddenly a sound like the blowing of a violent wind came from heaven and filled the whole house where they were sitting. They saw what seemed to be tongues of fire that separated and came to rest on each of them. All of them were filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them."
+            </p>
+            <p class="scripture-ref">Acts 2:1-4</p>
+        </div>
+
+        <p style="font-size: 1.2rem; text-align: center; margin: 2rem 0; color: #6b7280;">
+            Pentecost marks the moment when Jesus' promise of the Holy Spirit was fulfilled, transforming a small group of disciples into bold witnesses who would turn the world upside down.
+        </p>
+
+        <div class="pentecost-grid">
+            <div class="fire-card">
+                <span class="fire-icon">🔥</span>
+                <h3>Tongues of Fire</h3>
+                <p>Visible flames rested on each disciple, symbolizing the purifying and empowering presence of the Holy Spirit. This wasn't destructive fire, but the sacred fire of God's presence.</p>
+            </div>
+
+            <div class="fire-card">
+                <span class="fire-icon">🌪️</span>
+                <h3>Sound of Wind</h3>
+                <p>A violent wind filled the house, representing the powerful, unstoppable movement of God's Spirit. The Hebrew word "ruach" means both wind and spirit.</p>
+            </div>
+
+            <div class="fire-card">
+                <span class="fire-icon">🗣️</span>
+                <h3>Speaking in Tongues</h3>
+                <p>The disciples spoke in languages they had never learned, enabling people from every nation to hear the gospel in their native tongue. This reversed the confusion of Babel.</p>
+            </div>
+        </div>
+
+        <h2>The Timeline of Pentecost</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Jesus' Promise</h3>
+                    <p>Before His ascension, Jesus told the disciples to wait in Jerusalem for the "gift my Father promised" - the Holy Spirit who would give them power to be witnesses.</p>
+                </div>
+                <div class="timeline-date">Before Ascension</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>10 Days of Prayer</h3>
+                    <p>About 120 disciples gathered in the upper room, devoting themselves to prayer and waiting for the promised Spirit. They replaced Judas with Matthias during this time.</p>
+                </div>
+                <div class="timeline-date">10 Days</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>The Spirit Comes</h3>
+                    <p>On the Jewish festival of Pentecost (50 days after Passover), the Holy Spirit came with power, filling all the believers and enabling them to speak in foreign languages.</p>
+                </div>
+                <div class="timeline-date">Pentecost Morning</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Peter's Sermon</h3>
+                    <p>Peter, filled with boldness, preached the first Christian sermon, explaining that Jesus was the promised Messiah and calling people to repentance.</p>
+                </div>
+                <div class="timeline-date">Same Day</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>3,000 Baptized</h3>
+                    <p>About 3,000 people responded to Peter's message, were baptized, and joined the first Christian church. The kingdom of God exploded into growth.</p>
+                </div>
+                <div class="timeline-date">That Evening</div>
+            </div>
+        </div>
+
+        <h2>The Gifts of the Spirit</h2>
+        
+        <div class="interactive-section">
+            <h3 style="color: #dc2626; margin-bottom: 1rem;">Spiritual Gifts Given at Pentecost</h3>
+            <p style="margin-bottom: 2rem;">The Holy Spirit empowered believers with supernatural abilities for building up the church and spreading the gospel.</p>
+            
+            <div class="gift-grid">
+                <div class="gift-item">
+                    <h4>Prophecy</h4>
+                    <p>Speaking God's message</p>
+                </div>
+                <div class="gift-item">
+                    <h4>Healing</h4>
+                    <p>Supernatural restoration</p>
+                </div>
+                <div class="gift-item">
+                    <h4>Miracles</h4>
+                    <p>Acts of divine power</p>
+                </div>
+                <div class="gift-item">
+                    <h4>Tongues</h4>
+                    <p>Speaking in languages</p>
+                </div>
+                <div class="gift-item">
+                    <h4>Interpretation</h4>
+                    <p>Understanding tongues</p>
+                </div>
+                <div class="gift-item">
+                    <h4>Wisdom</h4>
+                    <p>Divine insight</p>
+                </div>
+                <div class="gift-item">
+                    <h4>Knowledge</h4>
+                    <p>Supernatural understanding</p>
+                </div>
+                <div class="gift-item">
+                    <h4>Faith</h4>
+                    <p>Extraordinary trust</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Pentecost Today</h2>
+        
+        <div class="fire-card" style="margin: 2rem 0;">
+            <h3 style="color: #dc2626;">The Ongoing Work</h3>
+            <p style="font-size: 1.1rem; line-height: 1.7;">
+                Pentecost wasn't a one-time event but the beginning of the Spirit's ongoing work in the church. Today, the same Holy Spirit who empowered the first disciples continues to work through believers, building the church, transforming lives, and spreading the gospel to every nation.
+            </p>
+            
+            <p style="margin-top: 1.5rem; font-weight: bold; color: #b91c1c;">
+                Every believer receives the Holy Spirit at conversion and can experience His power for witnessing, worship, and service.
+            </p>
+        </div>
+    </section>
+
+    <!-- Related Content Section -->
+    <section class="pentecost-connections">
+        <h2 style="color: white; text-align: center; margin-bottom: 2rem;">Explore Related Biblical Studies</h2>
+        
+        <div class="connection-grid">
+            <div class="connection-card">
+                <h3>The Holy Spirit</h3>
+                <p style="margin-bottom: 1rem;">Discover the person and work of the Holy Spirit throughout Scripture and Christian history.</p>
+                <a href="/holy_spirit_article.html">Study the Holy Spirit →</a>
+            </div>
+            
+            <div class="connection-card">
+                <h3>Jewish Roots of Christianity</h3>
+                <p style="margin-bottom: 1rem;">Understand how Pentecost connects to Jewish festivals and the continuity of God's plan.</p>
+                <a href="/The-Jewish-Roots-of-Christianity.html">Discover the Roots →</a>
+            </div>
+            
+            <div class="connection-card">
+                <h3>Four Gospels Study</h3>
+                <p style="margin-bottom: 1rem;">See how each Gospel prepares for the coming of the Spirit at Pentecost.</p>
+                <a href="/four-gospels-interactive.html">Study the Gospels →</a>
+            </div>
+            
+            <div class="connection-card">
+                <h3>Scripture Study Tools</h3>
+                <p style="margin-bottom: 1rem;">Learn to study Pentecost and other biblical events with proper interpretation methods.</p>
+                <a href="/scripture-interpretation-guide.html">Master Bible Study →</a>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(255, 255, 255, 0.1); border-radius: 15px;">
+            <h4 style="color: #fbbf24; margin-bottom: 1rem;">Continue Your Biblical Studies</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                <a href="/passover.html" style="color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9rem;">Passover Festival</a>
+                <a href="https://bibleproject.com/articles/what-is-pentecost-and-why-is-it-important/" style="color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9rem;">What Is Pentecost? And Why Is It Important?</a>
+                <a href="/seminary-study-plan.html" style="color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9rem;">Seminary Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/universal-nav.js"></script>
+    <script src="anchorstack-nav.js"></script>
+    <script src="anchorstack-footer.js"></script>
+</body>
+</html>

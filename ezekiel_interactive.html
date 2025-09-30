@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+ <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezekiel: The Visionary Prophet of Exile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="canonical" href="ezekiel_interactive.html">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "@id": "https://anchorstack.pro/satan_series", "headline": "Satan Series - Interactive Biblical Study", "description": "Comprehensive biblical analysis of Satan's role in Scripture with interactive elements", "image": "https://anchorstack.pro/images/satan-series-cover.jpg", "author": { "@type": "Person", "name": "Ricky Jarnagin" }, "publisher": { "@type": "Organization", "name": "AnchorStack", "logo": { "@type": "ImageObject", "url": "https://anchorstack.pro/images/logo.png" } }, "datePublished": "2024-01-01", "dateModified": "2025-09-26", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://anchorstack.pro/satan_series" } } </script>
+ <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #581c87 100%);
+            color: #1f2937;
+        }
+        .content-bg {
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: #581c87;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #7c3aed;
+            border-bottom-color: #7c3aed;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Vision Cards with Enhanced 3D Effect */
+        .vision-card {
+            perspective: 1200px;
+            height: 320px;
+            cursor: pointer;
+        }
+        
+        .vision-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .vision-card.flipped .vision-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .vision-card-front, .vision-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .vision-card-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .vision-card-back {
+            background: white;
+            color: #374151;
+            transform: rotateY(180deg);
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+        
+        .vision-card-back h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+            font-weight: 600;
+            color: #581c87;
+        }
+        
+        .vision-card-back p {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: #4b5563;
+        }
+        
+        .vision-card-back .reference {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #7c3aed;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Symbolic Actions Timeline */
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            background: linear-gradient(to bottom, #7c3aed, #3730a3);
+            height: 100%;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .timeline-content.left {
+            margin-left: 0;
+        }
+        
+        .timeline-content.right {
+            margin-left: 55%;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #7c3aed;
+            border: 4px solid #f8fafc;
+            border-radius: 50%;
+            z-index: 10;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 2rem;
+            }
+            .timeline-content {
+                width: calc(100% - 4rem);
+                margin-left: 4rem !important;
+            }
+            .timeline-dot {
+                left: 2rem;
+            }
+            .vision-card {
+                height: 280px;
+            }
+            .vision-card-back {
+                padding: 1rem;
+            }
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            height: 400px;
+        }
+        
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        
+        /* Interactive Temple Diagram */
+        .temple-diagram {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .temple-area {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .temple-area:hover {
+            fill-opacity: 0.8;
+            stroke-width: 3;
+        }
+        
+        .temple-tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 100;
+        }
+    </style>
+<meta name="description" content="Interactive study of Ezekiel the prophet - explore visions, symbolic actions, and the Babylonian exile through visual timelines and flip cards">
+<meta name="keywords" content="Ezekiel, prophet, Bible study, Babylonian exile, dry bones, temple vision, biblical education">
+<meta property="og:title" content="Ezekiel: The Visionary Prophet of Exile - Interactive Study">
+<meta property="og:description" content="Explore Ezekiel's extraordinary visions and symbolic actions through interactive timelines and visual aids">
+</head>
+
+
+
+
+<body class="antialiased">
+    <!-- Header with Navigation -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-purple-700">Ezekiel the Prophet</h1>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#overview" class="nav-link text-lg">Overview</a>
+                    <a href="#exile" class="nav-link text-lg">Exile</a>
+                    <a href="#visions" class="nav-link text-lg">Visions</a>
+                    <a href="#actions" class="nav-link text-lg">Actions</a>
+                    <a href="#temple" class="nav-link text-lg">Temple</a>
+                    <a href="#legacy" class="nav-link text-lg">Legacy</a>
+                </div>
+               <button id="mobile-menu-button" class="md:hidden p-2 rounded-md bg-purple-100 hover:bg-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-500">
+    <svg class="h-6 w-6 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+</button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#overview" class="block py-2 px-4 text-sm nav-link">Overview</a>
+                <a href="#exile" class="block py-2 px-4 text-sm nav-link">Exile</a>
+                <a href="#visions" class="block py-2 px-4 text-sm nav-link">Visions</a>
+                <a href="#actions" class="block py-2 px-4 text-sm nav-link">Actions</a>
+                <a href="#temple" class="block py-2 px-4 text-sm nav-link">Temple</a>
+                <a href="#legacy" class="block py-2 px-4 text-sm nav-link">Legacy</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-bg">
+        <main class="container mx-auto px-6 py-12">
+
+            <!-- Hero Section -->
+            <section id="hero" class="text-center mb-24">
+                <h2 class="text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                    "By the Waters of Babylon"
+                </h2>
+                <p class="max-w-4xl mx-auto text-xl text-gray-700 leading-relaxed">
+                    Meet Ezekiel, the priest-turned-prophet whose extraordinary visions by the Kebar River revealed God's glory in exile. From wheels within wheels to valleys of dry bones, experience the apocalyptic imagery that has captivated minds for millennia and discover hope beyond judgment.
+                </p>
+            </section>
+
+            <!-- Overview Section -->
+            <section id="overview" class="mb-24 scroll-mt-20">
+                <h3 class="text-5xl font-bold text-center mb-8">The Visionary of Exile</h3>
+                <p class="text-center max-w-4xl mx-auto mb-16 text-lg text-gray-700">
+                    Ezekiel (meaning "God strengthens") stands unique among the prophets—a priest called to prophesy, an exile who saw the future, a man whose very life became a living symbol of Israel's fate. His ministry spanned the most traumatic period in Jewish history, offering both warnings and wonderful promises.
+                </p>
+                
+                <div class="grid lg:grid-cols-4 gap-8">
+                    <div class="card bg-white p-8 rounded-xl shadow-lg border border-purple-100">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-2xl">
+                                👤
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 text-center">Identity</h4>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li><strong>Name:</strong> Ezekiel ("God strengthens")</li>
+                            <li><strong>Father:</strong> Buzi (priest)</li>
+                            <li><strong>Calling:</strong> Priest & Prophet</li>
+                            <li><strong>Age at calling:</strong> 30 years old</li>
+                            <li><strong>Wife:</strong> Died as prophetic sign</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card bg-white p-8 rounded-xl shadow-lg border border-purple-100">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-2xl">
+                                🏛️
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 text-center">Historical Context</h4>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li><strong>Period:</strong> Babylonian Exile</li>
+                            <li><strong>Exiled:</strong> 597 BC with Jehoiachin</li>
+                            <li><strong>Location:</strong> Tel-abib, Kebar River</li>
+                            <li><strong>Ministry:</strong> 593-571 BC (22 years)</li>
+                            <li><strong>Audience:</strong> Jewish exiles</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card bg-white p-8 rounded-xl shadow-lg border border-purple-100">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-2xl">
+                                👁️
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 text-center">Divine Encounters</h4>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li><strong>Call Vision:</strong> Throne-chariot of God</li>
+                            <li><strong>Symbolic Acts:</strong> 12 dramatic signs</li>
+                            <li><strong>Temple Visions:</strong> Glory departing/returning</li>
+                            <li><strong>Restoration:</strong> Dry bones & new temple</li>
+                            <li><strong>Method:</strong> Often mute, spoke only God's words</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card bg-white p-8 rounded-xl shadow-lg border border-purple-100">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-2xl">
+                                💭
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 text-center">Core Message</h4>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li><strong>Judgment:</strong> Jerusalem must fall</li>
+                            <li><strong>Sovereignty:</strong> God controls all nations</li>
+                            <li><strong>Restoration:</strong> "I will give you a new heart"</li>
+                            <li><strong>Presence:</strong> "The Lord is there"</li>
+                            <li><strong>Hope:</strong> Beyond exile lies glory</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exile Context Section -->
+            <section id="exile" class="mb-24 scroll-mt-20">
+                <h3 class="text-5xl font-bold text-center mb-8">The Babylonian Crisis</h3>
+                <p class="text-center max-w-4xl mx-auto mb-16 text-lg text-gray-700">
+                    Ezekiel's ministry unfolded during Israel's darkest hour. The great Babylonian war machine had shattered the nation, exiled its leaders, and left survivors questioning whether God had abandoned His covenant. Understanding this crisis is key to appreciating Ezekiel's revolutionary message.
+                </p>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-purple-100 mb-8">
+                    <h4 class="text-3xl font-bold mb-6 text-center">The Three Deportations</h4>
+                    <div class="chart-container">
+                        <canvas id="exileChart"></canvas>
+                    </div>
+                    <p class="text-center mt-6 text-sm text-gray-600">
+                        Ezekiel was among the second wave of exiles in 597 BC, ministering to his fellow deportees while Jerusalem still stood.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-purple-100">
+                        <h4 class="text-2xl font-bold mb-4">Life in Exile</h4>
+                        <p class="text-gray-700 mb-4">
+                            The exiles weren't prisoners but were settled in communities along Babylon's canal system. They could own property, conduct business, and maintain their cultural identity—yet they grieved for their lost homeland.
+                        </p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong>Location:</strong> Tel-abib by Kebar River</li>
+                            <li>• <strong>Community:</strong> 10,000+ Jewish exiles</li>
+                            <li>• <strong>Leadership:</strong> Elders still functioned</li>
+                            <li>• <strong>Hope:</strong> False prophets promised quick return</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-purple-100">
+                        <h4 class="text-2xl font-bold mb-4">The Identity Crisis</h4>
+                        <p class="text-gray-700 mb-4">
+                            How could Israel be God's chosen people if they were defeated? Could they worship without the temple? Was their covenant broken? Ezekiel's answers would reshape Jewish faith forever.
+                        </p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong>Theological:</strong> Why did God allow this?</li>
+                            <li>• <strong>Practical:</strong> How to maintain faith?</li>
+                            <li>• <strong>Future:</strong> Will restoration come?</li>
+                            <li>• <strong>Individual:</strong> Personal vs. corporate guilt</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visions Section -->
+            <section id="visions" class="mb-24 scroll-mt-20">
+                <h3 class="text-5xl font-bold text-center mb-8">Extraordinary Visions</h3>
+                <p class="text-center max-w-4xl mx-auto mb-16 text-lg text-gray-700">
+                    Ezekiel's visions are among the most spectacular and mysterious in all Scripture. From the throne-chariot with wheels within wheels to the valley of dry bones, these divine encounters shaped both his message and the future of biblical prophecy. Click each vision to explore its meaning.
+                </p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="visions-grid">
+                </div>
+            </section>
+
+            <!-- Symbolic Actions Section -->
+            <section id="actions" class="mb-24 scroll-mt-20">
+                <h3 class="text-5xl font-bold text-center mb-8">Living Prophecies</h3>
+                <p class="text-center max-w-4xl mx-auto mb-16 text-lg text-gray-700">
+                    More than any other prophet, Ezekiel used dramatic symbolic actions to communicate God's message. His entire life became a living sermon, with each dramatic act designed to shake his audience from complacency and prepare them for the unthinkable.
+                </p>
+                
+                <div class="timeline-container relative">
+                    <div class="timeline-line"></div>
+                    <div id="actions-timeline"></div>
+                </div>
+            </section>
+
+            <!-- Temple Vision Section -->
+            <section id="temple" class="mb-24 scroll-mt-20">
+                <h3 class="text-5xl font-bold text-center mb-8">The Future Temple</h3>
+                <p class="text-center max-w-4xl mx-auto mb-16 text-lg text-gray-700">
+                    Ezekiel's final vision spans nine chapters (40-48) and presents an incredibly detailed temple that has never been built. Whether literal, symbolic, or millennial, this vision represents the ultimate restoration of God's presence among His people.
+                </p>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-purple-100 mb-8">
+                    <h4 class="text-3xl font-bold mb-6 text-center">Temple Interpretations</h4>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-purple-50 rounded-lg">
+                            <h5 class="text-xl font-bold mb-3 text-purple-700">Literal/Millennial</h5>
+                            <p class="text-gray-700 text-sm">A future physical temple to be built during Christ's 1000-year reign, with restored sacrifices as memorials.</p>
+                        </div>
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <h5 class="text-xl font-bold mb-3 text-blue-700">Symbolic/Spiritual</h5>
+                            <p class="text-gray-700 text-sm">Represents the church age and God's spiritual presence among believers through Christ.</p>
+                        </div>
+                        <div class="text-center p-6 bg-indigo-50 rounded-lg">
+                            <h5 class="text-xl font-bold mb-3 text-indigo-700">Eschatological</h5>
+                            <p class="text-gray-700 text-sm">Points to the new heavens and earth where God dwells perfectly with His people forever.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-purple-100">
+                        <h4 class="text-2xl font-bold mb-4">Key Features</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><strong>Size:</strong> Much larger than Solomon's temple</li>
+                            <li><strong>Layout:</strong> Three courtyards with precise measurements</li>
+                            <li><strong>Priests:</strong> Only Zadokite priests may serve</li>
+                            <li><strong>Sacrifices:</strong> Detailed offerings described</li>
+                            <li><strong>River:</strong> Life-giving water flows from the temple</li>
+                            <li><strong>City:</strong> Named "The Lord is There" (Jehovah-Shammah)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-purple-100">
+                        <h4 class="text-2xl font-bold mb-4">The River of Life</h4>
+                        <p class="text-gray-700 mb-4">
+                            Ezekiel 47 describes a river flowing from beneath the temple threshold, starting ankle-deep but becoming a mighty river of life that heals everything it touches.
+                        </p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong>Source:</strong> From under the temple threshold</li>
+                            <li>• <strong>Direction:</strong> Flows east to the Dead Sea</li>
+                            <li>• <strong>Effect:</strong> Brings life wherever it flows</li>
+                            <li>• <strong>Trees:</strong> Monthly fruit for food and healing</li>
+                            <li>• <strong>Symbolism:</strong> God's life-giving presence</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Legacy Section -->
+            <section id="legacy" class="scroll-mt-20">
+                <h3 class="text-5xl font-bold text-center mb-8">Enduring Impact</h3>
+                <p class="text-center max-w-4xl mx-auto mb-16 text-lg text-gray-700">
+                    Ezekiel's influence extends far beyond his historical moment. His visions provided the foundation for Jewish mysticism, influenced New Testament imagery, and continue to inspire art, literature, and theology today.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-purple-100 text-center">
+                        <div class="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                            📜
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">Jewish Mysticism</h4>
+                        <p class="text-gray-700">
+                            Ezekiel's throne-chariot vision (Merkabah) became the foundation of Jewish mystical tradition, studied for centuries by kabbalists.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-purple-100 text-center">
+                        <div class="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                            ✝️
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">New Testament</h4>
+                        <p class="text-gray-700">
+                            Revelation draws heavily on Ezekiel's imagery—throne visions, living creatures, new temple, and river of life all reappear.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-purple-100 text-center">
+                        <div class="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                            🎨
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">Cultural Impact</h4>
+                        <p class="text-gray-700">
+                            From Handel's "Messiah" to modern UFO theories, Ezekiel's visions continue to captivate imaginations across cultures.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-purple-100">
+                    <h4 class="text-3xl font-bold mb-6 text-center">Theological Contributions</h4>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="text-xl font-bold mb-3 text-purple-700">Individual Responsibility</h5>
+                            <p class="text-gray-700 mb-4">
+                                Ezekiel 18 revolutionized theology by emphasizing personal accountability: "The soul who sins shall die." Each person bears responsibility for their own choices.
+                            </p>
+                        </div>
+                        <div>
+                            <h5 class="text-xl font-bold mb-3 text-purple-700">New Heart Promise</h5>
+                            <p class="text-gray-700 mb-4">
+                                "I will give you a new heart and put a new spirit within you" (36:26) points toward the New Covenant transformation through the Holy Spirit.
+                            </p>
+                        </div>
+                        <div>
+                            <h5 class="text-xl font-bold mb-3 text-purple-700">Divine Transcendence</h5>
+                            <p class="text-gray-700 mb-4">
+                                Ezekiel's visions emphasize God's otherness and glory, showing that the divine far exceeds human understanding and categories.
+                            </p>
+                        </div>
+                        <div>
+                            <h5 class="text-xl font-bold mb-3 text-purple-700">Hope Beyond Judgment</h5>
+                            <p class="text-gray-700 mb-4">
+                                Even in exile, God's presence remains. The vision of dry bones coming to life symbolizes resurrection and national restoration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+   <!-- ============================================= -->
+    <!-- START COPYING FROM HERE (INCLUDING THIS LINE) -->
+    <!-- ============================================= -->
+    
+    <!-- ANCHORSTACK ADAPTIVE FOOTER v3.0 - Matches Any Page Width -->
+    <style>
+        /* Reset only for footer - won't affect your page */
+        .anchorstack-footer * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .anchorstack-footer {
+            /* Subtle background that works with any page */
+            background: #f8f9fa;
+            border-top: 3px solid #4a90e2;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            margin-top: 60px;
+            padding: 40px 20px 20px;
+            /* This makes it full width of whatever container it's in */
+            width: 100%;
+            clear: both;
+        }
+        
+        /* This inner container will match your page width automatically */
+        .anchorstack-footer-inner {
+            /* Will be as wide as your page content */
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .anchorstack-footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .anchorstack-footer h3 {
+            color: #4a90e2;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        
+        .anchorstack-footer ul {
+            list-style: none;
+        }
+        
+        .anchorstack-footer li {
+            margin-bottom: 8px;
+        }
+        
+        .anchorstack-footer a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .anchorstack-footer a:hover {
+            color: #4a90e2;
+            text-decoration: underline;
+        }
+        
+        .anchorstack-footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        .anchorstack-footer-logo {
+            font-size: 1.5rem;
+            color: #4a90e2;
+            margin-bottom: 8px;
+        }
+        
+        /* Special highlight for important links */
+        .anchorstack-footer .highlight-link {
+            background: #4a90e2;
+            color: white !important;
+            padding: 4px 8px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .anchorstack-footer .highlight-link:hover {
+            background: #357abd;
+            text-decoration: none;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .anchorstack-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .anchorstack-footer {
+                padding: 30px 15px 15px;
+            }
+        }
+    </style>
+    
+    <footer class="anchorstack-footer">
+        <div class="anchorstack-footer-inner">
+            <div class="anchorstack-footer-grid">
+                <!-- Free Resources -->
+                <div>
+                    <h3>Free Resources</h3>
+                    <ul>
+                        <li><a href="https://anchorstack.pro/interactive_prayer_guide.html">Interactive Prayer Guide</a></li>
+                        <li><a href="https://anchorstack.pro/enhanced_prayer_guide.html">Complete Prayer Manual</a></li>
+                        <li><a href="https://anchorstack.pro/systematic_bible_study_guide.html">Bible Study Templates</a></li>
+                        <li><a href="https://anchorstack.pro/armor_of_god.html">Armor of God Interactive</a></li>
+                        <li><a href="https://anchorstack.pro/Daily_Devotions.html" class="highlight-link">Start Daily Devotions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Bible Studies -->
+                <div>
+                    <h3>Bible Studies</h3>
+                    <ul>
+                        <li><a href="https://anchorstack.gumroad.com/l/tefnpe">Lost Tribes of Israel</a></li>
+                        <li><a href="https://anchorstack.gumroad.com/l/xcqfn">Pentateuch Deep Dive</a></li>
+                        <li><a href="https://anchorstack.gumroad.com/l/pgfyd">Levitical Priesthood</a></li>
+                        <li><a href="https://anchorstack.gumroad.com/l/ryjycr">Isaiah Prophet Study</a></li>
+                        <li><a href="https://anchorstack.gumroad.com/l/uahhng" class="highlight-link">Get Complete Library</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Leadership -->
+                <div>
+                    <h3>Leadership Development</h3>
+                    <ul>
+                        <li><a href="https://anchorstack.pro/gideon_book_landing_page.html">Gideon Leadership Book</a></li>
+                       <li><a href="https://anchorstack.pro/Christian_Philosophy_101.html">Christian Philosophy 101</a></li>
+                       <!--  <li><a href="https://anchorstack.pro/Pastoral_Resources.html">Pastoral Resources</a></li>-->
+                        <li><a href="https://anchorstack.pro/Church_Growth_Tools.html">Church Growth Tools</a></li> 
+                    </ul>
+                </div>
+                
+                <!-- About -->
+                <div>
+                    <h3>About AnchorStack</h3>
+                    <ul>
+                        <li><a href="https://anchorstack.pro/about.html">About Us</a></li>
+                        <li><a href="https://anchorstack.pro/contact.html">Contact Support</a></li>
+                       <!-- <li><a href="https://anchorstack.pro/testimonials.html">Success Stories</a></li>-->
+                        <li><a href="https://anchorstack.pro/faq.html">FAQ</a></li> 
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="anchorstack-footer-bottom">
+                <div class="anchorstack-footer-logo">⚓ AnchorStack</div>
+                <p>© 2025 AnchorStack.pro | Biblical Education Made Interactive</p>
+                <p style="margin-top: 5px;">Built with faith, wisdom, and purpose</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- =========================================== -->
+    <!-- STOP COPYING HERE (INCLUDING THIS LINE) -->
+    <!-- =========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Visions Data
+            const visionsData = [
+                {
+                    title: "The Throne-Chariot",
+                    reference: "Ezekiel 1",
+                    icon: "⚡",
+                    description: "The inaugural vision of God's mobile throne with four living creatures and wheels within wheels, revealing divine glory in exile",
+                    meaning: "This spectacular vision establishes that God's presence isn't confined to Jerusalem's temple. The four-faced cherubim (human, lion, ox, eagle) represent all creation, while the wheels within wheels suggest God's omnipresence and ability to move in any direction. The vision emphasizes God's transcendence and sovereignty even in foreign lands."
+                },
+                {
+                    title: "Temple Abominations",
+                    reference: "Ezekiel 8-11",
+                    icon: "🏛️",
+                    description: "A tour through Jerusalem's temple revealing hideous idolatries and the departure of God's glory",
+                    meaning: "Transported in vision to Jerusalem, Ezekiel witnesses shocking idolatries in the temple courts—sun worship, Egyptian animal cults, and weeping for Tammuz. Most tragically, he sees God's glory departing the temple in stages, showing that judgment comes because of persistent unfaithfulness, not divine abandonment."
+                },
+                {
+                    title: "Valley of Dry Bones",
+                    reference: "Ezekiel 37",
+                    icon: "💀",
+                    description: "A valley full of dry bones that come to life by God's word and breath, symbolizing Israel's restoration",
+                    meaning: "This famous vision answers the exiles' despair: 'Our bones are dried up and our hope is lost.' God commands Ezekiel to prophesy to the bones, and they reassemble, receive flesh, and live again. It represents Israel's future national resurrection and return to their land, showing God can bring life from death."
+                },
+                {
+                    title: "The Scroll Vision",
+                    reference: "Ezekiel 2:9-3:3",
+                    icon: "📜",
+                    description: "Ezekiel eats a scroll written with lamentations, mourning, and woe that tastes like honey",
+                    meaning: "God commands Ezekiel to eat a scroll covered with judgments. Though the message is bitter (full of woes), it tastes sweet to the prophet, showing that God's word—even difficult words—are precious to those called to proclaim them. It symbolizes complete internalization of the divine message."
+                },
+                {
+                    title: "Gog and Magog",
+                    reference: "Ezekiel 38-39",
+                    icon: "⚔️",
+                    description: "A great end-time battle where God defeats the armies of Gog from the land of Magog",
+                    meaning: "This apocalyptic vision describes a future invasion of restored Israel by a coalition led by 'Gog of Magog.' God supernaturally defeats these armies to demonstrate His holiness to all nations. Many see this as an end-times prophecy that shows God's ultimate protection of His people."
+                },
+                {
+                    title: "The New Temple",
+                    reference: "Ezekiel 40-48",
+                    icon: "🏗️",
+                    description: "An incredibly detailed vision of a future temple with precise measurements and divine glory returning",
+                    meaning: "Ezekiel's longest vision provides architectural details of a magnificent temple complex. Whether literal, symbolic, or eschatological, it represents the complete restoration of God's presence among His people. The river flowing from the temple brings life wherever it goes, symbolizing divine blessing."
+                }
+            ];
+
+            // Symbolic Actions Data
+            const actionsData = [
+                {
+                    action: "Brick Siege Model",
+                    description: "Ezekiel carved Jerusalem on a brick, built siege works around it, and lay on his side facing it—first 390 days for Israel's sins, then 40 days for Judah's.",
+                    purpose: "To dramatically illustrate the coming siege of Jerusalem and the weight of the nation's accumulated guilt.",
+                    side: "left"
+                },
+                {
+                    action: "Rationed Food & Water",
+                    description: "Ate carefully measured portions of bread mixed from various grains and drank limited water, cooking with human dung (later changed to cow dung).",
+                    purpose: "To demonstrate the famine conditions and ritual defilement that would come during Jerusalem's siege.",
+                    side: "right"
+                },
+                {
+                    action: "Hair Cutting & Burning",
+                    description: "Shaved his head and beard, divided the hair into thirds—burning one portion, striking one with a sword, and scattering one to the wind.",
+                    purpose: "To symbolize the fate of Jerusalem's inhabitants: death by fire, sword, and exile, with only a small remnant preserved.",
+                    side: "left"
+                },
+                {
+                    action: "Digging Through Wall",
+                    description: "In broad daylight, dug through his house wall and carried out baggage like an exile, covering his face so he couldn't see the land.",
+                    purpose: "To portray King Zedekiah's futile escape attempt and capture, along with the people's coming exile.",
+                    side: "right"
+                },
+                {
+                    action: "Trembling While Eating",
+                    description: "Ate bread with trembling hands and drank water with fearful shaking in view of the people.",
+                    purpose: "To demonstrate the terror and anxiety that would grip Jerusalem's inhabitants during the siege.",
+                    side: "left"
+                },
+                {
+                    action: "No Mourning for Wife",
+                    description: "When his beloved wife died suddenly, God forbade him to mourn publicly—no tears, groaning, or funeral rites.",
+                    purpose: "To symbolize how the exiles would not be able to properly mourn when Jerusalem and the temple were destroyed—the loss would be too overwhelming.",
+                    side: "right"
+                }
+            ];
+
+            // Build Visions Grid
+            const visionsGrid = document.getElementById('visions-grid');
+            visionsData.forEach(vision => {
+                const visionCard = document.createElement('div');
+                visionCard.className = 'vision-card';
+                visionCard.innerHTML = `
+                    <div class="vision-card-inner">
+                        <div class="vision-card-front">
+                            <span class="text-6xl mb-4">${vision.icon}</span>
+                            <h4 class="text-2xl font-bold mb-3">${vision.title}</h4>
+                            <p class="text-lg opacity-90">${vision.reference}</p>
+                            <p class="text-sm mt-4 opacity-80 italic">${vision.description}</p>
+                        </div>
+                        <div class="vision-card-back">
+                            <div class="reference">${vision.reference}</div>
+                            <h4>${vision.title}</h4>
+                            <p>${vision.meaning}</p>
+                        </div>
+                    </div>
+                `;
+                visionsGrid.appendChild(visionCard);
+                
+                visionCard.addEventListener('click', () => {
+                    visionCard.classList.toggle('flipped');
+                });
+            });
+
+            // Build Actions Timeline
+            const actionsTimeline = document.getElementById('actions-timeline');
+            actionsData.forEach((action, index) => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                
+                timelineItem.innerHTML = `
+                    <div class="timeline-content ${action.side}">
+                        <h4 class="text-xl font-bold mb-3 text-purple-700">${action.action}</h4>
+                        <p class="text-gray-700 mb-3">${action.description}</p>
+                        <p class="text-sm text-gray-600 italic"><strong>Purpose:</strong> ${action.purpose}</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                `;
+                
+                actionsTimeline.appendChild(timelineItem);
+            });
+
+            // Build Exile Chart
+            const exileCtx = document.getElementById('exileChart').getContext('2d');
+            const exileChart = new Chart(exileCtx, {
+                type: 'line',
+                data: {
+                    labels: ['605 BC', '597 BC', '586 BC'],
+                    datasets: [
+                        {
+                            label: 'Exiles Deported',
+                            data: [3000, 10000, 50000],
+                            borderColor: 'rgb(139, 69, 19)',
+                            backgroundColor: 'rgba(139, 69, 19, 0.1)',
+                            tension: 0.3,
+                            fill: true,
+                            pointBackgroundColor: 'rgb(139, 69, 19)',
+                            pointBorderColor: 'white',
+                            pointBorderWidth: 3,
+                            pointRadius: 8
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    const labels = [
+                                        'First Deportation (605 BC)',
+                                        'Second Deportation (597 BC) - Ezekiel Exiled',
+                                        'Third Deportation (586 BC) - Jerusalem Destroyed'
+                                    ];
+                                    return labels[context[0].dataIndex];
+                                },
+                                label: function(context) {
+                                    const descriptions = [
+                                        'Daniel and royal youth taken to Babylon',
+                                        'King Jehoiachin, nobles, and Ezekiel deported',
+                                        'Jerusalem destroyed, massive deportation'
+                                    ];
+                                    return [
+                                        `Exiles: ${context.parsed.y.toLocaleString()}`,
+                                        descriptions[context.dataIndex]
+                                    ];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Deportation Events',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Exiles',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Mobile Menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Navigation highlighting
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+ 
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

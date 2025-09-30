@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+     <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "@id": "https://anchorstack.pro/satan_series", "headline": "Satan Series - Interactive Biblical Study", "description": "Comprehensive biblical analysis of Satan's role in Scripture with interactive elements", "image": "https://anchorstack.pro/images/satan-series-cover.jpg", "author": { "@type": "Person", "name": "Ricky Jarnagin" }, "publisher": { "@type": "Organization", "name": "AnchorStack", "logo": { "@type": "ImageObject", "url": "https://anchorstack.pro/images/logo.png" } }, "datePublished": "2024-01-01", "dateModified": "2025-09-26", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://anchorstack.pro/satan_series" } } </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God's Plan: An Interactive Exploration</title>
+     <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://www.anchorstack.pro/enhanced_gods_plan">
+    <meta property="og:title" content="God's Plan: An Interactive Exploration">
+    <meta property="og:description" content="Explore the theological concept of a divine blueprint for creation, humanity, and your own life through an interactive experience. Discover diverse perspectives on purpose, destiny, and free will across various faith traditions.">
+    <meta property="og:url" content="https://www.anchorstack.pro/enhanced_gods_plan">
+    <meta property="og:image" content="/assets/images/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="God's Plan: An Interactive Exploration">
+    <meta name="twitter:description" content="Explore the theological concept of a divine blueprint for creation, humanity, and your own life through an interactive experience. Discover diverse perspectives on purpose, destiny, and free will across various faith traditions.">
+    <meta name="twitter:image" content="/assets/images/logo.png">
+    <meta name="description" content="Explore the theological concept of a divine blueprint for creation, humanity, and your own life through an interactive experience. Discover diverse perspectives on purpose, destiny, and free will across various faith traditions.">
+    <meta name="keywords" content="God's Plan, Divine Blueprint, Creation, Humanity, Free Will, Faith Traditions, Reformed/Calvinist, Arminian/Lutheran, Catholicism, Sunni Islam, Judaism, Hinduism">
+    <style>
+        :root {
+            --divine-gold: #DAA520;
+            --sacred-purple: #6B46C1;
+            --heavenly-blue: #3B82F6;
+            --peaceful-cream: #FEF7ED;
+            --holy-white: #FEFEFE;
+            --deep-navy: #1E1B4B;
+            --soft-lavender: #E0E7FF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--peaceful-cream) 0%, #F8FAFC 100%);
+            color: var(--deep-navy);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(107, 70, 193, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(218, 165, 32, 0.03) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--sacred-purple), var(--divine-gold));
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 80%;
+        }
+
+        .nav-link:hover {
+            background: rgba(107, 70, 193, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .card {
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+            cursor: pointer;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 16px;
+        }
+
+        .card-face-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, var(--sacred-purple), var(--heavenly-blue));
+        }
+
+        .faith-btn {
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
+        }
+
+        .faith-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: var(--sacred-purple);
+        }
+
+        .faith-btn.active {
+            background: linear-gradient(135deg, var(--sacred-purple), var(--heavenly-blue));
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(107, 70, 193, 0.3);
+            border-color: var(--divine-gold);
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 400px;
+            background: linear-gradient(135deg, var(--holy-white) 0%, var(--soft-lavender) 100%);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(107, 70, 193, 0.2);
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 500px;
+            }
+        }
+
+        .section-card {
+            background: linear-gradient(135deg, var(--holy-white) 0%, rgba(254, 247, 237, 0.8) 100%);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(107, 70, 193, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .pillar-icon {
+            background: linear-gradient(135deg, var(--sacred-purple), var(--heavenly-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: gentle-float 3s ease-in-out infinite;
+        }
+
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hero-title {
+            background: linear-gradient(135deg, var(--sacred-purple) 0%, var(--divine-gold) 50%, var(--heavenly-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .paradox-card {
+            background: linear-gradient(135deg, var(--holy-white) 0%, var(--soft-lavender) 100%);
+            border: 2px solid rgba(107, 70, 193, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .paradox-card:hover {
+            transform: scale(1.02);
+            border-color: var(--sacred-purple);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.2);
+        }
+
+        .divine-sovereignty {
+            border-left: 5px solid var(--divine-gold);
+        }
+
+        .human-agency {
+            border-left: 5px solid var(--heavenly-blue);
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, var(--divine-gold), transparent);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float-particle 15s linear infinite;
+        }
+
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        .header-glow {
+            background: linear-gradient(135deg, rgba(254, 247, 237, 0.95) 0%, rgba(224, 231, 255, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(107, 70, 193, 0.1);
+        }
+
+        .wisdom-quote {
+            background: linear-gradient(135deg, var(--peaceful-cream) 0%, rgba(107, 70, 193, 0.05) 100%);
+            border-left: 4px solid var(--divine-gold);
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .wisdom-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 3rem;
+            color: rgba(107, 70, 193, 0.3);
+            font-family: serif;
+        }
+
+        .interactive-hint {
+            background: linear-gradient(45deg, var(--divine-gold), #F59E0B);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 20px rgba(218, 165, 32, 0.8);
+                transform: scale(1.05);
+            }
+        }
+
+        .section-bg-1 {
+            background: linear-gradient(135deg, var(--peaceful-cream) 0%, rgba(224, 231, 255, 0.3) 100%);
+        }
+
+        .section-bg-2 {
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.05) 0%, var(--peaceful-cream) 100%);
+        }
+
+        .footer-gradient {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--sacred-purple) 100%);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="floating-particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 9s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 12s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 5s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 11s;"></div>
+    </div>
+
+    <header id="header" class="header-glow sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-deep-navy">
+                <span class="hero-title">The Divine Blueprint</span>
+            </a>
+            <div class="hidden md:flex space-x-2">
+                <a href="#concepts" class="nav-link text-gray-600 hover:text-deep-navy">Concepts</a>
+                <a href="#perspectives" class="nav-link text-gray-600 hover:text-deep-navy">Perspectives</a>
+                <a href="#tension" class="nav-link text-gray-600 hover:text-deep-navy">The Paradox</a>
+                <a href="#guidance" class="nav-link text-gray-600 hover:text-deep-navy">Guidance</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-deep-navy hover:bg-purple-100 p-2 rounded-lg transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-purple-200">
+            <a href="#concepts" class="block py-3 px-6 text-sm text-gray-600 hover:bg-purple-50 transition-colors">Concepts</a>
+            <a href="#perspectives" class="block py-3 px-6 text-sm text-gray-600 hover:bg-purple-50 transition-colors">Perspectives</a>
+            <a href="#tension" class="block py-3 px-6 text-sm text-gray-600 hover:bg-purple-50 transition-colors">The Paradox</a>
+            <a href="#guidance" class="block py-3 px-6 text-sm text-gray-600 hover:bg-purple-50 transition-colors">Guidance</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="py-24 md:py-32 section-bg-1 relative overflow-hidden">
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-5xl md:text-7xl font-bold hero-title mb-6">Understanding God's Plan</h1>
+                <p class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">An interactive journey into the theological concept of a divine blueprint for creation, humanity, and your own life. Explore diverse perspectives on purpose, destiny, and free will.</p>
+                <div class="mt-8">
+                    <span class="interactive-hint">✨ Interactive Experience Below</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="concepts" class="py-24 section-bg-2">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-deep-navy mb-4">Core Theological Pillars</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">These foundational concepts underpin the idea of a Divine Plan. These pillars—Sovereignty, Providence, and Purpose—are interconnected, defining God's relationship with creation and the unfolding of history.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="section-card p-10 text-center">
+                        <div class="pillar-icon">👑</div>
+                        <h3 class="text-2xl font-semibold text-deep-navy mb-4">Divine Sovereignty</h3>
+                        <p class="text-gray-600 leading-relaxed">God's absolute rule and complete control over all creation. This doctrine asserts that nothing occurs outside of God's will or ultimate purpose, directing all events to fulfill His plan.</p>
+                    </div>
+                    <div class="section-card p-10 text-center">
+                        <div class="pillar-icon">🕊️</div>
+                        <h3 class="text-2xl font-semibold text-deep-navy mb-4">Divine Providence</h3>
+                        <p class="text-gray-600 leading-relaxed">The continuous care and guidance God provides to His creation. It is God's active intervention in the universe to uphold, direct, and govern all things.</p>
+                    </div>
+                    <div class="section-card p-10 text-center">
+                        <div class="pillar-icon">🎯</div>
+                        <h3 class="text-2xl font-semibold text-deep-navy mb-4">Divine Purpose</h3>
+                        <p class="text-gray-600 leading-relaxed">God's specific intentions for creation, humanity, and individuals. This encompasses the grand narrative of redemption and the unique calling for each person's life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="perspectives" class="py-24 section-bg-1">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-deep-navy mb-4">A Spectrum of Belief</h2>
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">While many faiths acknowledge a divine plan, their understanding of its interplay with human freedom varies significantly. Select a tradition below to explore its unique perspective on the balance between divine will and human agency.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
+                    <button class="faith-btn active px-6 py-3 bg-white rounded-full shadow-lg text-sm font-medium" data-faith="calvinist">Reformed/Calvinist</button>
+                    <button class="faith-btn px-6 py-3 bg-white rounded-full shadow-lg text-sm font-medium" data-faith="arminian">Arminian/Lutheran</button>
+                    <button class="faith-btn px-6 py-3 bg-white rounded-full shadow-lg text-sm font-medium" data-faith="catholic">Catholic</button>
+                    <button class="faith-btn px-6 py-3 bg-white rounded-full shadow-lg text-sm font-medium" data-faith="sunni">Sunni Islam</button>
+                    <button class="faith-btn px-6 py-3 bg-white rounded-full shadow-lg text-sm font-medium" data-faith="judaism">Judaism</button>
+                    <button class="faith-btn px-6 py-3 bg-white rounded-full shadow-lg text-sm font-medium" data-faith="hinduism">Hinduism</button>
+                </div>
+                <div class="grid lg:grid-cols-5 gap-10 items-center">
+                    <div class="lg:col-span-3">
+                        <div class="chart-container p-6">
+                            <canvas id="faithsChart"></canvas>
+                        </div>
+                    </div>
+                    <div id="faith-details" class="lg:col-span-2 section-card p-8">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tension" class="py-24 section-bg-2">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-deep-navy mb-4">The Great Paradox</h2>
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">At the heart of theology lies the enduring tension between God's absolute control and human freedom. This paradox is not necessarily a contradiction to be solved, but a mystery to be held in balance.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 items-start mb-12">
+                    <div class="paradox-card divine-sovereignty p-10 rounded-2xl text-center">
+                        <div class="text-6xl mb-6 text-divine-gold">👑</div>
+                        <h3 class="text-3xl font-semibold text-deep-navy mb-4">Divine Sovereignty</h3>
+                        <p class="text-gray-600 mb-6 text-lg">God's will is absolute and His plan is predetermined. He has chosen those He will save, and His grace cannot be resisted.</p>
+                        <ul class="text-left space-y-3 text-gray-600">
+                            <li class="flex items-start"><span class="mr-3 mt-1 text-divine-gold text-lg">✓</span><span>God is in complete control of all events.</span></li>
+                            <li class="flex items-start"><span class="mr-3 mt-1 text-divine-gold text-lg">✓</span><span>Salvation is entirely dependent on God's election.</span></li>
+                            <li class="flex items-start"><span class="mr-3 mt-1 text-divine-gold text-lg">✓</span><span>Provides deep assurance of salvation.</span></li>
+                        </ul>
+                    </div>
+                    <div class="paradox-card human-agency p-10 rounded-2xl text-center">
+                        <div class="text-6xl mb-6 text-heavenly-blue">✋</div>
+                        <h3 class="text-3xl font-semibold text-deep-navy mb-4">Human Agency</h3>
+                        <p class="text-gray-600 mb-6 text-lg">Humans possess free will to make their own choices. God's grace can be accepted or rejected.</p>
+                        <ul class="text-left space-y-3 text-gray-600">
+                           <li class="flex items-start"><span class="mr-3 mt-1 text-heavenly-blue text-lg">✓</span><span>Humans are responsible for their moral choices.</span></li>
+                           <li class="flex items-start"><span class="mr-3 mt-1 text-heavenly-blue text-lg">✓</span><span>God's call for salvation is open to all.</span></li>
+                           <li class="flex items-start"><span class="mr-3 mt-1 text-heavenly-blue text-lg">✓</span><span>Emphasizes personal responsibility and choice.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="wisdom-quote p-8 rounded-2xl">
+                    <h4 class="font-semibold text-2xl text-deep-navy mb-3">The Problem of Evil</h4>
+                    <p class="text-gray-700 text-lg max-w-4xl mx-auto leading-relaxed">How can a good and powerful God allow suffering? Theology suggests that trials are not random but are woven into God's plan for a greater purpose, such as spiritual growth, purification, and conforming believers to the image of Christ, even when the reasons are beyond our full comprehension.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="guidance" class="py-24 section-bg-1">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-deep-navy mb-4">Finding Your Path</h2>
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Discerning God's will is a dynamic journey of faith, not a passive waiting for a sign. It involves a partnership between divine guidance and your active participation.</p>
+                    <div class="mt-6">
+                        <span class="interactive-hint">💫 Click cards to reveal wisdom</span>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card h-80">
+                        <div class="card-face relative w-full h-full section-card p-8 flex flex-col justify-center items-center text-center">
+                            <div class="text-5xl mb-6 pillar-icon">🙏</div>
+                            <h3 class="text-2xl font-semibold text-deep-navy mb-3">Prayer & Commitment</h3>
+                            <p class="text-gray-500 text-sm interactive-hint">Click to learn more</p>
+                        </div>
+                        <div class="card-face card-face-back absolute w-full h-full p-8 rounded-2xl text-white flex flex-col justify-center">
+                            <h4 class="font-bold text-2xl mb-4">Commit and Ask</h4>
+                            <p class="text-lg leading-relaxed">Begin by committing your decisions to God, setting aside personal preferences. Ask for wisdom in faith, trusting that God will guide you (James 1:5).</p>
+                        </div>
+                    </div>
+                    <div class="card h-80">
+                        <div class="card-face relative w-full h-full section-card p-8 flex flex-col justify-center items-center text-center">
+                            <div class="text-5xl mb-6 pillar-icon">📖</div>
+                            <h3 class="text-2xl font-semibold text-deep-navy mb-3">Study Scripture</h3>
+                            <p class="text-gray-500 text-sm interactive-hint">Click to learn more</p>
+                        </div>
+                        <div class="card-face card-face-back absolute w-full h-full p-8 rounded-2xl text-white flex flex-col justify-center">
+                            <h4 class="font-bold text-2xl mb-4">Seek Principles</h4>
+                            <p class="text-lg leading-relaxed">The Bible reveals God's general will. It provides principles and direct guidance that act as a screen, ensuring your path aligns with His character.</p>
+                        </div>
+                    </div>
+                    <div class="card h-80">
+                        <div class="card-face relative w-full h-full section-card p-8 flex flex-col justify-center items-center text-center">
+                            <div class="text-5xl mb-6 pillar-icon">🤝</div>
+                            <h3 class="text-2xl font-semibold text-deep-navy mb-3">Seek Godly Counsel</h3>
+                            <p class="text-gray-500 text-sm interactive-hint">Click to learn more</p>
+                        </div>
+                        <div class="card-face card-face-back absolute w-full h-full p-8 rounded-2xl text-white flex flex-col justify-center">
+                            <h4 class="font-bold text-2xl mb-4">Gain Perspective</h4>
+                            <p class="text-lg leading-relaxed">A mature and wise counselor can offer perspective based on biblical truth, helping you see your situation more clearly. God often speaks through others.</p>
+                        </div>
+                    </div>
+                    <div class="card h-80">
+                        <div class="card-face relative w-full h-full section-card p-8 flex flex-col justify-center items-center text-center">
+                            <div class="text-5xl mb-6 pillar-icon">🎁</div>
+                            <h3 class="text-2xl font-semibold text-deep-navy mb-3">Recognize Your Gifts</h3>
+                            <p class="text-gray-500 text-sm interactive-hint">Click to learn more</p>
+                        </div>
+                        <div class="card-face card-face-back absolute w-full h-full p-8 rounded-2xl text-white flex flex-col justify-center">
+                            <h4 class="font-bold text-2xl mb-4">Understand Your Design</h4>
+                            <p class="text-lg leading-relaxed">God has uniquely equipped you with talents and passions. Reflecting on these gifts is crucial for understanding how they align with His purpose for you.</p>
+                        </div>
+                    </div>
+                    <div class="card h-80">
+                        <div class="card-face relative w-full h-full section-card p-8 flex flex-col justify-center items-center text-center">
+                            <div class="text-5xl mb-6 pillar-icon">🧭</div>
+                            <h3 class="text-2xl font-semibold text-deep-navy mb-3">Discern Circumstances</h3>
+                            <p class="text-gray-500 text-sm interactive-hint">Click to learn more</p>
+                        </div>
+                        <div class="card-face card-face-back absolute w-full h-full p-8 rounded-2xl text-white flex flex-col justify-center">
+                            <h4 class="font-bold text-2xl mb-4">Read the Signs</h4>
+                            <p class="text-lg leading-relaxed">God often arranges circumstances, opening and closing doors to point you in a certain direction. Use prayer and wisdom to interpret these signs correctly.</p>
+                        </div>
+                    </div>
+                    <div class="card h-80">
+                        <div class="card-face relative w-full h-full section-card p-8 flex flex-col justify-center items-center text-center">
+                            <div class="text-5xl mb-6 pillar-icon">❤️</div>
+                            <h3 class="text-2xl font-semibold text-deep-navy mb-3">Trust & Humility</h3>
+                            <p class="text-gray-500 text-sm interactive-hint">Click to learn more</p>
+                        </div>
+                        <div class="card-face card-face-back absolute w-full h-full p-8 rounded-2xl text-white flex flex-col justify-center">
+                            <h4 class="font-bold text-2xl mb-4">Embrace the Mystery</h4>
+                            <p class="text-lg leading-relaxed">Accept that much may remain unknown. Trust in God's goodness and embrace the journey with humility, knowing your life is part of a grand, divine purpose.</p>
+                        </div>
+                    </div>
+ 
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

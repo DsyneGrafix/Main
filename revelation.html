@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+<!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> "The Book of Revelation: Unveiling Prophecy, Symbolism, and Enduring Influence".</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="canonical" href="https://anchorstack.pro/revelation.html">
+    <meta property="og:title" content="The Book of Revelation: Unveiling Prophecy, Symbolism, and Enduring Influence">
+    <meta property="og:description" content="Explore the profound symbolism and diverse interpretations of the Book of Revelation, uncovering its enduring impact on Western culture.">
+    <meta property="og:image" content="/path/to/image.jpg">
+    <meta property="og:url" content="https://anchorstack.pro/revelation.html">
+    <meta name="twitter:title" content="The Book of Revelation: Unveiling Prophecy, Symbolism, and Enduring Influence">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Parchment & Ink -->
+    <!-- Application Structure Plan: A thematic, multi-section SPA designed for non-linear exploration. The structure includes: 1) An introduction to set the context. 2) An interactive symbol explorer (cards with modals) to make dense information digestible. 3) A comparative section for interpretive views, using a chart and dynamic text to clarify abstract concepts. 4) A core interactive timeline of eschatological events, with a linked chart to visualize the progression of judgments. 5) A final section on cultural influence. This structure was chosen to break down complex topics into manageable, interactive modules, allowing users to explore based on interest rather than following the report's linear format, thus enhancing usability and engagement. -->
+    <!-- Visualization & Content Choices: 1. Symbols: Report table -> Goal: Organize/Inform -> Method: Interactive HTML Cards -> Interaction: Click-to-reveal modal -> Justification: Better than a static table for engagement. 2. Interpretations: Report comparison table -> Goal: Compare -> Method: Bar Chart (Chart.js) + Text -> Interaction: Click buttons to update chart/text -> Justification: Visualizes the temporal focus of each view. 3. Timeline: Report's Futurist timeline table -> Goal: Show Change/Organize -> Method: HTML/CSS Timeline + Line Chart (Chart.js) -> Interaction: Click nodes to expand details and update line chart showing judgment intensity -> Justification: Creates a dynamic narrative, making the sequence of events clear and impactful. All interactions are powered by Vanilla JS. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF5;
+            color: #402F2D;
+        }
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #A97142;
+            border-bottom-color: #A97142;
+        }
+        .section-card {
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid #EAE0D5;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 40vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .timeline {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2em 0;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #D1C4B0;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container.left {
+            left: 0;
+        }
+        .timeline-container.right {
+            left: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: #FDFBF5;
+            border: 2px solid #A97142;
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-container.right::after {
+            left: -8px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: #FFFFFF;
+            position: relative;
+            border-radius: 6px;
+            border: 1px solid #EAE0D5;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .timeline-details {
+            display: none;
+            padding: 15px;
+            margin-top: 10px;
+            background-color: #FDFBF5;
+            border-radius: 6px;
+            border-left: 3px solid #A97142;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+        .modal-content {
+            background-color: #FDFBF5;
+            margin: 10% auto;
+            padding: 2rem;
+            border: 1px solid #D1C4B0;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 8px;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        @keyframes slideIn { from {transform: translateY(-50px);} to {transform: translateY(0);} }
+    </style>
+</head>
+<body class="bg-[#FDFBF5] text-[#402F2D]">
+
+    <header class="bg-[#FDFBF5]/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold text-[#A97142]">Revelation</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="/" class="nav-link">Home</a>
+                <a href="#introduction" class="nav-link">Introduction</a>
+                <a href="#symbols" class="nav-link">Symbols</a>
+                <a href="#interpretations" class="nav-link">Interpretations</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#influence" class="nav-link">Influence</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">☰</button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col space-y-2">
+            <a href="#introduction" class="nav-link">Introduction</a>
+            <a href="#symbols" class="nav-link">Symbols</a>
+            <a href="#interpretations" class="nav-link">Interpretations</a>
+            <a href="#timeline" class="nav-link">Timeline</a>
+            <a href="#influence" class="nav-link">Influence</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-12">
+        
+        <section id="introduction" class="text-center min-h-[60vh] flex flex-col justify-center items-center py-16">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">What the Future Holds</h1>
+            <h3 class="text-2xl md:text-3xl text-[#A97142] mb-6">An Interactive Exploration of the Book of Revelation</h2>
+            <p class="max-w-3xl mx-auto text-lg leading-relaxed">
+                The Book of Revelation, the final book of the Christian Bible, is an "apocalypse"—an unveiling of divine mysteries. Written by John on the island of Patmos, it served as a message of comfort and hope to first-century churches facing Roman persecution. This application invites you to explore its profound symbolism, diverse interpretations, and epic vision of history's culmination, moving beyond a simple reading to an interactive understanding of its enduring message.
+            </p>
+        </section>
+
+        <section id="symbols" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">The Divine Code</h2>
+                <p class="max-w-2xl mx-auto mt-4 text-lg">
+                    Revelation communicates through a rich vocabulary of symbols deeply rooted in the Old Testament and ancient culture. These are not random images but a carefully crafted code to convey messages of judgment and hope. Click on a symbol to unveil its meaning.
+                </p>
+            </div>
+            <div id="symbol-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            </div>
+        </section>
+
+        <section id="interpretations" class="py-16 bg-white/50 rounded-lg">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Lenses of Interpretation</h2>
+                <p class="max-w-2xl mx-auto mt-4 text-lg">
+                    How should we read Revelation? Throughout history, four major interpretive schools have emerged, each offering a different lens through which to view the book's prophecies. This section provides an overview of these perspectives, showing how each one approaches the text's relationship to history—past, present, and future.
+                </p>
+            </div>
+            <div class="flex justify-center space-x-2 md:space-x-4 mb-8 flex-wrap">
+                <button data-view="idealist" class="view-btn bg-[#A97142] text-white px-4 py-2 rounded-full transition">Idealist</button>
+                <button data-view="preterist" class="view-btn bg-white text-[#A97142] border border-[#A97142] px-4 py-2 rounded-full transition">Preterist</button>
+                <button data-view="historicist" class="view-btn bg-white text-[#A97142] border border-[#A97142] px-4 py-2 rounded-full transition">Historicist</button>
+                <button data-view="futurist" class="view-btn bg-white text-[#A97142] border border-[#A97142] px-4 py-2 rounded-full transition">Futurist</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div id="interpretation-text" class="p-6 rounded-lg"></div>
+                <div class="chart-container">
+                    <canvas id="interpretationChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">The Prophetic Timeline</h2>
+                <p class="max-w-2xl mx-auto mt-4 text-lg">
+                    The Futurist view interprets Revelation 4-22 as a chronological prophecy of end-time events. This interactive timeline visualizes that sequence, from the Rapture through the Great Tribulation to the creation of a new heaven and earth. Click on each event to explore its details and see how the judgments escalate.
+                </p>
+            </div>
+            <div class="chart-container mb-12">
+                <canvas id="judgementIntensityChart"></canvas>
+            </div>
+            <div id="futurist-timeline" class="timeline">
+            </div>
+        </section>
+
+        <section id="influence" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Echoes Through the Ages</h2>
+                <p class="max-w-2xl mx-auto mt-4 text-lg">
+                   Revelation's powerful imagery and dramatic narrative have profoundly influenced Western culture for two millennia. From masterpieces of art and literature to social movements and popular films, its themes of apocalypse, judgment, and redemption continue to resonate, shaping how we imagine the end of the world and the ultimate triumph of good over evil.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="section-card p-6 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-2">Art</h3>
+                    <p>Artists from Albrecht Dürer to Salvador Dalí have been captivated by Revelation's surreal visions, creating powerful works depicting the Four Horsemen, the Last Judgment, and the celestial New Jerusalem.</p>
+                </div>
+                <div class="section-card p-6 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-2">Literature & Music</h3>
+                    <p>The book's themes echo in the works of Dante, Milton, and W.B. Yeats. Its influence permeates modern apocalyptic fiction and inspires music from Handel's "Hallelujah Chorus" to the songs of Bob Dylan.</p>
+                </div>
+                <div class="section-card p-6 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-2">Social & Political Movements</h3>
+                    <p>Throughout history, groups have used Revelation to critique oppressive regimes, from the Protestant Reformers targeting the Papacy to Martin Luther King Jr. invoking its themes of justice in the Civil Rights Movement.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <div id="symbolModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="absolute top-4 right-6 text-2xl font-bold cursor-pointer">&times;</span>
+            <h3 id="modalTitle" class="text-2xl font-bold mb-4"></h3>
+            <p id="modalDescription" class="mb-2"></p>
+            <p id="modalInterpretation" class="text-lg"></p>
+        </div>
+    </div>
+
+   
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const symbolData = [
+                { name: "The Lamb", desc: "A lamb standing, as if slain, with seven horns and seven eyes.", interp: "Represents Jesus Christ, symbolizing his sacrifice, purity, and ultimate authority to enact God's plan." },
+                { name: "The Dragon", desc: "A great red dragon with seven heads and ten horns.", interp: "Explicitly identified as Satan or the Devil, the primary antagonist against God and His people." },
+                { name: "Beast of the Sea", desc: "Rises from the sea with seven heads and ten horns, resembling a leopard, bear, and lion.", interp: "Widely interpreted as the Antichrist, representing a powerful, oppressive, and blasphemous earthly empire (historically Rome)." },
+                { name: "Beast of the Earth", desc: "Rises from the earth with two horns like a lamb but speaks like a dragon.", interp: "Known as the False Prophet, this figure promotes the worship of the Sea Beast, performing deceptive miracles." },
+                { name: "Great Whore", desc: "A woman named 'Babylon the Great', arrayed in purple and scarlet, sitting on the beast.", interp: "A symbol for a corrupt, idolatrous, and powerful worldly system, historically identified with the Roman Empire." },
+                { name: "New Jerusalem", desc: "A magnificent, holy city descending from heaven, made of gold and precious stones.", interp: "Represents the perfected Church, the eternal dwelling place of the redeemed where God lives with His people." },
+                { name: "666", desc: "The 'number of the beast' and the 'number of a man's name'.", interp: "Often interpreted through gematria as the numerical value of 'Nero Caesar', a symbol of ultimate human rebellion and imperfection." },
+                { name: "Mark of the Beast", desc: "A mark on the right hand or forehead, required to buy or sell.", interp: "A sign of allegiance to the Antichrist and rejection of God, symbolizing a choice between worldly survival and spiritual faithfulness." }
+            ];
+
+            const interpretationData = {
+                idealist: {
+                    title: "Idealist View (Spiritual/Allegorical)",
+                    text: "This view sees Revelation not as a prediction of specific historical events, but as a symbolic depiction of the timeless, ongoing cosmic struggle between good (God and the Church) and evil (Satan and the world). The seals, trumpets, and bowls represent recurring patterns of war, famine, and disaster throughout history. Its focus is on the moral and spiritual truths that apply to all believers in every age.",
+                    chartData: [0, 100, 0]
+                },
+                preterist: {
+                    title: "Preterist View ('Past')",
+                    text: "This view asserts that most of Revelation's prophecies were fulfilled in the 1st century AD, primarily centered on the fall of Jerusalem in 70 AD and the persecution of Christians under the Roman Empire. 'Babylon' is Rome, and the 'Beast' is often identified as Emperor Nero. It reads Revelation as a message of hope for its original audience, assuring them of God's imminent victory over their persecutors.",
+                    chartData: [100, 20, 10]
+                },
+                historicist: {
+                    title: "Historicist View",
+                    text: "This view interprets Revelation as a symbolic panorama of church history, from the apostolic era to the end of time. Proponents have attempted to map its symbols to specific historical events and figures, such as the fall of Rome, the rise of the Papacy (often identified as the Antichrist), the Protestant Reformation, and various wars and revolutions. The prophecies are seen as continuously unfolding throughout history.",
+                    chartData: [20, 100, 20]
+                },
+                futurist: {
+                    title: "Futurist View",
+                    text: "This view, popular today, holds that the events from Revelation chapter 4 onward are yet to be fulfilled and will occur in a relatively short period at the end of history. This includes a literal seven-year Tribulation, the rise of a global Antichrist, the Battle of Armageddon, and the literal 1,000-year reign of Christ on Earth (the Millennium). It interprets the text more literally than other views.",
+                    chartData: [10, 20, 100]
+                }
+            };
+            
+            const timelineData = [
+                {
+                    event: "The Rapture",
+                    details: ["Jesus comes for the Church. Believers are taken to meet Christ in the air before the Tribulation begins."]
+                },
+                {
+                    event: "The Tribulation Begins: Seven Seals",
+                    details: ["1. White Horse: Conquest (Antichrist)", "2. Red Horse: War", "3. Black Horse: Famine", "4. Pale Horse: Death", "5. Martyrs' Cry", "6. Cosmic Disturbances", "7. Silence in Heaven"]
+                },
+                {
+                    event: "Mid-Tribulation: Seven Trumpets",
+                    details: ["Judgments escalate, affecting a third of the earth, sea, rivers, and heavens. Demonic locusts are released, and a massive army brings further death."]
+                },
+                {
+                    event: "End of Tribulation: Seven Bowls",
+                    details: ["The final, most severe outpourings of God's wrath, including painful sores, seas turning to blood, scorching heat, darkness, and a great earthquake leading to Armageddon."]
+                },
+                {
+                    event: "The Second Coming & Armageddon",
+                    details: ["Jesus returns to earth with the armies of heaven, defeats the Beast and the False Prophet, and ends the final battle."]
+                },
+                {
+                    event: "The Millennium",
+                    details: ["Satan is bound for 1,000 years. Christ reigns on earth with His resurrected saints in a period of peace and righteousness."]
+                },
+                {
+                    event: "The Final Judgment",
+                    details: ["After the Millennium, Satan is released and defeated one last time. All unbelievers throughout history are judged at the Great White Throne and cast into the Lake of Fire."]
+                },
+                {
+                    event: "New Heaven & New Earth",
+                    details: ["God creates a new, perfected reality. The New Jerusalem descends, and God dwells with humanity forever, with no more sin, suffering, or death."]
+                }
+            ];
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const symbolGrid = document.getElementById('symbol-grid');
+            const modal = document.getElementById('symbolModal');
+            const closeModal = document.getElementById('closeModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalInterpretation = document.getElementById('modalInterpretation');
+
+            symbolData.forEach(symbol => {
+                const card = document.createElement('div');
+                card.className = 'section-card p-4 rounded-lg text-center cursor-pointer transition-transform transform hover:scale-105';
+                card.innerHTML = `<h3 class="text-xl font-bold">${symbol.name}</h3>`;
+                card.addEventListener('click', () => {
+                    modalTitle.textContent = symbol.name;
+                    modalDescription.textContent = symbol.desc;
+                    modalInterpretation.textContent = symbol.interp;
+                    modal.style.display = 'block';
+                });
+                symbolGrid.appendChild(card);
+            });
+
+            closeModal.addEventListener('click', () => modal.style.display = 'none');
+            window.addEventListener('click', (event) => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            const interpretationCtx = document.getElementById('interpretationChart').getContext('2d');
+            let interpretationChart = new Chart(interpretationCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Past Fulfillment (AD 70)', 'Church Age', 'Future End-Times'],
+                    datasets: [{
+                        label: 'Interpretive Focus',
+                        data: interpretationData.idealist.chartData,
+                        backgroundColor: ['#D1C4B0', '#A97142', '#8C5A3A'],
+                        borderColor: '#FDFBF5',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    },
+                    scales: {
+                        x: { display: false, max: 110 },
+                        y: { ticks: { font: { size: 14, family: "'Inter', sans-serif" }, color: '#402F2D' } }
+                    }
+                }
+            });
+
+            const viewButtons = document.querySelectorAll('.view-btn');
+            const interpretationTextElem = document.getElementById('interpretation-text');
+
+            function updateInterpretationView(view) {
+                const data = interpretationData[view];
+                interpretationTextElem.innerHTML = `<h3 class="text-2xl font-bold mb-2">${data.title}</h3><p class="text-lg leading-relaxed">${data.text}</p>`;
+                interpretationChart.data.datasets[0].data = data.chartData;
+                interpretationChart.update();
+
+                viewButtons.forEach(btn => {
+                    if (btn.dataset.view === view) {
+                        btn.classList.add('bg-[#A97142]', 'text-white');
+                        btn.classList.remove('bg-white', 'text-[#A97142]', 'border', 'border-[#A97142]');
+                    } else {
+                        btn.classList.remove('bg-[#A97142]', 'text-white');
+                        btn.classList.add('bg-white', 'text-[#A97142]', 'border', 'border-[#A97142]');
+                    }
+                });
+            }
+            updateInterpretationView('idealist');
+            viewButtons.forEach(button => {
+                button.addEventListener('click', () => updateInterpretationView(button.dataset.view));
+            });
+            
+            const timelineElem = document.getElementById('futurist-timeline');
+            timelineData.forEach((item, index) => {
+                const side = index % 2 === 0 ? 'left' : 'right';
+                const container = document.createElement('div');
+                container.className = `timeline-container ${side}`;
+                
+                const content = document.createElement('div');
+                content.className = 'timeline-content';
+                content.dataset.index = index;
+                content.innerHTML = `<h3 class="text-xl font-bold">${item.event}</h3>`;
+                
+                const details = document.createElement('div');
+                details.className = 'timeline-details';
+                details.innerHTML = `<ul>${item.details.map(d => `<li class="mb-1">${d}</li>`).join('')}</ul>`;
+                
+                content.appendChild(details);
+                container.appendChild(content);
+                timelineElem.appendChild(container);
+            });
+
+            const judgementCtx = document.getElementById('judgementIntensityChart').getContext('2d');
+            let judgementIntensityChart = new Chart(judgementCtx, {
+                type: 'line',
+                data: {
+                    labels: ["Start", "Seals", "Trumpets", "Bowls", "Climax"],
+                    datasets: [{
+                        label: 'Judgment Intensity',
+                        data: [0, 0, 0, 0, 0],
+                        fill: true,
+                        backgroundColor: 'rgba(169, 113, 66, 0.2)',
+                        borderColor: '#A97142',
+                        tension: 0.4,
+                        pointBackgroundColor: '#A97142'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            display: false,
+                            max: 100
+                        },
+                        x: {
+                            ticks: { font: { size: 14, family: "'Inter', sans-serif" }, color: '#402F2D' }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Escalation of Tribulation Judgments',
+                            font: { size: 18, family: "'Lora', serif" },
+                            color: '#402F2D',
+                            padding: { bottom: 20 }
+                        }
+                    }
+                }
+            });
+
+            timelineElem.addEventListener('click', (e) => {
+                const content = e.target.closest('.timeline-content');
+                if (content) {
+                    const allDetails = document.querySelectorAll('.timeline-details');
+                    const currentDetails = content.querySelector('.timeline-details');
+                    const wasOpen = currentDetails.style.display === 'block';
+
+                    allDetails.forEach(d => d.style.display = 'none');
+                    
+                    if (!wasOpen) {
+                        currentDetails.style.display = 'block';
+                    }
+
+                    const index = parseInt(content.dataset.index);
+                    let newData = [0, 0, 0, 0, 0];
+                    if (index >= 1) newData[1] = 25;
+                    if (index >= 2) newData[2] = 60;
+                    if (index >= 3) newData[3] = 90;
+                    if (index >= 4) newData[4] = 100;
+                    if(wasOpen) {
+                       judgementIntensityChart.data.datasets[0].data = [0, 0, 0, 0, 0];
+                    } else {
+                       judgementIntensityChart.data.datasets[0].data = newData;
+                    }
+                    judgementIntensityChart.update();
+                }
+            });
+        });
+    </script>
+
+
+</main>
+
+  
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>
+

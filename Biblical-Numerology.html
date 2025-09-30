@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "@id": "https://anchorstack.pro/satan_series", "headline": "Satan Series - Interactive Biblical Study", "description": "Comprehensive biblical analysis of Satan's role in Scripture with interactive elements", "image": "https://anchorstack.pro/images/satan-series-cover.jpg", "author": { "@type": "Person", "name": "Ricky Jarnagin" }, "publisher": { "@type": "Organization", "name": "AnchorStack", "logo": { "@type": "ImageObject", "url": "https://anchorstack.pro/images/logo.png" } }, "datePublished": "2024-01-01", "dateModified": "2025-09-26", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://anchorstack.pro/satan_series" } } </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:site_name" content="AnchorStack.pro">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Biblical Numerology: The Significance of Numbers in Scripture">
+    <meta property="og:description" content="Explore the profound symbolism behind biblical numbers through an interactive guide. Discover how they represent divine unity, divine action, and more." />
+    <meta property="og:url" content="https://anchorstack.pro/Biblical-Numerology.html" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Biblical Numerology: The Significance of Numbers in Scripture"/>
+    <meta property="twitter:description" content="Discover the profound symbolism behind biblical numbers through an interactive guide. Learn about their representation of divine unity, divine action, and more." />
+    <link rel="stylesheet" href="main.css">
+    <link rel="canonical" href="https://anchorstack.pro/Biblical-Numerology.html" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="An interactive guide exploring the profound symbolism behind biblical numbers. Dive into their representations of divine unity, divine action, and more." />
+    <meta name="keywords" content="biblical numerology, bible study, divine symbolism, scripture analysis"/>
+    <meta name="author" content="AnchorStack.pro"/>
+    <meta name="robots" content="index,follow,noodp,noydir"/>
+    <meta name="google-site-verification" content="GzqVvYXQfZjWtTlRwKJkOaUoMnNcIg_5i4r8xu9mL60" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblical Numerology: The Significance of Numbers in Scripture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals (Parchment, Sepia, Soft Gold) -->
+    <!-- Application Structure Plan: The SPA is designed around a central interactive hub. Users select a number from a primary navigation grid, which dynamically updates a single content pane. This avoids a static, linear page scroll and encourages direct exploration. The structure includes: 1) Number Selector Grid for intuitive navigation. 2) A Dynamic Content Area for focused learning, showing meaning, detailed text, and interactive examples. 3) A dynamic Radar Chart to visually synthesize the theological themes associated with each number. This design was chosen to make a complex, non-linear topic accessible and engaging, allowing users to jump between concepts easily rather than reading a long document. -->
+    <!-- Visualization & Content Choices: Report Info: Symbolic meaning of biblical numbers. Goal: Inform & Organize. Viz/Presentation: Interactive content cards for biblical examples, updated via JS. Interaction: Click to reveal full verse. Justification: Keeps the UI clean and focused. Library: Vanilla JS DOM manipulation. | Report Info: Thematic connections of each number. Goal: Relationships. Viz/Presentation: Radar Chart. Interaction: Chart dynamically updates on number selection. Justification: Visually represents multi-faceted relationships in a compact format. Library: Chart.js (Canvas). | CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FDFBF5; 
+            color: #4B5D7A;
+        }
+        h1, h2, h3 {
+            font-family: 'Crimson Text', serif;
+        }
+        .number-btn {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .number-btn.active {
+            background-color: #D4AF37;
+            color: #FDFBF5;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .number-btn:hover {
+            border-color: #D4AF37;
+            transform: translateY(-2px);
+        }
+        .content-card {
+            background-color: #F7F3E9;
+            border-left: 4px solid #D4AF37;
+        }
+        .example-card {
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="text-center py-8 md:py-12 bg-opacity-50">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#3A322B]">Biblical Numerology</h1>
+            <p class="mt-2 text-lg md:text-xl text-[#6B5E53] max-w-3xl mx-auto">An interactive guide to the symbolic significance of numbers in Scripture.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pb-16">
+        <section id="number-selector" class="mb-12">
+            <h2 class="text-2xl font-semibold text-center mb-6 text-[#3A322B]">Select a Number to Explore</h2>
+            <div id="number-grid" class="grid grid-cols-3 md:grid-cols-6 gap-4 max-w-4xl mx-auto">
+            </div>
+        </section>
+
+        <section id="content-display" class="hidden opacity-0 transition-opacity duration-500">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
+                <div class="lg:col-span-3">
+                    <div class="content-card p-6 md:p-8 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <span id="selected-number-display" class="text-7xl font-bold text-[#D4AF37] mr-4"></span>
+                            <h2 id="number-meaning" class="text-3xl md:text-4xl font-semibold text-[#3A322B]"></h2>
+                        </div>
+                        <p id="number-description" class="text-base leading-relaxed text-[#4A3F35]"></p>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#3A322B]">Biblical Examples</h3>
+                        <div id="example-list" class="space-y-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                     <div class="bg-[#F7F3E9] p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-semibold mb-4 text-center text-[#3A322B]">Thematic Connections</h3>
+                        <p class="text-sm text-center text-gray-600 mb-4">This chart visualizes the theological concepts most strongly associated with the selected number.</p>
+                        <div class="chart-container">
+                            <canvas id="thematic-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+   
+
+    <script>
+        const numerologyData = [
+            {
+                number: 1,
+                meaning: 'Unity & Primacy',
+                description: 'The number one symbolizes absolute unity, singularity, and the primacy of God. It represents the concept that there is only one God and speaks to beginnings and divine authority.',
+                examples: [
+                    { ref: 'Deuteronomy 6:4', text: 'Hear, O Israel: The Lord our God, the Lord is one.' },
+                    { ref: 'Ephesians 4:4-6', text: 'There is one body and one Spirit... one Lord, one faith, one baptism; one God and Father of all...' },
+                    { ref: 'Genesis 1:1-5', text: 'The first day of creation, marking the beginning of God\'s work.' }
+                ],
+                themes: { 'Unity': 10, 'God\'s Sovereignty': 9, 'Beginnings': 8, 'Primacy': 7, 'Singularity': 6 }
+            },
+            {
+                number: 3,
+                meaning: 'Divine Completeness & Resurrection',
+                description: 'Three represents divine wholeness, completeness, and perfection. It is most famously associated with the Trinity (Father, Son, Holy Spirit) and key events like Jesus\' resurrection after three days.',
+                examples: [
+                    { ref: 'Matthew 28:19', text: '...baptizing them in the name of the Father and of the Son and of the Holy Spirit...' },
+                    { ref: 'Jonah 1:17', text: 'And Jonah was in the belly of the fish three days and three nights.' },
+                    { ref: '1 Corinthians 15:4', text: '...that he was buried, that he was raised on the third day in accordance with the Scriptures...' }
+                ],
+                themes: { 'Trinity': 10, 'Resurrection': 9, 'Completeness': 8, 'Divine Action': 7, 'Witness': 6 }
+            },
+            {
+                number: 7,
+                meaning: 'Perfection & Completion',
+                description: 'Seven is one of the most significant numbers, symbolizing divine perfection, completion, and spiritual wholeness. It appears in the creation week, the Sabbath, and numerous other contexts of finished work and divine rest.',
+                examples: [
+                    { ref: 'Genesis 2:2', text: 'And on the seventh day God finished his work that he had done, and he rested on the seventh day...' },
+                    { ref: 'Joshua 6:4', text: 'Seven priests shall bear seven trumpets of rams\' horns before the ark. On the seventh day you shall march around the city seven times...' },
+                    { ref: 'Revelation 1:20', text: 'As for the mystery of the seven stars that you saw in my right hand, and the seven golden lampstands, the seven stars are the angels of the seven churches...' }
+                ],
+                themes: { 'Perfection': 10, 'Completion': 9, 'Sabbath/Rest': 8, 'Holiness': 8, 'Divine Order': 7 }
+            },
+            {
+                number: 10,
+                meaning: 'Law, Order & Responsibility',
+                description: 'The number ten signifies divine order, law, and human responsibility. It is fundamentally linked to the Ten Commandments, which form the basis of God\'s covenant law with Israel, and also relates to concepts of tithing and testing.',
+                examples: [
+                    { ref: 'Exodus 20:1-17', text: 'The Ten Commandments given to Moses on Mount Sinai.' },
+                    { ref: 'Genesis 18:32', text: 'Abraham intercedes for Sodom, bargaining with God down to ten righteous people.' },
+                    { ref: 'Daniel 1:12', text: 'Daniel and his friends were tested for ten days on a diet of vegetables and water.' }
+                ],
+                themes: { 'Law & Covenant': 10, 'Order': 9, 'Responsibility': 8, 'Testing': 7, 'Government': 6 }
+            },
+            {
+                number: 12,
+                meaning: 'God\'s People & Authority',
+                description: 'Twelve represents the people and government of God. It points to divine authority and foundational structure, seen in the 12 tribes of Israel and the 12 apostles of Jesus, symbolizing the Old and New Covenants respectively.',
+                examples: [
+                    { ref: 'Genesis 49:28', text: 'All these are the twelve tribes of Israel.' },
+                    { ref: 'Matthew 10:2-4', text: 'The names of the twelve apostles are these...' },
+                    { ref: 'Revelation 21:12-14', text: 'The New Jerusalem has twelve gates, and on the gates the names of the twelve tribes... and twelve foundations, and on them the twelve names of the twelve apostles...' }
+                ],
+                themes: { 'God\'s People': 10, 'Apostolic Authority': 9, 'Foundations': 8, 'Government': 8, 'Covenant': 7 }
+            },
+            {
+                number: 40,
+                meaning: 'Trial, Testing & Probation',
+                description: 'The number forty consistently signifies a period of trial, testing, and preparation. It represents a significant length of time during which faith is tested and a generation is transformed.',
+                examples: [
+                    { ref: 'Genesis 7:12', text: 'And rain fell upon the earth forty days and forty nights.' },
+                    { ref: 'Numbers 14:33', text: 'And your children shall be shepherds in the wilderness forty years...' },
+                    { ref: 'Matthew 4:2', text: 'And after fasting forty days and forty nights, he was hungry.' }
+                ],
+                themes: { 'Testing & Trials': 10, 'Probation': 9, 'Purification': 8, 'Preparation': 7, 'Generation': 6 }
+            },
+        ];
+
+        let thematicChart;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const numberGrid = document.getElementById('number-grid');
+            const contentDisplay = document.getElementById('content-display');
+
+            numerologyData.forEach(item => {
+                const button = document.createElement('button');
+                button.className = 'number-btn text-2xl font-bold py-4 px-2 rounded-lg shadow-sm bg-[#F7F3E9]';
+                button.textContent = item.number;
+                button.dataset.number = item.number;
+                button.addEventListener('click', (e) => handleNumberSelection(e.target.dataset.number));
+                numberGrid.appendChild(button);
+            });
+            
+            initializeChart();
+        });
+
+        function handleNumberSelection(selectedNum) {
+            const data = numerologyData.find(d => d.number == selectedNum);
+            if (!data) return;
+
+            const contentDisplay = document.getElementById('content-display');
+            contentDisplay.classList.add('opacity-0');
+
+            setTimeout(() => {
+                document.getElementById('selected-number-display').textContent = data.number;
+                document.getElementById('number-meaning').textContent = data.meaning;
+                document.getElementById('number-description').textContent = data.description;
+                
+                const exampleList = document.getElementById('example-list');
+                exampleList.innerHTML = '';
+                data.examples.forEach(ex => {
+                    const card = document.createElement('div');
+                    card.className = 'example-card bg-white p-4 rounded-lg shadow-sm border border-gray-200';
+                    card.innerHTML = `
+                        <p class="font-semibold text-lg text-[#3A322B]">${ex.ref}</p>
+                        <p class="hidden text-sm mt-2 text-[#4A3F35]">${ex.text}</p>
+                    `;
+                    card.addEventListener('click', () => {
+                        card.querySelector('p:last-child').classList.toggle('hidden');
+                    });
+                    exampleList.appendChild(card);
+                });
+
+                updateChart(data);
+
+                document.querySelectorAll('.number-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.number == selectedNum);
+                });
+
+                contentDisplay.classList.remove('hidden');
+                setTimeout(() => contentDisplay.classList.remove('opacity-0'), 20);
+
+            }, 300);
+        }
+        
+        function initializeChart() {
+            const ctx = document.getElementById('thematic-chart').getContext('2d');
+            thematicChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Thematic Strength',
+                        data: [],
+                        backgroundColor: 'rgba(212, 175, 55, 0.2)',
+                        borderColor: 'rgba(212, 175, 55, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(212, 175, 55, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(212, 175, 55, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(74, 63, 53, 0.2)' },
+                            grid: { color: 'rgba(74, 63, 53, 0.2)' },
+                            pointLabels: { 
+                                font: { size: 12, family: "'Lato', sans-serif" },
+                                color: '#4A3F35'
+                            },
+                            ticks: {
+                                backdropColor: 'rgba(253, 251, 245, 1)',
+                                color: '#6B5E53',
+                                stepSize: 2,
+                                font: { size: 10 }
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 10
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` Strength: ${context.raw}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function updateChart(data) {
+            const labels = Object.keys(data.themes);
+            const values = Object.values(data.themes);
+
+            thematicChart.data.labels = labels;
+            thematicChart.data.datasets[0].data = values;
+            thematicChart.update();
+        }
+
+    </script>
+ 
+
+
+</body>
+</html>
+

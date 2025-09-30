@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QL8N3YFW6B');
+</script> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="AnchorStack.pro">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Explore the Wisdom of Solomon with this interactive study guide. Understand its historical context, key themes, and modern applications.">
+<meta name="keywords" content="Wisdom of Solomon, Deuterocanonical Books, Biblical Studies, Ancient Texts, Jewish Wisdom, Christian Theology, Immortality, Divine Justice, Alexandria, Greek Philosophy">
+    <!-- Favicon and Manifest -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="canonical" href="https://anchorstack.pro/the-wisdom-of-solomon.html">
+    <title>The Wisdom of Solomon - Interactive Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 40px 0;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .tab-button {
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: #764ba2;
+        }
+        
+        .tab-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .accordion {
+            margin: 20px 0;
+        }
+        
+        .accordion-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-header:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .accordion-header.active {
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .accordion-arrow {
+            transition: transform 0.3s;
+        }
+        
+        .accordion-header.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            display: none;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .accordion-content.active {
+            display: block;
+            animation: slideDown 0.3s;
+        }
+        
+        @keyframes slideDown {
+            from { 
+                opacity: 0;
+                max-height: 0;
+            }
+            to { 
+                opacity: 1;
+                max-height: 2000px;
+            }
+        }
+        
+        .chapter-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .chapter-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .chapter-title {
+            color: #764ba2;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .key-verse {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 15px;
+            border-left: 4px solid #764ba2;
+            margin: 15px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+        
+        .study-exercise {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #667eea;
+        }
+        
+        .study-exercise h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        
+        .theme-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .theme-title {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .interactive-element {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 2px solid #ffc107;
+        }
+        
+        .interactive-element h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .historical-note {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .application-box {
+            background: #fff8e1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #ffc107;
+        }
+        
+        .connection-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8eaf6 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin: 25px 0 15px 0;
+            font-size: 2em;
+        }
+        
+        h3 {
+            color: #667eea;
+            margin: 20px 0 10px 0;
+            font-size: 1.5em;
+        }
+        
+        h4 {
+            color: #764ba2;
+            margin: 15px 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .info-badge {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .tabs {
+                justify-content: center;
+            }
+            
+            .tab-button {
+                font-size: 12px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📜 The Wisdom of Solomon</h1>
+            <p>An Interactive Study Guide for Beginners</p>
+            <div style="margin-top: 20px;">
+                <span class="info-badge">19 Chapters</span>
+                <span class="info-badge">Written ~50 BCE</span>
+                <span class="info-badge">Alexandria, Egypt</span>
+                <span class="info-badge">Deuterocanonical Text</span>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('overview')">📖 Overview</button>
+            <button class="tab-button" onclick="showTab('historical')">🏛️ Historical Context</button>
+            <button class="tab-button" onclick="showTab('chapters')">📚 Chapter Guide</button>
+            <button class="tab-button" onclick="showTab('themes')">💡 Key Themes</button>
+            <button class="tab-button" onclick="showTab('connections')">🔗 Biblical Connections</button>
+            <button class="tab-button" onclick="showTab('exercises')">✍️ Study Exercises</button>
+            <button class="tab-button" onclick="showTab('applications')">🌟 Modern Applications</button>
+        </div>
+        
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <h2>Welcome to the Wisdom of Solomon</h2>
+            
+            <p>The Wisdom of Solomon is a fascinating ancient Jewish text that bridges the gap between the Old and New Testaments. Written in Greek around 50 BCE by an anonymous Jewish author in Alexandria, Egypt,  it presents profound teachings about wisdom, immortality, and divine justice that have influenced both Jewish and Christian thought for over 2,000 years.</p>
+            
+            <div class="theme-box">
+                <div class="theme-title">What Makes This Book Special?</div>
+                <p>This book is unique because it:</p>
+                <ul>
+                    <li><strong>Introduces the concept of immortality</strong> - The first clear biblical statement that righteous souls live forever with God </li>
+                    <li><strong>Personifies Wisdom as divine</strong> - Presents Wisdom as God's companion in creation,  later influencing Christian understanding of Christ </li>
+                    <li><strong>Blends Jewish faith with Greek philosophy</strong> - Shows how ancient Jews engaged with contemporary culture while maintaining their faith </li>
+                    <li><strong>Offers hope in suffering</strong> - Explains why good people suffer and how God ultimately vindicates the righteous </li>
+                </ul>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>📊 Book Structure at a Glance</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>Three Major Sections:</h4>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Section I: Chapters 1-5 - The Reward of Righteousness</div>
+                        <p>Contrasts the ultimate destinies of the righteous and the wicked. Introduces revolutionary teaching on immortality and divine justice. </p>
+                    </div>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Section II: Chapters 6-9 - Solomon's Praise of Wisdom</div>
+                        <p>King Solomon describes his quest for wisdom, portraying her as his bride and life companion. Contains beautiful poetry about wisdom's divine nature. </p>
+                    </div>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Section III: Chapters 10-19 - Wisdom in Israel's History</div>
+                        <p>Shows how divine wisdom guided God's people throughout history, especially during the Exodus from Egypt. </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>👥 Who Should Read This Book?</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Originally written for Jews living in Alexandria who faced pressure to abandon their faith for Greek culture,  this book speaks powerfully to anyone who:</p>
+                    <ul>
+                        <li>Struggles to understand why good people suffer while evil seems to prosper</li>
+                        <li>Seeks wisdom for making important life decisions</li>
+                        <li>Wants to understand the biblical foundations of Christian theology</li>
+                        <li>Faces pressure to compromise their values for worldly success</li>
+                        <li>Desires to grow in spiritual wisdom and understanding</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="key-verse">
+                <strong>Key Verse to Remember (Wisdom 3:1-3):</strong><br>
+                "But the souls of the righteous are in the hand of God, and no torment will ever touch them. In the eyes of the foolish they seemed to have died, and their departure was thought to be a disaster... but they are at peace." 
+            </div>
+        </div>
+        
+        <!-- Historical Context Tab -->
+        <div id="historical" class="tab-content">
+            <h2>Historical Context & Background</h2>
+            
+            <div class="historical-note">
+                <h4>📅 When and Where Was It Written?</h4>
+                <p><strong>Date:</strong> Around 50 BCE (late 1st century BCE to early 1st century CE) <br>
+                <strong>Location:</strong> Alexandria, Egypt - the intellectual capital of the ancient world <br>
+                <strong>Language:</strong> Originally composed in Greek (not translated from Hebrew) </p>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>✍️ Who Wrote the Wisdom of Solomon?</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>Traditional Attribution vs. Actual Authorship</h4>
+                    
+                    <p><strong>Traditional View:</strong> Attributed to King Solomon (10th century BCE), Israel's wisest king who asked God for wisdom rather than riches. </p>
+                    
+                    <p><strong>Actual Author:</strong> An anonymous Jewish scholar in Alexandria  who: </p>
+                    <ul>
+                        <li>Was highly educated in both Jewish scripture and Greek philosophy </li>
+                        <li>Wrote in sophisticated Greek with rhetorical skill </li>
+                        <li>Used Solomon's name as a literary device (pseudepigraphy) - a common practice to give the work authority </li>
+                        <li>Knew the Septuagint (Greek translation of Hebrew Bible) intimately </li>
+                    </ul>
+                    
+                    <p><strong>Why we know it wasn't actually Solomon:</strong></p>
+                    <ul>
+                        <li>Written entirely in Greek, not Hebrew </li>
+                        <li>Contains Greek philosophical concepts unknown in Solomon's time </li>
+                        <li>References historical events after Solomon's era</li>
+                        <li>Uses the Greek Septuagint translation (created 3rd century BCE) </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🏛️ Alexandria: The Cultural Melting Pot</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>Jewish Life in Hellenistic Alexandria</h4>
+                    
+                    <p>Alexandria was home to the largest Jewish community outside Palestine, comprising about 35% of the city's population.  This vibrant community faced unique challenges:</p>
+                    
+                    <div class="theme-box">
+                        <div class="theme-title">Cultural Pressures</div>
+                        <ul>
+                            <li><strong>Hellenization:</strong> Pressure to adopt Greek culture, philosophy, and religion </li>
+                            <li><strong>Identity Crisis:</strong> Young Jews tempted to abandon their faith for social advancement </li>
+                            <li><strong>Intellectual Challenges:</strong> Greek philosophers questioned Jewish beliefs about God and morality </li>
+                            <li><strong>Anti-Semitism:</strong> Periodic persecution and discrimination from Greek citizens </li>
+                        </ul>
+                    </div>
+                    
+                    <p>The Wisdom of Solomon was written to:</p>
+                    <ul>
+                        <li>Strengthen Jewish faith and identity </li>
+                        <li>Show Judaism's intellectual sophistication </li>
+                        <li>Provide theological resources for engaging Greek culture </li>
+                        <li>Offer hope during persecution </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>📚 Canonical Status: Why Some Bibles Include It and Others Don't</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>The Book's Place in Different Traditions</h4>
+                    
+                    <div class="connection-card">
+                        <h4>✅ Catholic and Orthodox Churches (Deuterocanonical)</h4>
+                        <p>Accept it as inspired Scripture because:</p>
+                        <ul>
+                            <li>Included in the Septuagint (Greek Old Testament) used by early Christians </li>
+                            <li>Quoted and used by Church Fathers </li>
+                            <li>Affirmed by councils (Rome 382, Trent 1546) </li>
+                            <li>Contains important theological teachings (immortality, divine wisdom)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="connection-card">
+                        <h4>❌ Protestant Churches (Apocryphal)</h4>
+                        <p>Generally exclude it because:</p>
+                        <ul>
+                            <li>Not part of the Hebrew Bible canon </li>
+                            <li>Written in Greek, not Hebrew </li>
+                            <li>Protestant Reformers followed the Jewish canon </li>
+                            <li>Considered valuable for reading but not doctrine </li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>Important Note:</strong> Regardless of canonical status, scholars universally recognize its historical importance for understanding Second Temple Judaism and early Christianity. </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chapter Guide Tab -->
+        <div id="chapters" class="tab-content">
+            <h2>Chapter-by-Chapter Study Guide</h2>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>📖 Chapters 1-3: Righteousness and Immortality</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapter 1: The Call to Righteousness</div>
+                        <p><strong>Main Message:</strong> Leaders must love justice and seek God with sincere hearts, for wisdom won't enter a deceitful soul. </p>
+                        
+                        <div class="key-verse">
+                            <strong>Key Verse (1:1):</strong> "Love righteousness, you rulers of the earth, think of the Lord with uprightness, and seek him with sincerity of heart." 
+                        </div>
+                        
+                        <p><strong>For Beginners:</strong> The book opens addressing world leaders but really speaks to everyone. It establishes that God sees everything and that wisdom is like a living entity that chooses where to dwell - only in honest, sincere hearts. </p>
+                        
+                        <div class="study-exercise">
+                            <h4>💭 Reflection Question:</h4>
+                            <p>What areas of your life need more sincerity and integrity to invite wisdom in?</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapter 2: The False Reasoning of the Wicked</div>
+                        <p><strong>Main Message:</strong> The ungodly believe life is meaningless and plan to persecute the righteous to test if God will protect them. </p>
+                        
+                        <div class="key-verse">
+                            <strong>Remarkable Prophecy (2:12-20):</strong> Describes the persecution of a righteous man in terms that remarkably parallel Jesus' crucifixion - written decades before Christ! 
+                        </div>
+                        
+                        <p><strong>For Beginners:</strong> This chapter presents the worldview of those who reject God - they see life as random and meaningless, so they live for pleasure and oppress the weak. But they're completely wrong about reality. </p>
+                    </div>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapter 3: The Souls of the Righteous</div>
+                        <p><strong>Main Message:</strong> The righteous who suffer will receive immortal reward; death is not the end but a transition to eternal peace. </p>
+                        
+                        <div class="key-verse">
+                            <strong>Most Famous Verse (3:1):</strong> "But the souls of the righteous are in the hand of God, and no torment will ever touch them." 
+                        </div>
+                        
+                        <p><strong>Revolutionary Teaching:</strong> This is the first clear Old Testament statement about blessed immortality for the righteous - a major theological breakthrough! </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>📖 Chapters 4-6: Wisdom's Call to Leaders</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapter 4: The Value of Virtue Over Longevity</div>
+                        <p><strong>Main Message:</strong> A short, virtuous life is better than a long, wicked one. Sometimes God takes people young to preserve their goodness. </p>
+                        
+                        <p><strong>Cultural Revolution:</strong> Ancient cultures valued long life as God's blessing, but this chapter says quality matters more than quantity - virtue and wisdom are more honorable than mere old age. </p>
+                    </div>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapter 5: The Final Judgment</div>
+                        <p><strong>Main Message:</strong> At the end, the wicked will recognize their error and see the vindication of the righteous they mocked. </p>
+                        
+                        <p><strong>Courtroom Drama:</strong> Like a final trial where all truth comes to light and those who mocked the righteous realize they were completely wrong. </p>
+                    </div>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapter 6: Wisdom's Call to Rulers</div>
+                        <p><strong>Main Message:</strong> Kings and rulers must learn wisdom or face severe judgment. Greater power means greater responsibility. </p>
+                        
+                        <div class="key-verse">
+                            <strong>Beautiful Promise (6:12):</strong> "Wisdom is radiant and unfading, and she is easily discerned by those who love her." 
+                        </div>
+                        
+                        <p><strong>Good News:</strong> Wisdom isn't playing hard to get - she actively seeks those who truly desire her!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>📖 Chapters 7-9: Solomon's Love for Wisdom</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapter 7: Solomon's Humanity and Wisdom's Nature</div>
+                        <p><strong>Main Message:</strong> Even great Solomon emphasizes his common humanity. Wisdom comes as God's gift to those who pray for it. </p>
+                        
+                        <p><strong>21 Divine Attributes of Wisdom (7:22-23):</strong> Wisdom is described as intelligent, holy, unique, manifold, subtle, mobile, clear, unpolluted, distinct, invulnerable, loving the good, keen, irresistible, beneficent, humane, steadfast, sure, free from anxiety, all-powerful, overseeing all, and penetrating. </p>
+                    </div>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapter 8: Wisdom as Life Partner</div>
+                        <p><strong>Main Message:</strong> Solomon chose wisdom as his bride, finding in her the source of all good things. </p>
+                        
+                        <p><strong>Marriage Imagery:</strong> Uses romantic language to describe the intimate relationship between a wise person and divine wisdom - it's about life's most important relationship.</p>
+                    </div>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapter 9: Solomon's Prayer for Wisdom</div>
+                        <p><strong>Main Message:</strong> Solomon's famous prayer acknowledging human limitations and asking for divine wisdom.</p>
+                        
+                        <div class="key-verse">
+                            <strong>Model Prayer (9:4):</strong> "Give me the wisdom that sits by your throne, and do not reject me from among your servants."
+                        </div>
+                        
+                        <p><strong>For Today:</strong> A perfect prayer model for anyone facing difficult decisions or leadership responsibilities.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>📖 Chapters 10-19: Wisdom in History</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapter 10: Wisdom Guides Biblical Heroes</div>
+                        <p><strong>Main Message:</strong> Reviews how wisdom guided biblical figures from Adam through Moses. </p>
+                        
+                        <p><strong>Pattern Recognition:</strong> Shows that the same divine wisdom Solomon sought has been guiding God's people throughout history.</p>
+                    </div>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapters 11-19: The Exodus Meditation</div>
+                        <p><strong>Main Theme:</strong> Seven detailed comparisons showing how the same elements that plagued Egypt blessed Israel.</p>
+                        
+                        <div class="theme-box">
+                            <div class="theme-title">The Seven Contrasts</div>
+                            <ol>
+                                <li><strong>Water:</strong> Nile turned to blood vs. water from rock</li>
+                                <li><strong>Animals:</strong> Plague creatures vs. nourishing quail</li>
+                                <li><strong>Insects:</strong> Destructive locusts vs. healing from snakes</li>
+                                <li><strong>Weather:</strong> Destructive hail vs. nourishing manna</li>
+                                <li><strong>Darkness:</strong> Plague darkness vs. pillar of fire</li>
+                                <li><strong>Death:</strong> Egyptian firstborn die vs. Israel protected</li>
+                                <li><strong>Sea:</strong> Egyptians drown vs. Israel's safe passage</li>
+                            </ol>
+                        </div>
+                        
+                        <p><strong>Theological Principle:</strong> God uses the same creation to both judge the wicked and save the righteous - showing perfect divine justice and care.</p>
+                    </div>
+                    
+                    <div class="chapter-card">
+                        <div class="chapter-title">Chapters 13-15: The Folly of Idolatry</div>
+                        <p><strong>Main Message:</strong> Comprehensive critique of idol worship, showing how it corrupts every aspect of human life. </p>
+                        
+                        <p><strong>Modern Application:</strong> Though we don't worship statues today, we have our own idols - money, power, technology, celebrity. The critique remains relevant.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Themes Tab -->
+        <div id="themes" class="tab-content">
+            <h2>Major Theological Themes</h2>
+            
+            <div class="theme-box">
+                <div class="theme-title">1. 👑 Wisdom (Sophia) - The Divine Feminine</div>
+                <p>Wisdom is personified as a beautiful, divine female figure who:</p>
+                <ul>
+                    <li>Was present with God at creation (9:9)</li>
+                    <li>Serves as intermediary between God and humanity</li>
+                    <li>Actively seeks those who desire her (6:13-16)</li>
+                    <li>Grants immortality to those who embrace her (8:13)</li>
+                </ul>
+                
+                <div class="key-verse">
+                    <strong>Divine Description (7:25-26):</strong><br>
+                    "For she is a breath of the power of God, and a pure emanation of the glory of the Almighty... a reflection of eternal light, a spotless mirror of the working of God."
+                </div>
+                
+                <p><strong>Christian Connection:</strong> This language about Wisdom was later applied to Christ in the New Testament, influencing the development of Logos theology.</p>
+            </div>
+            
+            <div class="theme-box">
+                <div class="theme-title">2. ⚖️ Righteousness and Justice</div>
+                <p>The book establishes a cosmic framework where:</p>
+                <ul>
+                    <li>Righteousness leads to immortality (1:15)</li>
+                    <li>The righteous may suffer temporarily but are vindicated eternally</li>
+                    <li>Divine justice operates through natural creation</li>
+                    <li>God judges with both perfect justice and infinite mercy</li>
+                </ul>
+                
+                <p><strong>Revolutionary Concept:</strong> "Righteousness is immortal" (1:15) - not just that righteous people become immortal, but righteousness itself is an eternal, divine quality.</p>
+            </div>
+            
+            <div class="theme-box">
+                <div class="theme-title">3. 🌟 Immortality - Life After Death</div>
+                <p>The book's most groundbreaking theological contribution:</p>
+                <ul>
+                    <li>First clear biblical teaching on individual soul immortality</li>
+                    <li>Immortality is God's gift to the righteous, not inherent</li>
+                    <li>Death is not the end but a transition to eternal life</li>
+                    <li>The souls of the righteous are in God's hand (3:1)</li>
+                </ul>
+                
+                <div class="historical-note">
+                    <strong>Historical Significance:</strong> This teaching bridged Hebrew concepts of Sheol with later Christian doctrine of eternal life, representing a major development in Jewish theology.
+                </div>
+            </div>
+            
+            <div class="theme-box">
+                <div class="theme-title">4. 🙏 Divine Providence</div>
+                <p>God's active care and guidance throughout history:</p>
+                <ul>
+                    <li>Wisdom serves as God's agent in providence</li>
+                    <li>God guides both individuals and nations</li>
+                    <li>Creation itself serves divine purposes</li>
+                    <li>Everything is "arranged by measure, number, and weight" (11:20)</li>
+                </ul>
+                
+                <p><strong>Comfort for Today:</strong> Nothing is random or meaningless - God is actively involved in guiding history and individual lives toward ultimate good.</p>
+            </div>
+            
+            <div class="theme-box">
+                <div class="theme-title">5. 🚫 Critique of Idolatry</div>
+                <p>Comprehensive analysis of false worship (Chapters 13-15):</p>
+                <ul>
+                    <li>Nature worship - understandable but wrong</li>
+                    <li>Idol manufacture - satirically mocked</li>
+                    <li>Moral corruption - idolatry leads to all evil</li>
+                    <li>Egyptian animal worship - most severely condemned</li>
+                </ul>
+                
+                <p><strong>Modern Relevance:</strong> Though we don't worship statues, the critique applies to anything we make ultimate in place of God - wealth, power, pleasure, technology.</p>
+            </div>
+        </div>
+        
+        <!-- Biblical Connections Tab -->
+        <div id="connections" class="tab-content">
+            <h2>Biblical Connections & Christian Influence</h2>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>📚 Connections to Other Wisdom Literature</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="connection-card">
+                        <h4>Links with Proverbs</h4>
+                        <ul>
+                            <li>Both personify Wisdom as a divine female figure</li>
+                            <li>Share emphasis on "fear of the Lord" as wisdom's beginning</li>
+                            <li>Wisdom of Solomon greatly expands Proverbs 8's creation theology</li>
+                            <li>Both contrast the ways of the righteous and wicked</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="connection-card">
+                        <h4>Contrasts with Ecclesiastes</h4>
+                        <ul>
+                            <li>Ecclesiastes: "All is vanity" vs. Wisdom: "Righteousness is immortal"</li>
+                            <li>Ecclesiastes questions meaning; Wisdom provides answers</li>
+                            <li>Ecclesiastes sees death as final; Wisdom teaches immortality</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="connection-card">
+                        <h4>Parallels with Sirach (Ben Sira)</h4>
+                        <ul>
+                            <li>Both are deuterocanonical wisdom texts</li>
+                            <li>Share Hellenistic Jewish context</li>
+                            <li>Both integrate wisdom with salvation history</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>✝️ Influence on the New Testament</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>Direct Parallels and Influences</h4>
+                    
+                    <div class="connection-card">
+                        <h4>Paul's Letters</h4>
+                        <ul>
+                            <li><strong>Romans 1:18-32:</strong> Paul's critique of idolatry closely follows Wisdom 13-14</li>
+                            <li><strong>1 Corinthians 1:24:</strong> Christ as "the wisdom of God" echoes Wisdom's theology</li>
+                            <li><strong>Ephesians 6:13-17:</strong> "Armor of God" parallels Wisdom 5:17-20</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="connection-card">
+                        <h4>The Gospels</h4>
+                        <ul>
+                            <li><strong>Matthew 27:43:</strong> Mockers at crucifixion echo Wisdom 2:18</li>
+                            <li><strong>John 1:</strong> Logos theology builds on Wisdom's divine intermediary concept</li>
+                            <li><strong>Wisdom 2:12-20:</strong> Remarkable prophecy of righteous suffering parallels Passion narrative</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="connection-card">
+                        <h4>Hebrews</h4>
+                        <ul>
+                            <li><strong>Hebrews 1:3:</strong> Christ as "brightness of glory" uses Wisdom 7:26's language</li>
+                            <li>Faith heroes chapter (Hebrews 11) parallels Wisdom 10's historical review</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>⛪ Early Christian Usage</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>How Early Christians Used This Book</h4>
+                    
+                    <div class="historical-note">
+                        <h4>Theological Development</h4>
+                        <p>The Wisdom of Solomon provided crucial concepts for early Christian theology:</p>
+                        <ul>
+                            <li><strong>Christology:</strong> Wisdom's divine attributes applied to Christ</li>
+                            <li><strong>Trinity:</strong> Wisdom as distinct yet unified with God</li>
+                            <li><strong>Immortality:</strong> Biblical foundation for eternal life doctrine</li>
+                            <li><strong>Theodicy:</strong> Explaining suffering and divine justice</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="connection-card">
+                        <h4>Church Father Citations</h4>
+                        <ul>
+                            <li><strong>Augustine:</strong> Considered it canonical Scripture</li>
+                            <li><strong>Origen:</strong> Used it extensively despite questions about authorship</li>
+                            <li><strong>Athanasius:</strong> Listed it as "profitable for instruction"</li>
+                            <li><strong>Jerome:</strong> Included in the Vulgate as "Book of Wisdom"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Study Exercises Tab -->
+        <div id="exercises" class="tab-content">
+            <h2>Interactive Study Exercises & Questions</h2>
+            
+            <div class="study-exercise">
+                <h4>📖 For Personal Reflection</h4>
+                
+                <div class="interactive-element">
+                    <h4>Chapter 1-3 Questions: Righteousness and Immortality</h4>
+                    <ol>
+                        <li>What does it mean to "seek God with sincerity of heart" in your daily life?</li>
+                        <li>How does knowing "the souls of the righteous are in God's hand" change your perspective on death and suffering?</li>
+                        <li>In what ways do you see the "reasoning of the wicked" (Chapter 2) reflected in modern culture?</li>
+                        <li>Write about a time when you suffered for doing right. How does this book's teaching on vindication encourage you?</li>
+                    </ol>
+                </div>
+                
+                <div class="interactive-element">
+                    <h4>Chapter 6-9 Questions: The Quest for Wisdom</h4>
+                    <ol>
+                        <li>If you could ask God for anything (like Solomon), what would it be and why?</li>
+                        <li>How is seeking wisdom different from seeking knowledge or intelligence?</li>
+                        <li>What would it look like to make wisdom your "life partner" as Solomon describes?</li>
+                        <li>Write your own prayer for wisdom based on Solomon's prayer in Chapter 9.</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="study-exercise">
+                <h4>👥 For Group Discussion</h4>
+                
+                <div class="interactive-element">
+                    <h4>Thematic Discussions</h4>
+                    <ol>
+                        <li><strong>Modern Idolatry:</strong> What are the "idols" in contemporary society? How do they corrupt human life as described in chapters 13-15?</li>
+                        <li><strong>Leadership and Wisdom:</strong> Discuss how Chapter 6's message to rulers applies to leadership today (in business, politics, community).</li>
+                        <li><strong>Suffering and Hope:</strong> Share experiences where suffering led to growth. How does the book's teaching on immortality provide comfort?</li>
+                        <li><strong>Divine Providence:</strong> Trace examples from your community's history where you can see God's providence at work.</li>
+                    </ol>
+                </div>
+                
+                <div class="interactive-element">
+                    <h4>Creative Activities</h4>
+                    <ul>
+                        <li><strong>Wisdom Personification:</strong> Create artwork or poetry personifying wisdom for today's world</li>
+                        <li><strong>Modern Exodus:</strong> Identify a modern "exodus" story and analyze it through Wisdom's lens</li>
+                        <li><strong>Righteous Heroes:</strong> Research someone who suffered for righteousness and present their story</li>
+                        <li><strong>Prayer Writing:</strong> Compose group prayers based on Solomon's prayer structure</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="study-exercise">
+                <h4>📝 Chapter-by-Chapter Study Method</h4>
+                
+                <div class="theme-box">
+                    <div class="theme-title">SOAP Method for Each Chapter</div>
+                    <p><strong>S</strong>cripture - Read the chapter slowly and carefully<br>
+                    <strong>O</strong>bservation - What stands out? What is the main message?<br>
+                    <strong>A</strong>pplication - How does this apply to your life today?<br>
+                    <strong>P</strong>rayer - Write a prayer response to what you've learned</p>
+                </div>
+                
+                <div class="interactive-element">
+                    <h4>Weekly Study Plan</h4>
+                    <ul>
+                        <li><strong>Week 1:</strong> Overview and Chapters 1-3 (Righteousness)</li>
+                        <li><strong>Week 2:</strong> Chapters 4-6 (Wisdom's Call)</li>
+                        <li><strong>Week 3:</strong> Chapters 7-9 (Solomon's Quest)</li>
+                        <li><strong>Week 4:</strong> Chapters 10-12 (Wisdom in History)</li>
+                        <li><strong>Week 5:</strong> Chapters 13-15 (Against Idolatry)</li>
+                        <li><strong>Week 6:</strong> Chapters 16-19 (The Exodus)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modern Applications Tab -->
+        <div id="applications" class="tab-content">
+            <h2>Practical Applications for Modern Life</h2>
+            
+            <div class="application-box">
+                <h3>💼 Business and Professional Ethics</h3>
+                <p>The Wisdom of Solomon offers timeless principles for professional life:</p>
+                <ul>
+                    <li><strong>Leadership Responsibility (Ch. 6):</strong> Leaders face stricter judgment - use power to serve, not exploit</li>
+                    <li><strong>Integrity Over Profit (Ch. 1):</strong> Wisdom won't dwell with deception - honest business practices matter</li>
+                    <li><strong>Long-term Perspective (Ch. 3):</strong> Temporary setbacks for doing right lead to ultimate vindication</li>
+                    <li><strong>Divine Justice (Ch. 11):</strong> Unethical gains ultimately lead to loss - "by what things a person sins, by these they are punished"</li>
+                </ul>
+                
+                <div class="interactive-element">
+                    <h4>Reflection Exercise</h4>
+                    <p>Identify a challenging ethical decision in your work. How would applying these principles change your approach?</p>
+                </div>
+            </div>
+            
+            <div class="application-box">
+                <h3>🏛️ Political and Civic Engagement</h3>
+                <p>Messages for citizens and leaders in democratic societies:</p>
+                <ul>
+                    <li><strong>Accountability (Ch. 6:3-4):</strong> All authority comes from God; leaders will answer for their stewardship</li>
+                    <li><strong>Justice Priority (Ch. 1:1):</strong> "Love righteousness, you rulers" - justice should guide policy</li>
+                    <li><strong>Care for Vulnerable:</strong> The wicked oppress the weak (Ch. 2); the righteous protect them</li>
+                    <li><strong>Truth in Public Discourse:</strong> Wisdom flees from deceit - demand honesty in political dialogue</li>
+                </ul>
+            </div>
+            
+            <div class="application-box">
+                <h3>👨‍👩‍👧‍👦 Family and Relationships</h3>
+                <p>Wisdom for personal relationships:</p>
+                <ul>
+                    <li><strong>Choosing Life Partners (Ch. 8):</strong> Solomon's "marriage" to wisdom models prioritizing character and values</li>
+                    <li><strong>Parenting (Ch. 4):</strong> Quality of character matters more than worldly success</li>
+                    <li><strong>Dealing with Loss (Ch. 3-4):</strong> Death of loved ones isn't the end - "their hope is full of immortality"</li>
+                    <li><strong>Conflict Resolution:</strong> Seek wisdom's qualities: peaceable, gentle, reasonable (Ch. 7:22-23)</li>
+                </ul>
+                
+                <div class="study-exercise">
+                    <h4>Family Discussion Topics</h4>
+                    <ul>
+                        <li>What "wisdom" do we want to pass to the next generation?</li>
+                        <li>How do we help children recognize and resist modern "idols"?</li>
+                        <li>What does "seeking wisdom together" look like for our family?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="application-box">
+                <h3>🌍 Social Justice and Activism</h3>
+                <p>The book's teachings fuel righteous activism:</p>
+                <ul>
+                    <li><strong>Prophetic Critique:</strong> Like the criticism of idolatry, call out systems that dehumanize</li>
+                    <li><strong>Perseverance in Suffering:</strong> The righteous may suffer temporarily but are ultimately vindicated</li>
+                    <li><strong>Divine Providence:</strong> Trust that God is working through history toward justice</li>
+                    <li><strong>Universal Human Dignity:</strong> All humans can access wisdom; God "loves all things that exist" (11:24)</li>
+                </ul>
+            </div>
+            
+            <div class="application-box">
+                <h3>💭 Personal Spiritual Growth</h3>
+                <p>Daily practices inspired by the text:</p>
+                
+                <div class="theme-box">
+                    <div class="theme-title">Daily Wisdom Practices</div>
+                    <ol>
+                        <li><strong>Morning Prayer:</strong> Begin each day with Solomon's prayer for wisdom (Ch. 9)</li>
+                        <li><strong>Evening Reflection:</strong> Review the day asking "Where did I choose wisdom or folly?"</li>
+                        <li><strong>Weekly Meditation:</strong> Choose one attribute of wisdom (7:22-23) to cultivate each week</li>
+                        <li><strong>Monthly Review:</strong> Identify and address modern "idols" that distract from God</li>
+                        <li><strong>Decision Framework:</strong> Before major choices, ask "What would wisdom counsel here?"</li>
+                    </ol>
+                </div>
+                
+                <div class="interactive-element">
+                    <h4>Personal Growth Challenge</h4>
+                    <p>For the next 30 days, commit to:</p>
+                    <ul>
+                        <li>Read one chapter of Wisdom of Solomon daily</li>
+                        <li>Journal one insight or application each day</li>
+                        <li>Pray Solomon's prayer (Ch. 9) each morning</li>
+                        <li>Share one wisdom insight weekly with someone else</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="application-box">
+                <h3>🌱 Environmental Stewardship</h3>
+                <p>Creation care through Wisdom's lens:</p>
+                <ul>
+                    <li><strong>Divine Presence in Creation:</strong> Wisdom "pervades and penetrates all things" (7:24)</li>
+                    <li><strong>God's Love for Creation:</strong> "You love all things that exist" (11:24) - creation has inherent value</li>
+                    <li><strong>Human Responsibility:</strong> As wisdom's students, we must care for what God loves</li>
+                    <li><strong>Justice and Ecology:</strong> Environmental destruction often hurts the poor most</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+        
+        function toggleAccordion(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            content.classList.toggle('active');
+        }
+    </script>
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========== SECTION 1: ALWAYS COPY EXACTLY ========== -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857989746698108"
+     crossorigin="anonymous"></script>
+   
+ <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+     <!-- ========== SECTION 2: CHANGE FOR EACH PAGE ========== -->
+    <link rel="canonical" href="https://anchorstack.pro/hermeneutics-masterclass.html">
+
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Biblical Hermeneutics Masterclass | AnchorStack Seminary</title>
+<style>
+/* Mobile Navigation Hamburger Menu */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: #2d4a9f;
+    transform: scale(1.05);
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Animate hamburger to X when open */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Navigation Overlay */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+}
+
+/* Modified TOC for mobile */
+@media (max-width: 1024px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .mobile-nav-overlay {
+        display: block;
+        pointer-events: none;
+    }
+    
+    .mobile-nav-overlay.active {
+        pointer-events: all;
+    }
+    
+    .toc-floating {
+        display: block !important;
+        left: -300px;
+        transition: left 0.3s ease;
+        z-index: 101;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .toc-floating.active {
+        left: 20px;
+    }
+    
+    /* Add close button to mobile menu */
+    .toc-floating::before {
+        content: '✕';
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
+        color: var(--primary);
+        cursor: pointer;
+    }
+    
+    /* Make TOC items larger for mobile */
+    .toc-item {
+        padding: 0.75rem 0;
+        font-size: 1rem;
+    }
+}
+
+/* Quick Jump Button (appears when scrolled down) */
+.quick-jump {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--gold);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+    z-index: 98;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.quick-jump.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quick-jump:hover {
+    background: var(--primary);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .quick-jump {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1e3a8a;
+            --gold: #d97706;
+            --sage: #84a98c;
+            --text: #374151;
+            --light-bg: #fafaf9;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        }
+        
+        body {
+            font-family: 'Merriweather', Georgia, serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--light-bg);
+        }
+        
+        /* Floating Table of Contents */
+        .toc-floating {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 250px;
+            z-index: 100;
+        }
+        
+        .toc-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .toc-item {
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-left: 3px solid transparent;
+            padding-left: 1rem;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .toc-item:hover {
+            border-left-color: var(--gold);
+            color: var(--primary);
+        }
+        
+        .toc-item.active {
+            border-left-color: var(--gold);
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Header with parallax effect */
+        .masterclass-header {
+            min-height: 100vh;
+            background: linear-gradient(rgba(30,58,138,0.9), rgba(30,58,138,0.9)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInScale 1.5s ease;
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .masterclass-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .masterclass-subtitle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+        
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--gold);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Main Content Container */
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            margin-left: 300px;
+        }
+        
+        /* Section Styling */
+        .content-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 2rem;
+        }
+        
+        .section-header {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--gold);
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--sage);
+        }
+        
+        /* Enhanced Typography */
+        .lead-paragraph {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .content-paragraph {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        /* Callout Boxes */
+        .callout-box {
+            background: white;
+            border-left: 5px solid var(--gold);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .callout-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .callout-icon {
+            font-size: 1.5rem;
+        }
+        
+        /* Case Study Cards */
+        .case-study {
+            background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .case-study-number {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .case-study-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+        
+        /* Method Cards */
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .method-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--sage);
+        }
+        
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .method-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .method-name {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Scripture Examples */
+        .scripture-example {
+            background: linear-gradient(135deg, #fef3c7 0%, #fef9e7 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border: 2px solid var(--gold);
+            font-style: italic;
+        }
+        
+        .scripture-reference {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Interactive Elements */
+        .expandable-section {
+            background: white;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .expandable-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .expandable-header:hover {
+            background: #2d4a9f;
+        }
+        
+        .expandable-content {
+            padding: 2rem;
+            display: none;
+        }
+        
+        .expandable-content.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Download Section */
+        .download-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #2d4a9f 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .download-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .download-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .download-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.05);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .toc-floating {
+                display: none;
+            }
+            
+            .content-wrapper {
+                margin-left: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .methods-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Table of Contents -->
+    <nav class="toc-floating">
+        <div class="toc-title">Navigate</div>
+        <a href="#introduction" class="toc-item active">Introduction</a>
+        <a href="#principles" class="toc-item">5 Core Principles</a>
+        <a href="#methods" class="toc-item">Academic Methods</a>
+        <a href="#case-studies" class="toc-item">Case Studies</a>
+        <a href="#devotional" class="toc-item">Devotional Approach</a>
+        <a href="#exercises" class="toc-item">Practice Exercises</a>
+        <a href="#application" class="toc-item">Modern Application</a>
+        <a href="#resources" class="toc-item">Resources</a>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="masterclass-header">
+        <div class="header-content">
+            <h1 class="masterclass-title">The Complete Biblical Hermeneutics Masterclass</h1>
+            <p class="masterclass-subtitle">Seminary-Level Training for Every Believer</p>
+            
+            <div class="header-stats">
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Core Principles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Study Methods</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">90</div>
+                    <div class="stat-label">Minutes to Master</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Lifetime Value</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+        <!-- Introduction Section -->
+        <section id="introduction" class="content-section">
+            <h2 class="section-header">Welcome to Your Hermeneutical Journey</h2>
+            
+            <p class="lead-paragraph">
+                Biblical hermeneutics is both an art and a science—the systematic approach to understanding God's Word 
+                as it was originally intended while discovering its timeless application for our lives today.
+            </p>
+            
+            <div class="callout-box">
+                <div class="callout-title">
+                    <span class="callout-icon">💡</span>
+                    Why This Matters
+                </div>
+                <p>Without proper hermeneutics, we risk making the Bible say what we want rather than hearing what God intends. 
+                This masterclass equips you with time-tested principles that have guided faithful interpretation for centuries.</p>
+            </div>
+            
+            <p class="content-paragraph">
+                In this comprehensive guide, we'll journey from the foundational principles that govern all biblical interpretation 
+                through advanced academic methods, practical exercises, and real-world applications. Whether you're preparing a sermon, 
+                leading a Bible study, or deepening your personal devotions, these tools will transform how you engage with Scripture.
+            </p>
+        </section>
+
+        <!-- Five Core Principles -->
+        <section id="principles" class="content-section">
+            <h2 class="section-header">The Five Pillars of Biblical Interpretation</h2>
+            
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <span>📚 Principle 1: Context is King</span>
+                    <span>▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p>Every verse exists within multiple layers of context: the immediate paragraph, the chapter, 
+                    the book, and ultimately the entire biblical canon. Context determines meaning.</p>
+                    
+                    <div class="scripture-example">
+                        <div class="scripture-reference">Philippians 4:13</div>
+                        "I can do all things through Christ who strengthens me."
+                    </div>
+                    
+                    <p><strong>Common Misinterpretation:</strong> This verse is often used as a motivational slogan for personal achievement.</p>
+                    <p><strong>In Context:</strong> Paul writes from prison about contentment in all circumstances—plenty or want, 
+                    comfort or suffering. The "all things" refers to enduring any situation with Christ's strength, not achieving any goal.</p>
+                </div>
+            </div>
+            
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <span>🎭 Principle 2: Genre Shapes Meaning</span>
+                    <span>▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p>Scripture contains multiple literary genres: narrative, law, wisdom, prophecy, gospel, epistle, 
+                    poetry, and apocalyptic. Each genre has its own interpretive rules.</p>
+                    
+                    <p><strong>Poetry (Psalms):</strong> Uses metaphor and parallelism. "The Lord is my shepherd" isn't about livestock.</p>
+                    <p><strong>Wisdom (Proverbs):</strong> General principles, not absolute promises. "Train up a child" is wisdom, not a guarantee.</p>
+                    <p><strong>Apocalyptic (Revelation):</strong> Symbolic imagery representing spiritual realities.</p>
+                </div>
+            </div>
+            
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <span>🌍 Principle 3: Original Language & Culture</span>
+                    <span>▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p>Hebrew, Aramaic, and Greek carry nuances English cannot fully capture. Understanding the original 
+                    languages and cultural context illuminates meaning.</p>
+                    
+                    <p><strong>Example:</strong> The Greek word "agape" (love) differs from "phileo" (brotherly love) and "eros" (romantic love). 
+                    When Jesus asks Peter "Do you love me?" He uses different Greek words with distinct meanings.</p>
+                    
+                    <p><strong>Cultural Context:</strong> Knowing that tax collectors were viewed as traitors helps us understand 
+                    the scandal of Jesus eating with them.</p>
+                </div>
+            </div>
+            
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <span>✍️ Principle 4: Authorial Intent</span>
+                    <span>▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p>What did the human author intend to communicate to the original audience? This anchors our interpretation 
+                    in historical reality rather than subjective feelings.</p>
+                    
+                    <p><strong>Key Questions:</strong></p>
+                    <ul style="margin-left: 2rem;">
+                        <li>Who wrote this text?</li>
+                        <li>To whom was it written?</li>
+                        <li>What situation prompted the writing?</li>
+                        <li>What response did the author seek?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <span>🔗 Principle 5: Scripture Interprets Scripture</span>
+                    <span>▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p>The Bible is ultimately one unified message from one divine Author. Clear passages illuminate 
+                    difficult ones. The whole counsel of God provides the framework for understanding parts.</p>
+                    
+                    <p><strong>Application:</strong> When James says we're "justified by works" and Paul says "by faith alone," 
+                    we don't choose sides. We recognize James addresses dead faith (faith without evidence) while Paul 
+                    addresses dead works (trying to earn salvation). Together they teach: genuine faith produces works.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Methods -->
+        <section id="methods" class="content-section">
+            <h2 class="section-header">Time-Tested Academic Methods</h2>
+            
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">🏛️</div>
+                    <h3 class="method-name">Historical-Critical</h3>
+                    <p>Investigates the historical origins, sources, and development of texts. Asks: Who wrote it? When? What sources did they use?</p>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">📝</div>
+                    <h3 class="method-name">Literary-Grammatical</h3>
+                    <p>Analyzes grammar, syntax, and literary structure. How do words and sentences create meaning? What literary devices are used?</p>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">🔍</div>
+                    <h3 class="method-name">Inductive Study</h3>
+                    <p>Moves from observation to interpretation to application. What does it say? What does it mean? How does it apply?</p>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">🌐</div>
+                    <h3 class="method-name">Cultural-Historical</h3>
+                    <p>Studies the broader cultural world behind the text. What did original readers know that we might miss?</p>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">📚</div>
+                    <h3 class="method-name">Canonical</h3>
+                    <p>Reads texts in light of the whole biblical canon. How does this passage fit in the grand narrative?</p>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">🙏</div>
+                    <h3 class="method-name">Theological</h3>
+                    <p>Seeks to understand what the text reveals about God, humanity, salvation, and ethics.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies -->
+        <section id="case-studies" class="content-section">
+            <h2 class="section-header">Case Studies: Principles in Action</h2>
+            
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-number">1</div>
+                    <h3 class="case-study-title">The Faith vs. Works Debate</h3>
+                </div>
+                <p><strong>The Problem:</strong> Paul says we're saved by faith apart from works (Ephesians 2:8-9). 
+                James says faith without works is dead (James 2:26). Do they contradict?</p>
+                
+                <p><strong>The Solution:</strong> Using Scripture-interprets-Scripture and understanding context:</p>
+                <ul style="margin-left: 2rem;">
+                    <li>Paul addresses legalism—trying to earn salvation through works</li>
+                    <li>James addresses antinomianism—claiming faith while living unchanged</li>
+                    <li>Paul emphasizes how we're saved (faith alone)</li>
+                    <li>James emphasizes how saving faith behaves (produces works)</li>
+                </ul>
+                <p><strong>The Harmony:</strong> We're saved by faith alone, but saving faith is never alone—it always produces fruit.</p>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-number">2</div>
+                    <h3 class="case-study-title">Jeremiah's Promise in Context</h3>
+                </div>
+                <p><strong>The Verse:</strong> "For I know the plans I have for you...plans to prosper you and not to harm you" (Jeremiah 29:11)</p>
+                
+                <p><strong>Common Application:</strong> God has a wonderful plan for my individual life right now.</p>
+                
+                <p><strong>The Context:</strong></p>
+                <ul style="margin-left: 2rem;">
+                    <li>Written to Jews exiled in Babylon</li>
+                    <li>They would remain in exile for 70 years</li>
+                    <li>Most original hearers would die in exile</li>
+                    <li>The promise was for the nation's future, not immediate individual prosperity</li>
+                </ul>
+                
+                <p><strong>Proper Application:</strong> God is sovereign over history and works through difficult circumstances 
+                for ultimate good. This gives hope in trials, not a guarantee of immediate prosperity.</p>
+            </div>
+        </section>
+
+        <!-- Devotional Approaches -->
+        <section id="devotional" class="content-section">
+            <h2 class="section-header">Devotional & Reflective Approaches</h2>
+            
+            <div class="callout-box">
+                <div class="callout-title">
+                    <span class="callout-icon">🕊️</span>
+                    Lectio Divina: Divine Reading
+                </div>
+                <p>An ancient practice combining careful reading with prayerful meditation:</p>
+                <ol style="margin-left: 2rem; margin-top: 1rem;">
+                    <li><strong>Lectio (Read):</strong> Read the passage slowly, attentively</li>
+                    <li><strong>Meditatio (Meditate):</strong> Ponder what stands out to you</li>
+                    <li><strong>Oratio (Pray):</strong> Respond to God about what you've read</li>
+                    <li><strong>Contemplatio (Contemplate):</strong> Rest in God's presence</li>
+                </ol>
+            </div>
+            
+            <p class="content-paragraph">
+                While academic methods help us understand what Scripture meant, devotional approaches help us hear what 
+                God is saying to us personally. Both are essential for a holistic engagement with God's Word.
+            </p>
+        </section>
+
+        <!-- Practice Exercises -->
+        <section id="exercises" class="content-section">
+            <h2 class="section-header">Practical Exercises to Build Your Skills</h2>
+            
+            <div class="callout-box">
+                <div class="callout-title">
+                    <span class="callout-icon">✏️</span>
+                    Exercise 1: Context Analysis
+                </div>
+                <p><strong>Assignment:</strong> Take John 3:16 and read the entire chapter. Answer:</p>
+                <ul style="margin-left: 2rem;">
+                    <li>Who is speaking?</li>
+                    <li>To whom?</li>
+                    <li>What prompted this conversation?</li>
+                    <li>How does the context deepen the meaning of verse 16?</li>
+                </ul>
+            </div>
+            
+            <div class="callout-box">
+                <div class="callout-title">
+                    <span class="callout-icon">✏️</span>
+                    Exercise 2: Genre Recognition
+                </div>
+                <p><strong>Assignment:</strong> Read Psalm 23, 1 Corinthians 13, and Exodus 20:1-17. For each:</p>
+                <ul style="margin-left: 2rem;">
+                    <li>Identify the genre</li>
+                    <li>List two features of that genre</li>
+                    <li>Explain how genre affects interpretation</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Modern Application -->
+        <section id="application" class="content-section">
+            <h2 class="section-header">Applying Ancient Texts to Modern Life</h2>
+            
+            <p class="lead-paragraph">
+                The goal of hermeneutics isn't merely academic understanding but life transformation. 
+                We bridge from "what it meant" to "what it means" through careful application.
+            </p>
+            
+            <div class="callout-box">
+                <div class="callout-title">
+                    <span class="callout-icon">🌉</span>
+                    The Bridge Method
+                </div>
+                <ol style="margin-left: 2rem;">
+                    <li><strong>Understand the original situation:</strong> What specific issue was addressed?</li>
+                    <li><strong>Identify the timeless principle:</strong> What universal truth is taught?</li>
+                    <li><strong>Find contemporary parallels:</strong> Where do we face similar issues?</li>
+                    <li><strong>Apply wisely:</strong> How does this principle guide us today?</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="content-section">
+            <h2 class="section-header">Your Complete Resource Library</h2>
+            
+            <div class="download-section">
+                <h3 class="download-title">Download the Complete Workshop Package</h3>
+                <p>Everything you need to teach or study Biblical Hermeneutics</p>
+                
+                <div class="download-grid">
+                    <div class="download-item">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📚</div>
+                        <div><a href="/Biblical Hermeneutics 101.pdf" class="study-link">Complete Guide PDF</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">PDF • 45 pages</div>
+                    </div>
+                    
+                    <div class="download-item">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">✏️</div>
+                        <div><a href="/Biblical-Hermeneutics101-Slide Deck.pdf" class="study-link"> Biblical Hermeneutics 101 — Slide Deck PDF</div
+                        <div style="font-size: 0.9rem; opacity: 0.8;">5 exercises</div>
+                    </div>
+
+
+                    <div class="download-item">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+                        <div><a href="/Biblical_Hermeneutics_101_Presentation.pptx" class="study-link">PowerPoint Slides</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">20 slides</div>
+                    </div>
+                   
+                    </br>
+                    
+                    <div class="download-item">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎓</div>
+                       <div><a href="/hermeneutics-assessment-quiz.html" class="study-link">Quiz & Key</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">10 questions</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <script>
+    // Toggle expandable sections
+    function toggleExpand(header) {
+        const content = header.nextElementSibling;
+        const arrow = header.querySelector('span:last-child');
+        
+        content.classList.toggle('active');
+        arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+    }
+    
+    // Update active TOC item on scroll
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('.content-section');
+        const tocItems = document.querySelectorAll('.toc-item');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${current}`) {
+                item.classList.add('active');
+            }
+        });
+    });
+    
+    // Smooth scroll for TOC links
+    document.querySelectorAll('.toc-item').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                // Calculate position accounting for any fixed headers
+                const offsetTop = targetSection.offsetTop - 20;
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Auto-expand sections if linked directly
+    window.addEventListener('DOMContentLoaded', () => {
+        // Check if there's a hash in the URL
+        if (window.location.hash) {
+            const targetId = window.location.hash.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Scroll to the element
+                setTimeout(() => {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
+        
+        // Make download links open in new tab for better user experience
+        document.querySelectorAll('.download-item a').forEach(link => {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        });
+    });
+    
+    // Ensure all study links maintain proper styling
+    document.querySelectorAll('.study-link').forEach(link => {
+        link.style.color = 'white';
+        link.style.textDecoration = 'none';
+    });
+</script>
+
+</main>
+
+
+    
+  
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>

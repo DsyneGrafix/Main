@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL8N3YFW6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QL8N3YFW6B');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer That Wins: Interactive Spiritual Warfare Guide</title>
+    <meta name="description" content="A comprehensive guide to spiritual warfare through prayer, featuring interactive tools, armor of God prayers, and practical victory strategies.">
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="css/site_styles.css">
+    
+    <!-- Additional page-specific styles -->
+    <style>
+    /* FLOATING NAVIGATION SYSTEM - v2.0 */
+    .nav-float-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 28px;
+        font-weight: bold;
+        z-index: 999999;
+        box-shadow: 0 6px 25px rgba(30, 64, 175, 0.4);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-float-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 30px rgba(30, 64, 175, 0.6);
+    }
+
+    .nav-float-button.active {
+        background: linear-gradient(135deg, #dc2626, #ef4444);
+        transform: rotate(45deg);
+    }
+
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(37, 99, 235, 0.95));
+        z-index: 999998;
+        display: none;
+        overflow-y: auto;
+        padding: 20px;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-overlay.active {
+        display: block;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-panel {
+        max-width: 1200px;
+        margin: 100px auto 40px;
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: #dc2626;
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-header {
+        text-align: center;
+        margin-bottom: 40px;
+        border-bottom: 3px solid #e5e7eb;
+        padding-bottom: 20px;
+    }
+
+    .nav-header h1 {
+        color: #1e40af;
+        font-size: 32px;
+        margin: 0 0 10px 0;
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .nav-section {
+        background: #f8fafc;
+        padding: 25px;
+        border-radius: 15px;
+        border: 2px solid #e5e7eb;
+    }
+
+    .nav-section h3 {
+        color: #1e40af;
+        margin: 0 0 20px 0;
+        font-size: 20px;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 12px 15px;
+        margin: 8px 0;
+        background: white;
+        color: #374151;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+        background: #eff6ff;
+        color: #1d4ed8;
+        transform: translateX(5px);
+    }
+
+    .nav-link.prayer {
+        background: linear-gradient(135deg, #7c3aed, #6d28d9);
+        color: white;
+    }
+
+    .nav-link.premium {
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: white;
+    }
+
+    .nav-link.featured {
+        background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .nav-panel {
+            margin: 80px 10px 20px;
+            padding: 25px;
+        }
+        .nav-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+</head>
+<body>
+   <button class="nav-float-button" id="navButton" onclick="toggleNavigation()">☰</button>
+
+<div id="navOverlay" class="nav-overlay">
+    <div class="nav-panel">
+        <button class="nav-close" onclick="closeNavigation()">✕</button>
+        
+        <div class="nav-header">
+            <h1>⚓ AnchorStack Navigation</h1>
+            <p>Biblical studies and leadership resources</p>
+        </div>
+        
+        <div class="nav-grid">
+            <!-- ===== UPDATE THESE LINKS AS NEEDED ===== -->
+            
+            <div class="nav-section">
+                <h3>📚 Free Biblical Studies</h3>
+                <a href="https://anchorstack.pro" class="nav-link">🏠 Home</a>
+                <a href="https://anchorstack.pro/interactive_prayer_guide.html" class="nav-link prayer">🙏 Prayer Guide</a>
+                <a href="https://anchorstack.pro/enhanced_prayer_guide.html" class="nav-link">📖 Prayer Manual</a>
+                <a href="https://anchorstack.pro/systematic_bible_study_guide.html" class="nav-link">📋 Study Templates</a>
+                <a href="https://anchorstack.pro/armor_of_god.html" class="nav-link">⚔️ Armor of God</a>
+            </div>
+
+            <div class="nav-section">
+                <h3>💎 Premium Library</h3>
+                <a href="https://anchorstack.gumroad.com/l/ummlqq" class="nav-link">📜 Daniel Master Suite</a>
+                <a href="https://anchorstack.gumroad.com/l/edgnm" class="nav-link">🎵 Ezekiel Interactive</a>
+                <a href="https://anchorstack.gumroad.com/l/qrpult" class="nav-link">⚡ Revelation Study</a>
+                <a href="https://anchorstack.gumroad.com/l/uahhng" class="nav-link premium">🔓 Full Access</a>
+            </div>
+
+            <div class="nav-section">
+                <h3>📖 Books & Leadership</h3>
+                <a href="https://anchorstack.pro/gideon_book_landing_page.html" class="nav-link">👑 Gideon Leadership</a>
+                <a href="https://amazon.com/dp/B0FBZVXJT9" target="_blank" class="nav-link">📱 Amazon Kindle</a>
+                <a href="https://anchorstack.pro/individual_studies.html" class="nav-link">📋 Individual Studies</a>
+            </div>
+
+            <div class="nav-section">
+                <h3>ℹ️ About & Support</h3>
+                <a href="https://anchorstack.pro/about.html" class="nav-link">👨‍🏫 About Ricky</a>
+                <a href="mailto:info@anchorstack.pro" class="nav-link">📧 Contact</a>
+                <a href="https://anchorstack.pro/help.html" class="nav-link">❓ Help & FAQ</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- STEP 3: Add this JavaScript before closing </body> tag -->
+<script>
+    function toggleNavigation() {
+        const overlay = document.getElementById('navOverlay');
+        const button = document.getElementById('navButton');
+        
+        if (overlay.classList.contains('active')) {
+            closeNavigation();
+        } else {
+            overlay.classList.add('active');
+            button.classList.add('active');
+            button.innerHTML = '✕';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeNavigation() {
+        const overlay = document.getElementById('navOverlay');
+        const button = document.getElementById('navButton');
+        
+        overlay.classList.remove('active');
+        button.classList.remove('active');
+        button.innerHTML = '☰';
+        document.body.style.overflow = '';
+    }
+
+    // Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeNavigation();
+    });
+
+    // Close when clicking outside
+    document.getElementById('navOverlay').addEventListener('click', function(e) {
+        if (e.target === this) closeNavigation();
+    });
+</script>
+    <!-- Site Navigation Overlay -->
+   
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <header class="section text-center">
+            <h1>Prayer That Wins</h1>
+            <p class="mb-large" style="font-size: 1.25rem; color: var(--color-gray-medium);">
+                A Field Guide to Spiritual Warfare and Victory Over Darkness
+            </p>
+            <p style="max-width: 800px; margin: 0 auto;">
+                You were not designed to crawl through faith on your elbows, dodging blows you cannot name. 
+                You were designed to stand—rooted in Christ, armored in truth, moving through each day in prayerful authority. 
+                This interactive guide is your clear, practical map for that journey.
+            </p>
+        </header>
+
+        <!-- Progress Tracking -->
+        <div class="progress-container">
+            <h3>Your Victory Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="overallProgress" style="width: 0%"></div>
+            </div>
+            <p id="progressText">Click on armor pieces and use tools below to track your progress</p>
+        </div>
+
+        <!-- Interactive Prayer Timer -->
+        <section class="prayer-timer">
+            <h2>🙏 Interactive Prayer Timer</h2>
+            <p>Choose your prayer time and let the timer guide your focus</p>
+            
+            <div class="timer-display" id="timerDisplay">00:00</div>
+            
+            <div class="timer-controls">
+                <button class="timer-btn" onclick="setTimer(5)">5 min</button>
+                <button class="timer-btn" onclick="setTimer(10)">10 min</button>
+                <button class="timer-btn" onclick="setTimer(15)">15 min</button>
+                <button class="timer-btn" onclick="setTimer(20)">20 min</button>
+                <button class="timer-btn" onclick="startTimer()" id="startBtn">Start</button>
+                <button class="timer-btn" onclick="resetTimer()">Reset</button>
+            </div>
+        </section>
+
+        <!-- Foundations Section -->
+        <section class="section">
+            <h2>🎯 Foundations of Victory</h2>
+            
+            <div class="content-card">
+                <h3 class="card-title">What Is Spiritual Warfare?</h3>
+                <p>
+                    At its core, spiritual warfare is the clash of kingdoms: the reign of Christ breaking into a world 
+                    disordered by sin, rebellion, and deception. This battle is not primarily fought with volume, 
+                    theatrics, or perfect phrases. It is waged through allegiance—what you trust, whom you obey, and how you pray.
+                </p>
+                <p>
+                    Scripture frames this struggle in sober terms: the schemes of the devil, the lure of the world's 
+                    disordered loves, and the sabotage of our own sinful nature. But it also gives radiant clarity: 
+                    you fight from victory, not for it. Jesus triumphed at the cross; prayer is how we apply that finished work to today's real conflicts.
+                </p>
+                <div style="background: #f0f9ff; padding: var(--spacing-md); border-radius: 8px; border-left: 4px solid var(--color-blue); margin-top: var(--spacing-md);">
+                    <p style="font-style: italic; margin: 0; color: var(--color-blue);">
+                        "Father, I stand in the victory Jesus won at Calvary. I do not fight for victory—I fight from it. 
+                        Let this truth anchor my prayers and strengthen my faith. In Jesus' name, Amen."
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3 class="card-title">Why Prayer Wins When Nothing Else Does</h3>
+                <p>
+                    Prayer does three things Western strategies can't. First, it re-centers reality: God is God, 
+                    we are not, and evil is not sovereign. Second, it re-routes resources: "Your kingdom come" 
+                    channels Heaven's will into earthly places. Third, it reforms the warrior: prayer reshapes 
+                    the one who prays—clarifying desires, cleansing motives, and calibrating courage.
+                </p>
+                
+                <div class="grid grid-3" style="margin-top: var(--spacing-lg);">
+                    <div style="text-align: center; padding: var(--spacing-md);">
+                        <div style="font-size: 2rem; margin-bottom: var(--spacing-sm);">🎯</div>
+                        <h4>Prayer Anchors Identity</h4>
+                        <p style="font-size: 0.9rem;">We fight as beloved sons and daughters, not frenetic orphans trying to earn safety.</p>
+                    </div>
+                    <div style="text-align: center; padding: var(--spacing-md);">
+                        <div style="font-size: 2rem; margin-bottom: var(--spacing-sm);">🎯</div>
+                        <h4>Prayer Anchors Aim</h4>
+                        <p style="font-size: 0.9rem;">We seek God's will first, then tactics; this order matters.</p>
+                    </div>
+                    <div style="text-align: center; padding: var(--spacing-md);">
+                        <div style="font-size: 2rem; margin-bottom: var(--spacing-sm);">🎯</div>
+                        <h4>Prayer Anchors Atmosphere</h4>
+                        <p style="font-size: 0.9rem;">Gratitude, worship, and Scripture-filled speech change a room long before any meeting does.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: var(--spacing-lg); padding: var(--spacing-md); background: #fffbeb; border-radius: 8px;">
+                    <p style="font-style: italic; color: var(--color-gold-dark); margin: 0;">
+                        "Not by might nor by power, but by My Spirit," says the LORD. - Zechariah 4:6
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Armor of God Interactive Section -->
+        <section class="section">
+            <h2>⚔️ The Armor of God - Interactive Prayer</h2>
+            <p class="mb-large">
+                The armor is not a costume you imagine; it's a lifestyle you inhabit. "Put on" the armor by 
+                praying it into your day and practicing it in your decisions. Click each piece to pray it on:
+            </p>
+
+            <div id="armorPieces">
+                <div class="armor-piece" onclick="prayArmorPiece(this, 'truth')">
+                    <div class="armor-title">
+                        <span class="armor-emoji">🔗</span>
+                        Belt of Truth
+                    </div>
+                    <div class="armor-prayer">
+                        "Spirit of truth, surround my mind. Expose lies; anchor me in what's real."
+                    </div>
+                    <div class="armor-practice">
+                        Practice: Fact-check your feelings; speak truth kindly when rumors swirl.
+                    </div>
+                </div>
+
+                <div class="armor-piece" onclick="prayArmorPiece(this, 'righteousness')">
+                    <div class="armor-title">
+                        <span class="armor-emoji">🛡️</span>
+                        Breastplate of Righteousness
+                    </div>
+                    <div class="armor-prayer">
+                        "Jesus, be my righteousness. Guard my heart from accusation and pride."
+                    </div>
+                    <div class="armor-practice">
+                        Practice: Choose integrity when it costs; confess quickly when you fall.
+                    </div>
+                </div>
+
+                <div class="armor-piece" onclick="prayArmorPiece(this, 'peace')">
+                    <div class="armor-title">
+                        <span class="armor-emoji">👟</span>
+                        Gospel Shoes
+                    </div>
+                    <div class="armor-prayer">
+                        "Make me ready to carry peace into conflict today."
+                    </div>
+                    <div class="armor-practice">
+                        Practice: Enter tense rooms as a reconciler; ask, "How can I serve?"
+                    </div>
+                </div>
+
+                <div class="armor-piece" onclick="prayArmorPiece(this, 'faith')">
+                    <div class="armor-title">
+                        <span class="armor-emoji">🛡️</span>
+                        Shield of Faith
+                    </div>
+                    <div class="armor-prayer">
+                        "I trust You more than what I see. Quench every flaming lie."
+                    </div>
+                    <div class="armor-practice">
+                        Practice: Interrupt spirals with gratitude; remember past deliverances.
+                    </div>
+                </div>
+
+                <div class="armor-piece" onclick="prayArmorPiece(this, 'salvation')">
+                    <div class="armor-title">
+                        <span class="armor-emoji">⛑️</span>
+                        Helmet of Salvation
+                    </div>
+                    <div class="armor-prayer">
+                        "Secure my thoughts: I am saved by grace, adopted, and kept."
+                    </div>
+                    <div class="armor-practice">
+                        Practice: Limit doomscrolling; feed on Scripture before headlines.
+                    </div>
+                </div>
+
+                <div class="armor-piece" onclick="prayArmorPiece(this, 'word')">
+                    <div class="armor-title">
+                        <span class="armor-emoji">⚔️</span>
+                        Sword of the Spirit
+                    </div>
+                    <div class="armor-prayer">
+                        "Put Your Word on my tongue for this moment."
+                    </div>
+                    <div class="armor-practice">
+                        Practice: Memorize short verses that target your current battle.
+                    </div>
+                </div>
+
+                <div class="armor-piece" onclick="prayArmorPiece(this, 'prayer')">
+                    <div class="armor-title">
+                        <span class="armor-emoji">🙏</span>
+                        All-Occasion Prayer
+                    </div>
+                    <div class="armor-prayer">
+                        "Teach me to pray without ceasing—whisper, sing, sigh, contend."
+                    </div>
+                    <div class="armor-practice">
+                        Practice: Micro-prayers throughout the day; scheduled intercession blocks.
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-container" style="margin-top: var(--spacing-xl);">
+                <h3>🏆 Today's Armor Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="armorProgress" style="width: 0%"></div>
+                </div>
+                <p id="armorProgressText">Click each armor piece above to pray it on for today</p>
+            </div>
+        </section>
+
+        <!-- Scripture Memory Bank -->
+        <section class="section">
+            <h2>📖 Scripture Memory Bank</h2>
+            <p class="mb-large">Tap any verse to add it to your memory queue:</p>
+
+            <div id="verseBank">
+                <div class="verse-card" onclick="toggleVerse(this)">
+                    <strong>"The LORD is my light and my salvation—whom shall I fear?"</strong><br>
+                    <small>Psalm 27:1</small>
+                </div>
+                
+                <div class="verse-card" onclick="toggleVerse(this)">
+                    <strong>"Our struggle is not against flesh and blood, but against the spiritual forces of evil."</strong><br>
+                    <small>Ephesians 6:12</small>
+                </div>
+                
+                <div class="verse-card" onclick="toggleVerse(this)">
+                    <strong>"Submit to God. Resist the devil, and he will flee from you."</strong><br>
+                    <small>James 4:7</small>
+                </div>
+                
+                <div class="verse-card" onclick="toggleVerse(this)">
+                    <strong>"Greater is He who is in you than he who is in the world."</strong><br>
+                    <small>1 John 4:4</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <h2>❓ FAQ & Common Pitfalls</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    "How do I know it's spiritual warfare and not just life?"
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    Sometimes it's both. Use discernment tests: Does this thought make me more like Jesus? 
+                    Does it align with Scripture? Do mature believers corroborate it? If it's spiritual resistance, 
+                    declaration of truth and consistent prayer will noticeably shift the atmosphere over time.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    "Do I need special phrases?"
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    No. Authority is in Jesus, not in your eloquence. Pray plainly, biblically, humbly, and boldly.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    "What if I feel nothing when I pray?"
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    Faithfulness outruns feelings. Think of prayer like strength training: invisible progress 
+                    accumulates until a visible lift surprises you.
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section text-center">
+            <h2>🚀 Ready to Begin Your Victory Journey?</h2>
+            <p class="mb-large" style="max-width: 600px; margin: 0 auto var(--spacing-lg);">
+                Spiritual warfare is not a genre of Christian hype; it's the ordinary life of extraordinary love. 
+                Keep your eyes on Jesus. Keep your Bible open. Keep your circle close. Keep your prayers simple and steady. 
+                Courage grows here.
+            </p>
+            
+            <div class="cta-buttons">
+              <!-- >  <a href="#21day" class="cta-btn cta-primary">🏆 Start 21-Day Plan</a> -->
+                <a href="interactive_prayer_guide.html" class="cta-btn cta-secondary">🎮 Try Interactive Prayer Guide</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Link to your JavaScript file -->
+    <script src="site_navigation.js"></script>
+    
+    <!-- Page-specific JavaScript -->
+    <script>
+        // Prayer Timer Functionality
+        let timerInterval;
+        let timerSeconds = 0;
+        let isRunning = false;
+
+        function setTimer(minutes) {
+            timerSeconds = minutes * 60;
+            updateTimerDisplay();
+            
+            // Update button states
+            document.querySelectorAll('.timer-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timerSeconds / 60);
+            const seconds = timerSeconds % 60;
+            document.getElementById('timerDisplay').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (timerSeconds <= 0) {
+                alert('Please select a prayer time first!');
+                return;
+            }
+
+            if (!isRunning) {
+                isRunning = true;
+                document.getElementById('startBtn').textContent = 'Pause';
+                
+                timerInterval = setInterval(() => {
+                    timerSeconds--;
+                    updateTimerDisplay();
+                    
+                    if (timerSeconds <= 0) {
+                        clearInterval(timerInterval);
+                        isRunning = false;
+                        document.getElementById('startBtn').textContent = 'Start';
+                        alert('Prayer time complete! 🙏');
+                    }
+                }, 1000);
+            } else {
+                clearInterval(timerInterval);
+                isRunning = false;
+                document.getElementById('startBtn').textContent = 'Start';
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            timerSeconds = 0;
+            updateTimerDisplay();
+            document.getElementById('startBtn').textContent = 'Start';
+            document.querySelectorAll('.timer-btn').forEach(btn => btn.classList.remove('active'));
+        }
+
+        // Armor of God Functionality
+        let prayedPieces = new Set();
+
+        function prayArmorPiece(element, piece) {
+            if (!prayedPieces.has(piece)) {
+                prayedPieces.add(piece);
+                element.classList.add('prayed');
+                updateArmorProgress();
+                
+                // Show confirmation
+                const originalText = element.querySelector('.armor-prayer').textContent;
+                element.querySelector('.armor-prayer').innerHTML = 
+                    '<strong style="color: var(--color-blue);">✓ Prayed! ' + originalText + '</strong>';
+            }
+        }
+
+        function updateArmorProgress() {
+            const totalPieces = 7;
+            const prayedCount = prayedPieces.size;
+            const percentage = (prayedCount / totalPieces) * 100;
+            
+            document.getElementById('armorProgress').style.width = percentage + '%';
+            document.getElementById('armorProgressText').textContent = 
+                `${prayedCount} of ${totalPieces} armor pieces prayed on today`;
+            
+            updateOverallProgress();
+        }
+
+        // Scripture Memory Functionality
+        let memorizingVerses = new Set();
+
+        function toggleVerse(element) {
+            const verseText = element.querySelector('strong').textContent;
+            
+            if (memorizingVerses.has(verseText)) {
+                memorizingVerses.delete(verseText);
+                element.classList.remove('memorizing');
+            } else {
+                memorizingVerses.add(verseText);
+                element.classList.add('memorizing');
+            }
+            
+            updateOverallProgress();
+        }
+
+        // FAQ Functionality
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('span');
+            
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+                icon.textContent = '+';
+            } else {
+                answer.classList.add('show');
+                icon.textContent = '−';
+            }
+        }
+
+        // Overall Progress Tracking
+        function updateOverallProgress() {
+            const armorProgress = (prayedPieces.size / 7) * 40; // 40% of total
+            const verseProgress = Math.min(memorizingVerses.size, 4) / 4 * 30; // 30% of total
+            const timerProgress = timerSeconds > 0 ? 30 : 0; // 30% if timer set
+            
+            const totalProgress = armorProgress + verseProgress + timerProgress;
+            
+            document.getElementById('overallProgress').style.width = totalProgress + '%';
+            document.getElementById('progressText').textContent = 
+                `${Math.round(totalProgress)}% complete - Keep growing in victory!`;
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTimerDisplay();
+            updateOverallProgress();
+        });
+    </script>
+<script>
+    function toggleNavigation() {
+        const overlay = document.getElementById('navOverlay');
+        const button = document.getElementById('navButton');
+        
+        if (overlay.classList.contains('active')) {
+            closeNavigation();
+        } else {
+            overlay.classList.add('active');
+            button.classList.add('active');
+            button.innerHTML = '✕';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeNavigation() {
+        const overlay = document.getElementById('navOverlay');
+        const button = document.getElementById('navButton');
+        
+        overlay.classList.remove('active');
+        button.classList.remove('active');
+        button.innerHTML = '☰';
+        document.body.style.overflow = '';
+    }
+
+    // Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeNavigation();
+    });
+
+    // Close when clicking outside
+    document.getElementById('navOverlay').addEventListener('click', function(e) {
+        if (e.target === this) closeNavigation();
+    });
+</script>
+
+  
+
+
+<script src="/js/universal-nav.js"></script>
+<script src="anchorstack-nav.js"></script>
+<script src="anchorstack-footer.js"></script>
+</body>
+</html>
